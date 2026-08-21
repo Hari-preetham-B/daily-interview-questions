@@ -108,7 +108,7 @@ def call_claude(category: str, history: dict) -> dict:
         "Respond with ONLY the JSON object."
     )
 
-        resp = requests.post(
+    resp = requests.post(
         API_URL,
         headers={
             "x-api-key": api_key,

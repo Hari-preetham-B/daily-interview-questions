@@ -26,9 +26,11 @@ DATA_FILE = ROOT / "data" / "questions.json"
 QUESTIONS_DIR = ROOT / "questions"
 README_FILE = ROOT / "README.md"
 
-# Gemini free-tier model. "gemini-1.5-flash" and "gemini-2.0-flash" both have
-# generous free quotas as of writing — check https://ai.google.dev/pricing if unsure.
-MODEL = "gemini-2.0-flash"
+# Gemini free-tier model. Google deprecates/renames Flash models every few months
+# (this script was bumped from gemini-2.0-flash after Google shut it down in June 2026).
+# If this model 404s in the future, check https://ai.google.dev/gemini-api/docs/models
+# for the current stable Flash model name and update MODEL below.
+MODEL = "gemini-3.6-flash"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 
 # Rotate categories by day-of-year so you get an even, predictable spread

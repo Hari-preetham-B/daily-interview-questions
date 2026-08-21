@@ -1,0 +1,41 @@
+name: Daily Interview Question
+
+on:
+  schedule:
+    # 8:00 AM IST = 2:30 AM UTC. Change if you want a different time.
+    - cron: '30 2 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab to test
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate today's question
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_question.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Hari Preetham"
+          git config user.email "haripreetham.1111@gmail.com"
+          git add data/questions.json questions/ README.md
+          git diff --cached --quiet || git commit -m "chore: add daily interview question ($(date +'%Y-%m-%d'))"
+          git push

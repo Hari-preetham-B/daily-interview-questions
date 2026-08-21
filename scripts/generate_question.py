@@ -122,7 +122,7 @@ def call_gemini(category: str, history: dict) -> dict:
             "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
             "generationConfig": {
                 "temperature": 0.9,
-                "maxOutputTokens": 800,
+                "maxOutputTokens": 2048,
                 "responseMimeType": "application/json",
             },
         },
@@ -135,10 +135,19 @@ def call_gemini(category: str, history: dict) -> dict:
 
     try:
         candidates = data["candidates"]
+        finish_reason = candidates[0].get("finishReason")
         parts = candidates[0]["content"]["parts"]
         raw = "".join(p.get("text", "") for p in parts).strip()
     except (KeyError, IndexError):
         print(f"ERROR: unexpected Gemini response shape:\n{json.dumps(data, indent=2)}", file=sys.stderr)
+        sys.exit(1)
+
+    if finish_reason == "MAX_TOKENS":
+        print(
+            "ERROR: Gemini response was cut off (hit maxOutputTokens). "
+            "Increase generationConfig.maxOutputTokens in the script.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     raw = raw.replace("```json", "").replace("```", "").strip()

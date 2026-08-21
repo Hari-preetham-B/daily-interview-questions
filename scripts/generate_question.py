@@ -108,7 +108,7 @@ def call_claude(category: str, history: dict) -> dict:
         "Respond with ONLY the JSON object."
     )
 
-    resp = requests.post(
+        resp = requests.post(
         API_URL,
         headers={
             "x-api-key": api_key,
@@ -123,6 +123,8 @@ def call_claude(category: str, history: dict) -> dict:
         },
         timeout=60,
     )
+    if resp.status_code != 200:
+        print(f"API error {resp.status_code}: {resp.text}", file=sys.stderr)
     resp.raise_for_status()
     data = resp.json()
 

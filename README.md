@@ -24,16 +24,37 @@ A Clustered Index determines the physical order of data rows in a table, which m
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-22) — DSA
+
+**Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider using prefix sums. How can a hash map help you check if a previous prefix sum exists such that current_prefix_sum - previous_prefix_sum = k?
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+We can solve this problem in O(N) time complexity using the Prefix Sum technique combined with a Hash Map. As we iterate through the array, we maintain a running prefix sum. If `current_sum - k` exists in our hash map, it means there are subarrays ending at the current index whose sum equals `k`, so we add its frequency to our count. We then increment the count of `current_sum` in the hash map. We initialize the hash map with `{0: 1}` to account for subarrays starting from index 0. This approach achieves O(N) time complexity and O(N) auxiliary space complexity.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **2**
-- DSA: 0 · AI/ML: 1 · CSE Core: 1 · Behavioral: 0
+- Total questions logged: **3**
+- DSA: 1 · AI/ML: 1 · CSE Core: 1 · Behavioral: 0
 
 ## 🗂️ Recent Questions
 
+- **2026-08-22 [PM]** [DSA](questions/2026-08-22-pm-dsa.md): Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
 - **2026-08-22 [AM]** [CSE Core](questions/2026-08-22-am-cse-core.md): What is the key difference between a Clustered Index and a Non-Clustered Index in a Relational Database Management System (RDBMS), and how do they impact data retrieval performance?
 - **2026-08-21** [AIML](questions/2026-08-21-aiml.md): Explain the vanishing and exploding gradient problems in deep neural networks. What causes them, and what are two common techniques used to mitigate each?
 

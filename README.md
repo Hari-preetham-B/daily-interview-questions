@@ -24,16 +24,37 @@ To answer this question effectively, use the STAR framework. Start by setting th
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-23) — AIML
+
+**Explain the Bias-Variance Tradeoff in machine learning. How do model complexity, underfitting, and overfitting relate to bias and variance, and what are two practical techniques to reduce variance in a high-variance model?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how a simple linear model compares to an unpruned deep decision tree when trained on slightly different training subsets.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+The bias-variance tradeoff describes the balance between two key sources of error in predictive models. High bias occurs when a model is too simple (underfitting), causing it to make strong assumptions and fail to capture complex underlying patterns in the data. High variance occurs when a model is overly complex (overfitting), causing it to learn noisy, specific details of the training set that do not generalize to unseen data. As model complexity increases, bias typically decreases while variance increases. To reduce variance in a high-variance model, one can apply regularization techniques (such as L1 or L2 penalty), use ensemble methods like bagging (e.g., Random Forests), prune the model, or collect more training data.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **4**
-- DSA: 1 · AI/ML: 1 · CSE Core: 1 · Behavioral: 1
+- Total questions logged: **5**
+- DSA: 1 · AI/ML: 2 · CSE Core: 1 · Behavioral: 1
 
 ## 🗂️ Recent Questions
 
+- **2026-08-23 [PM]** [AIML](questions/2026-08-23-pm-aiml.md): Explain the Bias-Variance Tradeoff in machine learning. How do model complexity, underfitting, and overfitting relate to bias and variance, and what are two practical techniques to reduce variance in a high-variance model?
 - **2026-08-23 [AM]** [Behavioral](questions/2026-08-23-am-behavioral.md): Describe a situation where you had a strong technical disagreement with a teammate during a group project. How did you handle it, and what was the outcome?
 - **2026-08-22 [PM]** [DSA](questions/2026-08-22-pm-dsa.md): Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
 - **2026-08-22 [AM]** [CSE Core](questions/2026-08-22-am-cse-core.md): What is the key difference between a Clustered Index and a Non-Clustered Index in a Relational Database Management System (RDBMS), and how do they impact data retrieval performance?

@@ -58,6 +58,16 @@
       "hint": "Try sorting the intervals by their start times first. How does this help in identifying overlaps sequentially?",
       "answer": "First, sort the array of intervals by their start times in ascending order. Initialize a list `merged` to store the result. Iterate through each interval: if `merged` is empty or the start time of the current interval is greater than the end time of the last interval in `merged`, add the current interval to `merged`. Otherwise, there is an overlap, so merge them by updating the end time of the last interval in `merged` to max(last_interval.end, current_interval.end). The time complexity is O(N log N) due to sorting, and the space complexity is O(N) or O(log N) depending on the sorting algorithm implementation.",
       "generated_at": "2026-08-24T03:30:16.458758Z"
+    },
+    {
+      "date": "2026-08-24",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?",
+      "difficulty": "Medium",
+      "hint": "Consider the unexpected effect of increasing the number of allocated page frames on the total count of page faults.",
+      "answer": "Belady's Anomaly is the phenomenon where increasing the number of page frames allocated to a process leads to an increase, rather than a decrease, in the number of page faults. This counter-intuitive behavior occurs in certain page replacement algorithms, most notably First-In, First-Out (FIFO). In contrast, stack-based algorithms such as Least Recently Used (LRU) and Optimal Page Replacement (OPT) are completely immune to Belady's Anomaly. This immunity exists because, for stack algorithms, the set of pages residing in memory with N frames is guaranteed to be a subset of the pages that would reside in memory with N+1 frames.",
+      "generated_at": "2026-08-24T15:09:35.422083Z"
     }
   ]
 }

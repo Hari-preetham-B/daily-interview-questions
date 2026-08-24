@@ -24,16 +24,37 @@ First, sort the array of intervals by their start times in ascending order. Init
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-24) — CSE Core
+
+**What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the unexpected effect of increasing the number of allocated page frames on the total count of page faults.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Belady's Anomaly is the phenomenon where increasing the number of page frames allocated to a process leads to an increase, rather than a decrease, in the number of page faults. This counter-intuitive behavior occurs in certain page replacement algorithms, most notably First-In, First-Out (FIFO). In contrast, stack-based algorithms such as Least Recently Used (LRU) and Optimal Page Replacement (OPT) are completely immune to Belady's Anomaly. This immunity exists because, for stack algorithms, the set of pages residing in memory with N frames is guaranteed to be a subset of the pages that would reside in memory with N+1 frames.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **6**
-- DSA: 2 · AI/ML: 2 · CSE Core: 1 · Behavioral: 1
+- Total questions logged: **7**
+- DSA: 2 · AI/ML: 2 · CSE Core: 2 · Behavioral: 1
 
 ## 🗂️ Recent Questions
 
+- **2026-08-24 [PM]** [CSE Core](questions/2026-08-24-pm-cse-core.md): What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?
 - **2026-08-24 [AM]** [DSA](questions/2026-08-24-am-dsa.md): Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 - **2026-08-23 [PM]** [AIML](questions/2026-08-23-pm-aiml.md): Explain the Bias-Variance Tradeoff in machine learning. How do model complexity, underfitting, and overfitting relate to bias and variance, and what are two practical techniques to reduce variance in a high-variance model?
 - **2026-08-23 [AM]** [Behavioral](questions/2026-08-23-am-behavioral.md): Describe a situation where you had a strong technical disagreement with a teammate during a group project. How did you handle it, and what was the outcome?

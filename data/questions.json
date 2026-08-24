@@ -48,6 +48,16 @@
       "hint": "Think about how a simple linear model compares to an unpruned deep decision tree when trained on slightly different training subsets.",
       "answer": "The bias-variance tradeoff describes the balance between two key sources of error in predictive models. High bias occurs when a model is too simple (underfitting), causing it to make strong assumptions and fail to capture complex underlying patterns in the data. High variance occurs when a model is overly complex (overfitting), causing it to learn noisy, specific details of the training set that do not generalize to unseen data. As model complexity increases, bias typically decreases while variance increases. To reduce variance in a high-variance model, one can apply regularization techniques (such as L1 or L2 penalty), use ensemble methods like bagging (e.g., Random Forests), prune the model, or collect more training data.",
       "generated_at": "2026-08-23T14:48:30.952484Z"
+    },
+    {
+      "date": "2026-08-24",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+      "difficulty": "Medium",
+      "hint": "Try sorting the intervals by their start times first. How does this help in identifying overlaps sequentially?",
+      "answer": "First, sort the array of intervals by their start times in ascending order. Initialize a list `merged` to store the result. Iterate through each interval: if `merged` is empty or the start time of the current interval is greater than the end time of the last interval in `merged`, add the current interval to `merged`. Otherwise, there is an overlap, so merge them by updating the end time of the last interval in `merged` to max(last_interval.end, current_interval.end). The time complexity is O(N log N) due to sorting, and the space complexity is O(N) or O(log N) depending on the sorting algorithm implementation.",
+      "generated_at": "2026-08-24T03:30:16.458758Z"
     }
   ]
 }

@@ -68,6 +68,16 @@
       "hint": "Consider the unexpected effect of increasing the number of allocated page frames on the total count of page faults.",
       "answer": "Belady's Anomaly is the phenomenon where increasing the number of page frames allocated to a process leads to an increase, rather than a decrease, in the number of page faults. This counter-intuitive behavior occurs in certain page replacement algorithms, most notably First-In, First-Out (FIFO). In contrast, stack-based algorithms such as Least Recently Used (LRU) and Optimal Page Replacement (OPT) are completely immune to Belady's Anomaly. This immunity exists because, for stack algorithms, the set of pages residing in memory with N frames is guaranteed to be a subset of the pages that would reside in memory with N+1 frames.",
       "generated_at": "2026-08-24T15:09:35.422083Z"
+    },
+    {
+      "date": "2026-08-25",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Compare L1 (Lasso) and L2 (Ridge) regularization. How do their penalty terms differ mathematically, and why does L1 regularization tend to produce sparse weight vectors while L2 does not?",
+      "difficulty": "Medium",
+      "hint": "Think about the shape of their constraint regions (contours) in parameter space and where the unconstrained loss contours are likely to intersect them.",
+      "answer": "L1 regularization adds a penalty proportional to the sum of absolute values of the weights ($\\\\lambda \\\\sum |w_i|$), while L2 regularization adds a penalty proportional to the sum of squared weights ($\\\\lambda \\\\sum w_i^2$). Geometrically, in 2D parameter space, the L1 constraint region forms a diamond shape with sharp corners on the coordinate axes, whereas L2 forms a smooth circle. The loss function contours are most likely to intersect the L1 diamond at one of its axis corners, which drives the corresponding parameter exactly to zero, producing a sparse model useful for feature selection. In contrast, the smooth L2 sphere results in intersections off the axes; it continuously shrinks all weights toward zero proportionally to their size, but rarely forces them to be exactly zero.",
+      "generated_at": "2026-08-25T03:25:20.614622Z"
     }
   ]
 }

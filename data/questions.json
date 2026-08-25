@@ -78,6 +78,16 @@
       "hint": "Think about the shape of their constraint regions (contours) in parameter space and where the unconstrained loss contours are likely to intersect them.",
       "answer": "L1 regularization adds a penalty proportional to the sum of absolute values of the weights ($\\\\lambda \\\\sum |w_i|$), while L2 regularization adds a penalty proportional to the sum of squared weights ($\\\\lambda \\\\sum w_i^2$). Geometrically, in 2D parameter space, the L1 constraint region forms a diamond shape with sharp corners on the coordinate axes, whereas L2 forms a smooth circle. The loss function contours are most likely to intersect the L1 diamond at one of its axis corners, which drives the corresponding parameter exactly to zero, producing a sparse model useful for feature selection. In contrast, the smooth L2 sphere results in intersections off the axes; it continuously shrinks all weights toward zero proportionally to their size, but rarely forces them to be exactly zero.",
       "generated_at": "2026-08-25T03:25:20.614622Z"
+    },
+    {
+      "date": "2026-08-25",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a time when a project or task you were working on did not go as planned or failed completely. How did you handle the situation, and what did you learn from it?",
+      "difficulty": "Medium",
+      "hint": "Use the STAR method (Situation, Task, Action, Result) and focus heavily on personal accountability, immediate problem-solving, and actionable takeaways.",
+      "answer": "A strong response uses the STAR framework and highlights personal ownership rather than making excuses. Start by concisely describing the context and what went wrong, such as underestimating a project's technical scope or missing a key requirement that caused a feature to fail. Next, explain the immediate steps you took to address the problem, including transparent communication with team members or mentors and working to mitigate the impact. Finally, emphasize the outcome and the constructive lessons learned, explaining how you changed your approach\u2014such as adopting better testing practices, creating clearer project milestones, or seeking feedback earlier\u2014in subsequent projects.",
+      "generated_at": "2026-08-25T15:13:47.239053Z"
     }
   ]
 }

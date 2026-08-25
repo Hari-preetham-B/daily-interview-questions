@@ -24,16 +24,37 @@ L1 regularization adds a penalty proportional to the sum of absolute values of t
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-25) — Behavioral
+
+**Describe a time when a project or task you were working on did not go as planned or failed completely. How did you handle the situation, and what did you learn from it?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use the STAR method (Situation, Task, Action, Result) and focus heavily on personal accountability, immediate problem-solving, and actionable takeaways.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A strong response uses the STAR framework and highlights personal ownership rather than making excuses. Start by concisely describing the context and what went wrong, such as underestimating a project's technical scope or missing a key requirement that caused a feature to fail. Next, explain the immediate steps you took to address the problem, including transparent communication with team members or mentors and working to mitigate the impact. Finally, emphasize the outcome and the constructive lessons learned, explaining how you changed your approach—such as adopting better testing practices, creating clearer project milestones, or seeking feedback earlier—in subsequent projects.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **8**
-- DSA: 2 · AI/ML: 3 · CSE Core: 2 · Behavioral: 1
+- Total questions logged: **9**
+- DSA: 2 · AI/ML: 3 · CSE Core: 2 · Behavioral: 2
 
 ## 🗂️ Recent Questions
 
+- **2026-08-25 [PM]** [Behavioral](questions/2026-08-25-pm-behavioral.md): Describe a time when a project or task you were working on did not go as planned or failed completely. How did you handle the situation, and what did you learn from it?
 - **2026-08-25 [AM]** [AIML](questions/2026-08-25-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization. How do their penalty terms differ mathematically, and why does L1 regularization tend to produce sparse weight vectors while L2 does not?
 - **2026-08-24 [PM]** [CSE Core](questions/2026-08-24-pm-cse-core.md): What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?
 - **2026-08-24 [AM]** [DSA](questions/2026-08-24-am-dsa.md): Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.

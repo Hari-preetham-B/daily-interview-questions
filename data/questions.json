@@ -98,6 +98,16 @@
       "hint": "Think about who is being protected from data overflow in each scenario: the receiving host or the intermediate network nodes.",
       "answer": "Flow Control prevents a fast sender from overwhelming a slow receiver, whereas Congestion Control prevents the sender from overwhelming the intermediate network infrastructure (routers and links). TCP implements Flow Control using the Sliding Window protocol, where the receiver continuously communicates its available buffer capacity to the sender via the 'Receive Window' (rwnd) field in the TCP header. In contrast, Congestion Control dynamically adjusts traffic based on network capacity using a 'Congestion Window' (cwnd) and algorithms like Slow Start, Congestion Avoidance, and Fast Retransmit.",
       "generated_at": "2026-08-26T03:31:46.121089Z"
+    },
+    {
+      "date": "2026-08-26",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an integer array `nums` sorted in ascending order (with distinct values) that has been rotated at an unknown pivot index, and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not. Your algorithm must run in O(log n) time complexity.",
+      "difficulty": "Medium",
+      "hint": "Notice that at least one half of the array (left or right of mid) is always strictly sorted. Use this property to determine which side target could reside in.",
+      "answer": "We can use a modified binary search. At each step, calculate `mid`. First check if `nums[mid] == target`. If not, determine which half is sorted by comparing `nums[left]` and `nums[mid]`. If `nums[left] <= nums[mid]`, the left half is sorted; check if `target` lies between `nums[left]` and `nums[mid]` to adjust `right = mid - 1`, otherwise set `left = mid + 1`. If the right half is sorted, check if `target` lies between `nums[mid]` and `nums[right]` to adjust `left = mid + 1`, otherwise set `right = mid - 1`. This achieves O(log n) time complexity and O(1) space complexity.",
+      "generated_at": "2026-08-26T15:58:25.067225Z"
     }
   ]
 }

@@ -24,16 +24,37 @@ Flow Control prevents a fast sender from overwhelming a slow receiver, whereas C
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-26) — DSA
+
+**Given an integer array `nums` sorted in ascending order (with distinct values) that has been rotated at an unknown pivot index, and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not. Your algorithm must run in O(log n) time complexity.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Notice that at least one half of the array (left or right of mid) is always strictly sorted. Use this property to determine which side target could reside in.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+We can use a modified binary search. At each step, calculate `mid`. First check if `nums[mid] == target`. If not, determine which half is sorted by comparing `nums[left]` and `nums[mid]`. If `nums[left] <= nums[mid]`, the left half is sorted; check if `target` lies between `nums[left]` and `nums[mid]` to adjust `right = mid - 1`, otherwise set `left = mid + 1`. If the right half is sorted, check if `target` lies between `nums[mid]` and `nums[right]` to adjust `left = mid + 1`, otherwise set `right = mid - 1`. This achieves O(log n) time complexity and O(1) space complexity.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **10**
-- DSA: 2 · AI/ML: 3 · CSE Core: 3 · Behavioral: 2
+- Total questions logged: **11**
+- DSA: 3 · AI/ML: 3 · CSE Core: 3 · Behavioral: 2
 
 ## 🗂️ Recent Questions
 
+- **2026-08-26 [PM]** [DSA](questions/2026-08-26-pm-dsa.md): Given an integer array `nums` sorted in ascending order (with distinct values) that has been rotated at an unknown pivot index, and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not. Your algorithm must run in O(log n) time complexity.
 - **2026-08-26 [AM]** [CSE Core](questions/2026-08-26-am-cse-core.md): What is the key difference between Flow Control and Congestion Control in TCP, and what mechanism is used to implement Flow Control?
 - **2026-08-25 [PM]** [Behavioral](questions/2026-08-25-pm-behavioral.md): Describe a time when a project or task you were working on did not go as planned or failed completely. How did you handle the situation, and what did you learn from it?
 - **2026-08-25 [AM]** [AIML](questions/2026-08-25-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization. How do their penalty terms differ mathematically, and why does L1 regularization tend to produce sparse weight vectors while L2 does not?

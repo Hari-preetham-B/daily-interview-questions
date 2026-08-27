@@ -108,6 +108,16 @@
       "hint": "Notice that at least one half of the array (left or right of mid) is always strictly sorted. Use this property to determine which side target could reside in.",
       "answer": "We can use a modified binary search. At each step, calculate `mid`. First check if `nums[mid] == target`. If not, determine which half is sorted by comparing `nums[left]` and `nums[mid]`. If `nums[left] <= nums[mid]`, the left half is sorted; check if `target` lies between `nums[left]` and `nums[mid]` to adjust `right = mid - 1`, otherwise set `left = mid + 1`. If the right half is sorted, check if `target` lies between `nums[mid]` and `nums[right]` to adjust `left = mid + 1`, otherwise set `right = mid - 1`. This achieves O(log n) time complexity and O(1) space complexity.",
       "generated_at": "2026-08-26T15:58:25.067225Z"
+    },
+    {
+      "date": "2026-08-27",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the fundamental differences between Bagging and Boosting ensemble techniques. Specifically, compare Random Forests (Bagging) and Gradient Boosting Decision Trees (Boosting) in terms of how base learners are trained, how they affect bias and variance, and their sensitivity to noisy data.",
+      "difficulty": "Medium",
+      "hint": "Think about whether base trees are built independently or sequentially, and how each method handles errors from prior trees.",
+      "answer": "Bagging (Bootstrap Aggregating) trains base learners independently in parallel on different bootstrap samples of the data, whereas Boosting trains base learners sequentially, with each new model focusing on correcting the residual errors or misclassifications of the previous models. Random Forests combine deep, low-bias decision trees to primarily reduce variance through averaging, making them robust to overfitting and noise. In contrast, Gradient Boosting builds shallow, low-variance trees (weak learners) to primarily reduce bias, which can yield higher performance but makes it more sensitive to outliers and noisy data.",
+      "generated_at": "2026-08-27T12:57:51.678313Z"
     }
   ]
 }

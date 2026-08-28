@@ -118,6 +118,16 @@
       "hint": "Think about whether base trees are built independently or sequentially, and how each method handles errors from prior trees.",
       "answer": "Bagging (Bootstrap Aggregating) trains base learners independently in parallel on different bootstrap samples of the data, whereas Boosting trains base learners sequentially, with each new model focusing on correcting the residual errors or misclassifications of the previous models. Random Forests combine deep, low-bias decision trees to primarily reduce variance through averaging, making them robust to overfitting and noise. In contrast, Gradient Boosting builds shallow, low-variance trees (weak learners) to primarily reduce bias, which can yield higher performance but makes it more sensitive to outliers and noisy data.",
       "generated_at": "2026-08-27T12:57:51.678313Z"
+    },
+    {
+      "date": "2026-08-28",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is Two-Phase Locking (2PL) in DBMS, and how does Strict 2PL differ from Basic 2PL to prevent cascading rollbacks?",
+      "difficulty": "Medium",
+      "hint": "Consider the exact moment when exclusive locks are released relative to the transaction's commit or abort phase.",
+      "answer": "Two-Phase Locking (2PL) is a concurrency control protocol ensuring serializability through two distinct phases: the Growing Phase (acquiring locks) and the Shrinking Phase (releasing locks). In Basic 2PL, a transaction can start releasing locks at any point during its execution once it no longer needs the data, even before committing. This can cause cascading rollbacks if another transaction reads uncommitted data from a transaction that later aborts. Strict 2PL prevents this issue by requiring all exclusive (write) locks held by a transaction to be retained until the transaction completely commits or aborts. This guarantees that no other transaction can read uncommitted dirty data, eliminating cascading rollbacks and making recovery easier.",
+      "generated_at": "2026-08-28T14:27:52.878350Z"
     }
   ]
 }

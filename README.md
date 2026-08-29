@@ -24,16 +24,37 @@ The ROC curve plots the True Positive Rate (TPR / Recall) against the False Posi
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-29) — Behavioral
+
+**Tell me about a time when you had to balance multiple competing priorities or tight deadlines. How did you structure your time, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use the STAR method to focus on your specific prioritization framework, how you communicated with stakeholders, and the measurable result.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A strong response uses the STAR (Situation, Task, Action, Result) framework to demonstrate structured time management skills. Start by setting the scene where academic deadlines, team deliverables, or project milestones overlapped. Detail your action plan, such as categorizing tasks by impact versus urgency, using time-blocking techniques, or proactively renegotiating non-critical deadlines with project owners. Conclude with a clear result: delivering high-impact tasks on time, maintaining quality, and developing a sustainable habit for managing heavy workloads.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **14**
-- DSA: 3 · AI/ML: 5 · CSE Core: 4 · Behavioral: 2
+- Total questions logged: **15**
+- DSA: 3 · AI/ML: 5 · CSE Core: 4 · Behavioral: 3
 
 ## 🗂️ Recent Questions
 
+- **2026-08-29 [PM]** [Behavioral](questions/2026-08-29-pm-behavioral.md): Tell me about a time when you had to balance multiple competing priorities or tight deadlines. How did you structure your time, and what was the outcome?
 - **2026-08-29 [AM]** [AIML](questions/2026-08-29-am-aiml.md): Explain the difference between the Receiver Operating Characteristic (ROC) curve and the Precision-Recall (PR) curve. Why is the PR curve typically preferred over the ROC curve when evaluating binary classification models on highly imbalanced datasets?
 - **2026-08-28 [PM]** [CSE Core](questions/2026-08-28-pm-cse-core.md): What is Two-Phase Locking (2PL) in DBMS, and how does Strict 2PL differ from Basic 2PL to prevent cascading rollbacks?
 - **2026-08-27 [PM]** [AIML](questions/2026-08-27-pm-aiml.md): Explain the fundamental differences between Bagging and Boosting ensemble techniques. Specifically, compare Random Forests (Bagging) and Gradient Boosting Decision Trees (Boosting) in terms of how base learners are trained, how they affect bias and variance, and their sensitivity to noisy data.

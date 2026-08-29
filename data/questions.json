@@ -138,6 +138,16 @@
       "hint": "Consider how False Positive Rate (used in ROC) and Precision (used in PR) are calculated, specifically paying attention to the role of True Negatives when negative instances dominate the dataset.",
       "answer": "The ROC curve plots the True Positive Rate (TPR / Recall) against the False Positive Rate (FPR = FP / (FP + TN)), while the PR curve plots Precision (TP / (TP + FP)) against Recall (TP / (TP + FN)). In highly imbalanced datasets where the negative class heavily outnumbers the positive class, the denominator of FPR (FP + TN) is extremely large due to the high count of True Negatives. Consequently, a large increase in False Positives results in only a tiny, barely noticeable change in FPR, making the ROC curve appear deceptively optimistic. In contrast, Precision does not incorporate True Negatives in its denominator and instead focuses strictly on the total predicted positives. Therefore, the PR curve is far more sensitive to False Positives and provides a much clearer, more realistic representation of model performance on skewed data.",
       "generated_at": "2026-08-29T09:14:32.958283Z"
+    },
+    {
+      "date": "2026-08-29",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to balance multiple competing priorities or tight deadlines. How did you structure your time, and what was the outcome?",
+      "difficulty": "Easy",
+      "hint": "Use the STAR method to focus on your specific prioritization framework, how you communicated with stakeholders, and the measurable result.",
+      "answer": "A strong response uses the STAR (Situation, Task, Action, Result) framework to demonstrate structured time management skills. Start by setting the scene where academic deadlines, team deliverables, or project milestones overlapped. Detail your action plan, such as categorizing tasks by impact versus urgency, using time-blocking techniques, or proactively renegotiating non-critical deadlines with project owners. Conclude with a clear result: delivering high-impact tasks on time, maintaining quality, and developing a sustainable habit for managing heavy workloads.",
+      "generated_at": "2026-08-29T17:46:30.303600Z"
     }
   ]
 }

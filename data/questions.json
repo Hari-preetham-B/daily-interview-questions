@@ -128,6 +128,16 @@
       "hint": "Consider the exact moment when exclusive locks are released relative to the transaction's commit or abort phase.",
       "answer": "Two-Phase Locking (2PL) is a concurrency control protocol ensuring serializability through two distinct phases: the Growing Phase (acquiring locks) and the Shrinking Phase (releasing locks). In Basic 2PL, a transaction can start releasing locks at any point during its execution once it no longer needs the data, even before committing. This can cause cascading rollbacks if another transaction reads uncommitted data from a transaction that later aborts. Strict 2PL prevents this issue by requiring all exclusive (write) locks held by a transaction to be retained until the transaction completely commits or aborts. This guarantees that no other transaction can read uncommitted dirty data, eliminating cascading rollbacks and making recovery easier.",
       "generated_at": "2026-08-28T14:27:52.878350Z"
+    },
+    {
+      "date": "2026-08-29",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain the difference between the Receiver Operating Characteristic (ROC) curve and the Precision-Recall (PR) curve. Why is the PR curve typically preferred over the ROC curve when evaluating binary classification models on highly imbalanced datasets?",
+      "difficulty": "Medium",
+      "hint": "Consider how False Positive Rate (used in ROC) and Precision (used in PR) are calculated, specifically paying attention to the role of True Negatives when negative instances dominate the dataset.",
+      "answer": "The ROC curve plots the True Positive Rate (TPR / Recall) against the False Positive Rate (FPR = FP / (FP + TN)), while the PR curve plots Precision (TP / (TP + FP)) against Recall (TP / (TP + FN)). In highly imbalanced datasets where the negative class heavily outnumbers the positive class, the denominator of FPR (FP + TN) is extremely large due to the high count of True Negatives. Consequently, a large increase in False Positives results in only a tiny, barely noticeable change in FPR, making the ROC curve appear deceptively optimistic. In contrast, Precision does not incorporate True Negatives in its denominator and instead focuses strictly on the total predicted positives. Therefore, the PR curve is far more sensitive to False Positives and provides a much clearer, more realistic representation of model performance on skewed data.",
+      "generated_at": "2026-08-29T09:14:32.958283Z"
     }
   ]
 }

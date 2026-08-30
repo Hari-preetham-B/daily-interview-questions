@@ -148,6 +148,16 @@
       "hint": "Use the STAR method to focus on your specific prioritization framework, how you communicated with stakeholders, and the measurable result.",
       "answer": "A strong response uses the STAR (Situation, Task, Action, Result) framework to demonstrate structured time management skills. Start by setting the scene where academic deadlines, team deliverables, or project milestones overlapped. Detail your action plan, such as categorizing tasks by impact versus urgency, using time-blocking techniques, or proactively renegotiating non-critical deadlines with project owners. Conclude with a clear result: delivering high-impact tasks on time, maintaining quality, and developing a sustainable habit for managing heavy workloads.",
       "generated_at": "2026-08-29T17:46:30.303600Z"
+    },
+    {
+      "date": "2026-08-30",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain the four standard SQL Transaction Isolation Levels and the specific read phenomena (Dirty Read, Non-Repeatable Read, Phantom Read) each level prevents.",
+      "difficulty": "Medium",
+      "hint": "Consider how locks or multi-version concurrency control (MVCC) restrict visibility of uncommitted or newly committed changes between concurrent transactions.",
+      "answer": "SQL isolation levels define how changes made by one transaction are isolated from other concurrent transactions. 1. Read Uncommitted: Allows transactions to read uncommitted changes, making it susceptible to Dirty Reads, Non-Repeatable Reads, and Phantom Reads. 2. Read Committed: Guarantees that any data read is committed at the moment it is read, preventing Dirty Reads, but still allowing Non-Repeatable Reads and Phantom Reads. 3. Repeatable Read: Ensures that if a transaction reads a row, subsequent reads of that same row will return the same data, preventing Dirty Reads and Non-Repeatable Reads, though Phantom Reads (new rows inserted by concurrent transactions) can still occur. 4. Serializable: The highest isolation level, enforcing total isolation (often via range locks or snapshot isolation) to prevent all three phenomena: Dirty Reads, Non-Repeatable Reads, and Phantom Reads.",
+      "generated_at": "2026-08-30T08:26:46.001224Z"
     }
   ]
 }

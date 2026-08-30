@@ -24,16 +24,37 @@ SQL isolation levels define how changes made by one transaction are isolated fro
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-30) — DSA
+
+**Given a string `s`, find the length of the longest substring without repeating characters.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use a sliding window approach with two pointers and a hash map (or array) to keep track of the last seen index of each character.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+To solve this in O(n) time, we maintain a sliding window using two pointers, `left` and `right`. We use a hash map to store the most recent index of each character in string `s`. As `right` iterates from `0` to `len(s) - 1`, if `s[right]` is already in the map and its recorded index is greater than or equal to `left`, we update `left` to `map[s[right]] + 1` to skip the duplicate character. At each step, we update the maximum length found so far (`maxLength = max(maxLength, right - left + 1)`) and update `map[s[right]] = right`. This approach visits each character at most twice, resulting in O(n) time complexity and O(min(m, n)) space complexity, where m is the size of the character set.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **16**
-- DSA: 3 · AI/ML: 5 · CSE Core: 5 · Behavioral: 3
+- Total questions logged: **17**
+- DSA: 4 · AI/ML: 5 · CSE Core: 5 · Behavioral: 3
 
 ## 🗂️ Recent Questions
 
+- **2026-08-30 [PM]** [DSA](questions/2026-08-30-pm-dsa.md): Given a string `s`, find the length of the longest substring without repeating characters.
 - **2026-08-30 [AM]** [CSE Core](questions/2026-08-30-am-cse-core.md): Explain the four standard SQL Transaction Isolation Levels and the specific read phenomena (Dirty Read, Non-Repeatable Read, Phantom Read) each level prevents.
 - **2026-08-29 [PM]** [Behavioral](questions/2026-08-29-pm-behavioral.md): Tell me about a time when you had to balance multiple competing priorities or tight deadlines. How did you structure your time, and what was the outcome?
 - **2026-08-29 [AM]** [AIML](questions/2026-08-29-am-aiml.md): Explain the difference between the Receiver Operating Characteristic (ROC) curve and the Precision-Recall (PR) curve. Why is the PR curve typically preferred over the ROC curve when evaluating binary classification models on highly imbalanced datasets?
@@ -48,7 +69,6 @@ SQL isolation levels define how changes made by one transaction are isolated fro
 - **2026-08-23 [PM]** [AIML](questions/2026-08-23-pm-aiml.md): Explain the Bias-Variance Tradeoff in machine learning. How do model complexity, underfitting, and overfitting relate to bias and variance, and what are two practical techniques to reduce variance in a high-variance model?
 - **2026-08-23 [AM]** [Behavioral](questions/2026-08-23-am-behavioral.md): Describe a situation where you had a strong technical disagreement with a teammate during a group project. How did you handle it, and what was the outcome?
 - **2026-08-22 [PM]** [DSA](questions/2026-08-22-pm-dsa.md): Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
-- **2026-08-22 [AM]** [CSE Core](questions/2026-08-22-am-cse-core.md): What is the key difference between a Clustered Index and a Non-Clustered Index in a Relational Database Management System (RDBMS), and how do they impact data retrieval performance?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

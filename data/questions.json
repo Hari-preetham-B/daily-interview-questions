@@ -158,6 +158,16 @@
       "hint": "Consider how locks or multi-version concurrency control (MVCC) restrict visibility of uncommitted or newly committed changes between concurrent transactions.",
       "answer": "SQL isolation levels define how changes made by one transaction are isolated from other concurrent transactions. 1. Read Uncommitted: Allows transactions to read uncommitted changes, making it susceptible to Dirty Reads, Non-Repeatable Reads, and Phantom Reads. 2. Read Committed: Guarantees that any data read is committed at the moment it is read, preventing Dirty Reads, but still allowing Non-Repeatable Reads and Phantom Reads. 3. Repeatable Read: Ensures that if a transaction reads a row, subsequent reads of that same row will return the same data, preventing Dirty Reads and Non-Repeatable Reads, though Phantom Reads (new rows inserted by concurrent transactions) can still occur. 4. Serializable: The highest isolation level, enforcing total isolation (often via range locks or snapshot isolation) to prevent all three phenomena: Dirty Reads, Non-Repeatable Reads, and Phantom Reads.",
       "generated_at": "2026-08-30T08:26:46.001224Z"
+    },
+    {
+      "date": "2026-08-30",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given a string `s`, find the length of the longest substring without repeating characters.",
+      "difficulty": "Medium",
+      "hint": "Use a sliding window approach with two pointers and a hash map (or array) to keep track of the last seen index of each character.",
+      "answer": "To solve this in O(n) time, we maintain a sliding window using two pointers, `left` and `right`. We use a hash map to store the most recent index of each character in string `s`. As `right` iterates from `0` to `len(s) - 1`, if `s[right]` is already in the map and its recorded index is greater than or equal to `left`, we update `left` to `map[s[right]] + 1` to skip the duplicate character. At each step, we update the maximum length found so far (`maxLength = max(maxLength, right - left + 1)`) and update `map[s[right]] = right`. This approach visits each character at most twice, resulting in O(n) time complexity and O(min(m, n)) space complexity, where m is the size of the character set.",
+      "generated_at": "2026-08-30T18:08:10.248472Z"
     }
   ]
 }

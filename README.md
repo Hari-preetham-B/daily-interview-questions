@@ -24,16 +24,37 @@ A strong answer follows the STAR (Situation, Task, Action, Result) method. Begin
 
 </details>
 
+---
+
+### 🌙 Evening (2026-08-31) — AIML
+
+**Explain the Scaled Dot-Product Attention mechanism used in Transformer architectures. What are the conceptual roles of the Query (Q), Key (K), and Value (V) matrices, and why is the dot product scaled by the square root of the key dimension, sqrt(d_k)?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about what happens to the variance of the dot product as vector dimensionality grows, and how that affects the softmax function's gradients.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Scaled Dot-Product Attention computes output representations using the formula Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) * V. Conceptually, the Query (Q) represents the current token asking for context, the Key (K) represents all target tokens offering context, and the Value (V) holds the actual content to be aggregated. The dot product QK^T measures pairwise similarity between queries and keys, which softmax converts into normalized attention weights. Scaling by sqrt(d_k) is essential because as the dimension d_k increases, the dot products grow large in magnitude, pushing the softmax function into regions with extremely small gradients (gradient saturation). Scaling stabilizes the variance of the dot products to approximately 1, ensuring stable gradient flow during backpropagation.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **18**
-- DSA: 4 · AI/ML: 5 · CSE Core: 5 · Behavioral: 4
+- Total questions logged: **19**
+- DSA: 4 · AI/ML: 6 · CSE Core: 5 · Behavioral: 4
 
 ## 🗂️ Recent Questions
 
+- **2026-08-31 [PM]** [AIML](questions/2026-08-31-pm-aiml.md): Explain the Scaled Dot-Product Attention mechanism used in Transformer architectures. What are the conceptual roles of the Query (Q), Key (K), and Value (V) matrices, and why is the dot product scaled by the square root of the key dimension, sqrt(d_k)?
 - **2026-08-31 [AM]** [Behavioral](questions/2026-08-31-am-behavioral.md): Tell me about a time when you received difficult or constructive feedback on a project or assignment. How did you handle the situation, and what changes did you make based on that feedback?
 - **2026-08-30 [PM]** [DSA](questions/2026-08-30-pm-dsa.md): Given a string `s`, find the length of the longest substring without repeating characters.
 - **2026-08-30 [AM]** [CSE Core](questions/2026-08-30-am-cse-core.md): Explain the four standard SQL Transaction Isolation Levels and the specific read phenomena (Dirty Read, Non-Repeatable Read, Phantom Read) each level prevents.
@@ -48,7 +69,6 @@ A strong answer follows the STAR (Situation, Task, Action, Result) method. Begin
 - **2026-08-24 [PM]** [CSE Core](questions/2026-08-24-pm-cse-core.md): What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?
 - **2026-08-24 [AM]** [DSA](questions/2026-08-24-am-dsa.md): Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 - **2026-08-23 [PM]** [AIML](questions/2026-08-23-pm-aiml.md): Explain the Bias-Variance Tradeoff in machine learning. How do model complexity, underfitting, and overfitting relate to bias and variance, and what are two practical techniques to reduce variance in a high-variance model?
-- **2026-08-23 [AM]** [Behavioral](questions/2026-08-23-am-behavioral.md): Describe a situation where you had a strong technical disagreement with a teammate during a group project. How did you handle it, and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

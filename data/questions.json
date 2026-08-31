@@ -168,6 +168,16 @@
       "hint": "Use a sliding window approach with two pointers and a hash map (or array) to keep track of the last seen index of each character.",
       "answer": "To solve this in O(n) time, we maintain a sliding window using two pointers, `left` and `right`. We use a hash map to store the most recent index of each character in string `s`. As `right` iterates from `0` to `len(s) - 1`, if `s[right]` is already in the map and its recorded index is greater than or equal to `left`, we update `left` to `map[s[right]] + 1` to skip the duplicate character. At each step, we update the maximum length found so far (`maxLength = max(maxLength, right - left + 1)`) and update `map[s[right]] = right`. This approach visits each character at most twice, resulting in O(n) time complexity and O(min(m, n)) space complexity, where m is the size of the character set.",
       "generated_at": "2026-08-30T18:08:10.248472Z"
+    },
+    {
+      "date": "2026-08-31",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you received difficult or constructive feedback on a project or assignment. How did you handle the situation, and what changes did you make based on that feedback?",
+      "difficulty": "Medium",
+      "hint": "Use the STAR framework. Emphasize emotional maturity, active listening, and the concrete actions you took to act on the feedback rather than becoming defensive.",
+      "answer": "A strong answer follows the STAR (Situation, Task, Action, Result) method. Begin by describing a realistic scenario, such as receiving critical feedback during a code review or project presentation. Highlight that you listened actively without getting defensive, asked clarifying questions to fully understand the critique, and thanked the reviewer. Then, detail the specific steps you took to correct the issue\u2014such as refactoring code, improving documentation, or adopting a new workflow. Conclude with the positive outcome, explaining how the feedback improved the final deliverable and helped you grow technically or professionally.",
+      "generated_at": "2026-08-31T08:47:04.605221Z"
     }
   ]
 }

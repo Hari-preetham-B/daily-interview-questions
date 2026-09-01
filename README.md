@@ -38,16 +38,37 @@ def lowestCommonAncestor(root, p, q):
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-01) — CSE Core
+
+**What is the Copy-on-Write (CoW) resource management technique in Operating Systems, and how does it optimize the performance of the fork() system call?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider whether a child process actually needs its own independent physical copy of all memory pages immediately upon creation.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Copy-on-Write (CoW) is an optimization strategy where a child process created via `fork()` initially shares the parent process's physical memory pages instead of duplicating them immediately. These shared pages are marked as read-only in both the parent and child page tables. If either process attempts to write to a shared page, a page fault exception is raised by the MMU. The operating system handles this fault by allocating a new physical page, copying the data from the original page, updating the faulting process's page table entry with write permissions, and resuming execution. This prevents expensive memory allocation and copying overhead, which is especially beneficial when a `fork()` is immediately followed by an `exec()` call.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **20**
-- DSA: 5 · AI/ML: 6 · CSE Core: 5 · Behavioral: 4
+- Total questions logged: **21**
+- DSA: 5 · AI/ML: 6 · CSE Core: 6 · Behavioral: 4
 
 ## 🗂️ Recent Questions
 
+- **2026-09-01 [PM]** [CSE Core](questions/2026-09-01-pm-cse-core.md): What is the Copy-on-Write (CoW) resource management technique in Operating Systems, and how does it optimize the performance of the fork() system call?
 - **2026-09-01 [AM]** [DSA](questions/2026-09-01-am-dsa.md): Given a binary tree and two nodes `p` and `q`, find their Lowest Common Ancestor (LCA). According to the definition of LCA: 'The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where we allow a node to be a descendant of itself).' Assume all node values are unique and both `p` and `q` exist in the tree.
 - **2026-08-31 [PM]** [AIML](questions/2026-08-31-pm-aiml.md): Explain the Scaled Dot-Product Attention mechanism used in Transformer architectures. What are the conceptual roles of the Query (Q), Key (K), and Value (V) matrices, and why is the dot product scaled by the square root of the key dimension, sqrt(d_k)?
 - **2026-08-31 [AM]** [Behavioral](questions/2026-08-31-am-behavioral.md): Tell me about a time when you received difficult or constructive feedback on a project or assignment. How did you handle the situation, and what changes did you make based on that feedback?
@@ -62,7 +83,6 @@ def lowestCommonAncestor(root, p, q):
 - **2026-08-25 [PM]** [Behavioral](questions/2026-08-25-pm-behavioral.md): Describe a time when a project or task you were working on did not go as planned or failed completely. How did you handle the situation, and what did you learn from it?
 - **2026-08-25 [AM]** [AIML](questions/2026-08-25-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization. How do their penalty terms differ mathematically, and why does L1 regularization tend to produce sparse weight vectors while L2 does not?
 - **2026-08-24 [PM]** [CSE Core](questions/2026-08-24-pm-cse-core.md): What is Belady's Anomaly in Operating Systems, and which page replacement algorithms are susceptible or immune to it?
-- **2026-08-24 [AM]** [DSA](questions/2026-08-24-am-dsa.md): Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

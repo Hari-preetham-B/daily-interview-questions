@@ -198,6 +198,16 @@
       "hint": "Use a post-order (bottom-up) recursion approach. If a subtree search returns non-null for both the left and right branches, what does that say about the current parent node?",
       "answer": "We can solve this problem recursively by performing a depth-first traversal of the tree. If the current `root` is `null` or matches either `p` or `q`, we return `root`. We then recursively search the left and right subtrees. If both left and right recursive calls return a non-null node, it means `p` and `q` are located in different subtrees of `root`, so `root` is their Lowest Common Ancestor. If only one call returns a non-null node, both `p` and `q` reside in that subtree, so we propagate that result up.\n\npython\ndef lowestCommonAncestor(root, p, q):\n    if not root or root == p or root == q:\n        return root\n    left = lowestCommonAncestor(root.left, p, q)\n    right = lowestCommonAncestor(root.right, p, q)\n    if left and right:\n        return root\n    return left if left else right\n\n\n**Time Complexity:** O(N), where N is the number of nodes in the binary tree (worst-case traversal of all nodes).\n**Space Complexity:** O(H), where H is the height of the tree, corresponding to the maximum depth of the recursive call stack.",
       "generated_at": "2026-09-01T07:55:04.072324Z"
+    },
+    {
+      "date": "2026-09-01",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the Copy-on-Write (CoW) resource management technique in Operating Systems, and how does it optimize the performance of the fork() system call?",
+      "difficulty": "Medium",
+      "hint": "Consider whether a child process actually needs its own independent physical copy of all memory pages immediately upon creation.",
+      "answer": "Copy-on-Write (CoW) is an optimization strategy where a child process created via `fork()` initially shares the parent process's physical memory pages instead of duplicating them immediately. These shared pages are marked as read-only in both the parent and child page tables. If either process attempts to write to a shared page, a page fault exception is raised by the MMU. The operating system handles this fault by allocating a new physical page, copying the data from the original page, updating the faulting process's page table entry with write permissions, and resuming execution. This prevents expensive memory allocation and copying overhead, which is especially beneficial when a `fork()` is immediately followed by an `exec()` call.",
+      "generated_at": "2026-09-01T17:54:29.425111Z"
     }
   ]
 }

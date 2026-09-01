@@ -188,6 +188,16 @@
       "hint": "Think about what happens to the variance of the dot product as vector dimensionality grows, and how that affects the softmax function's gradients.",
       "answer": "Scaled Dot-Product Attention computes output representations using the formula Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) * V. Conceptually, the Query (Q) represents the current token asking for context, the Key (K) represents all target tokens offering context, and the Value (V) holds the actual content to be aggregated. The dot product QK^T measures pairwise similarity between queries and keys, which softmax converts into normalized attention weights. Scaling by sqrt(d_k) is essential because as the dimension d_k increases, the dot products grow large in magnitude, pushing the softmax function into regions with extremely small gradients (gradient saturation). Scaling stabilizes the variance of the dot products to approximately 1, ensuring stable gradient flow during backpropagation.",
       "generated_at": "2026-08-31T20:15:11.381109Z"
+    },
+    {
+      "date": "2026-09-01",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given a binary tree and two nodes `p` and `q`, find their Lowest Common Ancestor (LCA). According to the definition of LCA: 'The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where we allow a node to be a descendant of itself).' Assume all node values are unique and both `p` and `q` exist in the tree.",
+      "difficulty": "Medium",
+      "hint": "Use a post-order (bottom-up) recursion approach. If a subtree search returns non-null for both the left and right branches, what does that say about the current parent node?",
+      "answer": "We can solve this problem recursively by performing a depth-first traversal of the tree. If the current `root` is `null` or matches either `p` or `q`, we return `root`. We then recursively search the left and right subtrees. If both left and right recursive calls return a non-null node, it means `p` and `q` are located in different subtrees of `root`, so `root` is their Lowest Common Ancestor. If only one call returns a non-null node, both `p` and `q` reside in that subtree, so we propagate that result up.\n\npython\ndef lowestCommonAncestor(root, p, q):\n    if not root or root == p or root == q:\n        return root\n    left = lowestCommonAncestor(root.left, p, q)\n    right = lowestCommonAncestor(root.right, p, q)\n    if left and right:\n        return root\n    return left if left else right\n\n\n**Time Complexity:** O(N), where N is the number of nodes in the binary tree (worst-case traversal of all nodes).\n**Space Complexity:** O(H), where H is the height of the tree, corresponding to the maximum depth of the recursive call stack.",
+      "generated_at": "2026-09-01T07:55:04.072324Z"
     }
   ]
 }

@@ -208,6 +208,16 @@
       "hint": "Consider whether a child process actually needs its own independent physical copy of all memory pages immediately upon creation.",
       "answer": "Copy-on-Write (CoW) is an optimization strategy where a child process created via `fork()` initially shares the parent process's physical memory pages instead of duplicating them immediately. These shared pages are marked as read-only in both the parent and child page tables. If either process attempts to write to a shared page, a page fault exception is raised by the MMU. The operating system handles this fault by allocating a new physical page, copying the data from the original page, updating the faulting process's page table entry with write permissions, and resuming execution. This prevents expensive memory allocation and copying overhead, which is especially beneficial when a `fork()` is immediately followed by an `exec()` call.",
       "generated_at": "2026-09-01T17:54:29.425111Z"
+    },
+    {
+      "date": "2026-09-02",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you identified an issue or an opportunity for improvement in a project or process and took the initiative to address it without being explicitly asked.",
+      "difficulty": "Medium",
+      "hint": "Structure your response using the STAR method (Situation, Task, Action, Result), focusing heavily on what motivated you to act proactively and the measurable impact of your solution.",
+      "answer": "To answer this question effectively, use the STAR (Situation, Task, Action, Result) framework. Begin by briefly setting the scene and explaining the problem or bottleneck you noticed, such as a redundant manual process, lack of documentation, or a latent bug in a shared repository. Next, describe why you felt compelled to address it and how you evaluated the trade-offs regarding your existing workload. Detail the specific, proactive steps you took to solve the issue, including how you communicated your proposed fix to teammates or mentors. Finally, highlight the positive outcome with quantifiable metrics if possible (e.g., reducing build times by 30% or saving the team hours of manual effort) and reflect on what you learned about proactive ownership.",
+      "generated_at": "2026-09-02T17:58:46.214033Z"
     }
   ]
 }

@@ -218,6 +218,16 @@
       "hint": "Structure your response using the STAR method (Situation, Task, Action, Result), focusing heavily on what motivated you to act proactively and the measurable impact of your solution.",
       "answer": "To answer this question effectively, use the STAR (Situation, Task, Action, Result) framework. Begin by briefly setting the scene and explaining the problem or bottleneck you noticed, such as a redundant manual process, lack of documentation, or a latent bug in a shared repository. Next, describe why you felt compelled to address it and how you evaluated the trade-offs regarding your existing workload. Detail the specific, proactive steps you took to solve the issue, including how you communicated your proposed fix to teammates or mentors. Finally, highlight the positive outcome with quantifiable metrics if possible (e.g., reducing build times by 30% or saving the team hours of manual effort) and reflect on what you learned about proactive ownership.",
       "generated_at": "2026-09-02T17:58:46.214033Z"
+    },
+    {
+      "date": "2026-09-03",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is the primary purpose of the TIME_WAIT state during TCP connection teardown, and why is its duration typically set to 2 times the Maximum Segment Lifetime (2 * MSL)?",
+      "difficulty": "Medium",
+      "hint": "Consider what happens to packets that are delayed in transit across the network and how a new connection reusing the same socket pair could be affected.",
+      "answer": "The TIME_WAIT state is entered by the TCP endpoint that initiates the active close after sending the final ACK in the four-way handshake. Its primary purpose is twofold: first, to ensure the remote peer receives the final ACK (if the ACK is lost, the peer retransmits its FIN, requiring a re-sent ACK); second, to allow any delayed or duplicate packets from the closed connection to naturally expire in the network. The duration is set to 2 * MSL (Maximum Segment Lifetime) to guarantee that the maximum time a packet can exist in transit in both directions (to and from the destination) has elapsed before the same local IP/port combination can be reused for a new connection.",
+      "generated_at": "2026-09-03T07:18:19.906008Z"
     }
   ]
 }

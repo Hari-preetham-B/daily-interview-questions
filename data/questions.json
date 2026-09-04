@@ -228,6 +228,16 @@
       "hint": "Consider what happens to packets that are delayed in transit across the network and how a new connection reusing the same socket pair could be affected.",
       "answer": "The TIME_WAIT state is entered by the TCP endpoint that initiates the active close after sending the final ACK in the four-way handshake. Its primary purpose is twofold: first, to ensure the remote peer receives the final ACK (if the ACK is lost, the peer retransmits its FIN, requiring a re-sent ACK); second, to allow any delayed or duplicate packets from the closed connection to naturally expire in the network. The duration is set to 2 * MSL (Maximum Segment Lifetime) to guarantee that the maximum time a packet can exist in transit in both directions (to and from the destination) has elapsed before the same local IP/port combination can be reused for a new connection.",
       "generated_at": "2026-09-03T07:18:19.906008Z"
+    },
+    {
+      "date": "2026-09-04",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to work with ambiguous requirements or faced a sudden, unexpected change in project scope. How did you navigate the uncertainty, and what was the final outcome?",
+      "difficulty": "Medium",
+      "hint": "Focus on how you proactively sought clarity, communicated with stakeholders or teammates, and adapted your technical strategy without losing momentum.",
+      "answer": "A strong response uses the STAR method (Situation, Task, Action, Result) to demonstrate adaptability, proactive communication, and problem-solving skills. Start by explaining the context and the specific ambiguity or scope change encountered. Detail the concrete actions you took to resolve the uncertainty, such as interviewing stakeholders to clarify requirements, breaking down vague tasks into manageable milestones, or building a rapid prototype to validate assumptions. Conclude by sharing the successful outcome, quantifiable metrics if available, and key takeaways regarding how you handle shifting priorities in a software development lifecycle.",
+      "generated_at": "2026-09-04T07:20:31.516384Z"
     }
   ]
 }

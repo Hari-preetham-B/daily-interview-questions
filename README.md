@@ -24,16 +24,37 @@ A strong response uses the STAR method (Situation, Task, Action, Result) to demo
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-04) — AIML
+
+**Explain how Batch Normalization works during training versus inference. Why does its effectiveness degrade when mini-batch sizes are very small, and what alternative normalization technique can be used instead?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how batch mean and variance are calculated in both phases and what happens to statistical estimates when the sample count per batch is very low.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+During training, Batch Normalization computes the mean and variance across the current mini-batch for each feature channel to normalize activations, then scales and shifts them using learnable parameters gamma and beta. During inference, computing mini-batch statistics is impractical (e.g., single-instance evaluation), so it uses running population estimates of mean and variance accumulated during training via exponential moving average. When mini-batch sizes are extremely small (e.g., 2 to 4), mini-batch mean and variance become highly noisy, inaccurate representations of the dataset statistics, which destabilizes training and degrades model performance. In such cases, Layer Normalization or Group Normalization are used as alternatives because they calculate statistics along the feature or channel dimensions per instance, independent of the mini-batch size.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **24**
-- DSA: 5 · AI/ML: 6 · CSE Core: 7 · Behavioral: 6
+- Total questions logged: **25**
+- DSA: 5 · AI/ML: 7 · CSE Core: 7 · Behavioral: 6
 
 ## 🗂️ Recent Questions
 
+- **2026-09-04 [PM]** [AIML](questions/2026-09-04-pm-aiml.md): Explain how Batch Normalization works during training versus inference. Why does its effectiveness degrade when mini-batch sizes are very small, and what alternative normalization technique can be used instead?
 - **2026-09-04 [AM]** [Behavioral](questions/2026-09-04-am-behavioral.md): Describe a situation where you had to work with ambiguous requirements or faced a sudden, unexpected change in project scope. How did you navigate the uncertainty, and what was the final outcome?
 - **2026-09-03 [AM]** [CSE Core](questions/2026-09-03-am-cse-core.md): What is the primary purpose of the TIME_WAIT state during TCP connection teardown, and why is its duration typically set to 2 times the Maximum Segment Lifetime (2 * MSL)?
 - **2026-09-02 [PM]** [Behavioral](questions/2026-09-02-pm-behavioral.md): Describe a situation where you identified an issue or an opportunity for improvement in a project or process and took the initiative to address it without being explicitly asked.
@@ -48,7 +69,6 @@ A strong response uses the STAR method (Situation, Task, Action, Result) to demo
 - **2026-08-28 [PM]** [CSE Core](questions/2026-08-28-pm-cse-core.md): What is Two-Phase Locking (2PL) in DBMS, and how does Strict 2PL differ from Basic 2PL to prevent cascading rollbacks?
 - **2026-08-27 [PM]** [AIML](questions/2026-08-27-pm-aiml.md): Explain the fundamental differences between Bagging and Boosting ensemble techniques. Specifically, compare Random Forests (Bagging) and Gradient Boosting Decision Trees (Boosting) in terms of how base learners are trained, how they affect bias and variance, and their sensitivity to noisy data.
 - **2026-08-26 [PM]** [DSA](questions/2026-08-26-pm-dsa.md): Given an integer array `nums` sorted in ascending order (with distinct values) that has been rotated at an unknown pivot index, and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not. Your algorithm must run in O(log n) time complexity.
-- **2026-08-26 [AM]** [CSE Core](questions/2026-08-26-am-cse-core.md): What is the key difference between Flow Control and Congestion Control in TCP, and what mechanism is used to implement Flow Control?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

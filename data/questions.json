@@ -238,6 +238,16 @@
       "hint": "Focus on how you proactively sought clarity, communicated with stakeholders or teammates, and adapted your technical strategy without losing momentum.",
       "answer": "A strong response uses the STAR method (Situation, Task, Action, Result) to demonstrate adaptability, proactive communication, and problem-solving skills. Start by explaining the context and the specific ambiguity or scope change encountered. Detail the concrete actions you took to resolve the uncertainty, such as interviewing stakeholders to clarify requirements, breaking down vague tasks into manageable milestones, or building a rapid prototype to validate assumptions. Conclude by sharing the successful outcome, quantifiable metrics if available, and key takeaways regarding how you handle shifting priorities in a software development lifecycle.",
       "generated_at": "2026-09-04T07:20:31.516384Z"
+    },
+    {
+      "date": "2026-09-04",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain how Batch Normalization works during training versus inference. Why does its effectiveness degrade when mini-batch sizes are very small, and what alternative normalization technique can be used instead?",
+      "difficulty": "Medium",
+      "hint": "Consider how batch mean and variance are calculated in both phases and what happens to statistical estimates when the sample count per batch is very low.",
+      "answer": "During training, Batch Normalization computes the mean and variance across the current mini-batch for each feature channel to normalize activations, then scales and shifts them using learnable parameters gamma and beta. During inference, computing mini-batch statistics is impractical (e.g., single-instance evaluation), so it uses running population estimates of mean and variance accumulated during training via exponential moving average. When mini-batch sizes are extremely small (e.g., 2 to 4), mini-batch mean and variance become highly noisy, inaccurate representations of the dataset statistics, which destabilizes training and degrades model performance. In such cases, Layer Normalization or Group Normalization are used as alternatives because they calculate statistics along the feature or channel dimensions per instance, independent of the mini-batch size.",
+      "generated_at": "2026-09-04T17:42:05.010702Z"
     }
   ]
 }

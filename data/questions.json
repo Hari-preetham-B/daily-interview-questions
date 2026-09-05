@@ -248,6 +248,16 @@
       "hint": "Consider how batch mean and variance are calculated in both phases and what happens to statistical estimates when the sample count per batch is very low.",
       "answer": "During training, Batch Normalization computes the mean and variance across the current mini-batch for each feature channel to normalize activations, then scales and shifts them using learnable parameters gamma and beta. During inference, computing mini-batch statistics is impractical (e.g., single-instance evaluation), so it uses running population estimates of mean and variance accumulated during training via exponential moving average. When mini-batch sizes are extremely small (e.g., 2 to 4), mini-batch mean and variance become highly noisy, inaccurate representations of the dataset statistics, which destabilizes training and degrades model performance. In such cases, Layer Normalization or Group Normalization are used as alternatives because they calculate statistics along the feature or channel dimensions per instance, independent of the mini-batch size.",
       "generated_at": "2026-09-04T17:42:05.010702Z"
+    },
+    {
+      "date": "2026-09-05",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is Priority Inversion in real-time operating systems, and how does the Priority Inheritance Protocol resolve this issue?",
+      "difficulty": "Medium",
+      "hint": "Consider a scenario where a medium-priority process preempts a low-priority process that currently holds a mutex needed by a high-priority process.",
+      "answer": "Priority Inversion is a scenario in operating systems where a high-priority process is indirectly delayed by a lower-priority process. This occurs when a low-priority process holds a shared resource (via a lock) required by the high-priority process, and a medium-priority process\u2014which does not need the resource\u2014preempts the low-priority process, causing the high-priority process to wait indefinitely. The Priority Inheritance Protocol resolves this by temporarily boosting the priority of the low-priority process holding the lock to match that of the waiting high-priority process. Once the low-priority process releases the shared resource, its priority reverts to its original level, allowing the high-priority process to immediately acquire the lock and execute without being blocked by medium-priority tasks.",
+      "generated_at": "2026-09-05T16:53:27.628083Z"
     }
   ]
 }

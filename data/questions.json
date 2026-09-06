@@ -258,6 +258,16 @@
       "hint": "Consider a scenario where a medium-priority process preempts a low-priority process that currently holds a mutex needed by a high-priority process.",
       "answer": "Priority Inversion is a scenario in operating systems where a high-priority process is indirectly delayed by a lower-priority process. This occurs when a low-priority process holds a shared resource (via a lock) required by the high-priority process, and a medium-priority process\u2014which does not need the resource\u2014preempts the low-priority process, causing the high-priority process to wait indefinitely. The Priority Inheritance Protocol resolves this by temporarily boosting the priority of the low-priority process holding the lock to match that of the waiting high-priority process. Once the low-priority process releases the shared resource, its priority reverts to its original level, allowing the high-priority process to immediately acquire the lock and execute without being blocked by medium-priority tasks.",
       "generated_at": "2026-09-05T16:53:27.628083Z"
+    },
+    {
+      "date": "2026-09-06",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "What is the reparameterization trick in Variational Autoencoders (VAEs), why is it necessary for training via backpropagation, and how is it implemented mathematically?",
+      "difficulty": "Medium",
+      "hint": "Consider why direct sampling from a learned probability distribution creates a bottleneck for gradient propagation during backpropagation.",
+      "answer": "In Variational Autoencoders (VAEs), the encoder outputs parameters of a latent probability distribution, typically mean \u03bc and standard deviation \u03c3. Directly sampling a latent vector z ~ N(\u03bc, \u03c3\u00b2) introduces a non-differentiable stochastic node into the computational graph, which blocks gradient flow during backpropagation. The reparameterization trick resolves this by expressing z deterministically as z = \u03bc + \u03c3 \u2299 \u03b5, where \u03b5 is an independent noise variable sampled from a standard normal distribution N(0, I) and \u2299 denotes element-wise multiplication. By isolating the stochasticity into \u03b5, the sampling step becomes differentiable with respect to \u03bc and \u03c3, allowing standard backpropagation and gradient descent to update the encoder parameters.",
+      "generated_at": "2026-09-06T07:13:35.894544Z"
     }
   ]
 }

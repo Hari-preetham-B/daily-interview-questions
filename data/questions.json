@@ -268,6 +268,16 @@
       "hint": "Consider why direct sampling from a learned probability distribution creates a bottleneck for gradient propagation during backpropagation.",
       "answer": "In Variational Autoencoders (VAEs), the encoder outputs parameters of a latent probability distribution, typically mean \u03bc and standard deviation \u03c3. Directly sampling a latent vector z ~ N(\u03bc, \u03c3\u00b2) introduces a non-differentiable stochastic node into the computational graph, which blocks gradient flow during backpropagation. The reparameterization trick resolves this by expressing z deterministically as z = \u03bc + \u03c3 \u2299 \u03b5, where \u03b5 is an independent noise variable sampled from a standard normal distribution N(0, I) and \u2299 denotes element-wise multiplication. By isolating the stochasticity into \u03b5, the sampling step becomes differentiable with respect to \u03bc and \u03c3, allowing standard backpropagation and gradient descent to update the encoder parameters.",
       "generated_at": "2026-09-06T07:13:35.894544Z"
+    },
+    {
+      "date": "2026-09-07",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is a Virtual Table (vtable) and Virtual Table Pointer (vptr) in Object-Oriented Programming, and how do they enable Dynamic Polymorphism?",
+      "difficulty": "Medium",
+      "hint": "Consider how the compiler determines which method implementation to call at runtime when a virtual function is invoked via a base class pointer.",
+      "answer": "A Virtual Table (vtable) is a static lookup table of function pointers created by the compiler for every class containing or inheriting at least one virtual function. Each instance of such a class contains a hidden pointer, the Virtual Table Pointer (vptr), which points to the corresponding vtable for that object's dynamic type. When a virtual function is called through a base class pointer or reference at runtime, the program dereferences the object's vptr to find its vtable and retrieves the specific function address to execute. This mechanism, known as dynamic dispatch, enables runtime polymorphism at the cost of a small memory overhead (vptr per object, vtable per class) and slight execution latency due to pointer dereferencing.",
+      "generated_at": "2026-09-07T07:27:20.670629Z"
     }
   ]
 }

@@ -278,6 +278,16 @@
       "hint": "Consider how the compiler determines which method implementation to call at runtime when a virtual function is invoked via a base class pointer.",
       "answer": "A Virtual Table (vtable) is a static lookup table of function pointers created by the compiler for every class containing or inheriting at least one virtual function. Each instance of such a class contains a hidden pointer, the Virtual Table Pointer (vptr), which points to the corresponding vtable for that object's dynamic type. When a virtual function is called through a base class pointer or reference at runtime, the program dereferences the object's vptr to find its vtable and retrieves the specific function address to execute. This mechanism, known as dynamic dispatch, enables runtime polymorphism at the cost of a small memory overhead (vptr per object, vtable per class) and slight execution latency due to pointer dereferencing.",
       "generated_at": "2026-09-07T07:27:20.670629Z"
+    },
+    {
+      "date": "2026-09-07",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [a, b]` indicates that you must take course `b` first if you want to take course `a`. Return `true` if you can finish all courses. Otherwise, return `false`.",
+      "difficulty": "Medium",
+      "hint": "Model the problem as a directed graph where prerequisites represent directed edges. What property of a directed graph prevents a valid ordering of nodes?",
+      "answer": "This problem is equivalent to finding whether a cycle exists in a directed graph (or finding if a valid topological sort exists). We can solve this using Kahn's Algorithm (BFS for Topological Sort). First, build an adjacency list representing the directed edges (b -> a) and calculate the in-degree for each course. Next, initialize a queue with all nodes having an in-degree of 0. While the queue is not empty, pop a course, increment a `processedCourses` counter, and decrement the in-degree of all its neighboring courses. If a neighbor's in-degree becomes 0, push it to the queue. Finally, if `processedCourses` equals `numCourses`, return `true` (no cycle); otherwise return `false`. Time Complexity: O(V + E) and Space Complexity: O(V + E), where V is `numCourses` and E is the number of prerequisites.",
+      "generated_at": "2026-09-07T18:48:01.337567Z"
     }
   ]
 }

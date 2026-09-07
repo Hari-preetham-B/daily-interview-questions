@@ -24,16 +24,37 @@ A Virtual Table (vtable) is a static lookup table of function pointers created b
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-07) — DSA
+
+**There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [a, b]` indicates that you must take course `b` first if you want to take course `a`. Return `true` if you can finish all courses. Otherwise, return `false`.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Model the problem as a directed graph where prerequisites represent directed edges. What property of a directed graph prevents a valid ordering of nodes?
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+This problem is equivalent to finding whether a cycle exists in a directed graph (or finding if a valid topological sort exists). We can solve this using Kahn's Algorithm (BFS for Topological Sort). First, build an adjacency list representing the directed edges (b -> a) and calculate the in-degree for each course. Next, initialize a queue with all nodes having an in-degree of 0. While the queue is not empty, pop a course, increment a `processedCourses` counter, and decrement the in-degree of all its neighboring courses. If a neighbor's in-degree becomes 0, push it to the queue. Finally, if `processedCourses` equals `numCourses`, return `true` (no cycle); otherwise return `false`. Time Complexity: O(V + E) and Space Complexity: O(V + E), where V is `numCourses` and E is the number of prerequisites.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **28**
-- DSA: 5 · AI/ML: 8 · CSE Core: 9 · Behavioral: 6
+- Total questions logged: **29**
+- DSA: 6 · AI/ML: 8 · CSE Core: 9 · Behavioral: 6
 
 ## 🗂️ Recent Questions
 
+- **2026-09-07 [PM]** [DSA](questions/2026-09-07-pm-dsa.md): There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [a, b]` indicates that you must take course `b` first if you want to take course `a`. Return `true` if you can finish all courses. Otherwise, return `false`.
 - **2026-09-07 [AM]** [CSE Core](questions/2026-09-07-am-cse-core.md): What is a Virtual Table (vtable) and Virtual Table Pointer (vptr) in Object-Oriented Programming, and how do they enable Dynamic Polymorphism?
 - **2026-09-06 [AM]** [AIML](questions/2026-09-06-am-aiml.md): What is the reparameterization trick in Variational Autoencoders (VAEs), why is it necessary for training via backpropagation, and how is it implemented mathematically?
 - **2026-09-05 [PM]** [CSE Core](questions/2026-09-05-pm-cse-core.md): What is Priority Inversion in real-time operating systems, and how does the Priority Inheritance Protocol resolve this issue?
@@ -48,7 +69,6 @@ A Virtual Table (vtable) is a static lookup table of function pointers created b
 - **2026-08-30 [PM]** [DSA](questions/2026-08-30-pm-dsa.md): Given a string `s`, find the length of the longest substring without repeating characters.
 - **2026-08-30 [AM]** [CSE Core](questions/2026-08-30-am-cse-core.md): Explain the four standard SQL Transaction Isolation Levels and the specific read phenomena (Dirty Read, Non-Repeatable Read, Phantom Read) each level prevents.
 - **2026-08-29 [PM]** [Behavioral](questions/2026-08-29-pm-behavioral.md): Tell me about a time when you had to balance multiple competing priorities or tight deadlines. How did you structure your time, and what was the outcome?
-- **2026-08-29 [AM]** [AIML](questions/2026-08-29-am-aiml.md): Explain the difference between the Receiver Operating Characteristic (ROC) curve and the Precision-Recall (PR) curve. Why is the PR curve typically preferred over the ROC curve when evaluating binary classification models on highly imbalanced datasets?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

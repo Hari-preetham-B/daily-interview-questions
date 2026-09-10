@@ -24,16 +24,37 @@ The Kernel Trick enables linear models like Support Vector Machines to separate 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-10) — Behavioral
+
+**Tell me about a time when you were working on a group project and one of your teammates was struggling or not contributing their fair share. How did you address the situation, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Focus on empathy, active listening, and constructive problem-solving rather than assigning blame or escalating immediately.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Use the STAR (Situation, Task, Action, Result) framework to structure your answer. Start by setting the context of the project and describing the teammate's impact without taking a accusatory tone. Explain how you initiated a private, open conversation to understand the root cause of their struggle, such as a lack of clarity, personal difficulties, or skill gaps. Detail the actionable steps you took together, such as reassigning tasks based on strengths, setting up pair programming sessions, or breaking work into smaller milestones. Conclude with the positive outcome, highlighting how the team successfully met its deadline and how the experience strengthened team trust and collaboration.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **32**
-- DSA: 7 · AI/ML: 9 · CSE Core: 9 · Behavioral: 7
+- Total questions logged: **33**
+- DSA: 7 · AI/ML: 9 · CSE Core: 9 · Behavioral: 8
 
 ## 🗂️ Recent Questions
 
+- **2026-09-10 [PM]** [Behavioral](questions/2026-09-10-pm-behavioral.md): Tell me about a time when you were working on a group project and one of your teammates was struggling or not contributing their fair share. How did you address the situation, and what was the outcome?
 - **2026-09-10 [AM]** [AIML](questions/2026-09-10-am-aiml.md): Explain the Kernel Trick in Support Vector Machines (SVMs). How does it allow SVMs to learn non-linear decision boundaries without explicitly mapping data points to a high-dimensional feature space, and what requirement must a function satisfy to be a valid kernel (Mercer's Condition)?
 - **2026-09-09 [AM]** [DSA](questions/2026-09-09-am-dsa.md): You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite supply of each coin type.
 - **2026-09-08 [AM]** [Behavioral](questions/2026-09-08-am-behavioral.md): Tell me about a time when you had to explain a complex technical concept or decision to a non-technical team member or stakeholder. How did you adapt your communication, and what was the outcome?
@@ -48,7 +69,6 @@ The Kernel Trick enables linear models like Support Vector Machines to separate 
 - **2026-09-01 [PM]** [CSE Core](questions/2026-09-01-pm-cse-core.md): What is the Copy-on-Write (CoW) resource management technique in Operating Systems, and how does it optimize the performance of the fork() system call?
 - **2026-09-01 [AM]** [DSA](questions/2026-09-01-am-dsa.md): Given a binary tree and two nodes `p` and `q`, find their Lowest Common Ancestor (LCA). According to the definition of LCA: 'The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where we allow a node to be a descendant of itself).' Assume all node values are unique and both `p` and `q` exist in the tree.
 - **2026-08-31 [PM]** [AIML](questions/2026-08-31-pm-aiml.md): Explain the Scaled Dot-Product Attention mechanism used in Transformer architectures. What are the conceptual roles of the Query (Q), Key (K), and Value (V) matrices, and why is the dot product scaled by the square root of the key dimension, sqrt(d_k)?
-- **2026-08-31 [AM]** [Behavioral](questions/2026-08-31-am-behavioral.md): Tell me about a time when you received difficult or constructive feedback on a project or assignment. How did you handle the situation, and what changes did you make based on that feedback?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -308,6 +308,16 @@
       "hint": "Think about building up the minimum coins needed for smaller target amounts from 0 to amount using Dynamic Programming.",
       "answer": "This problem can be solved using 1D Dynamic Programming in a bottom-up approach. Create an array `dp` of size `amount + 1` initialized to `amount + 1` (acting as infinity), and set `dp[0] = 0` since zero coins are needed to make an amount of 0. Iterate through all amounts `i` from 1 to `amount`, and for each coin denomination `c` in `coins`, if `i - c >= 0`, update `dp[i] = min(dp[i], dp[i - c] + 1)`. Finally, return `dp[amount]` if it is less than or equal to `amount`, otherwise return `-1`. This solution runs in O(amount * n) time and uses O(amount) space, where n is the number of coin denominations.",
       "generated_at": "2026-09-09T07:29:44.302164Z"
+    },
+    {
+      "date": "2026-09-10",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain the Kernel Trick in Support Vector Machines (SVMs). How does it allow SVMs to learn non-linear decision boundaries without explicitly mapping data points to a high-dimensional feature space, and what requirement must a function satisfy to be a valid kernel (Mercer's Condition)?",
+      "difficulty": "Medium",
+      "hint": "Think about how SVM optimization relies solely on inner products of data points, and how Mercer's theorem guarantees those inner products correspond to a valid feature space.",
+      "answer": "The Kernel Trick enables linear models like Support Vector Machines to separate non-linearly separable data by implicitly mapping input vectors into a higher-dimensional (or infinite-dimensional) feature space. Since the dual formulation of the SVM optimization problem depends only on the dot products between data samples, a kernel function $K(x_i, x_j)$ can compute this dot product directly as $\\langle\\Phi(x_i), \\Phi(x_j)\\rangle$ without ever explicitly computing the high-dimensional mapping $\\Phi(x)$. This reduces the computational complexity from $O(D)$ in the transformed space $D$ back to efficient operations in the original input dimension $d$. For a function to be a valid Mercer kernel, its Gram matrix across any arbitrary set of points must be symmetric and positive semi-definite, guaranteeing that an underlying inner-product feature space exists.",
+      "generated_at": "2026-09-10T07:25:44.793146Z"
     }
   ]
 }

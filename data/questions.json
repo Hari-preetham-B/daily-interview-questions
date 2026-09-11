@@ -328,6 +328,16 @@
       "hint": "Focus on empathy, active listening, and constructive problem-solving rather than assigning blame or escalating immediately.",
       "answer": "Use the STAR (Situation, Task, Action, Result) framework to structure your answer. Start by setting the context of the project and describing the teammate's impact without taking a accusatory tone. Explain how you initiated a private, open conversation to understand the root cause of their struggle, such as a lack of clarity, personal difficulties, or skill gaps. Detail the actionable steps you took together, such as reassigning tasks based on strengths, setting up pair programming sessions, or breaking work into smaller milestones. Conclude with the positive outcome, highlighting how the team successfully met its deadline and how the experience strengthened team trust and collaboration.",
       "generated_at": "2026-09-10T17:46:58.576106Z"
+    },
+    {
+      "date": "2026-09-11",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Why are B+ Trees generally preferred over standard B-Trees for database indexing in relational database management systems (RDBMS)?",
+      "difficulty": "Medium",
+      "hint": "Consider where data pointers are stored in the tree structure and how leaf nodes are connected for sequential access.",
+      "answer": "B+ Trees store data records (or data pointers) exclusively at the leaf nodes, whereas internal nodes only contain key values and child pointers used for routing. In contrast, B-Trees store data pointers in both internal and leaf nodes, which reduces node capacity (fan-out) and increases tree height, leading to higher disk I/O overhead. Furthermore, in a B+ Tree, all leaf nodes are linked together in a sequential doubly-linked list, allowing fast range queries and full index scans without re-traversing parent nodes. This combination of higher fan-out and efficient range-scanning capability makes B+ Trees ideal for disk-based database indexing.",
+      "generated_at": "2026-09-11T07:23:32.169594Z"
     }
   ]
 }

@@ -338,6 +338,16 @@
       "hint": "Consider where data pointers are stored in the tree structure and how leaf nodes are connected for sequential access.",
       "answer": "B+ Trees store data records (or data pointers) exclusively at the leaf nodes, whereas internal nodes only contain key values and child pointers used for routing. In contrast, B-Trees store data pointers in both internal and leaf nodes, which reduces node capacity (fan-out) and increases tree height, leading to higher disk I/O overhead. Furthermore, in a B+ Tree, all leaf nodes are linked together in a sequential doubly-linked list, allowing fast range queries and full index scans without re-traversing parent nodes. This combination of higher fan-out and efficient range-scanning capability makes B+ Trees ideal for disk-based database indexing.",
       "generated_at": "2026-09-11T07:23:32.169594Z"
+    },
+    {
+      "date": "2026-09-12",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to quickly learn a new tool, language, or framework to complete a project or task. How did you approach the learning process, and what was the outcome?",
+      "difficulty": "Easy",
+      "hint": "Use the STAR method and focus on your systematic approach to rapid learning\u2014such as reading documentation, building minimal prototypes, and prioritizing core features under time constraints.",
+      "answer": "An ideal response uses the STAR method to demonstrate adaptability and resourcefulness. Begin by identifying the specific project and why learning the new technology was necessary on a short timeline. Explain your actionable learning strategy, such as reading core documentation, building small test prototypes to validate key features, or consulting mentors when stuck. Conclude by describing the successful completion of the project, any specific metrics of success, and how acquiring this skill benefited your long-term developer toolkit or team standard.",
+      "generated_at": "2026-09-12T07:16:14.298962Z"
     }
   ]
 }

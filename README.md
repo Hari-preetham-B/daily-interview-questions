@@ -24,16 +24,37 @@ An ideal response uses the STAR method to demonstrate adaptability and resourcef
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-12) — AIML
+
+**Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how Momentum tracks past gradients (first moment) while RMSProp tracks squared gradients (second moment). Consider what happens when moving averages are initialized to zero.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+SGD with Momentum accelerates optimization by keeping an exponentially decaying moving average of past gradients (first moment), which helps navigate flat regions and ravines. Adam (Adaptive Moment Estimation) combines Momentum with RMSProp by tracking both the first moment (moving average of gradients) and the second moment (moving average of squared gradients) to provide parameter-specific adaptive learning rates. Because both moving averages are initialized to vector zeros, they are biased toward zero during initial steps; Adam applies bias correction by dividing the moment estimates by (1 - beta^t) to counteract this initial offset. While Adam typically converges faster and requires less learning rate tuning, SGD with Momentum is often preferred in vision tasks (like training ResNets) because it frequently yields better final generalization performance on out-of-sample data compared to adaptive methods.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **35**
-- DSA: 7 · AI/ML: 9 · CSE Core: 10 · Behavioral: 9
+- Total questions logged: **36**
+- DSA: 7 · AI/ML: 10 · CSE Core: 10 · Behavioral: 9
 
 ## 🗂️ Recent Questions
 
+- **2026-09-12 [PM]** [AIML](questions/2026-09-12-pm-aiml.md): Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?
 - **2026-09-12 [AM]** [Behavioral](questions/2026-09-12-am-behavioral.md): Tell me about a time when you had to quickly learn a new tool, language, or framework to complete a project or task. How did you approach the learning process, and what was the outcome?
 - **2026-09-11 [AM]** [CSE Core](questions/2026-09-11-am-cse-core.md): Why are B+ Trees generally preferred over standard B-Trees for database indexing in relational database management systems (RDBMS)?
 - **2026-09-10 [PM]** [Behavioral](questions/2026-09-10-pm-behavioral.md): Tell me about a time when you were working on a group project and one of your teammates was struggling or not contributing their fair share. How did you address the situation, and what was the outcome?
@@ -48,7 +69,6 @@ An ideal response uses the STAR method to demonstrate adaptability and resourcef
 - **2026-09-04 [AM]** [Behavioral](questions/2026-09-04-am-behavioral.md): Describe a situation where you had to work with ambiguous requirements or faced a sudden, unexpected change in project scope. How did you navigate the uncertainty, and what was the final outcome?
 - **2026-09-03 [AM]** [CSE Core](questions/2026-09-03-am-cse-core.md): What is the primary purpose of the TIME_WAIT state during TCP connection teardown, and why is its duration typically set to 2 times the Maximum Segment Lifetime (2 * MSL)?
 - **2026-09-02 [PM]** [Behavioral](questions/2026-09-02-pm-behavioral.md): Describe a situation where you identified an issue or an opportunity for improvement in a project or process and took the initiative to address it without being explicitly asked.
-- **2026-09-01 [PM]** [CSE Core](questions/2026-09-01-pm-cse-core.md): What is the Copy-on-Write (CoW) resource management technique in Operating Systems, and how does it optimize the performance of the fork() system call?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

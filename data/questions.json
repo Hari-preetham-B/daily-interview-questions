@@ -348,6 +348,16 @@
       "hint": "Use the STAR method and focus on your systematic approach to rapid learning\u2014such as reading documentation, building minimal prototypes, and prioritizing core features under time constraints.",
       "answer": "An ideal response uses the STAR method to demonstrate adaptability and resourcefulness. Begin by identifying the specific project and why learning the new technology was necessary on a short timeline. Explain your actionable learning strategy, such as reading core documentation, building small test prototypes to validate key features, or consulting mentors when stuck. Conclude by describing the successful completion of the project, any specific metrics of success, and how acquiring this skill benefited your long-term developer toolkit or team standard.",
       "generated_at": "2026-09-12T07:16:14.298962Z"
+    },
+    {
+      "date": "2026-09-12",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?",
+      "difficulty": "Medium",
+      "hint": "Think about how Momentum tracks past gradients (first moment) while RMSProp tracks squared gradients (second moment). Consider what happens when moving averages are initialized to zero.",
+      "answer": "SGD with Momentum accelerates optimization by keeping an exponentially decaying moving average of past gradients (first moment), which helps navigate flat regions and ravines. Adam (Adaptive Moment Estimation) combines Momentum with RMSProp by tracking both the first moment (moving average of gradients) and the second moment (moving average of squared gradients) to provide parameter-specific adaptive learning rates. Because both moving averages are initialized to vector zeros, they are biased toward zero during initial steps; Adam applies bias correction by dividing the moment estimates by (1 - beta^t) to counteract this initial offset. While Adam typically converges faster and requires less learning rate tuning, SGD with Momentum is often preferred in vision tasks (like training ResNets) because it frequently yields better final generalization performance on out-of-sample data compared to adaptive methods.",
+      "generated_at": "2026-09-12T17:21:01.428730Z"
     }
   ]
 }

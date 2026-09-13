@@ -368,6 +368,16 @@
       "hint": "Think about how much water a single bar can hold. It depends on the maximum height of bars to its left and right. Can you optimize finding these max heights using a two-pointer technique?",
       "answer": "We can solve this using a two-pointer approach in O(n) time and O(1) space. Maintain two pointers, `left` at index 0 and `right` at index `n - 1`, along with `left_max` and `right_max` tracking the peak heights from both ends. At each step, compare `left_max` and `right_max`. If `left_max < right_max`, the water trapped at `left` is determined by `left_max - height[left]`; increment `left` and update `left_max`. Otherwise, the water trapped at `right` is determined by `right_max - height[right]`; decrement `right` and update `right_max`. Repeat until `left` meets `right` and sum the trapped water.",
       "generated_at": "2026-09-13T07:34:28.940826Z"
+    },
+    {
+      "date": "2026-09-13",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?",
+      "difficulty": "Medium",
+      "hint": "Consider the classic example where a Square class inherits from a Rectangle class and overrides width and height setters.",
+      "answer": "The Liskov Substitution Principle (LSP) states that objects of a subclass should be able to substitute objects of a superclass without affecting the correctness or expected behavior of the program. Violating LSP occurs when a derived class alters the behavioral contract of the base class\u2014such as throwing unexpected exceptions, relaxing preconditions, or strengthening postconditions (e.g., a Square class inheriting from Rectangle where changing the width unexpectedly modifies the height). Such violations force client code to introduce runtime type checks (`instanceof`) or special conditional logic for specific subclasses, tightly coupling the code and breaking the Open/Closed Principle.",
+      "generated_at": "2026-09-13T17:30:51.412276Z"
     }
   ]
 }

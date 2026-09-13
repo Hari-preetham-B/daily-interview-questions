@@ -24,16 +24,37 @@ We can solve this using a two-pointer approach in O(n) time and O(1) space. Main
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-13) — CSE Core
+
+**What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the classic example where a Square class inherits from a Rectangle class and overrides width and height setters.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+The Liskov Substitution Principle (LSP) states that objects of a subclass should be able to substitute objects of a superclass without affecting the correctness or expected behavior of the program. Violating LSP occurs when a derived class alters the behavioral contract of the base class—such as throwing unexpected exceptions, relaxing preconditions, or strengthening postconditions (e.g., a Square class inheriting from Rectangle where changing the width unexpectedly modifies the height). Such violations force client code to introduce runtime type checks (`instanceof`) or special conditional logic for specific subclasses, tightly coupling the code and breaking the Open/Closed Principle.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **37**
-- DSA: 8 · AI/ML: 10 · CSE Core: 10 · Behavioral: 9
+- Total questions logged: **38**
+- DSA: 8 · AI/ML: 10 · CSE Core: 11 · Behavioral: 9
 
 ## 🗂️ Recent Questions
 
+- **2026-09-13 [PM]** [CSE Core](questions/2026-09-13-pm-cse-core.md): What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?
 - **2026-09-13 [AM]** [DSA](questions/2026-09-13-am-dsa.md): Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 - **2026-09-12 [PM]** [AIML](questions/2026-09-12-pm-aiml.md): Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?
 - **2026-09-12 [AM]** [Behavioral](questions/2026-09-12-am-behavioral.md): Tell me about a time when you had to quickly learn a new tool, language, or framework to complete a project or task. How did you approach the learning process, and what was the outcome?
@@ -48,7 +69,6 @@ We can solve this using a two-pointer approach in O(n) time and O(1) space. Main
 - **2026-09-05 [PM]** [CSE Core](questions/2026-09-05-pm-cse-core.md): What is Priority Inversion in real-time operating systems, and how does the Priority Inheritance Protocol resolve this issue?
 - **2026-09-04 [PM]** [AIML](questions/2026-09-04-pm-aiml.md): Explain how Batch Normalization works during training versus inference. Why does its effectiveness degrade when mini-batch sizes are very small, and what alternative normalization technique can be used instead?
 - **2026-09-04 [AM]** [Behavioral](questions/2026-09-04-am-behavioral.md): Describe a situation where you had to work with ambiguous requirements or faced a sudden, unexpected change in project scope. How did you navigate the uncertainty, and what was the final outcome?
-- **2026-09-03 [AM]** [CSE Core](questions/2026-09-03-am-cse-core.md): What is the primary purpose of the TIME_WAIT state during TCP connection teardown, and why is its duration typically set to 2 times the Maximum Segment Lifetime (2 * MSL)?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

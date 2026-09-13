@@ -358,6 +358,16 @@
       "hint": "Think about how Momentum tracks past gradients (first moment) while RMSProp tracks squared gradients (second moment). Consider what happens when moving averages are initialized to zero.",
       "answer": "SGD with Momentum accelerates optimization by keeping an exponentially decaying moving average of past gradients (first moment), which helps navigate flat regions and ravines. Adam (Adaptive Moment Estimation) combines Momentum with RMSProp by tracking both the first moment (moving average of gradients) and the second moment (moving average of squared gradients) to provide parameter-specific adaptive learning rates. Because both moving averages are initialized to vector zeros, they are biased toward zero during initial steps; Adam applies bias correction by dividing the moment estimates by (1 - beta^t) to counteract this initial offset. While Adam typically converges faster and requires less learning rate tuning, SGD with Momentum is often preferred in vision tasks (like training ResNets) because it frequently yields better final generalization performance on out-of-sample data compared to adaptive methods.",
       "generated_at": "2026-09-12T17:21:01.428730Z"
+    },
+    {
+      "date": "2026-09-13",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.",
+      "difficulty": "Hard",
+      "hint": "Think about how much water a single bar can hold. It depends on the maximum height of bars to its left and right. Can you optimize finding these max heights using a two-pointer technique?",
+      "answer": "We can solve this using a two-pointer approach in O(n) time and O(1) space. Maintain two pointers, `left` at index 0 and `right` at index `n - 1`, along with `left_max` and `right_max` tracking the peak heights from both ends. At each step, compare `left_max` and `right_max`. If `left_max < right_max`, the water trapped at `left` is determined by `left_max - height[left]`; increment `left` and update `left_max`. Otherwise, the water trapped at `right` is determined by `right_max - height[right]`; decrement `right` and update `right_max`. Repeat until `left` meets `right` and sum the trapped water.",
+      "generated_at": "2026-09-13T07:34:28.940826Z"
     }
   ]
 }

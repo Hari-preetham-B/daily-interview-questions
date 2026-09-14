@@ -378,6 +378,16 @@
       "hint": "Consider the classic example where a Square class inherits from a Rectangle class and overrides width and height setters.",
       "answer": "The Liskov Substitution Principle (LSP) states that objects of a subclass should be able to substitute objects of a superclass without affecting the correctness or expected behavior of the program. Violating LSP occurs when a derived class alters the behavioral contract of the base class\u2014such as throwing unexpected exceptions, relaxing preconditions, or strengthening postconditions (e.g., a Square class inheriting from Rectangle where changing the width unexpectedly modifies the height). Such violations force client code to introduce runtime type checks (`instanceof`) or special conditional logic for specific subclasses, tightly coupling the code and breaking the Open/Closed Principle.",
       "generated_at": "2026-09-13T17:30:51.412276Z"
+    },
+    {
+      "date": "2026-09-14",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain how Focal Loss modifies standard Cross-Entropy loss to address severe class imbalance and the dominance of easy negative examples in single-stage object detectors. What are the specific mathematical roles of the focusing parameter (gamma) and the alpha-balancing factor (alpha)?",
+      "difficulty": "Medium",
+      "hint": "Think about how standard cross-entropy treats well-classified (easy) examples versus misclassified (hard) examples, and how multiplying the loss by a term involving the estimated probability dynamic suppresses easy examples.",
+      "answer": "Standard Cross-Entropy (CE) loss assigns equal weight to all samples, allowing a vast majority of easy-to-classify background examples to dominate the cumulative loss and gradients during training. Focal Loss modifies CE by adding a modulating factor (1 - p_t)^gamma, where p_t is the model's estimated probability for the ground truth class. When an example is easily classified (p_t approaches 1), the modulating factor approaches zero, dynamically down-weighting its loss contribution so the model focuses gradient updates on hard, misclassified examples. The focusing parameter gamma (gamma >= 0) smoothly controls the rate at which easy examples are suppressed (higher gamma suppresses easy samples more aggressively). Additionally, the alpha-balancing factor alpha in [0, 1] acts as a static weight to address raw class frequency imbalance between positive and negative classes.",
+      "generated_at": "2026-09-14T08:01:03.543813Z"
     }
   ]
 }

@@ -388,6 +388,16 @@
       "hint": "Think about how standard cross-entropy treats well-classified (easy) examples versus misclassified (hard) examples, and how multiplying the loss by a term involving the estimated probability dynamic suppresses easy examples.",
       "answer": "Standard Cross-Entropy (CE) loss assigns equal weight to all samples, allowing a vast majority of easy-to-classify background examples to dominate the cumulative loss and gradients during training. Focal Loss modifies CE by adding a modulating factor (1 - p_t)^gamma, where p_t is the model's estimated probability for the ground truth class. When an example is easily classified (p_t approaches 1), the modulating factor approaches zero, dynamically down-weighting its loss contribution so the model focuses gradient updates on hard, misclassified examples. The focusing parameter gamma (gamma >= 0) smoothly controls the rate at which easy examples are suppressed (higher gamma suppresses easy samples more aggressively). Additionally, the alpha-balancing factor alpha in [0, 1] acts as a static weight to address raw class frequency imbalance between positive and negative classes.",
       "generated_at": "2026-09-14T08:01:03.543813Z"
+    },
+    {
+      "date": "2026-09-14",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to make a trade-off between delivering a feature quickly to meet a deadline and maintaining high code quality or technical standards. How did you evaluate the options, and what was the result?",
+      "difficulty": "Medium",
+      "hint": "Structure your answer using the STAR method. Focus on how you calculated the risk, communicated with stakeholders, and planned for addressing any technical debt later.",
+      "answer": "To answer this question effectively, use the STAR (Situation, Task, Action, Result) framework. Begin by briefly describing the project context, the tight deadline, and the specific trade-off between speed and code quality or architecture. Explain your decision-making process: how you assessed the risks of taking shortcuts versus the business impact of missing the target launch date. Highlight the proactive steps you took, such as writing thorough test cases for critical paths, documenting temporary workarounds, or immediately creating backlog tickets to refactor technical debt post-launch. Conclude with the outcome, emphasizing that the delivery target was met without introducing major production bugs, and describe how you followed up to ensure long-term code health.",
+      "generated_at": "2026-09-14T19:31:27.790325Z"
     }
   ]
 }

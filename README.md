@@ -24,16 +24,37 @@ Standard Cross-Entropy (CE) loss assigns equal weight to all samples, allowing a
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-14) — Behavioral
+
+**Describe a situation where you had to make a trade-off between delivering a feature quickly to meet a deadline and maintaining high code quality or technical standards. How did you evaluate the options, and what was the result?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Structure your answer using the STAR method. Focus on how you calculated the risk, communicated with stakeholders, and planned for addressing any technical debt later.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+To answer this question effectively, use the STAR (Situation, Task, Action, Result) framework. Begin by briefly describing the project context, the tight deadline, and the specific trade-off between speed and code quality or architecture. Explain your decision-making process: how you assessed the risks of taking shortcuts versus the business impact of missing the target launch date. Highlight the proactive steps you took, such as writing thorough test cases for critical paths, documenting temporary workarounds, or immediately creating backlog tickets to refactor technical debt post-launch. Conclude with the outcome, emphasizing that the delivery target was met without introducing major production bugs, and describe how you followed up to ensure long-term code health.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **39**
-- DSA: 8 · AI/ML: 11 · CSE Core: 11 · Behavioral: 9
+- Total questions logged: **40**
+- DSA: 8 · AI/ML: 11 · CSE Core: 11 · Behavioral: 10
 
 ## 🗂️ Recent Questions
 
+- **2026-09-14 [PM]** [Behavioral](questions/2026-09-14-pm-behavioral.md): Describe a situation where you had to make a trade-off between delivering a feature quickly to meet a deadline and maintaining high code quality or technical standards. How did you evaluate the options, and what was the result?
 - **2026-09-14 [AM]** [AIML](questions/2026-09-14-am-aiml.md): Explain how Focal Loss modifies standard Cross-Entropy loss to address severe class imbalance and the dominance of easy negative examples in single-stage object detectors. What are the specific mathematical roles of the focusing parameter (gamma) and the alpha-balancing factor (alpha)?
 - **2026-09-13 [PM]** [CSE Core](questions/2026-09-13-pm-cse-core.md): What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?
 - **2026-09-13 [AM]** [DSA](questions/2026-09-13-am-dsa.md): Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
@@ -48,7 +69,6 @@ Standard Cross-Entropy (CE) loss assigns equal weight to all samples, allowing a
 - **2026-09-07 [AM]** [CSE Core](questions/2026-09-07-am-cse-core.md): What is a Virtual Table (vtable) and Virtual Table Pointer (vptr) in Object-Oriented Programming, and how do they enable Dynamic Polymorphism?
 - **2026-09-06 [AM]** [AIML](questions/2026-09-06-am-aiml.md): What is the reparameterization trick in Variational Autoencoders (VAEs), why is it necessary for training via backpropagation, and how is it implemented mathematically?
 - **2026-09-05 [PM]** [CSE Core](questions/2026-09-05-pm-cse-core.md): What is Priority Inversion in real-time operating systems, and how does the Priority Inheritance Protocol resolve this issue?
-- **2026-09-04 [PM]** [AIML](questions/2026-09-04-pm-aiml.md): Explain how Batch Normalization works during training versus inference. Why does its effectiveness degrade when mini-batch sizes are very small, and what alternative normalization technique can be used instead?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

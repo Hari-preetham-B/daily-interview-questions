@@ -398,6 +398,16 @@
       "hint": "Structure your answer using the STAR method. Focus on how you calculated the risk, communicated with stakeholders, and planned for addressing any technical debt later.",
       "answer": "To answer this question effectively, use the STAR (Situation, Task, Action, Result) framework. Begin by briefly describing the project context, the tight deadline, and the specific trade-off between speed and code quality or architecture. Explain your decision-making process: how you assessed the risks of taking shortcuts versus the business impact of missing the target launch date. Highlight the proactive steps you took, such as writing thorough test cases for critical paths, documenting temporary workarounds, or immediately creating backlog tickets to refactor technical debt post-launch. Conclude with the outcome, emphasizing that the delivery target was met without introducing major production bugs, and describe how you followed up to ensure long-term code health.",
       "generated_at": "2026-09-14T19:31:27.790325Z"
+    },
+    {
+      "date": "2026-09-15",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are surrounded by water.",
+      "difficulty": "Medium",
+      "hint": "Traverse each cell in the grid. When you encounter a '1', increment your island count and perform a depth-first search (DFS) or breadth-first search (BFS) to mark all horizontally and vertically connected '1's as visited.",
+      "answer": "We can solve this problem by iterating through every cell in the grid and using Depth-First Search (DFS) or Breadth-First Search (BFS). When we land on a cell containing '1', we increment our island count and trigger a traversal (e.g., DFS) starting from that cell. The traversal explores all 4-directionally adjacent cells containing '1' and converts them to '0' (or marks them in a visited set) to avoid processing them multiple times. We repeat this until the entire grid has been scanned. The time complexity is O(M * N), where M and N are the dimensions of the grid, since each cell is visited a constant number of times. The space complexity is O(M * N) in the worst case due to the recursion stack for DFS (or queue size for BFS) when the grid is filled entirely with land.",
+      "generated_at": "2026-09-15T18:21:17.645174Z"
     }
   ]
 }

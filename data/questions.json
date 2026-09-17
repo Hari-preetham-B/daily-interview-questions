@@ -408,6 +408,16 @@
       "hint": "Traverse each cell in the grid. When you encounter a '1', increment your island count and perform a depth-first search (DFS) or breadth-first search (BFS) to mark all horizontally and vertically connected '1's as visited.",
       "answer": "We can solve this problem by iterating through every cell in the grid and using Depth-First Search (DFS) or Breadth-First Search (BFS). When we land on a cell containing '1', we increment our island count and trigger a traversal (e.g., DFS) starting from that cell. The traversal explores all 4-directionally adjacent cells containing '1' and converts them to '0' (or marks them in a visited set) to avoid processing them multiple times. We repeat this until the entire grid has been scanned. The time complexity is O(M * N), where M and N are the dimensions of the grid, since each cell is visited a constant number of times. The space complexity is O(M * N) in the worst case due to the recursion stack for DFS (or queue size for BFS) when the grid is filled entirely with land.",
       "generated_at": "2026-09-15T18:21:17.645174Z"
+    },
+    {
+      "date": "2026-09-17",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.",
+      "difficulty": "Medium",
+      "hint": "Can you maintain an auxiliary array representing the smallest tail of all increasing subsequences of each length found so far, using binary search to update it?",
+      "answer": "To solve this in O(n log n) time, maintain an array `tails` where `tails[i]` stores the smallest ending element among all increasing subsequences of length `i + 1`. For each number `x` in `nums`, use binary search to find the smallest element in `tails` that is greater than or equal to `x`. If such an element exists, replace it with `x` (this lowers the potential tail for future subsequences). If `x` is larger than all elements in `tails`, append `x` to `tails`. The length of `tails` at the end gives the length of the longest increasing subsequence. The space complexity is O(n).",
+      "generated_at": "2026-09-17T07:53:15.991527Z"
     }
   ]
 }

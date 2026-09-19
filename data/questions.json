@@ -418,6 +418,16 @@
       "hint": "Can you maintain an auxiliary array representing the smallest tail of all increasing subsequences of each length found so far, using binary search to update it?",
       "answer": "To solve this in O(n log n) time, maintain an array `tails` where `tails[i]` stores the smallest ending element among all increasing subsequences of length `i + 1`. For each number `x` in `nums`, use binary search to find the smallest element in `tails` that is greater than or equal to `x`. If such an element exists, replace it with `x` (this lowers the potential tail for future subsequences). If `x` is larger than all elements in `tails`, append `x` to `tails`. The length of `tails` at the end gives the length of the longest increasing subsequence. The space complexity is O(n).",
       "generated_at": "2026-09-17T07:53:15.991527Z"
+    },
+    {
+      "date": "2026-09-19",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an integer array `height` of length `n`, where each element represents the height of a vertical line drawn at coordinate `(i, height[i])`, find two lines that together with the x-axis form a container that holds the most water. Return the maximum area of water the container can store. Note that you may not slant the container.",
+      "difficulty": "Medium",
+      "hint": "Use a two-pointer approach starting at opposite ends of the array. To maximize area, moving the pointer with the shorter height is the only way that might yield a larger area.",
+      "answer": "We can solve this problem in $O(n)$ time using the two-pointer technique. We initialize two pointers, `left` at index `0` and `right` at index `n - 1`, and maintain a variable `max_area` set to `0`. At each step, the current area is calculated as `(right - left) * min(height[left], height[right])`. To potentially find a larger area, we must increment `left` if `height[left] < height[right]`, or decrement `right` otherwise, because moving the taller line can never increase the area bounded by the shorter line. We repeat this until the pointers meet, requiring $O(1)$ extra space.\n\npython\ndef maxArea(height: list[int]) -> int:\n    left, right = 0, len(height) - 1\n    max_area = 0\n    while left < right:\n        current_area = (right - left) * min(height[left], height[right])\n        max_area = max(max_area, current_area)\n        if height[left] < height[right]:\n            left += 1\n        else:\n            right -= 1\n    return max_area\n",
+      "generated_at": "2026-09-19T17:21:11.629238Z"
     }
   ]
 }

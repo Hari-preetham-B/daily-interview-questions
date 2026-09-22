@@ -36,8 +36,8 @@ README_FILE = ROOT / "README.md"
 # (this script was bumped from gemini-2.0-flash after Google shut it down in June 2026).
 # If this model 404s in the future, check https://ai.google.dev/gemini-api/docs/models
 # for the current stable Flash model name and update MODEL below.
-MODEL = "gemini-3.6-flash"
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+# MODEL = "gemini-3.6-flash"
+# API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 
 # Rotate categories by day-of-year so you get an even, predictable spread
 CATEGORIES = ["DSA", "AIML", "CSE Core", "Behavioral"]
@@ -157,28 +157,41 @@ def call_gemini(category: str, history: dict) -> dict:
         },
     }
 
-    max_attempts = 5
+    # Try each model in order. For each model, retry a couple of times on
+    # 503/429 before giving up on it and falling through to the next one.
+    models_to_try = ["gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
     resp = None
-    for attempt in range(1, max_attempts + 1):
-        resp = requests.post(
-            API_URL,
-            params={"key": api_key},
-            headers={"content-type": "application/json"},
-            json=payload,
-            timeout=60,
-        )
-        if resp.status_code == 200:
-            break
-        if resp.status_code in (429, 503) and attempt < max_attempts:
-            wait = attempt * 15  # 15s, 30s, 45s, 60s
-            print(
-                f"API returned {resp.status_code} (attempt {attempt}/{max_attempts}), "
-                f"retrying in {wait}s...",
-                file=sys.stderr,
+
+    for model in models_to_try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        attempts_for_this_model = 3
+        for attempt in range(1, attempts_for_this_model + 1):
+            resp = requests.post(
+                url,
+                params={"key": api_key},
+                headers={"content-type": "application/json"},
+                json=payload,
+                timeout=60,
             )
-            time.sleep(wait)
-            continue
-        print(f"API error {resp.status_code}: {resp.text}", file=sys.stderr)
+            if resp.status_code == 200:
+                print(f"Used model: {model}")
+                break
+            if resp.status_code in (429, 503) and attempt < attempts_for_this_model:
+                wait = attempt * 15
+                print(
+                    f"{model} returned {resp.status_code} (attempt {attempt}/{attempts_for_this_model}), "
+                    f"retrying in {wait}s...",
+                    file=sys.stderr,
+                )
+                time.sleep(wait)
+                continue
+            print(f"{model} failed with {resp.status_code}: {resp.text}", file=sys.stderr)
+            break
+        if resp is not None and resp.status_code == 200:
+            break
+
+    if resp is None or resp.status_code != 200:
+        print("ERROR: all models failed.", file=sys.stderr)
         resp.raise_for_status()
 
     data = resp.json()
@@ -209,7 +222,6 @@ def call_gemini(category: str, history: dict) -> dict:
         sys.exit(1)
 
     return parsed
-
 def write_dated_file(category: str, q: dict, slot: str) -> Path:
     today = date.today().isoformat()
     slug = category.lower().replace(" ", "-")

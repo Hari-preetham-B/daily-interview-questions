@@ -34,8 +34,7 @@ README_FILE = ROOT / "README.md"
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 # Try these in order; if one is down/deprecated, fall through to the next.
-MODELS_TO_TRY = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]
-
+MODELS_TO_TRY = ["openai/gpt-oss-20b", "openai/gpt-oss-120b"]
 # Rotate categories by day-of-year so you get an even, predictable spread
 CATEGORIES = ["DSA", "AIML", "CSE Core", "Behavioral"]
 

@@ -21,6 +21,7 @@ https://aistudio.google.com/app/apikey
 import json
 import os
 import sys
+import time
 from datetime import date, datetime
 from pathlib import Path
 
@@ -146,24 +147,40 @@ def call_gemini(category: str, history: dict) -> dict:
         "Respond with ONLY the JSON object."
     )
 
-    resp = requests.post(
-        API_URL,
-        params={"key": api_key},
-        headers={"content-type": "application/json"},
-        json={
-            "systemInstruction": {"parts": [{"text": system_prompt}]},
-            "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
-            "generationConfig": {
-                "temperature": 0.9,
-                "maxOutputTokens": 2048,
-                "responseMimeType": "application/json",
-            },
+    payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+        "generationConfig": {
+            "temperature": 0.9,
+            "maxOutputTokens": 2048,
+            "responseMimeType": "application/json",
         },
-        timeout=60,
-    )
-    if resp.status_code != 200:
+    }
+
+    max_attempts = 5
+    resp = None
+    for attempt in range(1, max_attempts + 1):
+        resp = requests.post(
+            API_URL,
+            params={"key": api_key},
+            headers={"content-type": "application/json"},
+            json=payload,
+            timeout=60,
+        )
+        if resp.status_code == 200:
+            break
+        if resp.status_code in (429, 503) and attempt < max_attempts:
+            wait = attempt * 15  # 15s, 30s, 45s, 60s
+            print(
+                f"API returned {resp.status_code} (attempt {attempt}/{max_attempts}), "
+                f"retrying in {wait}s...",
+                file=sys.stderr,
+            )
+            time.sleep(wait)
+            continue
         print(f"API error {resp.status_code}: {resp.text}", file=sys.stderr)
-    resp.raise_for_status()
+        resp.raise_for_status()
+
     data = resp.json()
 
     try:
@@ -192,7 +209,6 @@ def call_gemini(category: str, history: dict) -> dict:
         sys.exit(1)
 
     return parsed
-
 
 def write_dated_file(category: str, q: dict, slot: str) -> Path:
     today = date.today().isoformat()

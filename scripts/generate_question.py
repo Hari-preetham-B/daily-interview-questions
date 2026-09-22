@@ -2,27 +2,27 @@
 """
 Daily Interview Question Generator
 -----------------------------------
-Calls the Google Gemini API (free tier) to generate ONE new interview question
-per run, rotating across categories (AIML, CSE Core, DSA, Behavioral), avoiding
-repeats of anything already asked, and updates:
+Calls the Groq API (free tier, Llama models) to generate ONE new interview
+question per run, rotating across categories (AIML, CSE Core, DSA,
+Behavioral), avoiding repeats of anything already asked, and updates:
   - data/questions.json   (full history, structured)
   - questions/YYYY-MM-DD-<slot>-<category>.md   (dated question file with answer/hints)
   - README.md             (today's AM/PM questions + stats + index)
 
 Runs twice daily via GitHub Actions (AM and PM slots, based on UTC hour of the
-run). Each slot gets a different category so the two runs on the same day never
-collide. If a slot's question already exists for today (e.g. a manual re-run),
-the script skips calling the API entirely to avoid wasting quota.
+run). Each slot gets a different category so the two runs on the same day
+never collide. If a slot's question already exists for today (e.g. a manual
+re-run), the script skips calling the API entirely to avoid wasting quota.
 
-Requires env var GEMINI_API_KEY. Get a free key at:
-https://aistudio.google.com/app/apikey
+Requires env var GROQ_API_KEY. Get a free key at:
+https://console.groq.com/keys
 """
 
 import json
 import os
 import sys
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 import requests
@@ -32,12 +32,9 @@ DATA_FILE = ROOT / "data" / "questions.json"
 QUESTIONS_DIR = ROOT / "questions"
 README_FILE = ROOT / "README.md"
 
-# Gemini free-tier model. Google deprecates/renames Flash models every few months
-# (this script was bumped from gemini-2.0-flash after Google shut it down in June 2026).
-# If this model 404s in the future, check https://ai.google.dev/gemini-api/docs/models
-# for the current stable Flash model name and update MODEL below.
-# MODEL = "gemini-3.6-flash"
-# API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+# Try these in order; if one is down/deprecated, fall through to the next.
+MODELS_TO_TRY = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]
 
 # Rotate categories by day-of-year so you get an even, predictable spread
 CATEGORIES = ["DSA", "AIML", "CSE Core", "Behavioral"]
@@ -80,18 +77,11 @@ def save_history(history: dict) -> None:
 
 
 def determine_slot() -> str:
-    """AM if this run landed in the UTC morning window (covers 2:30 UTC / 8am IST),
-    PM if it landed in the UTC afternoon/evening window (covers 14:30 UTC / 8pm IST).
-    Using the UTC hour rather than a fixed label keeps this correct even if the
-    cron times in the workflow are ever tweaked slightly."""
-    hour = datetime.utcnow().hour
+    hour = datetime.now(timezone.utc).hour
     return "AM" if hour < 12 else "PM"
 
 
 def pick_category(slot: str) -> str:
-    """Pick a category for this slot. Offsetting the PM slot by 2 (out of 4
-    categories) guarantees AM and PM always land on different categories on
-    the same day, while still rotating predictably day to day."""
     day_index = date.today().timetuple().tm_yday
     offset = 0 if slot == "AM" else 2
     return CATEGORIES[(day_index + offset) % len(CATEGORIES)]
@@ -102,9 +92,6 @@ def already_generated(history: dict, today: str, slot: str) -> bool:
 
 
 def question_filename(entry: dict) -> str:
-    """Build the questions/ filename for a history entry. Entries generated
-    before slots existed won't have a 'slot' key, so we fall back to the old
-    naming for those so existing links in README history keep working."""
     slug = entry["category"].lower().replace(" ", "-")
     slot = entry.get("slot")
     if slot:
@@ -120,10 +107,10 @@ def recent_questions_text(history: dict, category: str, limit: int = 25) -> str:
     return "\n".join(f"- {q}" for q in recent)
 
 
-def call_gemini(category: str, history: dict) -> dict:
-    api_key = os.environ.get("GEMINI_API_KEY")
+def call_groq(category: str, history: dict) -> dict:
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        print("ERROR: GEMINI_API_KEY not set", file=sys.stderr)
+        print("ERROR: GROQ_API_KEY not set", file=sys.stderr)
         sys.exit(1)
 
     avoid_list = recent_questions_text(history, category)
@@ -147,39 +134,34 @@ def call_gemini(category: str, history: dict) -> dict:
         "Respond with ONLY the JSON object."
     )
 
-    payload = {
-        "systemInstruction": {"parts": [{"text": system_prompt}]},
-        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
-        "generationConfig": {
-            "temperature": 0.9,
-            "maxOutputTokens": 2048,
-            "responseMimeType": "application/json",
-        },
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
     }
 
-    # Try each model in order. For each model, retry a couple of times on
-    # 503/429 before giving up on it and falling through to the next one.
-    models_to_try = ["gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
     resp = None
+    for model in MODELS_TO_TRY:
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            "temperature": 0.9,
+            "max_tokens": 1024,
+            "response_format": {"type": "json_object"},
+        }
 
-    for model in models_to_try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-        attempts_for_this_model = 3
-        for attempt in range(1, attempts_for_this_model + 1):
-            resp = requests.post(
-                url,
-                params={"key": api_key},
-                headers={"content-type": "application/json"},
-                json=payload,
-                timeout=60,
-            )
+        attempts = 3
+        for attempt in range(1, attempts + 1):
+            resp = requests.post(GROQ_URL, headers=headers, json=payload, timeout=60)
             if resp.status_code == 200:
                 print(f"Used model: {model}")
                 break
-            if resp.status_code in (429, 503) and attempt < attempts_for_this_model:
-                wait = attempt * 15
+            if resp.status_code in (429, 503) and attempt < attempts:
+                wait = attempt * 10
                 print(
-                    f"{model} returned {resp.status_code} (attempt {attempt}/{attempts_for_this_model}), "
+                    f"{model} returned {resp.status_code} (attempt {attempt}/{attempts}), "
                     f"retrying in {wait}s...",
                     file=sys.stderr,
                 )
@@ -197,20 +179,9 @@ def call_gemini(category: str, history: dict) -> dict:
     data = resp.json()
 
     try:
-        candidates = data["candidates"]
-        finish_reason = candidates[0].get("finishReason")
-        parts = candidates[0]["content"]["parts"]
-        raw = "".join(p.get("text", "") for p in parts).strip()
+        raw = data["choices"][0]["message"]["content"].strip()
     except (KeyError, IndexError):
-        print(f"ERROR: unexpected Gemini response shape:\n{json.dumps(data, indent=2)}", file=sys.stderr)
-        sys.exit(1)
-
-    if finish_reason == "MAX_TOKENS":
-        print(
-            "ERROR: Gemini response was cut off (hit maxOutputTokens). "
-            "Increase generationConfig.maxOutputTokens in the script.",
-            file=sys.stderr,
-        )
+        print(f"ERROR: unexpected Groq response shape:\n{json.dumps(data, indent=2)}", file=sys.stderr)
         sys.exit(1)
 
     raw = raw.replace("```json", "").replace("```", "").strip()
@@ -222,6 +193,8 @@ def call_gemini(category: str, history: dict) -> dict:
         sys.exit(1)
 
     return parsed
+
+
 def write_dated_file(category: str, q: dict, slot: str) -> Path:
     today = date.today().isoformat()
     slug = category.lower().replace(" ", "-")
@@ -262,7 +235,6 @@ def update_readme(history: dict) -> None:
     counts = {c: sum(1 for x in history["questions"] if x["category"] == c) for c in CATEGORIES}
     today = date.today().isoformat()
 
-    # Today's entries, AM first then PM
     todays = [q for q in history["questions"] if q["date"] == today]
     slot_order = {"AM": 0, "PM": 1}
     todays.sort(key=lambda e: slot_order.get(e.get("slot"), 0))
@@ -275,7 +247,6 @@ def update_readme(history: dict) -> None:
     else:
         today_section = "_No question generated yet today._"
 
-    # Index of last 15 entries, newest first
     recent = history["questions"][-15:][::-1]
     index_lines = []
     for entry in recent:
@@ -287,9 +258,9 @@ def update_readme(history: dict) -> None:
 
     content = f"""# 🧠 Daily Interview Question Bot
 
-Autonomous interview-prep log, generated by the Gemini API. Two new questions
-every day (morning and evening), rotating across **DSA**, **AI/ML**, **CSE Core**,
-and **Behavioral** topics — no repeats, no manual effort.
+Autonomous interview-prep log, generated by the Groq API (Llama models). Two
+new questions every day (morning and evening), rotating across **DSA**,
+**AI/ML**, **CSE Core**, and **Behavioral** topics — no repeats, no manual effort.
 
 ## 📅 Today's Questions — {today}
 
@@ -309,7 +280,7 @@ and **Behavioral** topics — no repeats, no manual effort.
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 
 ---
-*Auto-generated twice daily via GitHub Actions + the Gemini API. See `scripts/generate_question.py`.*
+*Auto-generated twice daily via GitHub Actions + the Groq API. See `scripts/generate_question.py`.*
 """
     README_FILE.write_text(content)
 
@@ -327,7 +298,7 @@ def main() -> None:
         return
 
     category = pick_category(slot)
-    q = call_gemini(category, history)
+    q = call_groq(category, history)
 
     entry = {
         "date": today,
@@ -337,7 +308,7 @@ def main() -> None:
         "difficulty": q.get("difficulty", "Medium"),
         "hint": q.get("hint", ""),
         "answer": q.get("answer", ""),
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     history["questions"].append(entry)
 

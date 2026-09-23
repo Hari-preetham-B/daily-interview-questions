@@ -438,6 +438,16 @@
       "hint": "Think about tools, scheduling, and documentation you used to keep everyone aligned.",
       "answer": "In my final year project I collaborated with teammates in India, Germany, and the US. We set up a shared Kanban board on Trello, assigning clear owners and due dates. Weekly sprint meetings were rotated so each region could attend at a reasonable hour. We used Slack for quick questions and a shared Google Docs notebook for meeting minutes, ensuring everyone could reference decisions asynchronously. By combining these practices, we reduced miscommunication and delivered the prototype on schedule.",
       "generated_at": "2026-09-22T15:56:11.805481+00:00"
+    },
+    {
+      "date": "2026-09-23",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain the difference between preemptive and cooperative multitasking in operating systems and give an example of each.",
+      "difficulty": "Medium",
+      "hint": "Think about how the CPU scheduler decides when to switch tasks.",
+      "answer": "In preemptive multitasking the OS kernel can interrupt a running task at any time and switch to another, using timers or signals; this allows fair CPU sharing but requires context switching overhead. An example is Windows or Linux preemptive scheduler. In cooperative multitasking a task voluntarily yields control, typically by calling a yield or sleep function; the OS trusts the task to give up the CPU, as in early Mac OS or classic Windows 3.x. The latter can lead to unresponsive applications if a task never yields.",
+      "generated_at": "2026-09-23T07:52:35.105686+00:00"
     }
   ]
 }

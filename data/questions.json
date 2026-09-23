@@ -448,6 +448,16 @@
       "hint": "Think about how the CPU scheduler decides when to switch tasks.",
       "answer": "In preemptive multitasking the OS kernel can interrupt a running task at any time and switch to another, using timers or signals; this allows fair CPU sharing but requires context switching overhead. An example is Windows or Linux preemptive scheduler. In cooperative multitasking a task voluntarily yields control, typically by calling a yield or sleep function; the OS trusts the task to give up the CPU, as in early Mac OS or classic Windows 3.x. The latter can lead to unresponsive applications if a task never yields.",
       "generated_at": "2026-09-23T07:52:35.105686+00:00"
+    },
+    {
+      "date": "2026-09-23",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.",
+      "difficulty": "Medium",
+      "hint": "Identify elements that are out of the expected order by comparing with the sorted array or by scanning from both ends to find where the order breaks.",
+      "answer": "Compute the sorted version of the array. Find the first index i where nums[i]!=sorted[i] and the last index j where they differ. The subarray nums[i..j] is the minimal segment that must be sorted; its length is j-i+1. If no differences exist, the array is already sorted and the answer is 0.",
+      "generated_at": "2026-09-23T18:30:23.380945+00:00"
     }
   ]
 }

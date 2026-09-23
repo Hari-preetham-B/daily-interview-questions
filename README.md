@@ -24,16 +24,37 @@ In preemptive multitasking the OS kernel can interrupt a running task at any tim
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-23) — DSA
+
+**Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Identify elements that are out of the expected order by comparing with the sorted array or by scanning from both ends to find where the order breaks.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Compute the sorted version of the array. Find the first index i where nums[i]!=sorted[i] and the last index j where they differ. The subarray nums[i..j] is the minimal segment that must be sorted; its length is j-i+1. If no differences exist, the array is already sorted and the answer is 0.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **45**
-- DSA: 11 · AI/ML: 11 · CSE Core: 12 · Behavioral: 11
+- Total questions logged: **46**
+- DSA: 12 · AI/ML: 11 · CSE Core: 12 · Behavioral: 11
 
 ## 🗂️ Recent Questions
 
+- **2026-09-23 [PM]** [DSA](questions/2026-09-23-pm-dsa.md): Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.
 - **2026-09-23 [AM]** [CSE Core](questions/2026-09-23-am-cse-core.md): Explain the difference between preemptive and cooperative multitasking in operating systems and give an example of each.
 - **2026-09-22 [PM]** [Behavioral](questions/2026-09-22-pm-behavioral.md): Describe a situation where you worked with a team spread across multiple time zones. How did you coordinate tasks and maintain effective communication?
 - **2026-09-19 [PM]** [DSA](questions/2026-09-19-pm-dsa.md): Given an integer array `height` of length `n`, where each element represents the height of a vertical line drawn at coordinate `(i, height[i])`, find two lines that together with the x-axis form a container that holds the most water. Return the maximum area of water the container can store. Note that you may not slant the container.
@@ -48,7 +69,6 @@ In preemptive multitasking the OS kernel can interrupt a running task at any tim
 - **2026-09-11 [AM]** [CSE Core](questions/2026-09-11-am-cse-core.md): Why are B+ Trees generally preferred over standard B-Trees for database indexing in relational database management systems (RDBMS)?
 - **2026-09-10 [PM]** [Behavioral](questions/2026-09-10-pm-behavioral.md): Tell me about a time when you were working on a group project and one of your teammates was struggling or not contributing their fair share. How did you address the situation, and what was the outcome?
 - **2026-09-10 [AM]** [AIML](questions/2026-09-10-am-aiml.md): Explain the Kernel Trick in Support Vector Machines (SVMs). How does it allow SVMs to learn non-linear decision boundaries without explicitly mapping data points to a high-dimensional feature space, and what requirement must a function satisfy to be a valid kernel (Mercer's Condition)?
-- **2026-09-09 [AM]** [DSA](questions/2026-09-09-am-dsa.md): You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite supply of each coin type.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

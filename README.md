@@ -24,16 +24,37 @@ I once worked on a project with a product manager who had little coding experien
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-24) — AIML
+
+**In a Variational Autoencoder (VAE), the loss function includes a KL‑divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about why we want the encoded distribution to resemble a simple prior and how that impacts sampling and disentanglement.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+The KL‑divergence term penalizes deviations of the encoder’s distribution q(z|x) from the chosen prior (usually a standard normal), encouraging the latent codes to be distributed like the prior. This regularization makes the latent space smooth and enables meaningful sampling: points drawn from the prior can be decoded into realistic data. If the KL weight is too high, the encoder collapses toward the prior, causing under‑fitting and loss of useful information (posterior collapse). If the weight is too low, the latent space becomes irregular and over‑fits the training data, reducing the model’s ability to generate diverse samples and harming disentanglement.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **47**
-- DSA: 12 · AI/ML: 11 · CSE Core: 12 · Behavioral: 12
+- Total questions logged: **48**
+- DSA: 12 · AI/ML: 12 · CSE Core: 12 · Behavioral: 12
 
 ## 🗂️ Recent Questions
 
+- **2026-09-24 [PM]** [AIML](questions/2026-09-24-pm-aiml.md): In a Variational Autoencoder (VAE), the loss function includes a KL‑divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.
 - **2026-09-24 [AM]** [Behavioral](questions/2026-09-24-am-behavioral.md): Describe a time when you had to adapt your communication style to effectively collaborate with a colleague or stakeholder who had a different technical background than yours. How did you adjust your approach, and what was the result?
 - **2026-09-23 [PM]** [DSA](questions/2026-09-23-pm-dsa.md): Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.
 - **2026-09-23 [AM]** [CSE Core](questions/2026-09-23-am-cse-core.md): Explain the difference between preemptive and cooperative multitasking in operating systems and give an example of each.
@@ -48,7 +69,6 @@ I once worked on a project with a product manager who had little coding experien
 - **2026-09-12 [PM]** [AIML](questions/2026-09-12-pm-aiml.md): Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?
 - **2026-09-12 [AM]** [Behavioral](questions/2026-09-12-am-behavioral.md): Tell me about a time when you had to quickly learn a new tool, language, or framework to complete a project or task. How did you approach the learning process, and what was the outcome?
 - **2026-09-11 [AM]** [CSE Core](questions/2026-09-11-am-cse-core.md): Why are B+ Trees generally preferred over standard B-Trees for database indexing in relational database management systems (RDBMS)?
-- **2026-09-10 [PM]** [Behavioral](questions/2026-09-10-pm-behavioral.md): Tell me about a time when you were working on a group project and one of your teammates was struggling or not contributing their fair share. How did you address the situation, and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

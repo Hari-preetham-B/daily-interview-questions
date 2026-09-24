@@ -468,6 +468,16 @@
       "hint": "Consider the audience\u2019s level of technical knowledge and how you might use analogies or visual aids.",
       "answer": "I once worked on a project with a product manager who had little coding experience. I began by explaining our technical constraints using simple analogies, such as comparing our database latency to a traffic jam, and used diagrams instead of code snippets. I also asked clarifying questions to gauge her understanding and encouraged her to voice concerns. As a result, she was able to provide clearer requirements, which reduced rework and kept the project on schedule.",
       "generated_at": "2026-09-24T07:42:56.010918+00:00"
+    },
+    {
+      "date": "2026-09-24",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "In a Variational Autoencoder (VAE), the loss function includes a KL\u2011divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.",
+      "difficulty": "Medium",
+      "hint": "Think about why we want the encoded distribution to resemble a simple prior and how that impacts sampling and disentanglement.",
+      "answer": "The KL\u2011divergence term penalizes deviations of the encoder\u2019s distribution q(z|x) from the chosen prior (usually a standard normal), encouraging the latent codes to be distributed like the prior. This regularization makes the latent space smooth and enables meaningful sampling: points drawn from the prior can be decoded into realistic data. If the KL weight is too high, the encoder collapses toward the prior, causing under\u2011fitting and loss of useful information (posterior collapse). If the weight is too low, the latent space becomes irregular and over\u2011fits the training data, reducing the model\u2019s ability to generate diverse samples and harming disentanglement.",
+      "generated_at": "2026-09-24T18:31:36.127126+00:00"
     }
   ]
 }

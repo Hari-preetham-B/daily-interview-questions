@@ -458,6 +458,16 @@
       "hint": "Identify elements that are out of the expected order by comparing with the sorted array or by scanning from both ends to find where the order breaks.",
       "answer": "Compute the sorted version of the array. Find the first index i where nums[i]!=sorted[i] and the last index j where they differ. The subarray nums[i..j] is the minimal segment that must be sorted; its length is j-i+1. If no differences exist, the array is already sorted and the answer is 0.",
       "generated_at": "2026-09-23T18:30:23.380945+00:00"
+    },
+    {
+      "date": "2026-09-24",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a time when you had to adapt your communication style to effectively collaborate with a colleague or stakeholder who had a different technical background than yours. How did you adjust your approach, and what was the result?",
+      "difficulty": "Medium",
+      "hint": "Consider the audience\u2019s level of technical knowledge and how you might use analogies or visual aids.",
+      "answer": "I once worked on a project with a product manager who had little coding experience. I began by explaining our technical constraints using simple analogies, such as comparing our database latency to a traffic jam, and used diagrams instead of code snippets. I also asked clarifying questions to gauge her understanding and encouraged her to voice concerns. As a result, she was able to provide clearer requirements, which reduced rework and kept the project on schedule.",
+      "generated_at": "2026-09-24T07:42:56.010918+00:00"
     }
   ]
 }

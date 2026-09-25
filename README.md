@@ -24,16 +24,37 @@ Convert every 0 to -1 and compute a prefix sum array. Use a hash map to store th
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-25) — CSE Core
+
+**Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how each entity shares memory, how the OS schedules them, and what happens when one fails.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A process is an independent execution unit with its own virtual address space, code, data, and system resources; it is scheduled by the OS as a single entity and has high isolation, meaning errors or crashes in one process do not directly affect others. A thread, however, is a lightweight subunit of a process that shares the process’s memory space, file descriptors, and other resources, but has its own stack and registers; threads are scheduled by the OS or by a user‑level library, and because they share memory, a fault in one thread can corrupt shared data affecting the entire process. These differences influence concurrent design: processes provide stronger fault isolation and security at the cost of higher overhead for context switches and inter‑process communication (IPC), while threads enable fine‑grained concurrency with lower overhead but require careful synchronization to avoid race conditions and deadlocks. Choosing between processes and threads depends on the required level of isolation, performance, and complexity of the application. 
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **49**
-- DSA: 13 · AI/ML: 12 · CSE Core: 12 · Behavioral: 12
+- Total questions logged: **50**
+- DSA: 13 · AI/ML: 12 · CSE Core: 13 · Behavioral: 12
 
 ## 🗂️ Recent Questions
 
+- **2026-09-25 [PM]** [CSE Core](questions/2026-09-25-pm-cse-core.md): Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?
 - **2026-09-25 [AM]** [DSA](questions/2026-09-25-am-dsa.md): You are given an integer array arr consisting only of 0s and 1s. Find the length of the longest contiguous subarray that contains an equal number of 0s and 1s.
 - **2026-09-24 [PM]** [AIML](questions/2026-09-24-pm-aiml.md): In a Variational Autoencoder (VAE), the loss function includes a KL‑divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.
 - **2026-09-24 [AM]** [Behavioral](questions/2026-09-24-am-behavioral.md): Describe a time when you had to adapt your communication style to effectively collaborate with a colleague or stakeholder who had a different technical background than yours. How did you adjust your approach, and what was the result?
@@ -48,7 +69,6 @@ Convert every 0 to -1 and compute a prefix sum array. Use a hash map to store th
 - **2026-09-13 [PM]** [CSE Core](questions/2026-09-13-pm-cse-core.md): What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?
 - **2026-09-13 [AM]** [DSA](questions/2026-09-13-am-dsa.md): Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 - **2026-09-12 [PM]** [AIML](questions/2026-09-12-pm-aiml.md): Explain the key differences between SGD with Momentum and the Adam optimizer. Specifically, how does Adam combine the principles of Momentum and RMSProp, why is bias correction necessary in the early steps of Adam, and why might SGD with Momentum still be preferred over Adam in certain deep learning tasks?
-- **2026-09-12 [AM]** [Behavioral](questions/2026-09-12-am-behavioral.md): Tell me about a time when you had to quickly learn a new tool, language, or framework to complete a project or task. How did you approach the learning process, and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

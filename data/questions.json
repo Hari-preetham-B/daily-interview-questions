@@ -488,6 +488,16 @@
       "hint": "Treat 0 as -1 and compute a running sum. Whenever the same sum reappears, the subarray between the two indices has equal numbers of 0s and 1s.",
       "answer": "Convert every 0 to -1 and compute a prefix sum array. Use a hash map to store the first index at which each sum occurs. While iterating, if the current sum has been seen before, the subarray between the previous index+1 and the current index has equal 0s and 1s, so update the maximum length. Return the maximum length found; if no such subarray exists, return 0.",
       "generated_at": "2026-09-25T08:02:20.016277+00:00"
+    },
+    {
+      "date": "2026-09-25",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?",
+      "difficulty": "Medium",
+      "hint": "Consider how each entity shares memory, how the OS schedules them, and what happens when one fails.",
+      "answer": "A process is an independent execution unit with its own virtual address space, code, data, and system resources; it is scheduled by the OS as a single entity and has high isolation, meaning errors or crashes in one process do not directly affect others. A thread, however, is a lightweight subunit of a process that shares the process\u2019s memory space, file descriptors, and other resources, but has its own stack and registers; threads are scheduled by the OS or by a user\u2011level library, and because they share memory, a fault in one thread can corrupt shared data affecting the entire process. These differences influence concurrent design: processes provide stronger fault isolation and security at the cost of higher overhead for context switches and inter\u2011process communication (IPC), while threads enable fine\u2011grained concurrency with lower overhead but require careful synchronization to avoid race conditions and deadlocks. Choosing between processes and threads depends on the required level of isolation, performance, and complexity of the application. ",
+      "generated_at": "2026-09-25T18:47:22.816222+00:00"
     }
   ]
 }

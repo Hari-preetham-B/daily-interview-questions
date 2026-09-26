@@ -508,6 +508,16 @@
       "hint": "Think about how lower layers capture generic features versus higher layers capturing task\u2011specific patterns, and consider dataset size.",
       "answer": "Transfer learning involves taking a model pre\u2011trained on a large source dataset (e.g., ImageNet) and adapting it to a target task with limited data. The typical approach is to reuse the network\u2019s convolutional backbone, optionally freezing its weights, and retrain only the final classification layers on the new data. Freezing layers is useful when the target dataset is small or similar to the source domain, because it prevents catastrophic forgetting of generic visual features and reduces the number of trainable parameters, which speeds up training and lowers memory usage. However, if the target domain differs substantially, freezing may limit the model\u2019s ability to learn new feature hierarchies, potentially hurting performance. Conversely, unfreezing more layers allows the network to adjust to domain\u2011specific cues but increases the risk of overfitting to the limited target data and requires longer training times. Thus, the decision to freeze layers balances training efficiency against the need for task\u2011specific representation learning and generalization.",
       "generated_at": "2026-09-26T07:54:01.624178+00:00"
+    },
+    {
+      "date": "2026-09-26",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?",
+      "difficulty": "Medium",
+      "hint": "Consider your teaching style, the resources you provided, and how you measured progress.",
+      "answer": "In my last group project, a new teammate was unfamiliar with our JavaScript framework. I first mapped out the core concepts in a short, one\u2011page cheat sheet and scheduled a pair\u2011programming session to walk through a small feature together. I encouraged questions by using the \"I\u2011need\u2011help\u2011list\" method, where each of us wrote down uncertainties before the session. After the session, I assigned a low\u2011risk task that built on what we covered and set up weekly check\u2011ins to review the code and give feedback. By the end of the sprint, the teammate was independently adding features and refactoring code, and our team's overall velocity increased by 15%.",
+      "generated_at": "2026-09-26T17:52:27.532884+00:00"
     }
   ]
 }

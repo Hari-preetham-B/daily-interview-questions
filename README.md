@@ -24,16 +24,37 @@ Transfer learning involves taking a model pre‑trained on a large source datase
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-26) — Behavioral
+
+**Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider your teaching style, the resources you provided, and how you measured progress.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In my last group project, a new teammate was unfamiliar with our JavaScript framework. I first mapped out the core concepts in a short, one‑page cheat sheet and scheduled a pair‑programming session to walk through a small feature together. I encouraged questions by using the "I‑need‑help‑list" method, where each of us wrote down uncertainties before the session. After the session, I assigned a low‑risk task that built on what we covered and set up weekly check‑ins to review the code and give feedback. By the end of the sprint, the teammate was independently adding features and refactoring code, and our team's overall velocity increased by 15%.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **51**
-- DSA: 13 · AI/ML: 13 · CSE Core: 13 · Behavioral: 12
+- Total questions logged: **52**
+- DSA: 13 · AI/ML: 13 · CSE Core: 13 · Behavioral: 13
 
 ## 🗂️ Recent Questions
 
+- **2026-09-26 [PM]** [Behavioral](questions/2026-09-26-pm-behavioral.md): Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?
 - **2026-09-26 [AM]** [AIML](questions/2026-09-26-am-aiml.md): Describe the process of transfer learning in deep neural networks. When would you choose to freeze certain layers, and what are the trade‑offs in terms of training speed, generalization, and risk of overfitting?
 - **2026-09-25 [PM]** [CSE Core](questions/2026-09-25-pm-cse-core.md): Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?
 - **2026-09-25 [AM]** [DSA](questions/2026-09-25-am-dsa.md): You are given an integer array arr consisting only of 0s and 1s. Find the length of the longest contiguous subarray that contains an equal number of 0s and 1s.
@@ -48,7 +69,6 @@ Transfer learning involves taking a model pre‑trained on a large source datase
 - **2026-09-14 [PM]** [Behavioral](questions/2026-09-14-pm-behavioral.md): Describe a situation where you had to make a trade-off between delivering a feature quickly to meet a deadline and maintaining high code quality or technical standards. How did you evaluate the options, and what was the result?
 - **2026-09-14 [AM]** [AIML](questions/2026-09-14-am-aiml.md): Explain how Focal Loss modifies standard Cross-Entropy loss to address severe class imbalance and the dominance of easy negative examples in single-stage object detectors. What are the specific mathematical roles of the focusing parameter (gamma) and the alpha-balancing factor (alpha)?
 - **2026-09-13 [PM]** [CSE Core](questions/2026-09-13-pm-cse-core.md): What is the Liskov Substitution Principle (LSP) in SOLID design, and how does violating it compromise program correctness?
-- **2026-09-13 [AM]** [DSA](questions/2026-09-13-am-dsa.md): Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

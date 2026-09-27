@@ -518,6 +518,16 @@
       "hint": "Consider your teaching style, the resources you provided, and how you measured progress.",
       "answer": "In my last group project, a new teammate was unfamiliar with our JavaScript framework. I first mapped out the core concepts in a short, one\u2011page cheat sheet and scheduled a pair\u2011programming session to walk through a small feature together. I encouraged questions by using the \"I\u2011need\u2011help\u2011list\" method, where each of us wrote down uncertainties before the session. After the session, I assigned a low\u2011risk task that built on what we covered and set up weekly check\u2011ins to review the code and give feedback. By the end of the sprint, the teammate was independently adding features and refactoring code, and our team's overall velocity increased by 15%.",
       "generated_at": "2026-09-26T17:52:27.532884+00:00"
+    },
+    {
+      "date": "2026-09-27",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain the Write-Ahead Logging (WAL) protocol used in relational database systems and how it guarantees atomicity and durability during crash recovery. What are the main steps involved in the redo and undo phases of the recovery process?",
+      "difficulty": "Medium",
+      "hint": "Consider the ordering requirement of log entries relative to physical data changes, and how the recovery algorithm scans the log before and after the crash point.",
+      "answer": "Write\u2011Ahead Logging (WAL) requires that every modification to database pages be recorded in a persistent log before the actual data page is updated on disk, ensuring that the log contains a complete, recoverable history of all changes. During recovery, the system first performs a redo phase: it scans the log forward from the last checkpoint, applying every logged update to the database pages to guarantee that all committed transactions are reflected on disk. Next, it performs an undo phase by scanning the log backward from the checkpoint, rolling back any uncommitted transactions by applying the inverse of their logged updates. This two\u2011pass process guarantees atomicity (uncommitted changes are undone) and durability (committed changes survive crashes).",
+      "generated_at": "2026-09-27T08:25:26.820749+00:00"
     }
   ]
 }

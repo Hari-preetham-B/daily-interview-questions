@@ -24,16 +24,37 @@ Write‑Ahead Logging (WAL) requires that every modification to database pages b
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-27) — DSA
+
+**Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use two pointers moving at different speeds to detect a cycle, then reset one pointer to the head and move both at the same speed to find the start.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+1. Use Floyd’s Tortoise and Hare algorithm: initialize two pointers, slow and fast, at the head. Move slow by one step and fast by two steps. If they meet, a cycle exists. 2. To find the cycle’s entry, reset one pointer to the head while keeping the other at the meeting point. Move both pointers one step at a time; the point where they meet is the cycle’s start. 3. If fast reaches null, there is no cycle, return null. This uses O(n) time and O(1) space.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **53**
-- DSA: 13 · AI/ML: 13 · CSE Core: 14 · Behavioral: 13
+- Total questions logged: **54**
+- DSA: 14 · AI/ML: 13 · CSE Core: 14 · Behavioral: 13
 
 ## 🗂️ Recent Questions
 
+- **2026-09-27 [PM]** [DSA](questions/2026-09-27-pm-dsa.md): Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.
 - **2026-09-27 [AM]** [CSE Core](questions/2026-09-27-am-cse-core.md): Explain the Write-Ahead Logging (WAL) protocol used in relational database systems and how it guarantees atomicity and durability during crash recovery. What are the main steps involved in the redo and undo phases of the recovery process?
 - **2026-09-26 [PM]** [Behavioral](questions/2026-09-26-pm-behavioral.md): Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?
 - **2026-09-26 [AM]** [AIML](questions/2026-09-26-am-aiml.md): Describe the process of transfer learning in deep neural networks. When would you choose to freeze certain layers, and what are the trade‑offs in terms of training speed, generalization, and risk of overfitting?
@@ -48,7 +69,6 @@ Write‑Ahead Logging (WAL) requires that every modification to database pages b
 - **2026-09-17 [AM]** [DSA](questions/2026-09-17-am-dsa.md): Given an integer array `nums`, return the length of the longest strictly increasing subsequence.
 - **2026-09-15 [PM]** [DSA](questions/2026-09-15-pm-dsa.md): Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are surrounded by water.
 - **2026-09-14 [PM]** [Behavioral](questions/2026-09-14-pm-behavioral.md): Describe a situation where you had to make a trade-off between delivering a feature quickly to meet a deadline and maintaining high code quality or technical standards. How did you evaluate the options, and what was the result?
-- **2026-09-14 [AM]** [AIML](questions/2026-09-14-am-aiml.md): Explain how Focal Loss modifies standard Cross-Entropy loss to address severe class imbalance and the dominance of easy negative examples in single-stage object detectors. What are the specific mathematical roles of the focusing parameter (gamma) and the alpha-balancing factor (alpha)?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

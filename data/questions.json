@@ -528,6 +528,16 @@
       "hint": "Consider the ordering requirement of log entries relative to physical data changes, and how the recovery algorithm scans the log before and after the crash point.",
       "answer": "Write\u2011Ahead Logging (WAL) requires that every modification to database pages be recorded in a persistent log before the actual data page is updated on disk, ensuring that the log contains a complete, recoverable history of all changes. During recovery, the system first performs a redo phase: it scans the log forward from the last checkpoint, applying every logged update to the database pages to guarantee that all committed transactions are reflected on disk. Next, it performs an undo phase by scanning the log backward from the checkpoint, rolling back any uncommitted transactions by applying the inverse of their logged updates. This two\u2011pass process guarantees atomicity (uncommitted changes are undone) and durability (committed changes survive crashes).",
       "generated_at": "2026-09-27T08:25:26.820749+00:00"
+    },
+    {
+      "date": "2026-09-27",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.",
+      "difficulty": "Medium",
+      "hint": "Use two pointers moving at different speeds to detect a cycle, then reset one pointer to the head and move both at the same speed to find the start.",
+      "answer": "1. Use Floyd\u2019s Tortoise and Hare algorithm: initialize two pointers, slow and fast, at the head. Move slow by one step and fast by two steps. If they meet, a cycle exists. 2. To find the cycle\u2019s entry, reset one pointer to the head while keeping the other at the meeting point. Move both pointers one step at a time; the point where they meet is the cycle\u2019s start. 3. If fast reaches null, there is no cycle, return null. This uses O(n) time and O(1) space.",
+      "generated_at": "2026-09-27T18:34:17.962436+00:00"
     }
   ]
 }

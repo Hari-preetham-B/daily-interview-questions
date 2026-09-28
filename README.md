@@ -24,16 +24,37 @@ During my internship at a fintech startup, a product manager expected a fully fu
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-28) — AIML
+
+**What is label smoothing in classification models, how is it implemented mathematically, and why can it improve model calibration and reduce overconfidence?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about replacing a hard one‑hot target vector with a softer distribution and how that changes the cross‑entropy loss.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Label smoothing modifies the target distribution so that the correct class has probability 1‑ε instead of 1, and each incorrect class gets ε/(K‑1) where K is the number of classes and ε is a small smoothing factor. In practice the target vector t becomes t_i = 1‑ε + ε/K for the true class and ε/K for all others. This softening of the target reduces the maximum logit value the model is encouraged to produce, discouraging over‑confident predictions. Empirically, label smoothing improves calibration by preventing the model from assigning near‑certainty to predictions, and can also act as a regularizer that mitigates overfitting, especially in large neural nets trained with cross‑entropy. The technique is simple to implement as a small change to the loss function and works well in many image‑classification, NLP, and speech‑recognition tasks.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **55**
-- DSA: 14 · AI/ML: 13 · CSE Core: 14 · Behavioral: 14
+- Total questions logged: **56**
+- DSA: 14 · AI/ML: 14 · CSE Core: 14 · Behavioral: 14
 
 ## 🗂️ Recent Questions
 
+- **2026-09-28 [PM]** [AIML](questions/2026-09-28-pm-aiml.md): What is label smoothing in classification models, how is it implemented mathematically, and why can it improve model calibration and reduce overconfidence?
 - **2026-09-28 [AM]** [Behavioral](questions/2026-09-28-am-behavioral.md): Tell me about a time when you had to manage a stakeholder with unrealistic expectations about project delivery. How did you handle the situation and what was the outcome?
 - **2026-09-27 [PM]** [DSA](questions/2026-09-27-pm-dsa.md): Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.
 - **2026-09-27 [AM]** [CSE Core](questions/2026-09-27-am-cse-core.md): Explain the Write-Ahead Logging (WAL) protocol used in relational database systems and how it guarantees atomicity and durability during crash recovery. What are the main steps involved in the redo and undo phases of the recovery process?
@@ -48,7 +69,6 @@ During my internship at a fintech startup, a product manager expected a fully fu
 - **2026-09-22 [PM]** [Behavioral](questions/2026-09-22-pm-behavioral.md): Describe a situation where you worked with a team spread across multiple time zones. How did you coordinate tasks and maintain effective communication?
 - **2026-09-19 [PM]** [DSA](questions/2026-09-19-pm-dsa.md): Given an integer array `height` of length `n`, where each element represents the height of a vertical line drawn at coordinate `(i, height[i])`, find two lines that together with the x-axis form a container that holds the most water. Return the maximum area of water the container can store. Note that you may not slant the container.
 - **2026-09-17 [AM]** [DSA](questions/2026-09-17-am-dsa.md): Given an integer array `nums`, return the length of the longest strictly increasing subsequence.
-- **2026-09-15 [PM]** [DSA](questions/2026-09-15-pm-dsa.md): Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are surrounded by water.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

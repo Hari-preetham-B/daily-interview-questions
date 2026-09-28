@@ -538,6 +538,16 @@
       "hint": "Use two pointers moving at different speeds to detect a cycle, then reset one pointer to the head and move both at the same speed to find the start.",
       "answer": "1. Use Floyd\u2019s Tortoise and Hare algorithm: initialize two pointers, slow and fast, at the head. Move slow by one step and fast by two steps. If they meet, a cycle exists. 2. To find the cycle\u2019s entry, reset one pointer to the head while keeping the other at the meeting point. Move both pointers one step at a time; the point where they meet is the cycle\u2019s start. 3. If fast reaches null, there is no cycle, return null. This uses O(n) time and O(1) space.",
       "generated_at": "2026-09-27T18:34:17.962436+00:00"
+    },
+    {
+      "date": "2026-09-28",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to manage a stakeholder with unrealistic expectations about project delivery. How did you handle the situation and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Consider how you assessed the situation, communicated the constraints, and negotiated a realistic plan.",
+      "answer": "During my internship at a fintech startup, a product manager expected a fully functional payment gateway within one week, which conflicted with the technical complexity and our current sprint commitments. I scheduled a brief meeting to present a realistic timeline, outlining the required steps, potential risks, and impact on quality. By providing concrete data on development effort and demonstrating a phased rollout plan, I helped align expectations with what the team could deliver. The stakeholder agreed to a two\u2011week timeline for a minimum viable version, which allowed us to meet quality standards and avoid a rushed release.",
+      "generated_at": "2026-09-28T08:50:42.471931+00:00"
     }
   ]
 }

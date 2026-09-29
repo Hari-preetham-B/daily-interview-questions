@@ -24,16 +24,37 @@ Use a single pass with two counters. First scan left‑to‑right: increment a l
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-29) — CSE Core
+
+**What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the problems caused by a single large interface that forces clients to depend on methods they never use, and how splitting it into smaller, client‑specific interfaces helps.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+The Interface Segregation Principle states that no client should be forced to depend on methods it does not use; therefore, interfaces should be fine‑grained and specific to the needs of each client. By breaking a "fat" interface into several smaller ones, each implementing class only needs to provide the behavior that its consumers require, reducing unnecessary coupling. This leads to easier code evolution because changes to one interface affect only the clients that actually use it, minimizing the risk of unintended side effects. It also enhances testability, as mock implementations can target only the relevant subset of functionality, and improves readability by clarifying the contract each client expects.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **57**
-- DSA: 15 · AI/ML: 14 · CSE Core: 14 · Behavioral: 14
+- Total questions logged: **58**
+- DSA: 15 · AI/ML: 14 · CSE Core: 15 · Behavioral: 14
 
 ## 🗂️ Recent Questions
 
+- **2026-09-29 [PM]** [CSE Core](questions/2026-09-29-pm-cse-core.md): What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?
 - **2026-09-29 [AM]** [DSA](questions/2026-09-29-am-dsa.md): Given a string consisting only of '(' and ')', return the length of the longest substring that forms a valid (well‑balanced) set of parentheses. Aim for O(n) time and O(1) extra space.
 - **2026-09-28 [PM]** [AIML](questions/2026-09-28-pm-aiml.md): What is label smoothing in classification models, how is it implemented mathematically, and why can it improve model calibration and reduce overconfidence?
 - **2026-09-28 [AM]** [Behavioral](questions/2026-09-28-am-behavioral.md): Tell me about a time when you had to manage a stakeholder with unrealistic expectations about project delivery. How did you handle the situation and what was the outcome?
@@ -48,7 +69,6 @@ Use a single pass with two counters. First scan left‑to‑right: increment a l
 - **2026-09-23 [PM]** [DSA](questions/2026-09-23-pm-dsa.md): Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.
 - **2026-09-23 [AM]** [CSE Core](questions/2026-09-23-am-cse-core.md): Explain the difference between preemptive and cooperative multitasking in operating systems and give an example of each.
 - **2026-09-22 [PM]** [Behavioral](questions/2026-09-22-pm-behavioral.md): Describe a situation where you worked with a team spread across multiple time zones. How did you coordinate tasks and maintain effective communication?
-- **2026-09-19 [PM]** [DSA](questions/2026-09-19-pm-dsa.md): Given an integer array `height` of length `n`, where each element represents the height of a vertical line drawn at coordinate `(i, height[i])`, find two lines that together with the x-axis form a container that holds the most water. Return the maximum area of water the container can store. Note that you may not slant the container.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

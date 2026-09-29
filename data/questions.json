@@ -568,6 +568,16 @@
       "hint": "Consider scanning the string while keeping track of the last index where a mismatch occurred, and use a counter to record unmatched '(' positions.",
       "answer": "Use a single pass with two counters. First scan left\u2011to\u2011right: increment a left counter for '(' and a right counter for ')'. When left==right, update maxLen = max(maxLen, 2*right). If right exceeds left, reset both counters to zero. Then scan right\u2011to\u2011left repeating the same logic with roles swapped (right counter first). The maximum length found in either pass is the answer. This runs in O(n) time and O(1) extra space.",
       "generated_at": "2026-09-29T08:48:53.250269+00:00"
+    },
+    {
+      "date": "2026-09-29",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?",
+      "difficulty": "Medium",
+      "hint": "Consider the problems caused by a single large interface that forces clients to depend on methods they never use, and how splitting it into smaller, client\u2011specific interfaces helps.",
+      "answer": "The Interface Segregation Principle states that no client should be forced to depend on methods it does not use; therefore, interfaces should be fine\u2011grained and specific to the needs of each client. By breaking a \"fat\" interface into several smaller ones, each implementing class only needs to provide the behavior that its consumers require, reducing unnecessary coupling. This leads to easier code evolution because changes to one interface affect only the clients that actually use it, minimizing the risk of unintended side effects. It also enhances testability, as mock implementations can target only the relevant subset of functionality, and improves readability by clarifying the contract each client expects.",
+      "generated_at": "2026-09-29T19:32:12.253305+00:00"
     }
   ]
 }

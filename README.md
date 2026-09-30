@@ -24,16 +24,37 @@ Dropout randomly zeroes a fraction p of activations in a layer during training. 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-09-30) — Behavioral
+
+**Tell me about a time when you had to take on a leadership role in a project because the original team leader was unavailable. How did you manage responsibilities, and what was the impact on the team and project?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you organized the team, communicated changes, and maintained progress.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+When my project lead fell ill during the sprint, I quickly organized a stand‑up to assess the situation and redistributed tasks based on each member’s strengths. I set up a shared task board and clarified priorities, while keeping the team’s morale high by acknowledging their flexibility. I also maintained regular communication with stakeholders to update timelines and expectations. As a result, the project stayed on schedule, the team reported feeling supported, and the deliverable was completed on time with no loss in quality.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **59**
-- DSA: 15 · AI/ML: 15 · CSE Core: 15 · Behavioral: 14
+- Total questions logged: **60**
+- DSA: 15 · AI/ML: 15 · CSE Core: 15 · Behavioral: 15
 
 ## 🗂️ Recent Questions
 
+- **2026-09-30 [PM]** [Behavioral](questions/2026-09-30-pm-behavioral.md): Tell me about a time when you had to take on a leadership role in a project because the original team leader was unavailable. How did you manage responsibilities, and what was the impact on the team and project?
 - **2026-09-30 [AM]** [AIML](questions/2026-09-30-am-aiml.md): Explain how dropout acts as a regularization technique in neural networks. Include the mathematical expectation of the output during training and inference, and describe why dropout can be interpreted as model averaging over many subnetworks.
 - **2026-09-29 [PM]** [CSE Core](questions/2026-09-29-pm-cse-core.md): What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?
 - **2026-09-29 [AM]** [DSA](questions/2026-09-29-am-dsa.md): Given a string consisting only of '(' and ')', return the length of the longest substring that forms a valid (well‑balanced) set of parentheses. Aim for O(n) time and O(1) extra space.
@@ -48,7 +69,6 @@ Dropout randomly zeroes a fraction p of activations in a layer during training. 
 - **2026-09-24 [PM]** [AIML](questions/2026-09-24-pm-aiml.md): In a Variational Autoencoder (VAE), the loss function includes a KL‑divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.
 - **2026-09-24 [AM]** [Behavioral](questions/2026-09-24-am-behavioral.md): Describe a time when you had to adapt your communication style to effectively collaborate with a colleague or stakeholder who had a different technical background than yours. How did you adjust your approach, and what was the result?
 - **2026-09-23 [PM]** [DSA](questions/2026-09-23-pm-dsa.md): Given an array of integers nums, find the length of the shortest contiguous subarray that, if sorted in ascending order, would make the whole array sorted in ascending order. Return 0 if the array is already sorted.
-- **2026-09-23 [AM]** [CSE Core](questions/2026-09-23-am-cse-core.md): Explain the difference between preemptive and cooperative multitasking in operating systems and give an example of each.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

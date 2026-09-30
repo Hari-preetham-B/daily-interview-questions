@@ -578,6 +578,16 @@
       "hint": "Consider the problems caused by a single large interface that forces clients to depend on methods they never use, and how splitting it into smaller, client\u2011specific interfaces helps.",
       "answer": "The Interface Segregation Principle states that no client should be forced to depend on methods it does not use; therefore, interfaces should be fine\u2011grained and specific to the needs of each client. By breaking a \"fat\" interface into several smaller ones, each implementing class only needs to provide the behavior that its consumers require, reducing unnecessary coupling. This leads to easier code evolution because changes to one interface affect only the clients that actually use it, minimizing the risk of unintended side effects. It also enhances testability, as mock implementations can target only the relevant subset of functionality, and improves readability by clarifying the contract each client expects.",
       "generated_at": "2026-09-29T19:32:12.253305+00:00"
+    },
+    {
+      "date": "2026-09-30",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain how dropout acts as a regularization technique in neural networks. Include the mathematical expectation of the output during training and inference, and describe why dropout can be interpreted as model averaging over many subnetworks.",
+      "difficulty": "Medium",
+      "hint": "Think about the scaling factor applied to the activations during training and what the network sees during inference.",
+      "answer": "Dropout randomly zeroes a fraction p of activations in a layer during training. The remaining activations are scaled by 1/(1\u2011p) so that the expected activation value stays the same: E[dropout(a)]=a. During inference the full network is used without dropping units; the weights are effectively scaled by (1\u2011p). This scaling ensures consistent output distribution between training and test. Because each training step samples a different sub\u2011network, the final model can be viewed as an ensemble of 2^n subnetworks averaged together, reducing variance and helping to prevent overfitting.",
+      "generated_at": "2026-09-30T08:48:26.192398+00:00"
     }
   ]
 }

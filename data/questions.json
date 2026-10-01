@@ -598,6 +598,16 @@
       "hint": "Consider how you organized the team, communicated changes, and maintained progress.",
       "answer": "When my project lead fell ill during the sprint, I quickly organized a stand\u2011up to assess the situation and redistributed tasks based on each member\u2019s strengths. I set up a shared task board and clarified priorities, while keeping the team\u2019s morale high by acknowledging their flexibility. I also maintained regular communication with stakeholders to update timelines and expectations. As a result, the project stayed on schedule, the team reported feeling supported, and the deliverable was completed on time with no loss in quality.",
       "generated_at": "2026-09-30T19:32:50.783931+00:00"
+    },
+    {
+      "date": "2026-10-01",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain how the Linux Completely Fair Scheduler (CFS) approximates fairness using virtual runtime, and describe a scenario where CFS might lead to starvation of a low\u2011priority task.",
+      "difficulty": "Medium",
+      "hint": "Think about how CFS keeps track of each task\u2019s execution time and how it uses a red\u2011black tree to select the next task.",
+      "answer": "CFS maintains a virtual runtime (vruntime) for each task, which increases by the actual CPU time the task has consumed, but is scaled by the task\u2019s nice value so that lower\u2011priority tasks accumulate vruntime faster. All runnable tasks are stored in a red\u2011black tree keyed by vruntime; the task with the smallest vruntime is selected next, ensuring that over time each task gets a proportional share of CPU. Because CFS always picks the task with the lowest vruntime, a very low\u2011priority task that has never run will have a very low vruntime and can be scheduled frequently. However, if a group of high\u2011priority tasks keeps consuming CPU, their vruntime grows slowly, staying ahead of the low\u2011priority task, which can lead to the low\u2011priority task being starved for extended periods, especially in systems with many active high\u2011priority threads or in real\u2011time workloads where priority inversion occurs.",
+      "generated_at": "2026-10-01T09:12:30.443883+00:00"
     }
   ]
 }

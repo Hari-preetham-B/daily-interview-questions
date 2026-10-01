@@ -608,6 +608,16 @@
       "hint": "Think about how CFS keeps track of each task\u2019s execution time and how it uses a red\u2011black tree to select the next task.",
       "answer": "CFS maintains a virtual runtime (vruntime) for each task, which increases by the actual CPU time the task has consumed, but is scaled by the task\u2019s nice value so that lower\u2011priority tasks accumulate vruntime faster. All runnable tasks are stored in a red\u2011black tree keyed by vruntime; the task with the smallest vruntime is selected next, ensuring that over time each task gets a proportional share of CPU. Because CFS always picks the task with the lowest vruntime, a very low\u2011priority task that has never run will have a very low vruntime and can be scheduled frequently. However, if a group of high\u2011priority tasks keeps consuming CPU, their vruntime grows slowly, staying ahead of the low\u2011priority task, which can lead to the low\u2011priority task being starved for extended periods, especially in systems with many active high\u2011priority threads or in real\u2011time workloads where priority inversion occurs.",
       "generated_at": "2026-10-01T09:12:30.443883+00:00"
+    },
+    {
+      "date": "2026-10-01",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell\u2019s value is strictly greater than the current cell\u2019s value. Return the maximum length among all such paths.",
+      "difficulty": "Medium",
+      "hint": "Use DFS from each cell and cache the result for each cell to avoid recomputation.",
+      "answer": "Perform a depth\u2011first search starting from every cell. For a cell (i,j), recursively compute the longest increasing path from each neighbor that has a greater value, then add one for the current cell. Store the computed length in a memoization table so each cell is processed only once. The overall time complexity is O(m\u00b7n) and the space complexity is also O(m\u00b7n) for the memo table and recursion stack.",
+      "generated_at": "2026-10-01T19:39:53.560312+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ CFS maintains a virtual runtime (vruntime) for each task, which increases by the
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-01) — DSA
+
+**Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell’s value is strictly greater than the current cell’s value. Return the maximum length among all such paths.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use DFS from each cell and cache the result for each cell to avoid recomputation.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Perform a depth‑first search starting from every cell. For a cell (i,j), recursively compute the longest increasing path from each neighbor that has a greater value, then add one for the current cell. Store the computed length in a memoization table so each cell is processed only once. The overall time complexity is O(m·n) and the space complexity is also O(m·n) for the memo table and recursion stack.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **61**
-- DSA: 15 · AI/ML: 15 · CSE Core: 16 · Behavioral: 15
+- Total questions logged: **62**
+- DSA: 16 · AI/ML: 15 · CSE Core: 16 · Behavioral: 15
 
 ## 🗂️ Recent Questions
 
+- **2026-10-01 [PM]** [DSA](questions/2026-10-01-pm-dsa.md): Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell’s value is strictly greater than the current cell’s value. Return the maximum length among all such paths.
 - **2026-10-01 [AM]** [CSE Core](questions/2026-10-01-am-cse-core.md): Explain how the Linux Completely Fair Scheduler (CFS) approximates fairness using virtual runtime, and describe a scenario where CFS might lead to starvation of a low‑priority task.
 - **2026-09-30 [PM]** [Behavioral](questions/2026-09-30-pm-behavioral.md): Tell me about a time when you had to take on a leadership role in a project because the original team leader was unavailable. How did you manage responsibilities, and what was the impact on the team and project?
 - **2026-09-30 [AM]** [AIML](questions/2026-09-30-am-aiml.md): Explain how dropout acts as a regularization technique in neural networks. Include the mathematical expectation of the output during training and inference, and describe why dropout can be interpreted as model averaging over many subnetworks.
@@ -48,7 +69,6 @@ CFS maintains a virtual runtime (vruntime) for each task, which increases by the
 - **2026-09-25 [PM]** [CSE Core](questions/2026-09-25-pm-cse-core.md): Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?
 - **2026-09-25 [AM]** [DSA](questions/2026-09-25-am-dsa.md): You are given an integer array arr consisting only of 0s and 1s. Find the length of the longest contiguous subarray that contains an equal number of 0s and 1s.
 - **2026-09-24 [PM]** [AIML](questions/2026-09-24-pm-aiml.md): In a Variational Autoencoder (VAE), the loss function includes a KL‑divergence term between the approximate posterior q(z|x) and the prior p(z). Explain the intuition behind this term, how it influences the structure of the latent space, and what effects arise if its weight is set too high or too low during training.
-- **2026-09-24 [AM]** [Behavioral](questions/2026-09-24-am-behavioral.md): Describe a time when you had to adapt your communication style to effectively collaborate with a colleague or stakeholder who had a different technical background than yours. How did you adjust your approach, and what was the result?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

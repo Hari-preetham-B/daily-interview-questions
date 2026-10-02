@@ -628,6 +628,16 @@
       "hint": "Focus on a situation where you identified a gap, gathered evidence, and communicated benefits to get buy\u2011in.",
       "answer": "In my sophomore year, our project suffered from slow build times due to an outdated scripting approach. I researched modern CI/CD tools, created a proof\u2011of\u2011concept pipeline that cut build time by 40%, and prepared a short presentation highlighting the productivity gains and cost savings. I addressed concerns about the learning curve by offering a short training session and documenting the setup. After a team meeting, we voted to adopt the new pipeline, which we fully integrated by the end of the semester, resulting in faster releases and higher morale.",
       "generated_at": "2026-10-02T08:45:41.243294+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.",
+      "difficulty": "Medium",
+      "hint": "Consider monitoring a metric on a hold\u2011out set and stopping when it stops improving.",
+      "answer": "Early stopping is a regularization technique that halts training when the performance on a validation set no longer improves, thereby preventing overfitting. To implement it, split the data into training and validation splits, choose a metric such as validation loss or accuracy, and after each epoch compare the current metric to the best seen so far. If the metric does not improve for a predefined number of consecutive epochs (the patience parameter), stop training and restore the model weights from the epoch with the best metric. If the validation set is not representative of the true data distribution, early stopping may either stop too early (under\u2011fitting) or too late (still over\u2011fitting), leading to suboptimal generalization. Hence a properly randomized, stratified, and sufficiently large validation set is crucial.",
+      "generated_at": "2026-10-02T19:26:05.478831+00:00"
     }
   ]
 }

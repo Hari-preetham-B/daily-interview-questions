@@ -24,16 +24,37 @@ In my sophomore year, our project suffered from slow build times due to an outda
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-02) — AIML
+
+**Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider monitoring a metric on a hold‑out set and stopping when it stops improving.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Early stopping is a regularization technique that halts training when the performance on a validation set no longer improves, thereby preventing overfitting. To implement it, split the data into training and validation splits, choose a metric such as validation loss or accuracy, and after each epoch compare the current metric to the best seen so far. If the metric does not improve for a predefined number of consecutive epochs (the patience parameter), stop training and restore the model weights from the epoch with the best metric. If the validation set is not representative of the true data distribution, early stopping may either stop too early (under‑fitting) or too late (still over‑fitting), leading to suboptimal generalization. Hence a properly randomized, stratified, and sufficiently large validation set is crucial.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **63**
-- DSA: 16 · AI/ML: 15 · CSE Core: 16 · Behavioral: 16
+- Total questions logged: **64**
+- DSA: 16 · AI/ML: 16 · CSE Core: 16 · Behavioral: 16
 
 ## 🗂️ Recent Questions
 
+- **2026-10-02 [PM]** [AIML](questions/2026-10-02-pm-aiml.md): Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.
 - **2026-10-02 [AM]** [Behavioral](questions/2026-10-02-am-behavioral.md): Can you describe a time when you successfully convinced your team to adopt a new technology or process that they were initially hesitant about?
 - **2026-10-01 [PM]** [DSA](questions/2026-10-01-pm-dsa.md): Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell’s value is strictly greater than the current cell’s value. Return the maximum length among all such paths.
 - **2026-10-01 [AM]** [CSE Core](questions/2026-10-01-am-cse-core.md): Explain how the Linux Completely Fair Scheduler (CFS) approximates fairness using virtual runtime, and describe a scenario where CFS might lead to starvation of a low‑priority task.
@@ -48,7 +69,6 @@ In my sophomore year, our project suffered from slow build times due to an outda
 - **2026-09-26 [PM]** [Behavioral](questions/2026-09-26-pm-behavioral.md): Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?
 - **2026-09-26 [AM]** [AIML](questions/2026-09-26-am-aiml.md): Describe the process of transfer learning in deep neural networks. When would you choose to freeze certain layers, and what are the trade‑offs in terms of training speed, generalization, and risk of overfitting?
 - **2026-09-25 [PM]** [CSE Core](questions/2026-09-25-pm-cse-core.md): Explain the difference between a process and a thread in terms of resource allocation, scheduling, and isolation. How do these differences impact the design of concurrent applications?
-- **2026-09-25 [AM]** [DSA](questions/2026-09-25-am-dsa.md): You are given an integer array arr consisting only of 0s and 1s. Find the length of the longest contiguous subarray that contains an equal number of 0s and 1s.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

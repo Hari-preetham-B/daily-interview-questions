@@ -618,6 +618,16 @@
       "hint": "Use DFS from each cell and cache the result for each cell to avoid recomputation.",
       "answer": "Perform a depth\u2011first search starting from every cell. For a cell (i,j), recursively compute the longest increasing path from each neighbor that has a greater value, then add one for the current cell. Store the computed length in a memoization table so each cell is processed only once. The overall time complexity is O(m\u00b7n) and the space complexity is also O(m\u00b7n) for the memo table and recursion stack.",
       "generated_at": "2026-10-01T19:39:53.560312+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Can you describe a time when you successfully convinced your team to adopt a new technology or process that they were initially hesitant about?",
+      "difficulty": "Medium",
+      "hint": "Focus on a situation where you identified a gap, gathered evidence, and communicated benefits to get buy\u2011in.",
+      "answer": "In my sophomore year, our project suffered from slow build times due to an outdated scripting approach. I researched modern CI/CD tools, created a proof\u2011of\u2011concept pipeline that cut build time by 40%, and prepared a short presentation highlighting the productivity gains and cost savings. I addressed concerns about the learning curve by offering a short training session and documenting the setup. After a team meeting, we voted to adopt the new pipeline, which we fully integrated by the end of the semester, resulting in faster releases and higher morale.",
+      "generated_at": "2026-10-02T08:45:41.243294+00:00"
     }
   ]
 }

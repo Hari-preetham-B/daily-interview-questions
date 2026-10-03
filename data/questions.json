@@ -648,6 +648,16 @@
       "hint": "Consider prefix sums and their remainders modulo k.",
       "answer": "Compute prefix sums modulo k while keeping the earliest index where each remainder occurs. For each position, the difference between the current remainder and an earlier same remainder gives a subarray sum divisible by k. Track the maximum length. Time complexity O(n) and space O(k). If k is 0, handle separately by looking for subarrays whose sum is 0.",
       "generated_at": "2026-10-03T08:23:23.768398+00:00"
+    },
+    {
+      "date": "2026-10-03",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?",
+      "difficulty": "Medium",
+      "hint": "Consider the effect of frequent page faults on CPU utilization and the set of pages a process actively uses.",
+      "answer": "Thrashing occurs when a system spends most of its time swapping pages in and out of memory rather than executing useful work, typically caused by a working set larger than available physical memory. As processes repeatedly reference pages not in RAM, page faults trigger excessive paging, leading to high CPU overhead and low throughput. The working set model mitigates thrashing by tracking the set of pages a process has referenced within a recent window of time; the OS can then ensure enough frames are allocated to keep this working set resident, or it may swap out entire processes whose working sets exceed the available memory, thereby reducing the paging rate.",
+      "generated_at": "2026-10-03T18:05:51.657025+00:00"
     }
   ]
 }

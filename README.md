@@ -24,16 +24,37 @@ Compute prefix sums modulo k while keeping the earliest index where each remaind
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-03) — CSE Core
+
+**What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the effect of frequent page faults on CPU utilization and the set of pages a process actively uses.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Thrashing occurs when a system spends most of its time swapping pages in and out of memory rather than executing useful work, typically caused by a working set larger than available physical memory. As processes repeatedly reference pages not in RAM, page faults trigger excessive paging, leading to high CPU overhead and low throughput. The working set model mitigates thrashing by tracking the set of pages a process has referenced within a recent window of time; the OS can then ensure enough frames are allocated to keep this working set resident, or it may swap out entire processes whose working sets exceed the available memory, thereby reducing the paging rate.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **65**
-- DSA: 17 · AI/ML: 16 · CSE Core: 16 · Behavioral: 16
+- Total questions logged: **66**
+- DSA: 17 · AI/ML: 16 · CSE Core: 17 · Behavioral: 16
 
 ## 🗂️ Recent Questions
 
+- **2026-10-03 [PM]** [CSE Core](questions/2026-10-03-pm-cse-core.md): What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?
 - **2026-10-03 [AM]** [DSA](questions/2026-10-03-am-dsa.md): Given an integer array nums and an integer k, find the length of the longest contiguous subarray whose sum is divisible by k. If no such subarray exists, return 0.
 - **2026-10-02 [PM]** [AIML](questions/2026-10-02-pm-aiml.md): Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.
 - **2026-10-02 [AM]** [Behavioral](questions/2026-10-02-am-behavioral.md): Can you describe a time when you successfully convinced your team to adopt a new technology or process that they were initially hesitant about?
@@ -48,7 +69,6 @@ Compute prefix sums modulo k while keeping the earliest index where each remaind
 - **2026-09-27 [PM]** [DSA](questions/2026-09-27-pm-dsa.md): Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.
 - **2026-09-27 [AM]** [CSE Core](questions/2026-09-27-am-cse-core.md): Explain the Write-Ahead Logging (WAL) protocol used in relational database systems and how it guarantees atomicity and durability during crash recovery. What are the main steps involved in the redo and undo phases of the recovery process?
 - **2026-09-26 [PM]** [Behavioral](questions/2026-09-26-pm-behavioral.md): Tell me about a time when you had to mentor a junior developer or teammate who was new to the tech stack you were using. How did you ensure they understood the concepts and contributed effectively?
-- **2026-09-26 [AM]** [AIML](questions/2026-09-26-am-aiml.md): Describe the process of transfer learning in deep neural networks. When would you choose to freeze certain layers, and what are the trade‑offs in terms of training speed, generalization, and risk of overfitting?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

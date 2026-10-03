@@ -638,6 +638,16 @@
       "hint": "Consider monitoring a metric on a hold\u2011out set and stopping when it stops improving.",
       "answer": "Early stopping is a regularization technique that halts training when the performance on a validation set no longer improves, thereby preventing overfitting. To implement it, split the data into training and validation splits, choose a metric such as validation loss or accuracy, and after each epoch compare the current metric to the best seen so far. If the metric does not improve for a predefined number of consecutive epochs (the patience parameter), stop training and restore the model weights from the epoch with the best metric. If the validation set is not representative of the true data distribution, early stopping may either stop too early (under\u2011fitting) or too late (still over\u2011fitting), leading to suboptimal generalization. Hence a properly randomized, stratified, and sufficiently large validation set is crucial.",
       "generated_at": "2026-10-02T19:26:05.478831+00:00"
+    },
+    {
+      "date": "2026-10-03",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array nums and an integer k, find the length of the longest contiguous subarray whose sum is divisible by k. If no such subarray exists, return 0.",
+      "difficulty": "Medium",
+      "hint": "Consider prefix sums and their remainders modulo k.",
+      "answer": "Compute prefix sums modulo k while keeping the earliest index where each remainder occurs. For each position, the difference between the current remainder and an earlier same remainder gives a subarray sum divisible by k. Track the maximum length. Time complexity O(n) and space O(k). If k is 0, handle separately by looking for subarrays whose sum is 0.",
+      "generated_at": "2026-10-03T08:23:23.768398+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ Teacher forcing is a training technique where the decoder of a seq2seq model is 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-04) — Behavioral
+
+**Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how you gathered evidence, presented it, and addressed concerns.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In my senior year, I noticed our data processing pipeline was bottlenecking at a specific step. I identified a cloud-based solution that could scale but had higher upfront cost. I gathered benchmarks, cost estimates, and a projected timeline showing a 30% reduction in processing time. I prepared a slide deck and presented it to the department head and finance team. I addressed their concerns by proposing a phased rollout and a cost-benefit analysis over 12 months. They approved a pilot budget, and after three months we saw the expected performance gains, validating the investment.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **67**
-- DSA: 17 · AI/ML: 17 · CSE Core: 17 · Behavioral: 16
+- Total questions logged: **68**
+- DSA: 17 · AI/ML: 17 · CSE Core: 17 · Behavioral: 17
 
 ## 🗂️ Recent Questions
 
+- **2026-10-04 [PM]** [Behavioral](questions/2026-10-04-pm-behavioral.md): Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.
 - **2026-10-04 [AM]** [AIML](questions/2026-10-04-am-aiml.md): Explain the concept of teacher forcing in training sequence‑to‑sequence models. Why is it useful, what are the potential pitfalls, and how can scheduled sampling mitigate these pitfalls?
 - **2026-10-03 [PM]** [CSE Core](questions/2026-10-03-pm-cse-core.md): What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?
 - **2026-10-03 [AM]** [DSA](questions/2026-10-03-am-dsa.md): Given an integer array nums and an integer k, find the length of the longest contiguous subarray whose sum is divisible by k. If no such subarray exists, return 0.
@@ -48,7 +69,6 @@ Teacher forcing is a training technique where the decoder of a seq2seq model is 
 - **2026-09-28 [PM]** [AIML](questions/2026-09-28-pm-aiml.md): What is label smoothing in classification models, how is it implemented mathematically, and why can it improve model calibration and reduce overconfidence?
 - **2026-09-28 [AM]** [Behavioral](questions/2026-09-28-am-behavioral.md): Tell me about a time when you had to manage a stakeholder with unrealistic expectations about project delivery. How did you handle the situation and what was the outcome?
 - **2026-09-27 [PM]** [DSA](questions/2026-09-27-pm-dsa.md): Given a singly linked list where each node has a 'next' pointer, it may contain a cycle. Write a function that returns the node where the cycle begins. If there is no cycle, return null. Your solution should run in O(n) time and use O(1) extra space.
-- **2026-09-27 [AM]** [CSE Core](questions/2026-09-27-am-cse-core.md): Explain the Write-Ahead Logging (WAL) protocol used in relational database systems and how it guarantees atomicity and durability during crash recovery. What are the main steps involved in the redo and undo phases of the recovery process?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

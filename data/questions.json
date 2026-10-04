@@ -668,6 +668,16 @@
       "hint": "Think about what the decoder receives during training versus inference.",
       "answer": "Teacher forcing is a training technique where the decoder of a seq2seq model is fed the true previous token instead of its own prediction. It speeds up convergence and provides strong supervision, but it creates a discrepancy between training and inference because at test time the decoder must rely on its own outputs. This can lead to exposure bias, where errors accumulate and degrade performance. Scheduled sampling gradually replaces ground\u2011truth tokens with model predictions during training, thereby exposing the model to its own mistakes and reducing the mismatch between training and inference.",
       "generated_at": "2026-10-04T08:37:30.316595+00:00"
+    },
+    {
+      "date": "2026-10-04",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.",
+      "difficulty": "Medium",
+      "hint": "Think about how you gathered evidence, presented it, and addressed concerns.",
+      "answer": "In my senior year, I noticed our data processing pipeline was bottlenecking at a specific step. I identified a cloud-based solution that could scale but had higher upfront cost. I gathered benchmarks, cost estimates, and a projected timeline showing a 30% reduction in processing time. I prepared a slide deck and presented it to the department head and finance team. I addressed their concerns by proposing a phased rollout and a cost-benefit analysis over 12 months. They approved a pilot budget, and after three months we saw the expected performance gains, validating the investment.",
+      "generated_at": "2026-10-04T18:15:55.646579+00:00"
     }
   ]
 }

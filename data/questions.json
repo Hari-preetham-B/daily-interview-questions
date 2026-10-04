@@ -658,6 +658,16 @@
       "hint": "Consider the effect of frequent page faults on CPU utilization and the set of pages a process actively uses.",
       "answer": "Thrashing occurs when a system spends most of its time swapping pages in and out of memory rather than executing useful work, typically caused by a working set larger than available physical memory. As processes repeatedly reference pages not in RAM, page faults trigger excessive paging, leading to high CPU overhead and low throughput. The working set model mitigates thrashing by tracking the set of pages a process has referenced within a recent window of time; the OS can then ensure enough frames are allocated to keep this working set resident, or it may swap out entire processes whose working sets exceed the available memory, thereby reducing the paging rate.",
       "generated_at": "2026-10-03T18:05:51.657025+00:00"
+    },
+    {
+      "date": "2026-10-04",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain the concept of teacher forcing in training sequence\u2011to\u2011sequence models. Why is it useful, what are the potential pitfalls, and how can scheduled sampling mitigate these pitfalls?",
+      "difficulty": "Medium",
+      "hint": "Think about what the decoder receives during training versus inference.",
+      "answer": "Teacher forcing is a training technique where the decoder of a seq2seq model is fed the true previous token instead of its own prediction. It speeds up convergence and provides strong supervision, but it creates a discrepancy between training and inference because at test time the decoder must rely on its own outputs. This can lead to exposure bias, where errors accumulate and degrade performance. Scheduled sampling gradually replaces ground\u2011truth tokens with model predictions during training, thereby exposing the model to its own mistakes and reducing the mismatch between training and inference.",
+      "generated_at": "2026-10-04T08:37:30.316595+00:00"
     }
   ]
 }

@@ -678,6 +678,16 @@
       "hint": "Think about how you gathered evidence, presented it, and addressed concerns.",
       "answer": "In my senior year, I noticed our data processing pipeline was bottlenecking at a specific step. I identified a cloud-based solution that could scale but had higher upfront cost. I gathered benchmarks, cost estimates, and a projected timeline showing a 30% reduction in processing time. I prepared a slide deck and presented it to the department head and finance team. I addressed their concerns by proposing a phased rollout and a cost-benefit analysis over 12 months. They approved a pilot budget, and after three months we saw the expected performance gains, validating the investment.",
       "generated_at": "2026-10-04T18:15:55.646579+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "In Java, what is the difference between an abstract class and an interface, and in which scenarios would you choose one over the other?",
+      "difficulty": "Medium",
+      "hint": "Think about method implementation, inheritance, and the ability to provide default behavior.",
+      "answer": "An abstract class can contain both abstract methods without implementation and concrete methods with implementation, allowing shared code and state via fields. An interface, until Java 8, could only declare abstract methods, but now can also provide default methods and static methods, yet it cannot hold instance fields. Use an abstract class when you want to share common implementation or maintain state among subclasses, especially when the classes belong to the same inheritance hierarchy. Use an interface when you need to define a contract that can be implemented by classes across unrelated hierarchies, or when you want to provide optional default behavior without forcing inheritance.",
+      "generated_at": "2026-10-05T09:21:47.568594+00:00"
     }
   ]
 }

@@ -688,6 +688,16 @@
       "hint": "Think about method implementation, inheritance, and the ability to provide default behavior.",
       "answer": "An abstract class can contain both abstract methods without implementation and concrete methods with implementation, allowing shared code and state via fields. An interface, until Java 8, could only declare abstract methods, but now can also provide default methods and static methods, yet it cannot hold instance fields. Use an abstract class when you want to share common implementation or maintain state among subclasses, especially when the classes belong to the same inheritance hierarchy. Use an interface when you need to define a contract that can be implemented by classes across unrelated hierarchies, or when you want to provide optional default behavior without forcing inheritance.",
       "generated_at": "2026-10-05T09:21:47.568594+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.",
+      "difficulty": "Medium",
+      "hint": "Think about how a merge sort can give you order information for the left and right halves simultaneously; you can count qualifying pairs while merging the two sorted sub\u2011arrays.",
+      "answer": "Use a divide\u2011and\u2011conquer approach similar to merge sort. Recursively sort the left and right halves, and before merging, for each element in the left half advance a pointer in the right half until nums[left[i]] <= 2*nums[right[j]]; the number of remaining elements in the right half forms reverse pairs with left[i]. Then merge the two halves in the usual O(n) way. This yields O(n log n) time and O(n) extra space for the temporary array. Below is a concise Python implementation:\npython\ndef reversePairs(nums):\n    def merge_sort(l, r):\n        if r - l <= 1:\n            return 0\n        mid = (l + r) // 2\n        cnt = merge_sort(l, mid) + merge_sort(mid, r)\n        j = mid\n        for i in range(l, mid):\n            while j < r and nums[i] > 2 * nums[j]:\n                j += 1\n            cnt += j - mid\n        # merge step\n        temp = []\n        i, j = l, mid\n        while i < mid and j < r:\n            if nums[i] <= nums[j]:\n                temp.append(nums[i]); i += 1\n            else:\n                temp.append(nums[j]); j += 1\n        temp.extend(nums[i:mid])\n        temp.extend(nums[j:r])\n        nums[l:r] = temp\n        return cnt\n    return merge_sort(0, len(nums))\n",
+      "generated_at": "2026-10-05T21:33:49.265435+00:00"
     }
   ]
 }

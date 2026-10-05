@@ -24,16 +24,63 @@ An abstract class can contain both abstract methods without implementation and c
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-05) — DSA
+
+**Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how a merge sort can give you order information for the left and right halves simultaneously; you can count qualifying pairs while merging the two sorted sub‑arrays.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Use a divide‑and‑conquer approach similar to merge sort. Recursively sort the left and right halves, and before merging, for each element in the left half advance a pointer in the right half until nums[left[i]] <= 2*nums[right[j]]; the number of remaining elements in the right half forms reverse pairs with left[i]. Then merge the two halves in the usual O(n) way. This yields O(n log n) time and O(n) extra space for the temporary array. Below is a concise Python implementation:
+python
+def reversePairs(nums):
+    def merge_sort(l, r):
+        if r - l <= 1:
+            return 0
+        mid = (l + r) // 2
+        cnt = merge_sort(l, mid) + merge_sort(mid, r)
+        j = mid
+        for i in range(l, mid):
+            while j < r and nums[i] > 2 * nums[j]:
+                j += 1
+            cnt += j - mid
+        # merge step
+        temp = []
+        i, j = l, mid
+        while i < mid and j < r:
+            if nums[i] <= nums[j]:
+                temp.append(nums[i]); i += 1
+            else:
+                temp.append(nums[j]); j += 1
+        temp.extend(nums[i:mid])
+        temp.extend(nums[j:r])
+        nums[l:r] = temp
+        return cnt
+    return merge_sort(0, len(nums))
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **69**
-- DSA: 17 · AI/ML: 17 · CSE Core: 18 · Behavioral: 17
+- Total questions logged: **70**
+- DSA: 18 · AI/ML: 17 · CSE Core: 18 · Behavioral: 17
 
 ## 🗂️ Recent Questions
 
+- **2026-10-05 [PM]** [DSA](questions/2026-10-05-pm-dsa.md): Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.
 - **2026-10-05 [AM]** [CSE Core](questions/2026-10-05-am-cse-core.md): In Java, what is the difference between an abstract class and an interface, and in which scenarios would you choose one over the other?
 - **2026-10-04 [PM]** [Behavioral](questions/2026-10-04-pm-behavioral.md): Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.
 - **2026-10-04 [AM]** [AIML](questions/2026-10-04-am-aiml.md): Explain the concept of teacher forcing in training sequence‑to‑sequence models. Why is it useful, what are the potential pitfalls, and how can scheduled sampling mitigate these pitfalls?
@@ -48,7 +95,6 @@ An abstract class can contain both abstract methods without implementation and c
 - **2026-09-29 [PM]** [CSE Core](questions/2026-09-29-pm-cse-core.md): What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?
 - **2026-09-29 [AM]** [DSA](questions/2026-09-29-am-dsa.md): Given a string consisting only of '(' and ')', return the length of the longest substring that forms a valid (well‑balanced) set of parentheses. Aim for O(n) time and O(1) extra space.
 - **2026-09-28 [PM]** [AIML](questions/2026-09-28-pm-aiml.md): What is label smoothing in classification models, how is it implemented mathematically, and why can it improve model calibration and reduce overconfidence?
-- **2026-09-28 [AM]** [Behavioral](questions/2026-09-28-am-behavioral.md): Tell me about a time when you had to manage a stakeholder with unrealistic expectations about project delivery. How did you handle the situation and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

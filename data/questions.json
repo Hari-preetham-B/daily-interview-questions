@@ -698,6 +698,16 @@
       "hint": "Think about how a merge sort can give you order information for the left and right halves simultaneously; you can count qualifying pairs while merging the two sorted sub\u2011arrays.",
       "answer": "Use a divide\u2011and\u2011conquer approach similar to merge sort. Recursively sort the left and right halves, and before merging, for each element in the left half advance a pointer in the right half until nums[left[i]] <= 2*nums[right[j]]; the number of remaining elements in the right half forms reverse pairs with left[i]. Then merge the two halves in the usual O(n) way. This yields O(n log n) time and O(n) extra space for the temporary array. Below is a concise Python implementation:\npython\ndef reversePairs(nums):\n    def merge_sort(l, r):\n        if r - l <= 1:\n            return 0\n        mid = (l + r) // 2\n        cnt = merge_sort(l, mid) + merge_sort(mid, r)\n        j = mid\n        for i in range(l, mid):\n            while j < r and nums[i] > 2 * nums[j]:\n                j += 1\n            cnt += j - mid\n        # merge step\n        temp = []\n        i, j = l, mid\n        while i < mid and j < r:\n            if nums[i] <= nums[j]:\n                temp.append(nums[i]); i += 1\n            else:\n                temp.append(nums[j]); j += 1\n        temp.extend(nums[i:mid])\n        temp.extend(nums[j:r])\n        nums[l:r] = temp\n        return cnt\n    return merge_sort(0, len(nums))\n",
       "generated_at": "2026-10-05T21:33:49.265435+00:00"
+    },
+    {
+      "date": "2026-10-06",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to mediate a disagreement between two teammates about the prioritization of features for a release. How did you approach the discussion, what steps did you take to reach a consensus, and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Consider how you gathered input from both parties, identified shared goals, and used data or business impact to guide the decision.",
+      "answer": "During a sprint planning meeting, two senior developers argued over whether to implement a new search feature or fix a critical bug. I organized a brief one-on-one with each to understand their concerns and then a joint session where we listed the business impact, customer feedback, and technical effort for each option. We used a simple scoring matrix to quantify risk vs. value, and agreed to address the bug first because it affected a larger user base. The release went on schedule, the bug was fixed, and the search feature was planned for the next sprint, improving team morale and product quality.",
+      "generated_at": "2026-10-06T09:10:37.551323+00:00"
     }
   ]
 }

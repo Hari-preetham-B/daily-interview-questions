@@ -24,16 +24,37 @@ During a sprint planning meeting, two senior developers argued over whether to i
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-06) — AIML
+
+**Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how each approach aggregates per-class precision and recall before computing F1 versus aggregating global counts first.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Macro-averaged F1 computes precision and recall separately for each class, averages these scores, and then takes the harmonic mean, giving every class equal weight regardless of its frequency. Micro-averaged F1 aggregates true positives, false positives, and false negatives across all classes before calculating precision and recall, so classes with more samples dominate the metric. You would use macro-F1 to assess performance on rare classes or when each class is equally important; micro-F1 is preferable when overall accuracy across the dataset matters more, such as in imbalanced settings where a few large classes dominate. In highly imbalanced data, macro-F1 tends to be lower because it penalizes poor performance on minority classes, whereas micro-F1 can be inflated by the majority classes' high counts.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **71**
-- DSA: 18 · AI/ML: 17 · CSE Core: 18 · Behavioral: 18
+- Total questions logged: **72**
+- DSA: 18 · AI/ML: 18 · CSE Core: 18 · Behavioral: 18
 
 ## 🗂️ Recent Questions
 
+- **2026-10-06 [PM]** [AIML](questions/2026-10-06-pm-aiml.md): Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?
 - **2026-10-06 [AM]** [Behavioral](questions/2026-10-06-am-behavioral.md): Describe a situation where you had to mediate a disagreement between two teammates about the prioritization of features for a release. How did you approach the discussion, what steps did you take to reach a consensus, and what was the outcome?
 - **2026-10-05 [PM]** [DSA](questions/2026-10-05-pm-dsa.md): Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.
 - **2026-10-05 [AM]** [CSE Core](questions/2026-10-05-am-cse-core.md): In Java, what is the difference between an abstract class and an interface, and in which scenarios would you choose one over the other?
@@ -48,7 +69,6 @@ During a sprint planning meeting, two senior developers argued over whether to i
 - **2026-09-30 [PM]** [Behavioral](questions/2026-09-30-pm-behavioral.md): Tell me about a time when you had to take on a leadership role in a project because the original team leader was unavailable. How did you manage responsibilities, and what was the impact on the team and project?
 - **2026-09-30 [AM]** [AIML](questions/2026-09-30-am-aiml.md): Explain how dropout acts as a regularization technique in neural networks. Include the mathematical expectation of the output during training and inference, and describe why dropout can be interpreted as model averaging over many subnetworks.
 - **2026-09-29 [PM]** [CSE Core](questions/2026-09-29-pm-cse-core.md): What is the Interface Segregation Principle (ISP) in SOLID design, and how does adhering to it improve system maintainability and flexibility?
-- **2026-09-29 [AM]** [DSA](questions/2026-09-29-am-dsa.md): Given a string consisting only of '(' and ')', return the length of the longest substring that forms a valid (well‑balanced) set of parentheses. Aim for O(n) time and O(1) extra space.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -708,6 +708,16 @@
       "hint": "Consider how you gathered input from both parties, identified shared goals, and used data or business impact to guide the decision.",
       "answer": "During a sprint planning meeting, two senior developers argued over whether to implement a new search feature or fix a critical bug. I organized a brief one-on-one with each to understand their concerns and then a joint session where we listed the business impact, customer feedback, and technical effort for each option. We used a simple scoring matrix to quantify risk vs. value, and agreed to address the bug first because it affected a larger user base. The release went on schedule, the bug was fixed, and the search feature was planned for the next sprint, improving team morale and product quality.",
       "generated_at": "2026-10-06T09:10:37.551323+00:00"
+    },
+    {
+      "date": "2026-10-06",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?",
+      "difficulty": "Medium",
+      "hint": "Consider how each approach aggregates per-class precision and recall before computing F1 versus aggregating global counts first.",
+      "answer": "Macro-averaged F1 computes precision and recall separately for each class, averages these scores, and then takes the harmonic mean, giving every class equal weight regardless of its frequency. Micro-averaged F1 aggregates true positives, false positives, and false negatives across all classes before calculating precision and recall, so classes with more samples dominate the metric. You would use macro-F1 to assess performance on rare classes or when each class is equally important; micro-F1 is preferable when overall accuracy across the dataset matters more, such as in imbalanced settings where a few large classes dominate. In highly imbalanced data, macro-F1 tends to be lower because it penalizes poor performance on minority classes, whereas micro-F1 can be inflated by the majority classes' high counts.",
+      "generated_at": "2026-10-06T19:39:32.034044+00:00"
     }
   ]
 }

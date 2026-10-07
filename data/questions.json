@@ -718,6 +718,16 @@
       "hint": "Consider how each approach aggregates per-class precision and recall before computing F1 versus aggregating global counts first.",
       "answer": "Macro-averaged F1 computes precision and recall separately for each class, averages these scores, and then takes the harmonic mean, giving every class equal weight regardless of its frequency. Micro-averaged F1 aggregates true positives, false positives, and false negatives across all classes before calculating precision and recall, so classes with more samples dominate the metric. You would use macro-F1 to assess performance on rare classes or when each class is equally important; micro-F1 is preferable when overall accuracy across the dataset matters more, such as in imbalanced settings where a few large classes dominate. In highly imbalanced data, macro-F1 tends to be lower because it penalizes poor performance on minority classes, whereas micro-F1 can be inflated by the majority classes' high counts.",
       "generated_at": "2026-10-06T19:39:32.034044+00:00"
+    },
+    {
+      "date": "2026-10-07",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array `nums` representing the amount of money in each house along a street, determine the maximum amount of money you can rob without robbing two adjacent houses. Return the maximum sum you can obtain.",
+      "difficulty": "Medium",
+      "hint": "Think about making a choice at each house: either rob it and skip the previous one, or skip it and keep the best total so far. Use dynamic programming with O(1) extra space.",
+      "answer": "Use a DP where `dp[i]` is the max money that can be robbed from the first `i` houses. The recurrence is `dp[i] = max(dp[i-1], dp[i-2] + nums[i-1])`. Initialize `prev2 = 0` (dp[0]) and `prev1 = nums[0]` (dp[1]) handling empty array separately. Iterate through the array updating `curr = max(prev1, prev2 + nums[i])`, then shift `prev2 = prev1` and `prev1 = curr`. After the loop, `prev1` holds the answer. This runs in O(n) time and O(1) space.",
+      "generated_at": "2026-10-07T09:00:09.385955+00:00"
     }
   ]
 }

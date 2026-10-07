@@ -24,16 +24,37 @@ Use a DP where `dp[i]` is the max money that can be robbed from the first `i` ho
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-07) — CSE Core
+
+**Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the prepare and commit/abort phases and the messages exchanged.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In 2PC, a coordinator initiates a transaction and sends a prepare request to all participants. Each participant locks the necessary resources and votes either commit or abort, responding to the coordinator. In phase two, the coordinator sends a global commit if all votes were commit, or a global abort otherwise, and participants release locks accordingly. This guarantees that either all participants commit or all abort, ensuring atomicity and consistency across the distributed system.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **73**
-- DSA: 19 · AI/ML: 18 · CSE Core: 18 · Behavioral: 18
+- Total questions logged: **74**
+- DSA: 19 · AI/ML: 18 · CSE Core: 19 · Behavioral: 18
 
 ## 🗂️ Recent Questions
 
+- **2026-10-07 [PM]** [CSE Core](questions/2026-10-07-pm-cse-core.md): Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?
 - **2026-10-07 [AM]** [DSA](questions/2026-10-07-am-dsa.md): Given an integer array `nums` representing the amount of money in each house along a street, determine the maximum amount of money you can rob without robbing two adjacent houses. Return the maximum sum you can obtain.
 - **2026-10-06 [PM]** [AIML](questions/2026-10-06-pm-aiml.md): Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?
 - **2026-10-06 [AM]** [Behavioral](questions/2026-10-06-am-behavioral.md): Describe a situation where you had to mediate a disagreement between two teammates about the prioritization of features for a release. How did you approach the discussion, what steps did you take to reach a consensus, and what was the outcome?
@@ -48,7 +69,6 @@ Use a DP where `dp[i]` is the max money that can be robbed from the first `i` ho
 - **2026-10-01 [PM]** [DSA](questions/2026-10-01-pm-dsa.md): Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell’s value is strictly greater than the current cell’s value. Return the maximum length among all such paths.
 - **2026-10-01 [AM]** [CSE Core](questions/2026-10-01-am-cse-core.md): Explain how the Linux Completely Fair Scheduler (CFS) approximates fairness using virtual runtime, and describe a scenario where CFS might lead to starvation of a low‑priority task.
 - **2026-09-30 [PM]** [Behavioral](questions/2026-09-30-pm-behavioral.md): Tell me about a time when you had to take on a leadership role in a project because the original team leader was unavailable. How did you manage responsibilities, and what was the impact on the team and project?
-- **2026-09-30 [AM]** [AIML](questions/2026-09-30-am-aiml.md): Explain how dropout acts as a regularization technique in neural networks. Include the mathematical expectation of the output during training and inference, and describe why dropout can be interpreted as model averaging over many subnetworks.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -728,6 +728,16 @@
       "hint": "Think about making a choice at each house: either rob it and skip the previous one, or skip it and keep the best total so far. Use dynamic programming with O(1) extra space.",
       "answer": "Use a DP where `dp[i]` is the max money that can be robbed from the first `i` houses. The recurrence is `dp[i] = max(dp[i-1], dp[i-2] + nums[i-1])`. Initialize `prev2 = 0` (dp[0]) and `prev1 = nums[0]` (dp[1]) handling empty array separately. Iterate through the array updating `curr = max(prev1, prev2 + nums[i])`, then shift `prev2 = prev1` and `prev1 = curr`. After the loop, `prev1` holds the answer. This runs in O(n) time and O(1) space.",
       "generated_at": "2026-10-07T09:00:09.385955+00:00"
+    },
+    {
+      "date": "2026-10-07",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?",
+      "difficulty": "Medium",
+      "hint": "Consider the prepare and commit/abort phases and the messages exchanged.",
+      "answer": "In 2PC, a coordinator initiates a transaction and sends a prepare request to all participants. Each participant locks the necessary resources and votes either commit or abort, responding to the coordinator. In phase two, the coordinator sends a global commit if all votes were commit, or a global abort otherwise, and participants release locks accordingly. This guarantees that either all participants commit or all abort, ensuring atomicity and consistency across the distributed system.",
+      "generated_at": "2026-10-07T20:03:19.297578+00:00"
     }
   ]
 }

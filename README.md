@@ -24,16 +24,37 @@ Temperature scaling is a simple post‑processing method that adjusts the logits
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-08) — Behavioral
+
+**Tell me about a time when you had to handle a last‑minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you prioritize tasks, adjust timelines, and keep stakeholders informed.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+When the product owner added a new feature just a week before the release, I first held a quick sync with the team to assess the impact on our sprint backlog. We broke the new requirement into two smaller tasks and re‑estimated effort, then shifted lower‑priority bugs to the next sprint. I updated the Gantt chart and sent a concise email to stakeholders summarizing the revised timeline, the trade‑offs, and the rationale. By keeping communication transparent, the client understood the delay, and we delivered the core functionality on time.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **75**
-- DSA: 19 · AI/ML: 19 · CSE Core: 19 · Behavioral: 18
+- Total questions logged: **76**
+- DSA: 19 · AI/ML: 19 · CSE Core: 19 · Behavioral: 19
 
 ## 🗂️ Recent Questions
 
+- **2026-10-08 [PM]** [Behavioral](questions/2026-10-08-pm-behavioral.md): Tell me about a time when you had to handle a last‑minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?
 - **2026-10-08 [AM]** [AIML](questions/2026-10-08-am-aiml.md): Explain temperature scaling as a model calibration technique: how it works, why it does not alter the predicted class order, and how the temperature parameter is typically determined.
 - **2026-10-07 [PM]** [CSE Core](questions/2026-10-07-pm-cse-core.md): Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?
 - **2026-10-07 [AM]** [DSA](questions/2026-10-07-am-dsa.md): Given an integer array `nums` representing the amount of money in each house along a street, determine the maximum amount of money you can rob without robbing two adjacent houses. Return the maximum sum you can obtain.
@@ -48,7 +69,6 @@ Temperature scaling is a simple post‑processing method that adjusts the logits
 - **2026-10-02 [PM]** [AIML](questions/2026-10-02-pm-aiml.md): Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.
 - **2026-10-02 [AM]** [Behavioral](questions/2026-10-02-am-behavioral.md): Can you describe a time when you successfully convinced your team to adopt a new technology or process that they were initially hesitant about?
 - **2026-10-01 [PM]** [DSA](questions/2026-10-01-pm-dsa.md): Given a 2D matrix of integers, find the length of the longest strictly increasing path. From any cell you may move to any of its four adjacent cells (up, down, left, right) only if the adjacent cell’s value is strictly greater than the current cell’s value. Return the maximum length among all such paths.
-- **2026-10-01 [AM]** [CSE Core](questions/2026-10-01-am-cse-core.md): Explain how the Linux Completely Fair Scheduler (CFS) approximates fairness using virtual runtime, and describe a scenario where CFS might lead to starvation of a low‑priority task.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

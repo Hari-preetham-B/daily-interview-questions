@@ -748,6 +748,16 @@
       "hint": "Consider how scaling the logits before softmax changes the probability distribution but keeps the relative ordering of scores.",
       "answer": "Temperature scaling is a simple post\u2011processing method that adjusts the logits of a classifier before applying the softmax. By dividing each logit by a temperature parameter T>1, the softmax output becomes flatter, reducing the model\u2019s overconfidence. Because the same scaling factor is applied to all logits, their relative differences are preserved, so the rank of the predicted classes\u2014and thus the argmax decision\u2014remains unchanged. The optimal temperature is usually found by minimizing the negative log\u2011likelihood on a held\u2011out validation set, ensuring the calibrated probabilities are as close as possible to true likelihoods.",
       "generated_at": "2026-10-08T09:15:27.271198+00:00"
+    },
+    {
+      "date": "2026-10-08",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to handle a last\u2011minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?",
+      "difficulty": "Medium",
+      "hint": "Consider how you prioritize tasks, adjust timelines, and keep stakeholders informed.",
+      "answer": "When the product owner added a new feature just a week before the release, I first held a quick sync with the team to assess the impact on our sprint backlog. We broke the new requirement into two smaller tasks and re\u2011estimated effort, then shifted lower\u2011priority bugs to the next sprint. I updated the Gantt chart and sent a concise email to stakeholders summarizing the revised timeline, the trade\u2011offs, and the rationale. By keeping communication transparent, the client understood the delay, and we delivered the core functionality on time.",
+      "generated_at": "2026-10-08T20:01:49.055129+00:00"
     }
   ]
 }

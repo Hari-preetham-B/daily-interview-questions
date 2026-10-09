@@ -24,16 +24,51 @@ Composition is a "has‑a" relationship where a class contains an instance of an
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-09) — DSA
+
+**You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Maintain a sliding window and update the product as you expand and shrink the window. Keep the window valid by dividing out elements when the product reaches or exceeds k.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+python
+from typing import List
+
+def longest_subarray_product_less_than_k(nums: List[int], k: int) -> int:
+    if k <= 1:
+        return 0
+    prod, left, best = 1, 0, 0
+    for right, val in enumerate(nums):
+        prod *= val
+        while prod >= k and left <= right:
+            prod //= nums[left]
+            left += 1
+        best = max(best, right - left + 1)
+    return best
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **77**
-- DSA: 19 · AI/ML: 19 · CSE Core: 20 · Behavioral: 19
+- Total questions logged: **78**
+- DSA: 20 · AI/ML: 19 · CSE Core: 20 · Behavioral: 19
 
 ## 🗂️ Recent Questions
 
+- **2026-10-09 [PM]** [DSA](questions/2026-10-09-pm-dsa.md): You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.
 - **2026-10-09 [AM]** [CSE Core](questions/2026-10-09-am-cse-core.md): Explain the difference between composition and inheritance in object-oriented design and give an example of a scenario where composition is preferred over inheritance.
 - **2026-10-08 [PM]** [Behavioral](questions/2026-10-08-pm-behavioral.md): Tell me about a time when you had to handle a last‑minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?
 - **2026-10-08 [AM]** [AIML](questions/2026-10-08-am-aiml.md): Explain temperature scaling as a model calibration technique: how it works, why it does not alter the predicted class order, and how the temperature parameter is typically determined.
@@ -48,7 +83,6 @@ Composition is a "has‑a" relationship where a class contains an instance of an
 - **2026-10-03 [PM]** [CSE Core](questions/2026-10-03-pm-cse-core.md): What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?
 - **2026-10-03 [AM]** [DSA](questions/2026-10-03-am-dsa.md): Given an integer array nums and an integer k, find the length of the longest contiguous subarray whose sum is divisible by k. If no such subarray exists, return 0.
 - **2026-10-02 [PM]** [AIML](questions/2026-10-02-pm-aiml.md): Explain the concept of early stopping in training neural networks. Discuss how you would implement it using a validation set, what metrics to monitor, and what are the potential downsides if the validation set is not representative.
-- **2026-10-02 [AM]** [Behavioral](questions/2026-10-02-am-behavioral.md): Can you describe a time when you successfully convinced your team to adopt a new technology or process that they were initially hesitant about?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -768,6 +768,16 @@
       "hint": "Consider the \"has\u2011a\" versus \"is\u2011a\" relationship and think about flexibility and encapsulation.",
       "answer": "Composition is a \"has\u2011a\" relationship where a class contains an instance of another class, enabling it to delegate responsibilities and change behavior at runtime. Inheritance is an \"is\u2011a\" relationship where a subclass extends a parent class and inherits its implementation, often leading to tighter coupling. Composition is preferred when you need to vary behavior dynamically, promote encapsulation, or avoid fragile base class problems. For example, a Car class can have a Engine object (composition) rather than inherit from an Engine class, allowing the car to swap engines or modify engine behavior without altering the Car hierarchy.",
       "generated_at": "2026-10-09T09:23:33.262350+00:00"
+    },
+    {
+      "date": "2026-10-09",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.",
+      "difficulty": "Medium",
+      "hint": "Maintain a sliding window and update the product as you expand and shrink the window. Keep the window valid by dividing out elements when the product reaches or exceeds k.",
+      "answer": "python\nfrom typing import List\n\ndef longest_subarray_product_less_than_k(nums: List[int], k: int) -> int:\n    if k <= 1:\n        return 0\n    prod, left, best = 1, 0, 0\n    for right, val in enumerate(nums):\n        prod *= val\n        while prod >= k and left <= right:\n            prod //= nums[left]\n            left += 1\n        best = max(best, right - left + 1)\n    return best\n",
+      "generated_at": "2026-10-09T19:36:26.567794+00:00"
     }
   ]
 }

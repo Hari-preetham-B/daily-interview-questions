@@ -758,6 +758,16 @@
       "hint": "Consider how you prioritize tasks, adjust timelines, and keep stakeholders informed.",
       "answer": "When the product owner added a new feature just a week before the release, I first held a quick sync with the team to assess the impact on our sprint backlog. We broke the new requirement into two smaller tasks and re\u2011estimated effort, then shifted lower\u2011priority bugs to the next sprint. I updated the Gantt chart and sent a concise email to stakeholders summarizing the revised timeline, the trade\u2011offs, and the rationale. By keeping communication transparent, the client understood the delay, and we delivered the core functionality on time.",
       "generated_at": "2026-10-08T20:01:49.055129+00:00"
+    },
+    {
+      "date": "2026-10-09",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain the difference between composition and inheritance in object-oriented design and give an example of a scenario where composition is preferred over inheritance.",
+      "difficulty": "Medium",
+      "hint": "Consider the \"has\u2011a\" versus \"is\u2011a\" relationship and think about flexibility and encapsulation.",
+      "answer": "Composition is a \"has\u2011a\" relationship where a class contains an instance of another class, enabling it to delegate responsibilities and change behavior at runtime. Inheritance is an \"is\u2011a\" relationship where a subclass extends a parent class and inherits its implementation, often leading to tighter coupling. Composition is preferred when you need to vary behavior dynamically, promote encapsulation, or avoid fragile base class problems. For example, a Car class can have a Engine object (composition) rather than inherit from an Engine class, allowing the car to swap engines or modify engine behavior without altering the Car hierarchy.",
+      "generated_at": "2026-10-09T09:23:33.262350+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ In a recent project, my teammate preferred a very analytical, step‑by‑step d
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-10) — AIML
+
+**What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how the teacher’s soft targets can provide richer information than hard labels and how scaling the logits affects that softness.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Knowledge distillation is a technique to transfer knowledge from a large, often over‑parameterized teacher model to a smaller student model. During training, the student is supervised not only by the true labels but also by the teacher’s softened probability distribution over classes. The softmax output of the teacher is computed with a temperature (T>1): (sigma_i=rac{exp(z_i/T)}{sum_jexp(z_j/T)}). A higher temperature produces a smoother distribution that reveals class similarities the teacher learned. The student loss is usually a weighted sum of the standard cross‑entropy with the true labels and a Kullback–Leibler divergence (or cross‑entropy) between the student’s softened logits and the teacher’s softened outputs. Training with this loss encourages the student to mimic the teacher’s behavior while remaining compact, improving generalization and sometimes achieving comparable performance to the teacher with fewer parameters.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **79**
-- DSA: 20 · AI/ML: 19 · CSE Core: 20 · Behavioral: 20
+- Total questions logged: **80**
+- DSA: 20 · AI/ML: 20 · CSE Core: 20 · Behavioral: 20
 
 ## 🗂️ Recent Questions
 
+- **2026-10-10 [PM]** [AIML](questions/2026-10-10-pm-aiml.md): What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.
 - **2026-10-10 [AM]** [Behavioral](questions/2026-10-10-am-behavioral.md): Describe a situation where you had to change your working style to accommodate a teammate who had a different approach to problem-solving. How did you adapt, and what was the outcome?
 - **2026-10-09 [PM]** [DSA](questions/2026-10-09-pm-dsa.md): You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.
 - **2026-10-09 [AM]** [CSE Core](questions/2026-10-09-am-cse-core.md): Explain the difference between composition and inheritance in object-oriented design and give an example of a scenario where composition is preferred over inheritance.
@@ -48,7 +69,6 @@ In a recent project, my teammate preferred a very analytical, step‑by‑step d
 - **2026-10-04 [PM]** [Behavioral](questions/2026-10-04-pm-behavioral.md): Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.
 - **2026-10-04 [AM]** [AIML](questions/2026-10-04-am-aiml.md): Explain the concept of teacher forcing in training sequence‑to‑sequence models. Why is it useful, what are the potential pitfalls, and how can scheduled sampling mitigate these pitfalls?
 - **2026-10-03 [PM]** [CSE Core](questions/2026-10-03-pm-cse-core.md): What is thrashing in a virtual memory system, what causes it, and how does the working set model help prevent it?
-- **2026-10-03 [AM]** [DSA](questions/2026-10-03-am-dsa.md): Given an integer array nums and an integer k, find the length of the longest contiguous subarray whose sum is divisible by k. If no such subarray exists, return 0.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

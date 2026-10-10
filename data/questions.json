@@ -788,6 +788,16 @@
       "hint": "Consider how you used communication and flexibility to blend different working habits.",
       "answer": "In a recent project, my teammate preferred a very analytical, step\u2011by\u2011step debugging process, while I tend to jump straight into writing code and testing quickly. To accommodate this, I scheduled short daily syncs where we mapped out a shared plan before coding, and I made sure to document each step so she could review and suggest improvements. I also started using pair\u2011programming sessions to blend our styles, which reduced misunderstandings and improved the code quality. As a result, we completed the feature two days ahead of schedule and received positive feedback from the product owner.",
       "generated_at": "2026-10-10T08:44:54.320248+00:00"
+    },
+    {
+      "date": "2026-10-10",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.",
+      "difficulty": "Medium",
+      "hint": "Think about how the teacher\u2019s soft targets can provide richer information than hard labels and how scaling the logits affects that softness.",
+      "answer": "Knowledge distillation is a technique to transfer knowledge from a large, often over\u2011parameterized teacher model to a smaller student model. During training, the student is supervised not only by the true labels but also by the teacher\u2019s softened probability distribution over classes. The softmax output of the teacher is computed with a temperature (T>1): (sigma_i=\frac{exp(z_i/T)}{sum_jexp(z_j/T)}). A higher temperature produces a smoother distribution that reveals class similarities the teacher learned. The student loss is usually a weighted sum of the standard cross\u2011entropy with the true labels and a Kullback\u2013Leibler divergence (or cross\u2011entropy) between the student\u2019s softened logits and the teacher\u2019s softened outputs. Training with this loss encourages the student to mimic the teacher\u2019s behavior while remaining compact, improving generalization and sometimes achieving comparable performance to the teacher with fewer parameters.",
+      "generated_at": "2026-10-10T18:45:01.541835+00:00"
     }
   ]
 }

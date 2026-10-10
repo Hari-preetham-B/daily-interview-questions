@@ -778,6 +778,16 @@
       "hint": "Maintain a sliding window and update the product as you expand and shrink the window. Keep the window valid by dividing out elements when the product reaches or exceeds k.",
       "answer": "python\nfrom typing import List\n\ndef longest_subarray_product_less_than_k(nums: List[int], k: int) -> int:\n    if k <= 1:\n        return 0\n    prod, left, best = 1, 0, 0\n    for right, val in enumerate(nums):\n        prod *= val\n        while prod >= k and left <= right:\n            prod //= nums[left]\n            left += 1\n        best = max(best, right - left + 1)\n    return best\n",
       "generated_at": "2026-10-09T19:36:26.567794+00:00"
+    },
+    {
+      "date": "2026-10-10",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to change your working style to accommodate a teammate who had a different approach to problem-solving. How did you adapt, and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Consider how you used communication and flexibility to blend different working habits.",
+      "answer": "In a recent project, my teammate preferred a very analytical, step\u2011by\u2011step debugging process, while I tend to jump straight into writing code and testing quickly. To accommodate this, I scheduled short daily syncs where we mapped out a shared plan before coding, and I made sure to document each step so she could review and suggest improvements. I also started using pair\u2011programming sessions to blend our styles, which reduced misunderstandings and improved the code quality. As a result, we completed the feature two days ahead of schedule and received positive feedback from the product owner.",
+      "generated_at": "2026-10-10T08:44:54.320248+00:00"
     }
   ]
 }

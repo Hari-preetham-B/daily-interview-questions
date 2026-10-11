@@ -808,6 +808,16 @@
       "hint": "Pre\u2011compute a table that tells whether any substring s[i..j] is a palindrome, then use dynamic programming where dp[i] stores the best cut count for the prefix ending at i.",
       "answer": "We first build a boolean table isPal[n][n] where isPal[i][j] is true if s[i..j] is a palindrome. This can be filled in O(n^2) by checking s[i]==s[j] and isPal[i+1][j-1] (or handling length 1 and 2 separately). Then let dp[i] be the minimum cuts for s[0..i]. Initialize dp[i]=i (worst case: cut each character). For each i, if isPal[0][i] is true, dp[i]=0; otherwise, for each j<i, if isPal[j+1][i] is true we update dp[i]=min(dp[i], dp[j]+1). The answer is dp[n-1]. This runs in O(n^2) time and O(n^2) space (the palindrome table) or O(n) extra space if we compute palindromes on the fly. Example Python implementation:\npython\ndef minCut(s: str) -> int:\n    n = len(s)\n    isPal = [[False]*n for _ in range(n)]\n    for i in range(n-1, -1, -1):\n        for j in range(i, n):\n            isPal[i][j] = s[i]==s[j] and (j-i<2 or isPal[i+1][j-1])\n    dp = [0]*n\n    for i in range(n):\n        if isPal[0][i]:\n            dp[i] = 0\n        else:\n            dp[i] = i\n            for j in range(i):\n                if isPal[j+1][i]:\n                    dp[i] = min(dp[i], dp[j]+1)\n    return dp[-1]\n",
       "generated_at": "2026-10-11T09:07:41.083846+00:00"
+    },
+    {
+      "date": "2026-10-11",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.",
+      "difficulty": "Hard",
+      "hint": "Consider the scheduler\u2019s data structures and the cache state that is preserved or flushed when a process is swapped in or out. Think about cache line reuse and how TLB entries are managed across contexts.",
+      "answer": "The scheduler picks the next process based on its policy (e.g., round\u2011robin, priority\u2011based, or multi\u2011level feedback queue). It maintains per\u2011process state such as run\u2011queue position, priority, and estimated CPU burst. When a context switch occurs, the CPU\u2019s L1 data and instruction caches are still occupied with the previous process\u2019s data. If the new process touches the same cache lines, a cache hit can happen; otherwise, the cache must be refilled, leading to a miss penalty. Modern OSes mitigate this by using cache\u2011friendly scheduling: they try to keep processes that share memory (or are in the same locality group) on the same core for as long as possible, use cache\u2011aware data structures, and employ techniques like cache prefetching or TLB shootdown minimization. Some systems also support \u201ccache partitioning\u201d or \u201ccache locking\u201d for real\u2011time tasks to reduce interference.\n",
+      "generated_at": "2026-10-11T19:05:21.863609+00:00"
     }
   ]
 }

@@ -42,16 +42,38 @@ def minCut(s: str) -> int:
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-11) — CSE Core
+
+**In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the scheduler’s data structures and the cache state that is preserved or flushed when a process is swapped in or out. Think about cache line reuse and how TLB entries are managed across contexts.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+The scheduler picks the next process based on its policy (e.g., round‑robin, priority‑based, or multi‑level feedback queue). It maintains per‑process state such as run‑queue position, priority, and estimated CPU burst. When a context switch occurs, the CPU’s L1 data and instruction caches are still occupied with the previous process’s data. If the new process touches the same cache lines, a cache hit can happen; otherwise, the cache must be refilled, leading to a miss penalty. Modern OSes mitigate this by using cache‑friendly scheduling: they try to keep processes that share memory (or are in the same locality group) on the same core for as long as possible, use cache‑aware data structures, and employ techniques like cache prefetching or TLB shootdown minimization. Some systems also support “cache partitioning” or “cache locking” for real‑time tasks to reduce interference.
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **81**
-- DSA: 21 · AI/ML: 20 · CSE Core: 20 · Behavioral: 20
+- Total questions logged: **82**
+- DSA: 21 · AI/ML: 20 · CSE Core: 21 · Behavioral: 20
 
 ## 🗂️ Recent Questions
 
+- **2026-10-11 [PM]** [CSE Core](questions/2026-10-11-pm-cse-core.md): In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.
 - **2026-10-11 [AM]** [DSA](questions/2026-10-11-am-dsa.md): Given a string s, partition it into substrings such that each substring is a palindrome. Return the minimum number of cuts needed to split s into palindrome substrings.
 - **2026-10-10 [PM]** [AIML](questions/2026-10-10-pm-aiml.md): What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.
 - **2026-10-10 [AM]** [Behavioral](questions/2026-10-10-am-behavioral.md): Describe a situation where you had to change your working style to accommodate a teammate who had a different approach to problem-solving. How did you adapt, and what was the outcome?
@@ -66,7 +88,6 @@ def minCut(s: str) -> int:
 - **2026-10-05 [PM]** [DSA](questions/2026-10-05-pm-dsa.md): Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.
 - **2026-10-05 [AM]** [CSE Core](questions/2026-10-05-am-cse-core.md): In Java, what is the difference between an abstract class and an interface, and in which scenarios would you choose one over the other?
 - **2026-10-04 [PM]** [Behavioral](questions/2026-10-04-pm-behavioral.md): Describe a situation where you had to persuade senior management to invest in a new tool that your team was proposing, but you had limited data to support the ROI.
-- **2026-10-04 [AM]** [AIML](questions/2026-10-04-am-aiml.md): Explain the concept of teacher forcing in training sequence‑to‑sequence models. Why is it useful, what are the potential pitfalls, and how can scheduled sampling mitigate these pitfalls?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

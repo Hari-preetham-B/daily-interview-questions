@@ -798,6 +798,16 @@
       "hint": "Think about how the teacher\u2019s soft targets can provide richer information than hard labels and how scaling the logits affects that softness.",
       "answer": "Knowledge distillation is a technique to transfer knowledge from a large, often over\u2011parameterized teacher model to a smaller student model. During training, the student is supervised not only by the true labels but also by the teacher\u2019s softened probability distribution over classes. The softmax output of the teacher is computed with a temperature (T>1): (sigma_i=\frac{exp(z_i/T)}{sum_jexp(z_j/T)}). A higher temperature produces a smoother distribution that reveals class similarities the teacher learned. The student loss is usually a weighted sum of the standard cross\u2011entropy with the true labels and a Kullback\u2013Leibler divergence (or cross\u2011entropy) between the student\u2019s softened logits and the teacher\u2019s softened outputs. Training with this loss encourages the student to mimic the teacher\u2019s behavior while remaining compact, improving generalization and sometimes achieving comparable performance to the teacher with fewer parameters.",
       "generated_at": "2026-10-10T18:45:01.541835+00:00"
+    },
+    {
+      "date": "2026-10-11",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given a string\u202fs, partition it into substrings such that each substring is a palindrome. Return the minimum number of cuts needed to split\u202fs\u202finto palindrome substrings.",
+      "difficulty": "Medium",
+      "hint": "Pre\u2011compute a table that tells whether any substring s[i..j] is a palindrome, then use dynamic programming where dp[i] stores the best cut count for the prefix ending at i.",
+      "answer": "We first build a boolean table isPal[n][n] where isPal[i][j] is true if s[i..j] is a palindrome. This can be filled in O(n^2) by checking s[i]==s[j] and isPal[i+1][j-1] (or handling length 1 and 2 separately). Then let dp[i] be the minimum cuts for s[0..i]. Initialize dp[i]=i (worst case: cut each character). For each i, if isPal[0][i] is true, dp[i]=0; otherwise, for each j<i, if isPal[j+1][i] is true we update dp[i]=min(dp[i], dp[j]+1). The answer is dp[n-1]. This runs in O(n^2) time and O(n^2) space (the palindrome table) or O(n) extra space if we compute palindromes on the fly. Example Python implementation:\npython\ndef minCut(s: str) -> int:\n    n = len(s)\n    isPal = [[False]*n for _ in range(n)]\n    for i in range(n-1, -1, -1):\n        for j in range(i, n):\n            isPal[i][j] = s[i]==s[j] and (j-i<2 or isPal[i+1][j-1])\n    dp = [0]*n\n    for i in range(n):\n        if isPal[0][i]:\n            dp[i] = 0\n        else:\n            dp[i] = i\n            for j in range(i):\n                if isPal[j+1][i]:\n                    dp[i] = min(dp[i], dp[j]+1)\n    return dp[-1]\n",
+      "generated_at": "2026-10-11T09:07:41.083846+00:00"
     }
   ]
 }

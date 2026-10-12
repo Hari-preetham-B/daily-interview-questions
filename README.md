@@ -24,16 +24,37 @@ Data leakage occurs when information from the test set influences the training p
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-12) — Behavioral
+
+**Tell me about a time when you had to manage a conflict between two departments—such as engineering and product—over resource allocation or project priorities, and how you helped reach a resolution.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you identified each side’s core needs and how you used a structured approach to negotiate a compromise.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+I was leading a cross‑department sprint where engineering wanted to focus on a performance overhaul while product demanded new features for an upcoming launch. I first mapped each team’s key objectives and gathered data on impact and effort. Then I organized a joint workshop where both sides presented their constraints, and we used a weighted scoring model to prioritize tasks. By framing the trade‑off in terms of shared business outcomes, we agreed on a phased plan that delivered critical features first while scheduling the performance work for the next quarter. The result was a smoother sprint planning process and improved trust between the departments.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **83**
-- DSA: 21 · AI/ML: 21 · CSE Core: 21 · Behavioral: 20
+- Total questions logged: **84**
+- DSA: 21 · AI/ML: 21 · CSE Core: 21 · Behavioral: 21
 
 ## 🗂️ Recent Questions
 
+- **2026-10-12 [PM]** [Behavioral](questions/2026-10-12-pm-behavioral.md): Tell me about a time when you had to manage a conflict between two departments—such as engineering and product—over resource allocation or project priorities, and how you helped reach a resolution.
 - **2026-10-12 [AM]** [AIML](questions/2026-10-12-am-aiml.md): How would you detect and prevent data leakage in a supervised learning pipeline? Give a concrete example where leakage could occur during preprocessing and explain how you would modify the pipeline to eliminate it.
 - **2026-10-11 [PM]** [CSE Core](questions/2026-10-11-pm-cse-core.md): In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.
 - **2026-10-11 [AM]** [DSA](questions/2026-10-11-am-dsa.md): Given a string s, partition it into substrings such that each substring is a palindrome. Return the minimum number of cuts needed to split s into palindrome substrings.
@@ -48,7 +69,6 @@ Data leakage occurs when information from the test set influences the training p
 - **2026-10-06 [PM]** [AIML](questions/2026-10-06-pm-aiml.md): Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?
 - **2026-10-06 [AM]** [Behavioral](questions/2026-10-06-am-behavioral.md): Describe a situation where you had to mediate a disagreement between two teammates about the prioritization of features for a release. How did you approach the discussion, what steps did you take to reach a consensus, and what was the outcome?
 - **2026-10-05 [PM]** [DSA](questions/2026-10-05-pm-dsa.md): Given an integer array `nums`, count the number of reverse pairs where a reverse pair is defined as indices (i, j) such that i < j and nums[i] > 2 * nums[j]. Return the total count.
-- **2026-10-05 [AM]** [CSE Core](questions/2026-10-05-am-cse-core.md): In Java, what is the difference between an abstract class and an interface, and in which scenarios would you choose one over the other?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

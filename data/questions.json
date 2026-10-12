@@ -828,6 +828,16 @@
       "hint": "Think about the order in which you split data and apply transformations such as scaling or feature engineering.",
       "answer": "Data leakage occurs when information from the test set influences the training process, leading to overly optimistic performance. A common scenario is scaling or normalizing features after the train-test split: if you compute mean/variance on the entire dataset, the test data stats leak into training. To fix this, perform the split first, then fit transformers (e.g., StandardScaler, Imputer, PCA) only on the training data, and apply the fitted transformers to the test set. Likewise, avoid creating derived features that depend on future labels or on the full dataset. Validating the pipeline with cross\u2011validation after fitting transformations ensures leakage is avoided.",
       "generated_at": "2026-10-12T09:31:33.568268+00:00"
+    },
+    {
+      "date": "2026-10-12",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to manage a conflict between two departments\u2014such as engineering and product\u2014over resource allocation or project priorities, and how you helped reach a resolution.",
+      "difficulty": "Medium",
+      "hint": "Consider how you identified each side\u2019s core needs and how you used a structured approach to negotiate a compromise.",
+      "answer": "I was leading a cross\u2011department sprint where engineering wanted to focus on a performance overhaul while product demanded new features for an upcoming launch. I first mapped each team\u2019s key objectives and gathered data on impact and effort. Then I organized a joint workshop where both sides presented their constraints, and we used a weighted scoring model to prioritize tasks. By framing the trade\u2011off in terms of shared business outcomes, we agreed on a phased plan that delivered critical features first while scheduling the performance work for the next quarter. The result was a smoother sprint planning process and improved trust between the departments.",
+      "generated_at": "2026-10-12T22:11:24.504483+00:00"
     }
   ]
 }

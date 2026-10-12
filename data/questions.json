@@ -818,6 +818,16 @@
       "hint": "Consider the scheduler\u2019s data structures and the cache state that is preserved or flushed when a process is swapped in or out. Think about cache line reuse and how TLB entries are managed across contexts.",
       "answer": "The scheduler picks the next process based on its policy (e.g., round\u2011robin, priority\u2011based, or multi\u2011level feedback queue). It maintains per\u2011process state such as run\u2011queue position, priority, and estimated CPU burst. When a context switch occurs, the CPU\u2019s L1 data and instruction caches are still occupied with the previous process\u2019s data. If the new process touches the same cache lines, a cache hit can happen; otherwise, the cache must be refilled, leading to a miss penalty. Modern OSes mitigate this by using cache\u2011friendly scheduling: they try to keep processes that share memory (or are in the same locality group) on the same core for as long as possible, use cache\u2011aware data structures, and employ techniques like cache prefetching or TLB shootdown minimization. Some systems also support \u201ccache partitioning\u201d or \u201ccache locking\u201d for real\u2011time tasks to reduce interference.\n",
       "generated_at": "2026-10-11T19:05:21.863609+00:00"
+    },
+    {
+      "date": "2026-10-12",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "How would you detect and prevent data leakage in a supervised learning pipeline? Give a concrete example where leakage could occur during preprocessing and explain how you would modify the pipeline to eliminate it.",
+      "difficulty": "Medium",
+      "hint": "Think about the order in which you split data and apply transformations such as scaling or feature engineering.",
+      "answer": "Data leakage occurs when information from the test set influences the training process, leading to overly optimistic performance. A common scenario is scaling or normalizing features after the train-test split: if you compute mean/variance on the entire dataset, the test data stats leak into training. To fix this, perform the split first, then fit transformers (e.g., StandardScaler, Imputer, PCA) only on the training data, and apply the fitted transformers to the test set. Likewise, avoid creating derived features that depend on future labels or on the full dataset. Validating the pipeline with cross\u2011validation after fitting transformations ensures leakage is avoided.",
+      "generated_at": "2026-10-12T09:31:33.568268+00:00"
     }
   ]
 }

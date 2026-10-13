@@ -30,16 +30,57 @@ Example pessimistic: A bank transfer transaction locks both the source and desti
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-13) — DSA
+
+**Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Perform a level‑order traversal and, for each level, record the last node you encounter.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Use BFS with a queue. While the queue is not empty, iterate over the current level size, dequeue nodes, enqueue their left and right children, and store the value of the node processed last in that level into the result list. This yields the right‑side view in O(n) time and O(w) auxiliary space, where w is the maximum width of the tree. Example Python implementation:
+python
+from collections import deque
+
+def rightSideView(root):
+    if not root:
+        return []
+    view = []
+    q = deque([root])
+    while q:
+        level_len = len(q)
+        for i in range(level_len):
+            node = q.popleft()
+            if i == level_len - 1:
+                view.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+    return view
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **85**
-- DSA: 21 · AI/ML: 21 · CSE Core: 22 · Behavioral: 21
+- Total questions logged: **86**
+- DSA: 22 · AI/ML: 21 · CSE Core: 22 · Behavioral: 21
 
 ## 🗂️ Recent Questions
 
+- **2026-10-13 [PM]** [DSA](questions/2026-10-13-pm-dsa.md): Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.
 - **2026-10-13 [AM]** [CSE Core](questions/2026-10-13-am-cse-core.md): What is the difference between optimistic and pessimistic locking mechanisms in relational database systems, and in which scenarios would each approach be more appropriate? Provide an example transaction scenario for each.
 - **2026-10-12 [PM]** [Behavioral](questions/2026-10-12-pm-behavioral.md): Tell me about a time when you had to manage a conflict between two departments—such as engineering and product—over resource allocation or project priorities, and how you helped reach a resolution.
 - **2026-10-12 [AM]** [AIML](questions/2026-10-12-am-aiml.md): How would you detect and prevent data leakage in a supervised learning pipeline? Give a concrete example where leakage could occur during preprocessing and explain how you would modify the pipeline to eliminate it.
@@ -54,7 +95,6 @@ Example pessimistic: A bank transfer transaction locks both the source and desti
 - **2026-10-07 [PM]** [CSE Core](questions/2026-10-07-pm-cse-core.md): Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?
 - **2026-10-07 [AM]** [DSA](questions/2026-10-07-am-dsa.md): Given an integer array `nums` representing the amount of money in each house along a street, determine the maximum amount of money you can rob without robbing two adjacent houses. Return the maximum sum you can obtain.
 - **2026-10-06 [PM]** [AIML](questions/2026-10-06-pm-aiml.md): Describe the difference between macro-averaged and micro-averaged F1 scores in multi-class classification. When would you choose one over the other, and how do class imbalances affect each metric?
-- **2026-10-06 [AM]** [Behavioral](questions/2026-10-06-am-behavioral.md): Describe a situation where you had to mediate a disagreement between two teammates about the prioritization of features for a release. How did you approach the discussion, what steps did you take to reach a consensus, and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

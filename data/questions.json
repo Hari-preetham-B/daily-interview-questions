@@ -848,6 +848,16 @@
       "hint": "Consider how each method detects or prevents conflicts and when conflicts are expected to occur.",
       "answer": "Optimistic locking assumes that conflicts are rare. Transactions proceed without acquiring locks on data; when they finish, they check whether any data they read has been modified by another transaction (typically via a version number or timestamp). If a conflict is detected, the transaction is rolled back or retried. This approach is efficient for read\u2011heavy workloads with low contention, such as reporting or web applications where many users read data but few update the same rows.\n\nPessimistic locking, by contrast, preemptively acquires exclusive locks on data that a transaction intends to modify. The locks are held until the transaction commits or aborts, preventing other transactions from reading or writing the locked data. This is suitable for workloads with high contention or where consistency is critical, such as financial systems where concurrent updates to the same account must be serialized.\n\nExample optimistic: A user edits a profile record. The application reads the row, shows the data, and when the user submits, the system checks that the version number hasn\u2019t changed. If it has, the update fails and the user is notified.\n\nExample pessimistic: A bank transfer transaction locks both the source and destination account rows before debiting and crediting, ensuring no other transfer can modify those accounts until the transaction completes.",
       "generated_at": "2026-10-13T09:37:22.577581+00:00"
+    },
+    {
+      "date": "2026-10-13",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.",
+      "difficulty": "Medium",
+      "hint": "Perform a level\u2011order traversal and, for each level, record the last node you encounter.",
+      "answer": "Use BFS with a queue. While the queue is not empty, iterate over the current level size, dequeue nodes, enqueue their left and right children, and store the value of the node processed last in that level into the result list. This yields the right\u2011side view in O(n) time and O(w) auxiliary space, where w is the maximum width of the tree. Example Python implementation:\npython\nfrom collections import deque\n\ndef rightSideView(root):\n    if not root:\n        return []\n    view = []\n    q = deque([root])\n    while q:\n        level_len = len(q)\n        for i in range(level_len):\n            node = q.popleft()\n            if i == level_len - 1:\n                view.append(node.val)\n            if node.left:\n                q.append(node.left)\n            if node.right:\n                q.append(node.right)\n    return view\n",
+      "generated_at": "2026-10-13T20:18:07.994632+00:00"
     }
   ]
 }

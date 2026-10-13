@@ -838,6 +838,16 @@
       "hint": "Consider how you identified each side\u2019s core needs and how you used a structured approach to negotiate a compromise.",
       "answer": "I was leading a cross\u2011department sprint where engineering wanted to focus on a performance overhaul while product demanded new features for an upcoming launch. I first mapped each team\u2019s key objectives and gathered data on impact and effort. Then I organized a joint workshop where both sides presented their constraints, and we used a weighted scoring model to prioritize tasks. By framing the trade\u2011off in terms of shared business outcomes, we agreed on a phased plan that delivered critical features first while scheduling the performance work for the next quarter. The result was a smoother sprint planning process and improved trust between the departments.",
       "generated_at": "2026-10-12T22:11:24.504483+00:00"
+    },
+    {
+      "date": "2026-10-13",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is the difference between optimistic and pessimistic locking mechanisms in relational database systems, and in which scenarios would each approach be more appropriate? Provide an example transaction scenario for each.",
+      "difficulty": "Medium",
+      "hint": "Consider how each method detects or prevents conflicts and when conflicts are expected to occur.",
+      "answer": "Optimistic locking assumes that conflicts are rare. Transactions proceed without acquiring locks on data; when they finish, they check whether any data they read has been modified by another transaction (typically via a version number or timestamp). If a conflict is detected, the transaction is rolled back or retried. This approach is efficient for read\u2011heavy workloads with low contention, such as reporting or web applications where many users read data but few update the same rows.\n\nPessimistic locking, by contrast, preemptively acquires exclusive locks on data that a transaction intends to modify. The locks are held until the transaction commits or aborts, preventing other transactions from reading or writing the locked data. This is suitable for workloads with high contention or where consistency is critical, such as financial systems where concurrent updates to the same account must be serialized.\n\nExample optimistic: A user edits a profile record. The application reads the row, shows the data, and when the user submits, the system checks that the version number hasn\u2019t changed. If it has, the update fails and the user is notified.\n\nExample pessimistic: A bank transfer transaction locks both the source and destination account rows before debiting and crediting, ensuring no other transfer can modify those accounts until the transaction completes.",
+      "generated_at": "2026-10-13T09:37:22.577581+00:00"
     }
   ]
 }

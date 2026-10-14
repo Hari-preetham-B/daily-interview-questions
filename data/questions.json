@@ -858,6 +858,16 @@
       "hint": "Perform a level\u2011order traversal and, for each level, record the last node you encounter.",
       "answer": "Use BFS with a queue. While the queue is not empty, iterate over the current level size, dequeue nodes, enqueue their left and right children, and store the value of the node processed last in that level into the result list. This yields the right\u2011side view in O(n) time and O(w) auxiliary space, where w is the maximum width of the tree. Example Python implementation:\npython\nfrom collections import deque\n\ndef rightSideView(root):\n    if not root:\n        return []\n    view = []\n    q = deque([root])\n    while q:\n        level_len = len(q)\n        for i in range(level_len):\n            node = q.popleft()\n            if i == level_len - 1:\n                view.append(node.val)\n            if node.left:\n                q.append(node.left)\n            if node.right:\n                q.append(node.right)\n    return view\n",
       "generated_at": "2026-10-13T20:18:07.994632+00:00"
+    },
+    {
+      "date": "2026-10-14",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you noticed a teammate consistently arriving late to team meetings, and you had to address the issue without causing friction. How did you approach the conversation, what was the outcome, and what did you learn?",
+      "difficulty": "Medium",
+      "hint": "Think about setting clear expectations and using a collaborative tone.",
+      "answer": "I scheduled a short one\u2011to\u2011one, started by acknowledging their recent contributions, then shared my observations about the late arrivals and how it impacted the team\u2019s flow. I asked if there were obstacles and offered to help find a solution. We agreed on a new meeting schedule that worked for both of us. The next week, the teammate started arriving on time, and the team\u2019s meeting efficiency improved. I learned that addressing issues privately and collaboratively often leads to better outcomes than public criticism.",
+      "generated_at": "2026-10-14T07:51:51.868691+00:00"
     }
   ]
 }

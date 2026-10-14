@@ -24,16 +24,37 @@ I scheduled a short one‑to‑one, started by acknowledging their recent contri
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-14) — AIML
+
+**How does Synthetic Minority Over-sampling Technique (SMOTE) generate synthetic samples for the minority class? Explain the algorithmic steps and discuss potential risks such as overfitting and noise amplification. Suggest possible mitigations.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how SMOTE selects minority examples and interpolates between them.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+SMOTE first selects a minority‑class instance and identifies its k nearest minority neighbors in feature space. For each neighbor, it generates a synthetic sample by taking a random point on the line segment between the selected instance and the neighbor: synthetic = instance + λ*(neighbor – instance), where λ ∈ [0,1] is drawn uniformly at random. This process is repeated until the desired number of synthetic samples is produced. Risks include overfitting because synthetic points may reinforce noise or outliers, and they can create overlapping class boundaries if minority and majority regions are close. Mitigations include using a smaller k, applying SMOTE only to a subset of features, combining SMOTE with Tomek links or edited nearest neighbors to clean borderline samples, and performing post‑processing to remove noisy synthetic points or applying dimensionality reduction before SMOTE.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **87**
-- DSA: 22 · AI/ML: 21 · CSE Core: 22 · Behavioral: 22
+- Total questions logged: **88**
+- DSA: 22 · AI/ML: 22 · CSE Core: 22 · Behavioral: 22
 
 ## 🗂️ Recent Questions
 
+- **2026-10-14 [PM]** [AIML](questions/2026-10-14-pm-aiml.md): How does Synthetic Minority Over-sampling Technique (SMOTE) generate synthetic samples for the minority class? Explain the algorithmic steps and discuss potential risks such as overfitting and noise amplification. Suggest possible mitigations.
 - **2026-10-14 [AM]** [Behavioral](questions/2026-10-14-am-behavioral.md): Tell me about a time when you noticed a teammate consistently arriving late to team meetings, and you had to address the issue without causing friction. How did you approach the conversation, what was the outcome, and what did you learn?
 - **2026-10-13 [PM]** [DSA](questions/2026-10-13-pm-dsa.md): Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.
 - **2026-10-13 [AM]** [CSE Core](questions/2026-10-13-am-cse-core.md): What is the difference between optimistic and pessimistic locking mechanisms in relational database systems, and in which scenarios would each approach be more appropriate? Provide an example transaction scenario for each.
@@ -48,7 +69,6 @@ I scheduled a short one‑to‑one, started by acknowledging their recent contri
 - **2026-10-08 [PM]** [Behavioral](questions/2026-10-08-pm-behavioral.md): Tell me about a time when you had to handle a last‑minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?
 - **2026-10-08 [AM]** [AIML](questions/2026-10-08-am-aiml.md): Explain temperature scaling as a model calibration technique: how it works, why it does not alter the predicted class order, and how the temperature parameter is typically determined.
 - **2026-10-07 [PM]** [CSE Core](questions/2026-10-07-pm-cse-core.md): Explain the two-phase commit (2PC) protocol and how it ensures atomicity and consistency across distributed database transactions. What are the roles of the coordinator and participants, and what happens in each phase?
-- **2026-10-07 [AM]** [DSA](questions/2026-10-07-am-dsa.md): Given an integer array `nums` representing the amount of money in each house along a street, determine the maximum amount of money you can rob without robbing two adjacent houses. Return the maximum sum you can obtain.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

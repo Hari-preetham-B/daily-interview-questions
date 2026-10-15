@@ -878,6 +878,16 @@
       "hint": "Think about how SMOTE selects minority examples and interpolates between them.",
       "answer": "SMOTE first selects a minority\u2011class instance and identifies its k nearest minority neighbors in feature space. For each neighbor, it generates a synthetic sample by taking a random point on the line segment between the selected instance and the neighbor: synthetic = instance + \u03bb*(neighbor \u2013 instance), where \u03bb \u2208 [0,1] is drawn uniformly at random. This process is repeated until the desired number of synthetic samples is produced. Risks include overfitting because synthetic points may reinforce noise or outliers, and they can create overlapping class boundaries if minority and majority regions are close. Mitigations include using a smaller k, applying SMOTE only to a subset of features, combining SMOTE with Tomek links or edited nearest neighbors to clean borderline samples, and performing post\u2011processing to remove noisy synthetic points or applying dimensionality reduction before SMOTE.",
       "generated_at": "2026-10-14T18:47:01.994566+00:00"
+    },
+    {
+      "date": "2026-10-15",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an m\u202f\u00d7\u202fn integer matrix (which may contain negative numbers), find the submatrix with the maximum possible sum and return that sum. Aim for a solution with O(m\u00b7n\u00b2) time complexity.",
+      "difficulty": "Medium",
+      "hint": "Fix two rows (or columns) as the top and bottom boundaries, collapse the matrix between them into a 1\u2011D array of column sums, and then apply the linear\u2011time maximum subarray algorithm on that array.",
+      "answer": "The optimal approach runs in O(m\u00b7n\u00b2) by iterating over all pairs of rows as the top and bottom of the submatrix. For each pair, we maintain a temporary array `colSum` where `colSum[j]` accumulates the sum of elements in column j between the two rows. Applying Kadane's algorithm on `colSum` yields the maximum subarray sum for that row pair, which corresponds to the best submatrix for those boundaries. We keep the global maximum over all row pairs. The overall time is O(m\u00b7n\u00b2) and the extra space is O(n). Example Python implementation:\npython\ndef maxSumSubmatrix(matrix):\n    if not matrix or not matrix[0]:\n        return 0\n    m, n = len(matrix), len(matrix[0])\n    max_sum = float('-inf')\n    for top in range(m):\n        col_sum = [0] * n\n        for bottom in range(top, m):\n            for c in range(n):\n                col_sum[c] += matrix[bottom][c]\n            # Kadane's algorithm on col_sum\n            cur = 0\n            best = float('-inf')\n            for val in col_sum:\n                cur = max(val, cur + val)\n                best = max(best, cur)\n            max_sum = max(max_sum, best)\n    return max_sum\n",
+      "generated_at": "2026-10-15T07:37:19.065820+00:00"
     }
   ]
 }

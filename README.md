@@ -44,16 +44,37 @@ def maxSumSubmatrix(matrix):
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-15) — CSE Core
+
+**Explain the phenomenon known as "write‑skew" that can occur under Snapshot Isolation in a relational database. How can this anomaly lead to integrity constraint violations, and what techniques can be used to prevent it?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider two concurrent transactions that read the same rows but update different rows; think about a uniqueness or sum constraint that could be broken.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Write‑skew is an anomaly where two concurrent transactions, each reading a set of rows and then updating disjoint rows, commit under Snapshot Isolation without seeing each other's updates. Because each transaction bases its decision on a snapshot that does not include the other’s write, a global integrity constraint (e.g., only one row may have a certain flag set) can be violated after both commit. Snapshot Isolation prevents only write‑write conflicts on the same row, not logical conflicts across rows. To avoid write‑skew, one can use a stronger isolation level such as serializable, employ predicate locking, add explicit checks that enforce the constraint, or introduce a dummy row that all transactions lock to create a write‑write conflict.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **89**
-- DSA: 23 · AI/ML: 22 · CSE Core: 22 · Behavioral: 22
+- Total questions logged: **90**
+- DSA: 23 · AI/ML: 22 · CSE Core: 23 · Behavioral: 22
 
 ## 🗂️ Recent Questions
 
+- **2026-10-15 [PM]** [CSE Core](questions/2026-10-15-pm-cse-core.md): Explain the phenomenon known as "write‑skew" that can occur under Snapshot Isolation in a relational database. How can this anomaly lead to integrity constraint violations, and what techniques can be used to prevent it?
 - **2026-10-15 [AM]** [DSA](questions/2026-10-15-am-dsa.md): Given an m × n integer matrix (which may contain negative numbers), find the submatrix with the maximum possible sum and return that sum. Aim for a solution with O(m·n²) time complexity.
 - **2026-10-14 [PM]** [AIML](questions/2026-10-14-pm-aiml.md): How does Synthetic Minority Over-sampling Technique (SMOTE) generate synthetic samples for the minority class? Explain the algorithmic steps and discuss potential risks such as overfitting and noise amplification. Suggest possible mitigations.
 - **2026-10-14 [AM]** [Behavioral](questions/2026-10-14-am-behavioral.md): Tell me about a time when you noticed a teammate consistently arriving late to team meetings, and you had to address the issue without causing friction. How did you approach the conversation, what was the outcome, and what did you learn?
@@ -68,7 +89,6 @@ def maxSumSubmatrix(matrix):
 - **2026-10-09 [PM]** [DSA](questions/2026-10-09-pm-dsa.md): You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.
 - **2026-10-09 [AM]** [CSE Core](questions/2026-10-09-am-cse-core.md): Explain the difference between composition and inheritance in object-oriented design and give an example of a scenario where composition is preferred over inheritance.
 - **2026-10-08 [PM]** [Behavioral](questions/2026-10-08-pm-behavioral.md): Tell me about a time when you had to handle a last‑minute change in project requirements that threatened your team's deadline. What steps did you take to replan and communicate the changes to stakeholders?
-- **2026-10-08 [AM]** [AIML](questions/2026-10-08-am-aiml.md): Explain temperature scaling as a model calibration technique: how it works, why it does not alter the predicted class order, and how the temperature parameter is typically determined.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

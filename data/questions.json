@@ -908,6 +908,16 @@
       "hint": "Think about how the convolution operation slides a kernel across an image and reuses the same weights.",
       "answer": "Weight sharing in a CNN means that the same filter weights are applied at every spatial location when computing the convolution. This drastically reduces parameters because a filter of size k\u00d7k\u00d7C has k^2\u00d7C parameters regardless of the input image size, whereas a fully connected layer would need one weight per input-output pair. Because the filter is reused across the image, the network responds similarly to a feature wherever it appears, giving the model approximate translation invariance. The receptive field grows with depth and pooling, allowing higher layers to capture larger patterns while still maintaining a small parameter count.",
       "generated_at": "2026-10-16T07:23:49.702623+00:00"
+    },
+    {
+      "date": "2026-10-16",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Consider how you translate technical jargon into business terms and how you use data to support your recommendation.",
+      "answer": "I was working on a data migration project where the legacy system could not handle the new schema without a significant refactor. The product owner wanted to push the migration forward to meet a launch date. I prepared a clear risk\u2011benefit matrix, using simple analogies and a cost\u2011of\u2011delay estimate to show that a short\u2011term delay would save significant rework later. I presented this in a one\u2011page deck and ran through a quick workshop with the stakeholder, addressing concerns and clarifying the fallback plan. The stakeholder agreed to a two\u2011week extension, and the migration proceeded without major bugs, ultimately delivering the product on time.",
+      "generated_at": "2026-10-16T18:15:09.035819+00:00"
     }
   ]
 }

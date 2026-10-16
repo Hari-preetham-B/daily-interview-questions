@@ -24,16 +24,37 @@ Weight sharing in a CNN means that the same filter weights are applied at every 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-16) — Behavioral
+
+**Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you translate technical jargon into business terms and how you use data to support your recommendation.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+I was working on a data migration project where the legacy system could not handle the new schema without a significant refactor. The product owner wanted to push the migration forward to meet a launch date. I prepared a clear risk‑benefit matrix, using simple analogies and a cost‑of‑delay estimate to show that a short‑term delay would save significant rework later. I presented this in a one‑page deck and ran through a quick workshop with the stakeholder, addressing concerns and clarifying the fallback plan. The stakeholder agreed to a two‑week extension, and the migration proceeded without major bugs, ultimately delivering the product on time.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **91**
-- DSA: 23 · AI/ML: 23 · CSE Core: 23 · Behavioral: 22
+- Total questions logged: **92**
+- DSA: 23 · AI/ML: 23 · CSE Core: 23 · Behavioral: 23
 
 ## 🗂️ Recent Questions
 
+- **2026-10-16 [PM]** [Behavioral](questions/2026-10-16-pm-behavioral.md): Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?
 - **2026-10-16 [AM]** [AIML](questions/2026-10-16-am-aiml.md): Explain the concept of weight sharing in convolutional neural networks. How does it reduce the number of parameters compared to fully connected layers, and what effect does this have on translation invariance in image processing?
 - **2026-10-15 [PM]** [CSE Core](questions/2026-10-15-pm-cse-core.md): Explain the phenomenon known as "write‑skew" that can occur under Snapshot Isolation in a relational database. How can this anomaly lead to integrity constraint violations, and what techniques can be used to prevent it?
 - **2026-10-15 [AM]** [DSA](questions/2026-10-15-am-dsa.md): Given an m × n integer matrix (which may contain negative numbers), find the submatrix with the maximum possible sum and return that sum. Aim for a solution with O(m·n²) time complexity.
@@ -48,7 +69,6 @@ Weight sharing in a CNN means that the same filter weights are applied at every 
 - **2026-10-10 [PM]** [AIML](questions/2026-10-10-pm-aiml.md): What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.
 - **2026-10-10 [AM]** [Behavioral](questions/2026-10-10-am-behavioral.md): Describe a situation where you had to change your working style to accommodate a teammate who had a different approach to problem-solving. How did you adapt, and what was the outcome?
 - **2026-10-09 [PM]** [DSA](questions/2026-10-09-pm-dsa.md): You are given an array of positive integers nums and an integer k. Find the length of the longest contiguous subarray such that the product of all its elements is strictly less than k. If no such subarray exists, return 0.
-- **2026-10-09 [AM]** [CSE Core](questions/2026-10-09-am-cse-core.md): Explain the difference between composition and inheritance in object-oriented design and give an example of a scenario where composition is preferred over inheritance.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

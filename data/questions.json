@@ -898,6 +898,16 @@
       "hint": "Consider two concurrent transactions that read the same rows but update different rows; think about a uniqueness or sum constraint that could be broken.",
       "answer": "Write\u2011skew is an anomaly where two concurrent transactions, each reading a set of rows and then updating disjoint rows, commit under Snapshot Isolation without seeing each other's updates. Because each transaction bases its decision on a snapshot that does not include the other\u2019s write, a global integrity constraint (e.g., only one row may have a certain flag set) can be violated after both commit. Snapshot Isolation prevents only write\u2011write conflicts on the same row, not logical conflicts across rows. To avoid write\u2011skew, one can use a stronger isolation level such as serializable, employ predicate locking, add explicit checks that enforce the constraint, or introduce a dummy row that all transactions lock to create a write\u2011write conflict.",
       "generated_at": "2026-10-15T18:28:38.680359+00:00"
+    },
+    {
+      "date": "2026-10-16",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain the concept of weight sharing in convolutional neural networks. How does it reduce the number of parameters compared to fully connected layers, and what effect does this have on translation invariance in image processing?",
+      "difficulty": "Medium",
+      "hint": "Think about how the convolution operation slides a kernel across an image and reuses the same weights.",
+      "answer": "Weight sharing in a CNN means that the same filter weights are applied at every spatial location when computing the convolution. This drastically reduces parameters because a filter of size k\u00d7k\u00d7C has k^2\u00d7C parameters regardless of the input image size, whereas a fully connected layer would need one weight per input-output pair. Because the filter is reused across the image, the network responds similarly to a feature wherever it appears, giving the model approximate translation invariance. The receptive field grows with depth and pooling, allowing higher layers to capture larger patterns while still maintaining a small parameter count.",
+      "generated_at": "2026-10-16T07:23:49.702623+00:00"
     }
   ]
 }

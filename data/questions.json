@@ -928,6 +928,16 @@
       "hint": "Think about how readers can see a consistent snapshot while writers create new versions of data rows. Consider the role of timestamps or transaction IDs in determining visibility.",
       "answer": "Multiversion Concurrency Control keeps multiple historical versions of each row, each tagged with transaction start and end timestamps. Read transactions obtain a snapshot timestamp and see only rows whose start timestamp is before the snapshot and whose end timestamp is after it, so they never block writers. Writers create a new version of a row with a new start timestamp; if two writers modify the same row, the database detects a conflict and aborts one of the transactions. This allows reads to proceed without acquiring locks, while write\u2011write conflicts are still detected and resolved at commit time. PostgreSQL, Oracle, and many NoSQL stores implement MVCC for high concurrency.",
       "generated_at": "2026-10-17T07:05:31.015169+00:00"
+    },
+    {
+      "date": "2026-10-17",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non\u2011overlapping jobs.",
+      "difficulty": "Medium",
+      "hint": "Sort the jobs by finish time, then for each job determine the last job that finishes before it starts. Use dynamic programming where dp[i] is the max profit using the first i jobs.",
+      "answer": "1. Sort the jobs by their finish times.\n2. For each job i, perform a binary search on the sorted list to find the last job j that finishes before job i starts.\n3. Let dp[i] be the maximum profit using jobs up to i. Then dp[i] = max(dp[i-1], profit[i] + dp[j]) where j is the index found in step 2 (or 0 if none).\n4. The answer is dp[n] where n is the number of jobs.\nThis runs in O(n log n) time due to sorting and binary searches, and uses O(n) space for the DP array.",
+      "generated_at": "2026-10-17T17:25:01.711441+00:00"
     }
   ]
 }

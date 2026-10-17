@@ -24,16 +24,41 @@ Multiversion Concurrency Control keeps multiple historical versions of each row,
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-17) — DSA
+
+**You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non‑overlapping jobs.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Sort the jobs by finish time, then for each job determine the last job that finishes before it starts. Use dynamic programming where dp[i] is the max profit using the first i jobs.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+1. Sort the jobs by their finish times.
+2. For each job i, perform a binary search on the sorted list to find the last job j that finishes before job i starts.
+3. Let dp[i] be the maximum profit using jobs up to i. Then dp[i] = max(dp[i-1], profit[i] + dp[j]) where j is the index found in step 2 (or 0 if none).
+4. The answer is dp[n] where n is the number of jobs.
+This runs in O(n log n) time due to sorting and binary searches, and uses O(n) space for the DP array.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **93**
-- DSA: 23 · AI/ML: 23 · CSE Core: 24 · Behavioral: 23
+- Total questions logged: **94**
+- DSA: 24 · AI/ML: 23 · CSE Core: 24 · Behavioral: 23
 
 ## 🗂️ Recent Questions
 
+- **2026-10-17 [PM]** [DSA](questions/2026-10-17-pm-dsa.md): You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non‑overlapping jobs.
 - **2026-10-17 [AM]** [CSE Core](questions/2026-10-17-am-cse-core.md): What is Multiversion Concurrency Control (MVCC) in relational databases, and how does it enable concurrent reads and writes without locking conflicts?
 - **2026-10-16 [PM]** [Behavioral](questions/2026-10-16-pm-behavioral.md): Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?
 - **2026-10-16 [AM]** [AIML](questions/2026-10-16-am-aiml.md): Explain the concept of weight sharing in convolutional neural networks. How does it reduce the number of parameters compared to fully connected layers, and what effect does this have on translation invariance in image processing?
@@ -48,7 +73,6 @@ Multiversion Concurrency Control keeps multiple historical versions of each row,
 - **2026-10-11 [PM]** [CSE Core](questions/2026-10-11-pm-cse-core.md): In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.
 - **2026-10-11 [AM]** [DSA](questions/2026-10-11-am-dsa.md): Given a string s, partition it into substrings such that each substring is a palindrome. Return the minimum number of cuts needed to split s into palindrome substrings.
 - **2026-10-10 [PM]** [AIML](questions/2026-10-10-pm-aiml.md): What is knowledge distillation in deep learning, and how does it work to train a smaller student model using a larger teacher model? Explain the role of the temperature parameter in the softmax and how the student loss is typically formulated.
-- **2026-10-10 [AM]** [Behavioral](questions/2026-10-10-am-behavioral.md): Describe a situation where you had to change your working style to accommodate a teammate who had a different approach to problem-solving. How did you adapt, and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

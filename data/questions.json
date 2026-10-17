@@ -918,6 +918,16 @@
       "hint": "Consider how you translate technical jargon into business terms and how you use data to support your recommendation.",
       "answer": "I was working on a data migration project where the legacy system could not handle the new schema without a significant refactor. The product owner wanted to push the migration forward to meet a launch date. I prepared a clear risk\u2011benefit matrix, using simple analogies and a cost\u2011of\u2011delay estimate to show that a short\u2011term delay would save significant rework later. I presented this in a one\u2011page deck and ran through a quick workshop with the stakeholder, addressing concerns and clarifying the fallback plan. The stakeholder agreed to a two\u2011week extension, and the migration proceeded without major bugs, ultimately delivering the product on time.",
       "generated_at": "2026-10-16T18:15:09.035819+00:00"
+    },
+    {
+      "date": "2026-10-17",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is Multiversion Concurrency Control (MVCC) in relational databases, and how does it enable concurrent reads and writes without locking conflicts?",
+      "difficulty": "Medium",
+      "hint": "Think about how readers can see a consistent snapshot while writers create new versions of data rows. Consider the role of timestamps or transaction IDs in determining visibility.",
+      "answer": "Multiversion Concurrency Control keeps multiple historical versions of each row, each tagged with transaction start and end timestamps. Read transactions obtain a snapshot timestamp and see only rows whose start timestamp is before the snapshot and whose end timestamp is after it, so they never block writers. Writers create a new version of a row with a new start timestamp; if two writers modify the same row, the database detects a conflict and aborts one of the transactions. This allows reads to proceed without acquiring locks, while write\u2011write conflicts are still detected and resolved at commit time. PostgreSQL, Oracle, and many NoSQL stores implement MVCC for high concurrency.",
+      "generated_at": "2026-10-17T07:05:31.015169+00:00"
     }
   ]
 }

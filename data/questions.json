@@ -948,6 +948,16 @@
       "hint": "Think about how you identified differences in communication norms and what concrete steps you took to adapt.",
       "answer": "I was part of a cross\u2011continental sprint with developers in India and Brazil. I noticed that our weekly stand\u2011ups were often misinterpreted because of differing cultural norms around directness and timekeeping. I suggested a shared agenda template and brief written summaries after each meeting. I also encouraged using asynchronous channels for clarifications. As a result, the team reported higher clarity and we delivered the sprint on time.",
       "generated_at": "2026-10-18T07:20:14.108318+00:00"
+    },
+    {
+      "date": "2026-10-18",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.",
+      "difficulty": "Medium",
+      "hint": "Consider bounding the norm of the gradient vector during backpropagation.",
+      "answer": "Gradient clipping is a technique that limits the magnitude of gradients during backpropagation by rescaling them if their norm exceeds a predefined threshold. By capping the gradient norm, it prevents extreme weight updates that can destabilize training, particularly in recurrent networks where exploding gradients are common. Two common clipping strategies are global norm clipping, where all gradients are scaled together, and element-wise clipping, where each component is capped. While clipping mitigates instability, it can slow convergence if the threshold is set too low, so choosing an appropriate value is essential.",
+      "generated_at": "2026-10-18T17:27:25.891636+00:00"
     }
   ]
 }

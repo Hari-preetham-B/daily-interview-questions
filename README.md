@@ -24,16 +24,37 @@ I was part of a cross‑continental sprint with developers in India and Brazil. 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-18) — AIML
+
+**Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider bounding the norm of the gradient vector during backpropagation.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Gradient clipping is a technique that limits the magnitude of gradients during backpropagation by rescaling them if their norm exceeds a predefined threshold. By capping the gradient norm, it prevents extreme weight updates that can destabilize training, particularly in recurrent networks where exploding gradients are common. Two common clipping strategies are global norm clipping, where all gradients are scaled together, and element-wise clipping, where each component is capped. While clipping mitigates instability, it can slow convergence if the threshold is set too low, so choosing an appropriate value is essential.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **95**
-- DSA: 24 · AI/ML: 23 · CSE Core: 24 · Behavioral: 24
+- Total questions logged: **96**
+- DSA: 24 · AI/ML: 24 · CSE Core: 24 · Behavioral: 24
 
 ## 🗂️ Recent Questions
 
+- **2026-10-18 [PM]** [AIML](questions/2026-10-18-pm-aiml.md): Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.
 - **2026-10-18 [AM]** [Behavioral](questions/2026-10-18-am-behavioral.md): Tell me about a time when you worked with a remote team from a different cultural background, and you had to adjust your communication style to ensure clarity and maintain team cohesion.
 - **2026-10-17 [PM]** [DSA](questions/2026-10-17-pm-dsa.md): You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non‑overlapping jobs.
 - **2026-10-17 [AM]** [CSE Core](questions/2026-10-17-am-cse-core.md): What is Multiversion Concurrency Control (MVCC) in relational databases, and how does it enable concurrent reads and writes without locking conflicts?
@@ -48,7 +69,6 @@ I was part of a cross‑continental sprint with developers in India and Brazil. 
 - **2026-10-12 [PM]** [Behavioral](questions/2026-10-12-pm-behavioral.md): Tell me about a time when you had to manage a conflict between two departments—such as engineering and product—over resource allocation or project priorities, and how you helped reach a resolution.
 - **2026-10-12 [AM]** [AIML](questions/2026-10-12-am-aiml.md): How would you detect and prevent data leakage in a supervised learning pipeline? Give a concrete example where leakage could occur during preprocessing and explain how you would modify the pipeline to eliminate it.
 - **2026-10-11 [PM]** [CSE Core](questions/2026-10-11-pm-cse-core.md): In a preemptive multitasking operating system, how does the scheduler decide which process to run next, and what role does the CPU's cache (specifically L1 cache) play during a context switch? Explain the impact on performance and how modern OSes mitigate cache thrashing.
-- **2026-10-11 [AM]** [DSA](questions/2026-10-11-am-dsa.md): Given a string s, partition it into substrings such that each substring is a palindrome. Return the minimum number of cuts needed to split s into palindrome substrings.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

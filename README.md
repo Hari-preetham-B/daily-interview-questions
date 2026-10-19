@@ -24,16 +24,37 @@ Perform a post‑order DFS. For each node compute its left and right subtree hei
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-19) — CSE Core
+
+**Explain the role of the 'page table walk' in translating virtual addresses to physical addresses in an x86‑64 system, and discuss how the TLB mitigates the performance impact of this process.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the hierarchical page tables and how a TLB cache can avoid repeated walks.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In x86‑64, a virtual address is broken into a 4‑level page‑table index and an offset. The CPU walks each level (PML4, PDPT, PD, PT) by reading the corresponding page‑table entry from memory until it reaches the physical frame number, which can be expensive if done on every instruction. The Translation Lookaside Buffer (TLB) caches recently used virtual‑to‑physical translations; on a TLB hit, the walk is skipped entirely, dramatically reducing latency. When a translation is not in the TLB (a miss), the processor performs the walk and then inserts the mapping into the TLB for future use.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **97**
-- DSA: 25 · AI/ML: 24 · CSE Core: 24 · Behavioral: 24
+- Total questions logged: **98**
+- DSA: 25 · AI/ML: 24 · CSE Core: 25 · Behavioral: 24
 
 ## 🗂️ Recent Questions
 
+- **2026-10-19 [PM]** [CSE Core](questions/2026-10-19-pm-cse-core.md): Explain the role of the 'page table walk' in translating virtual addresses to physical addresses in an x86‑64 system, and discuss how the TLB mitigates the performance impact of this process.
 - **2026-10-19 [AM]** [DSA](questions/2026-10-19-am-dsa.md): Given the root of a binary tree, return the length of its diameter. The diameter is defined as the number of edges between the two farthest nodes in the tree (the path may or may not pass through the root).
 - **2026-10-18 [PM]** [AIML](questions/2026-10-18-pm-aiml.md): Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.
 - **2026-10-18 [AM]** [Behavioral](questions/2026-10-18-am-behavioral.md): Tell me about a time when you worked with a remote team from a different cultural background, and you had to adjust your communication style to ensure clarity and maintain team cohesion.
@@ -48,7 +69,6 @@ Perform a post‑order DFS. For each node compute its left and right subtree hei
 - **2026-10-13 [PM]** [DSA](questions/2026-10-13-pm-dsa.md): Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.
 - **2026-10-13 [AM]** [CSE Core](questions/2026-10-13-am-cse-core.md): What is the difference between optimistic and pessimistic locking mechanisms in relational database systems, and in which scenarios would each approach be more appropriate? Provide an example transaction scenario for each.
 - **2026-10-12 [PM]** [Behavioral](questions/2026-10-12-pm-behavioral.md): Tell me about a time when you had to manage a conflict between two departments—such as engineering and product—over resource allocation or project priorities, and how you helped reach a resolution.
-- **2026-10-12 [AM]** [AIML](questions/2026-10-12-am-aiml.md): How would you detect and prevent data leakage in a supervised learning pipeline? Give a concrete example where leakage could occur during preprocessing and explain how you would modify the pipeline to eliminate it.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

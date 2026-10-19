@@ -958,6 +958,16 @@
       "hint": "Consider bounding the norm of the gradient vector during backpropagation.",
       "answer": "Gradient clipping is a technique that limits the magnitude of gradients during backpropagation by rescaling them if their norm exceeds a predefined threshold. By capping the gradient norm, it prevents extreme weight updates that can destabilize training, particularly in recurrent networks where exploding gradients are common. Two common clipping strategies are global norm clipping, where all gradients are scaled together, and element-wise clipping, where each component is capped. While clipping mitigates instability, it can slow convergence if the threshold is set too low, so choosing an appropriate value is essential.",
       "generated_at": "2026-10-18T17:27:25.891636+00:00"
+    },
+    {
+      "date": "2026-10-19",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given the root of a binary tree, return the length of its diameter. The diameter is defined as the number of edges between the two farthest nodes in the tree (the path may or may not pass through the root).",
+      "difficulty": "Medium",
+      "hint": "Think about computing the height of each subtree while tracking the longest path that passes through the current node.",
+      "answer": "Perform a post\u2011order DFS. For each node compute its left and right subtree heights. The diameter candidate at that node is leftHeight + rightHeight. Keep a global maximum of these candidates. Return the global maximum after traversal. The height of a node is 1 + max(leftHeight, rightHeight), with a leaf having height 1. This runs in O(n) time and O(h) space for recursion depth.",
+      "generated_at": "2026-10-19T07:58:42.448326+00:00"
     }
   ]
 }

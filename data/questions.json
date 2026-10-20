@@ -988,6 +988,16 @@
       "hint": "Think about separating the data for hyperparameter search from the data used for final performance estimation, and how randomness in tree building can affect results.",
       "answer": "Use a nested CV: an outer loop splits the data into training and hold\u2011out sets to estimate generalisation, while an inner loop performs grid or random search over the hyperparameter space using k\u2011fold CV on the training split. For small datasets, the validation score can be very noisy and the outer test set may be too small; mitigate this by using leave\u2011one\u2011out or repeated k\u2011fold CV, ensuring each split has enough samples, and optionally using Bayesian optimisation to reduce the number of evaluations. Also set a random seed and, if the target distribution varies, use stratified or quantile\u2011based splits to keep each fold representative.",
       "generated_at": "2026-10-20T07:48:38.847400+00:00"
+    },
+    {
+      "date": "2026-10-20",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Consider how you can create small positive rituals or recognize achievements to lift spirits during a crunch period.",
+      "answer": "During the final sprint of a mobile app launch, the team was exhausted and motivation was low. I organized a brief daily stand\u2011up with a quick ice\u2011breaker, suggested short 5\u2011minute breaks for stretching, and set up a shared channel for celebrating small wins. I also requested a short extension from the product owner to allow the team to finish cleanly. The morale improved, the code quality stayed high, and we delivered on time with positive feedback from stakeholders.",
+      "generated_at": "2026-10-20T18:34:50.417692+00:00"
     }
   ]
 }

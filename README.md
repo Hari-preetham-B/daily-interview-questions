@@ -24,16 +24,37 @@ Use a nested CV: an outer loop splits the data into training and hold‑out sets
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-20) — Behavioral
+
+**Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you can create small positive rituals or recognize achievements to lift spirits during a crunch period.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+During the final sprint of a mobile app launch, the team was exhausted and motivation was low. I organized a brief daily stand‑up with a quick ice‑breaker, suggested short 5‑minute breaks for stretching, and set up a shared channel for celebrating small wins. I also requested a short extension from the product owner to allow the team to finish cleanly. The morale improved, the code quality stayed high, and we delivered on time with positive feedback from stakeholders.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **99**
-- DSA: 25 · AI/ML: 25 · CSE Core: 25 · Behavioral: 24
+- Total questions logged: **100**
+- DSA: 25 · AI/ML: 25 · CSE Core: 25 · Behavioral: 25
 
 ## 🗂️ Recent Questions
 
+- **2026-10-20 [PM]** [Behavioral](questions/2026-10-20-pm-behavioral.md): Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?
 - **2026-10-20 [AM]** [AIML](questions/2026-10-20-am-aiml.md): You have a Random Forest regressor for predicting house prices. How would you use cross-validation to tune its hyperparameters (e.g., number of trees, max depth, min samples split)? What pitfalls might arise when the dataset is small, and how can you mitigate them?
 - **2026-10-19 [PM]** [CSE Core](questions/2026-10-19-pm-cse-core.md): Explain the role of the 'page table walk' in translating virtual addresses to physical addresses in an x86‑64 system, and discuss how the TLB mitigates the performance impact of this process.
 - **2026-10-19 [AM]** [DSA](questions/2026-10-19-am-dsa.md): Given the root of a binary tree, return the length of its diameter. The diameter is defined as the number of edges between the two farthest nodes in the tree (the path may or may not pass through the root).
@@ -48,7 +69,6 @@ Use a nested CV: an outer loop splits the data into training and hold‑out sets
 - **2026-10-14 [PM]** [AIML](questions/2026-10-14-pm-aiml.md): How does Synthetic Minority Over-sampling Technique (SMOTE) generate synthetic samples for the minority class? Explain the algorithmic steps and discuss potential risks such as overfitting and noise amplification. Suggest possible mitigations.
 - **2026-10-14 [AM]** [Behavioral](questions/2026-10-14-am-behavioral.md): Tell me about a time when you noticed a teammate consistently arriving late to team meetings, and you had to address the issue without causing friction. How did you approach the conversation, what was the outcome, and what did you learn?
 - **2026-10-13 [PM]** [DSA](questions/2026-10-13-pm-dsa.md): Given the root of a binary tree, return an array containing the values of the nodes that are visible when the tree is viewed from the right side. The output should list the visible node values from top to bottom.
-- **2026-10-13 [AM]** [CSE Core](questions/2026-10-13-am-cse-core.md): What is the difference between optimistic and pessimistic locking mechanisms in relational database systems, and in which scenarios would each approach be more appropriate? Provide an example transaction scenario for each.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

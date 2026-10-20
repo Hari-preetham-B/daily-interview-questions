@@ -978,6 +978,16 @@
       "hint": "Consider the hierarchical page tables and how a TLB cache can avoid repeated walks.",
       "answer": "In x86\u201164, a virtual address is broken into a 4\u2011level page\u2011table index and an offset. The CPU walks each level (PML4, PDPT, PD, PT) by reading the corresponding page\u2011table entry from memory until it reaches the physical frame number, which can be expensive if done on every instruction. The Translation Lookaside Buffer (TLB) caches recently used virtual\u2011to\u2011physical translations; on a TLB hit, the walk is skipped entirely, dramatically reducing latency. When a translation is not in the TLB (a miss), the processor performs the walk and then inserts the mapping into the TLB for future use.",
       "generated_at": "2026-10-19T20:03:07.059996+00:00"
+    },
+    {
+      "date": "2026-10-20",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "You have a Random Forest regressor for predicting house prices. How would you use cross-validation to tune its hyperparameters (e.g., number of trees, max depth, min samples split)? What pitfalls might arise when the dataset is small, and how can you mitigate them?",
+      "difficulty": "Medium",
+      "hint": "Think about separating the data for hyperparameter search from the data used for final performance estimation, and how randomness in tree building can affect results.",
+      "answer": "Use a nested CV: an outer loop splits the data into training and hold\u2011out sets to estimate generalisation, while an inner loop performs grid or random search over the hyperparameter space using k\u2011fold CV on the training split. For small datasets, the validation score can be very noisy and the outer test set may be too small; mitigate this by using leave\u2011one\u2011out or repeated k\u2011fold CV, ensuring each split has enough samples, and optionally using Bayesian optimisation to reduce the number of evaluations. Also set a random seed and, if the target distribution varies, use stratified or quantile\u2011based splits to keep each fold representative.",
+      "generated_at": "2026-10-20T07:48:38.847400+00:00"
     }
   ]
 }

@@ -998,6 +998,16 @@
       "hint": "Consider how you can create small positive rituals or recognize achievements to lift spirits during a crunch period.",
       "answer": "During the final sprint of a mobile app launch, the team was exhausted and motivation was low. I organized a brief daily stand\u2011up with a quick ice\u2011breaker, suggested short 5\u2011minute breaks for stretching, and set up a shared channel for celebrating small wins. I also requested a short extension from the product owner to allow the team to finish cleanly. The morale improved, the code quality stayed high, and we delivered on time with positive feedback from stakeholders.",
       "generated_at": "2026-10-20T18:34:50.417692+00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "In object-oriented design, how do composition and aggregation differ, and in what scenarios would you prefer one over the other?",
+      "difficulty": "Medium",
+      "hint": "Think about ownership lifetime and the strength of the relationship between the containing and contained objects.",
+      "answer": "Composition implies a strong ownership: the container creates and destroys the contained object, and the contained object cannot exist independently. Aggregation is a weaker association; the container references an object that may outlive it and is often shared. Use composition when the contained object's lifecycle is tightly coupled to the container (e.g., a Car owns its Engine). Use aggregation when the contained object has an independent lifecycle and may be shared (e.g., a Library has Books that exist regardless of the Library).",
+      "generated_at": "2026-10-21T07:52:24.942250+00:00"
     }
   ]
 }

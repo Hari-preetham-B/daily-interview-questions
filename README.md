@@ -24,16 +24,37 @@ Composition implies a strong ownership: the container creates and destroys the c
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-21) — DSA
+
+**You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider using a stack to keep track of building indices. Think about how to determine the widest rectangle for each building when it becomes the limiting height.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A linear‑time stack solution works. Scan the array from left to right, pushing indices whose heights are increasing. When encountering a height lower than the stack’s top, pop until the stack is empty or the current height is taller. Each pop represents a rectangle where the popped height is the limiting height; the width is the distance between the current index and the new stack top (or the current index if the stack is empty). Update the maximum area during each pop. After processing all heights, pop any remaining indices in the stack, treating the array’s end as the right boundary. The algorithm runs in O(n) time and O(n) space for the stack. For example, for heights [2,1,5,6,2,3] the maximum area is 10 (rectangles 5x2 or 6x2).
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **101**
-- DSA: 25 · AI/ML: 25 · CSE Core: 26 · Behavioral: 25
+- Total questions logged: **102**
+- DSA: 26 · AI/ML: 25 · CSE Core: 26 · Behavioral: 25
 
 ## 🗂️ Recent Questions
 
+- **2026-10-21 [PM]** [DSA](questions/2026-10-21-pm-dsa.md): You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.
 - **2026-10-21 [AM]** [CSE Core](questions/2026-10-21-am-cse-core.md): In object-oriented design, how do composition and aggregation differ, and in what scenarios would you prefer one over the other?
 - **2026-10-20 [PM]** [Behavioral](questions/2026-10-20-pm-behavioral.md): Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?
 - **2026-10-20 [AM]** [AIML](questions/2026-10-20-am-aiml.md): You have a Random Forest regressor for predicting house prices. How would you use cross-validation to tune its hyperparameters (e.g., number of trees, max depth, min samples split)? What pitfalls might arise when the dataset is small, and how can you mitigate them?
@@ -48,7 +69,6 @@ Composition implies a strong ownership: the container creates and destroys the c
 - **2026-10-15 [PM]** [CSE Core](questions/2026-10-15-pm-cse-core.md): Explain the phenomenon known as "write‑skew" that can occur under Snapshot Isolation in a relational database. How can this anomaly lead to integrity constraint violations, and what techniques can be used to prevent it?
 - **2026-10-15 [AM]** [DSA](questions/2026-10-15-am-dsa.md): Given an m × n integer matrix (which may contain negative numbers), find the submatrix with the maximum possible sum and return that sum. Aim for a solution with O(m·n²) time complexity.
 - **2026-10-14 [PM]** [AIML](questions/2026-10-14-pm-aiml.md): How does Synthetic Minority Over-sampling Technique (SMOTE) generate synthetic samples for the minority class? Explain the algorithmic steps and discuss potential risks such as overfitting and noise amplification. Suggest possible mitigations.
-- **2026-10-14 [AM]** [Behavioral](questions/2026-10-14-am-behavioral.md): Tell me about a time when you noticed a teammate consistently arriving late to team meetings, and you had to address the issue without causing friction. How did you approach the conversation, what was the outcome, and what did you learn?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

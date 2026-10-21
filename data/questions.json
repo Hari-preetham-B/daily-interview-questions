@@ -1008,6 +1008,16 @@
       "hint": "Think about ownership lifetime and the strength of the relationship between the containing and contained objects.",
       "answer": "Composition implies a strong ownership: the container creates and destroys the contained object, and the contained object cannot exist independently. Aggregation is a weaker association; the container references an object that may outlive it and is often shared. Use composition when the contained object's lifecycle is tightly coupled to the container (e.g., a Car owns its Engine). Use aggregation when the contained object has an independent lifecycle and may be shared (e.g., a Library has Books that exist regardless of the Library).",
       "generated_at": "2026-10-21T07:52:24.942250+00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.",
+      "difficulty": "Medium",
+      "hint": "Consider using a stack to keep track of building indices. Think about how to determine the widest rectangle for each building when it becomes the limiting height.",
+      "answer": "A linear\u2011time stack solution works. Scan the array from left to right, pushing indices whose heights are increasing. When encountering a height lower than the stack\u2019s top, pop until the stack is empty or the current height is taller. Each pop represents a rectangle where the popped height is the limiting height; the width is the distance between the current index and the new stack top (or the current index if the stack is empty). Update the maximum area during each pop. After processing all heights, pop any remaining indices in the stack, treating the array\u2019s end as the right boundary. The algorithm runs in O(n) time and O(n) space for the stack. For example, for heights [2,1,5,6,2,3] the maximum area is 10 (rectangles 5x2 or 6x2).",
+      "generated_at": "2026-10-21T18:48:12.100482+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ When I joined the mobile app team two weeks into the development cycle, I first 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-22) — AIML
+
+**In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how the gradient changes for large residuals and how that affects learning.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+MSE is the average of squared residuals, giving a gradient proportional to the residual itself, so large errors are heavily penalized and dominate the loss. MAE is the average of absolute residuals, yielding a constant gradient magnitude regardless of error size, making it more robust to outliers. Because MSE emphasizes large errors, it tends to produce smoother models that fit the bulk of data but can be overly influenced by outliers, while MAE produces models that minimize the typical error but can be less sensitive to extreme values. If the dataset contains outliers that you want to reduce the influence of, MAE is preferable; if you want the model to be highly accurate on all points, especially the large‑error ones, MSE is the better choice.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **103**
-- DSA: 26 · AI/ML: 25 · CSE Core: 26 · Behavioral: 26
+- Total questions logged: **104**
+- DSA: 26 · AI/ML: 26 · CSE Core: 26 · Behavioral: 26
 
 ## 🗂️ Recent Questions
 
+- **2026-10-22 [PM]** [AIML](questions/2026-10-22-pm-aiml.md): In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.
 - **2026-10-22 [AM]** [Behavioral](questions/2026-10-22-am-behavioral.md): Describe a time when you joined a team mid-project and had to quickly earn the trust of your teammates to contribute effectively.
 - **2026-10-21 [PM]** [DSA](questions/2026-10-21-pm-dsa.md): You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.
 - **2026-10-21 [AM]** [CSE Core](questions/2026-10-21-am-cse-core.md): In object-oriented design, how do composition and aggregation differ, and in what scenarios would you prefer one over the other?
@@ -48,7 +69,6 @@ When I joined the mobile app team two weeks into the development cycle, I first 
 - **2026-10-16 [PM]** [Behavioral](questions/2026-10-16-pm-behavioral.md): Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?
 - **2026-10-16 [AM]** [AIML](questions/2026-10-16-am-aiml.md): Explain the concept of weight sharing in convolutional neural networks. How does it reduce the number of parameters compared to fully connected layers, and what effect does this have on translation invariance in image processing?
 - **2026-10-15 [PM]** [CSE Core](questions/2026-10-15-pm-cse-core.md): Explain the phenomenon known as "write‑skew" that can occur under Snapshot Isolation in a relational database. How can this anomaly lead to integrity constraint violations, and what techniques can be used to prevent it?
-- **2026-10-15 [AM]** [DSA](questions/2026-10-15-am-dsa.md): Given an m × n integer matrix (which may contain negative numbers), find the submatrix with the maximum possible sum and return that sum. Aim for a solution with O(m·n²) time complexity.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

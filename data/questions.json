@@ -1028,6 +1028,16 @@
       "hint": "Consider specific actions you took to understand the team's dynamics, show reliability, and align with their goals.",
       "answer": "When I joined the mobile app team two weeks into the development cycle, I first spent a day shadowing teammates to understand their workflow and the codebase. I scheduled brief one\u2011on\u2011one meetings to ask clarifying questions and listen to their pain points. I volunteered to tackle a backlog item that was blocking multiple features, delivered it ahead of schedule, and documented the process clearly. By sharing my progress in daily stand\u2011ups and offering help on their tasks, I demonstrated reliability and a collaborative mindset. Over the next sprint, the team trusted me with more responsibility, and we delivered the release on time.",
       "generated_at": "2026-10-22T07:48:32.279653+00:00"
+    },
+    {
+      "date": "2026-10-22",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.",
+      "difficulty": "Medium",
+      "hint": "Think about how the gradient changes for large residuals and how that affects learning.",
+      "answer": "MSE is the average of squared residuals, giving a gradient proportional to the residual itself, so large errors are heavily penalized and dominate the loss. MAE is the average of absolute residuals, yielding a constant gradient magnitude regardless of error size, making it more robust to outliers. Because MSE emphasizes large errors, it tends to produce smoother models that fit the bulk of data but can be overly influenced by outliers, while MAE produces models that minimize the typical error but can be less sensitive to extreme values. If the dataset contains outliers that you want to reduce the influence of, MAE is preferable; if you want the model to be highly accurate on all points, especially the large\u2011error ones, MSE is the better choice.",
+      "generated_at": "2026-10-22T18:41:12.846865+00:00"
     }
   ]
 }

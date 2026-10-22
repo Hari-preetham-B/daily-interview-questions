@@ -1018,6 +1018,16 @@
       "hint": "Consider using a stack to keep track of building indices. Think about how to determine the widest rectangle for each building when it becomes the limiting height.",
       "answer": "A linear\u2011time stack solution works. Scan the array from left to right, pushing indices whose heights are increasing. When encountering a height lower than the stack\u2019s top, pop until the stack is empty or the current height is taller. Each pop represents a rectangle where the popped height is the limiting height; the width is the distance between the current index and the new stack top (or the current index if the stack is empty). Update the maximum area during each pop. After processing all heights, pop any remaining indices in the stack, treating the array\u2019s end as the right boundary. The algorithm runs in O(n) time and O(n) space for the stack. For example, for heights [2,1,5,6,2,3] the maximum area is 10 (rectangles 5x2 or 6x2).",
       "generated_at": "2026-10-21T18:48:12.100482+00:00"
+    },
+    {
+      "date": "2026-10-22",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a time when you joined a team mid-project and had to quickly earn the trust of your teammates to contribute effectively.",
+      "difficulty": "Medium",
+      "hint": "Consider specific actions you took to understand the team's dynamics, show reliability, and align with their goals.",
+      "answer": "When I joined the mobile app team two weeks into the development cycle, I first spent a day shadowing teammates to understand their workflow and the codebase. I scheduled brief one\u2011on\u2011one meetings to ask clarifying questions and listen to their pain points. I volunteered to tackle a backlog item that was blocking multiple features, delivered it ahead of schedule, and documented the process clearly. By sharing my progress in daily stand\u2011ups and offering help on their tasks, I demonstrated reliability and a collaborative mindset. Over the next sprint, the team trusted me with more responsibility, and we delivered the release on time.",
+      "generated_at": "2026-10-22T07:48:32.279653+00:00"
     }
   ]
 }

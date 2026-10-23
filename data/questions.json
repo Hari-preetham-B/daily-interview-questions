@@ -1048,6 +1048,16 @@
       "hint": "Use a sliding window with two pointers, keeping a hash map of element counts in the window and the current window sum. When the map grows to more than two distinct keys, shrink from the left until it returns to two.",
       "answer": "The optimal solution runs in O(n) time using two pointers and a hashmap. Initialize left = 0, sum = 0, maxSum = 0, and an empty dictionary freq. Iterate right from 0 to n-1: add nums[right] to sum and increment freq[nums[right]]. While len(freq) > 2, subtract nums[left] from sum, decrement freq[nums[left]] and remove the key if its count becomes zero, then increment left. After each step, update maxSum = max(maxSum, sum). Finally return maxSum.\n\nPython implementation:\npython\ndef maxTwoDistinct(nums):\n    freq = {}\n    left = 0\n    cur_sum = 0\n    best = 0\n    for right, val in enumerate(nums):\n        cur_sum += val\n        freq[val] = freq.get(val, 0) + 1\n        while len(freq) > 2:\n            left_val = nums[left]\n            cur_sum -= left_val\n            freq[left_val] -= 1\n            if freq[left_val] == 0:\n                del freq[left_val]\n            left += 1\n        best = max(best, cur_sum)\n    return best\n",
       "generated_at": "2026-10-23T07:47:26.282350+00:00"
+    },
+    {
+      "date": "2026-10-23",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?",
+      "difficulty": "Medium",
+      "hint": "Consider how unsynchronized access to shared mutable data can lead to nondeterministic results, and recall the primitives that enforce ordering or exclusive access.",
+      "answer": "A race condition occurs when two or more threads access and modify shared data concurrently without proper synchronization, leading to unpredictable results depending on the execution order. It typically arises from unsynchronized reads/writes to mutable variables. To prevent race conditions, programmers can use mutexes or other lock primitives to ensure exclusive access, employ atomic operations that guarantee indivisible read-modify-write semantics, or insert memory barriers/fences that enforce ordering constraints on CPU and compiler optimizations. These mechanisms serialize access or establish a happens\u2011before relationship, making the program's behavior deterministic.",
+      "generated_at": "2026-10-23T18:34:50.079039+00:00"
     }
   ]
 }

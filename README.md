@@ -45,16 +45,37 @@ def maxTwoDistinct(nums):
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-23) — CSE Core
+
+**What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how unsynchronized access to shared mutable data can lead to nondeterministic results, and recall the primitives that enforce ordering or exclusive access.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A race condition occurs when two or more threads access and modify shared data concurrently without proper synchronization, leading to unpredictable results depending on the execution order. It typically arises from unsynchronized reads/writes to mutable variables. To prevent race conditions, programmers can use mutexes or other lock primitives to ensure exclusive access, employ atomic operations that guarantee indivisible read-modify-write semantics, or insert memory barriers/fences that enforce ordering constraints on CPU and compiler optimizations. These mechanisms serialize access or establish a happens‑before relationship, making the program's behavior deterministic.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **105**
-- DSA: 27 · AI/ML: 26 · CSE Core: 26 · Behavioral: 26
+- Total questions logged: **106**
+- DSA: 27 · AI/ML: 26 · CSE Core: 27 · Behavioral: 26
 
 ## 🗂️ Recent Questions
 
+- **2026-10-23 [PM]** [CSE Core](questions/2026-10-23-pm-cse-core.md): What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?
 - **2026-10-23 [AM]** [DSA](questions/2026-10-23-am-dsa.md): Given an integer array nums, find the maximum sum of any contiguous subarray that contains at most two distinct numbers. For example, in nums = [1,2,1,4,7,2,5], the subarray [1,4,7,2] has sum 14 and only contains the numbers 1,4,7,2? Actually 1,4,7,2 are four distinct, so not allowed. The best subarray is [4,7,2] with sum 13.
 - **2026-10-22 [PM]** [AIML](questions/2026-10-22-pm-aiml.md): In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.
 - **2026-10-22 [AM]** [Behavioral](questions/2026-10-22-am-behavioral.md): Describe a time when you joined a team mid-project and had to quickly earn the trust of your teammates to contribute effectively.
@@ -69,7 +90,6 @@ def maxTwoDistinct(nums):
 - **2026-10-17 [PM]** [DSA](questions/2026-10-17-pm-dsa.md): You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non‑overlapping jobs.
 - **2026-10-17 [AM]** [CSE Core](questions/2026-10-17-am-cse-core.md): What is Multiversion Concurrency Control (MVCC) in relational databases, and how does it enable concurrent reads and writes without locking conflicts?
 - **2026-10-16 [PM]** [Behavioral](questions/2026-10-16-pm-behavioral.md): Describe a time when you had to convince a non-technical stakeholder to adopt a technically risky approach that could potentially impact the project timeline. How did you communicate the risks and benefits, and what was the outcome?
-- **2026-10-16 [AM]** [AIML](questions/2026-10-16-am-aiml.md): Explain the concept of weight sharing in convolutional neural networks. How does it reduce the number of parameters compared to fully connected layers, and what effect does this have on translation invariance in image processing?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

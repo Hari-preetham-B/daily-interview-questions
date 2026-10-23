@@ -1038,6 +1038,16 @@
       "hint": "Think about how the gradient changes for large residuals and how that affects learning.",
       "answer": "MSE is the average of squared residuals, giving a gradient proportional to the residual itself, so large errors are heavily penalized and dominate the loss. MAE is the average of absolute residuals, yielding a constant gradient magnitude regardless of error size, making it more robust to outliers. Because MSE emphasizes large errors, it tends to produce smoother models that fit the bulk of data but can be overly influenced by outliers, while MAE produces models that minimize the typical error but can be less sensitive to extreme values. If the dataset contains outliers that you want to reduce the influence of, MAE is preferable; if you want the model to be highly accurate on all points, especially the large\u2011error ones, MSE is the better choice.",
       "generated_at": "2026-10-22T18:41:12.846865+00:00"
+    },
+    {
+      "date": "2026-10-23",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array nums, find the maximum sum of any contiguous subarray that contains at most two distinct numbers. For example, in nums = [1,2,1,4,7,2,5], the subarray [1,4,7,2] has sum 14 and only contains the numbers 1,4,7,2? Actually 1,4,7,2 are four distinct, so not allowed. The best subarray is [4,7,2] with sum 13.",
+      "difficulty": "Hard",
+      "hint": "Use a sliding window with two pointers, keeping a hash map of element counts in the window and the current window sum. When the map grows to more than two distinct keys, shrink from the left until it returns to two.",
+      "answer": "The optimal solution runs in O(n) time using two pointers and a hashmap. Initialize left = 0, sum = 0, maxSum = 0, and an empty dictionary freq. Iterate right from 0 to n-1: add nums[right] to sum and increment freq[nums[right]]. While len(freq) > 2, subtract nums[left] from sum, decrement freq[nums[left]] and remove the key if its count becomes zero, then increment left. After each step, update maxSum = max(maxSum, sum). Finally return maxSum.\n\nPython implementation:\npython\ndef maxTwoDistinct(nums):\n    freq = {}\n    left = 0\n    cur_sum = 0\n    best = 0\n    for right, val in enumerate(nums):\n        cur_sum += val\n        freq[val] = freq.get(val, 0) + 1\n        while len(freq) > 2:\n            left_val = nums[left]\n            cur_sum -= left_val\n            freq[left_val] -= 1\n            if freq[left_val] == 0:\n                del freq[left_val]\n            left += 1\n        best = max(best, cur_sum)\n    return best\n",
+      "generated_at": "2026-10-23T07:47:26.282350+00:00"
     }
   ]
 }

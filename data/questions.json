@@ -1058,6 +1058,16 @@
       "hint": "Consider how unsynchronized access to shared mutable data can lead to nondeterministic results, and recall the primitives that enforce ordering or exclusive access.",
       "answer": "A race condition occurs when two or more threads access and modify shared data concurrently without proper synchronization, leading to unpredictable results depending on the execution order. It typically arises from unsynchronized reads/writes to mutable variables. To prevent race conditions, programmers can use mutexes or other lock primitives to ensure exclusive access, employ atomic operations that guarantee indivisible read-modify-write semantics, or insert memory barriers/fences that enforce ordering constraints on CPU and compiler optimizations. These mechanisms serialize access or establish a happens\u2011before relationship, making the program's behavior deterministic.",
       "generated_at": "2026-10-23T18:34:50.079039+00:00"
+    },
+    {
+      "date": "2026-10-24",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "In contrastive representation learning, what is the InfoNCE loss? Describe its mathematical form, explain the role of the temperature hyper\u2011parameter, and discuss why using a higher number of negative samples can improve the learned embeddings.",
+      "difficulty": "Medium",
+      "hint": "Think about a batch of anchor-positive pairs and how the loss normalizes over all pairs in the batch.",
+      "answer": "InfoNCE is a contrastive loss that encourages an anchor (x_i) to be close to its positive counterpart (x_i^+) while far from all other negatives (x_j) in the batch. It is defined as (mathcal{L}_i=-log \frac{exp(mathrm{sim}(x_i,x_i^+)/\tau)}{sum_{j=1}^N exp(mathrm{sim}(x_i,x_j)/\tau)}), where (mathrm{sim}(cdot,cdot)) is typically cosine similarity and (\tau>0) is the temperature. The temperature controls the sharpness of the softmax: a low (\tau) makes the distribution more peaked, amplifying differences between positives and negatives; a high (\tau) smooths it, making the loss less sensitive. Increasing the number of negative samples (N) enlarges the denominator, providing a more accurate estimate of the similarity distribution and encouraging the model to learn more discriminative features, but it also raises computational cost.",
+      "generated_at": "2026-10-24T07:29:29.081549+00:00"
     }
   ]
 }

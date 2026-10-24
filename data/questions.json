@@ -1068,6 +1068,16 @@
       "hint": "Think about a batch of anchor-positive pairs and how the loss normalizes over all pairs in the batch.",
       "answer": "InfoNCE is a contrastive loss that encourages an anchor (x_i) to be close to its positive counterpart (x_i^+) while far from all other negatives (x_j) in the batch. It is defined as (mathcal{L}_i=-log \frac{exp(mathrm{sim}(x_i,x_i^+)/\tau)}{sum_{j=1}^N exp(mathrm{sim}(x_i,x_j)/\tau)}), where (mathrm{sim}(cdot,cdot)) is typically cosine similarity and (\tau>0) is the temperature. The temperature controls the sharpness of the softmax: a low (\tau) makes the distribution more peaked, amplifying differences between positives and negatives; a high (\tau) smooths it, making the loss less sensitive. Increasing the number of negative samples (N) enlarges the denominator, providing a more accurate estimate of the similarity distribution and encouraging the model to learn more discriminative features, but it also raises computational cost.",
       "generated_at": "2026-10-24T07:29:29.081549+00:00"
+    },
+    {
+      "date": "2026-10-24",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Think about a scenario where something you discovered could affect user data or company reputation, and how you communicated it.",
+      "answer": "During a mid\u2011term sprint for a web app, I noticed that the password reset endpoint accepted any email address without validation, potentially exposing user data to attackers. I first documented the flaw with screenshots and a risk assessment, then scheduled a brief meeting with the product owner and lead engineer. We discussed the severity, proposed adding proper email verification and rate\u2011limiting, and agreed on a quick patch. I wrote the fix, ran unit and integration tests, and pushed it to staging. The patch was deployed within a day, and the team added a new security review step to the CI pipeline to prevent similar issues.",
+      "generated_at": "2026-10-24T17:30:53.051942+00:00"
     }
   ]
 }

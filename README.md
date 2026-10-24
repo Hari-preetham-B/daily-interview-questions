@@ -24,16 +24,37 @@ InfoNCE is a contrastive loss that encourages an anchor (x_i) to be close to its
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-24) — Behavioral
+
+**Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about a scenario where something you discovered could affect user data or company reputation, and how you communicated it.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+During a mid‑term sprint for a web app, I noticed that the password reset endpoint accepted any email address without validation, potentially exposing user data to attackers. I first documented the flaw with screenshots and a risk assessment, then scheduled a brief meeting with the product owner and lead engineer. We discussed the severity, proposed adding proper email verification and rate‑limiting, and agreed on a quick patch. I wrote the fix, ran unit and integration tests, and pushed it to staging. The patch was deployed within a day, and the team added a new security review step to the CI pipeline to prevent similar issues.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **107**
-- DSA: 27 · AI/ML: 27 · CSE Core: 27 · Behavioral: 26
+- Total questions logged: **108**
+- DSA: 27 · AI/ML: 27 · CSE Core: 27 · Behavioral: 27
 
 ## 🗂️ Recent Questions
 
+- **2026-10-24 [PM]** [Behavioral](questions/2026-10-24-pm-behavioral.md): Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?
 - **2026-10-24 [AM]** [AIML](questions/2026-10-24-am-aiml.md): In contrastive representation learning, what is the InfoNCE loss? Describe its mathematical form, explain the role of the temperature hyper‑parameter, and discuss why using a higher number of negative samples can improve the learned embeddings.
 - **2026-10-23 [PM]** [CSE Core](questions/2026-10-23-pm-cse-core.md): What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?
 - **2026-10-23 [AM]** [DSA](questions/2026-10-23-am-dsa.md): Given an integer array nums, find the maximum sum of any contiguous subarray that contains at most two distinct numbers. For example, in nums = [1,2,1,4,7,2,5], the subarray [1,4,7,2] has sum 14 and only contains the numbers 1,4,7,2? Actually 1,4,7,2 are four distinct, so not allowed. The best subarray is [4,7,2] with sum 13.
@@ -48,7 +69,6 @@ InfoNCE is a contrastive loss that encourages an anchor (x_i) to be close to its
 - **2026-10-18 [PM]** [AIML](questions/2026-10-18-pm-aiml.md): Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.
 - **2026-10-18 [AM]** [Behavioral](questions/2026-10-18-am-behavioral.md): Tell me about a time when you worked with a remote team from a different cultural background, and you had to adjust your communication style to ensure clarity and maintain team cohesion.
 - **2026-10-17 [PM]** [DSA](questions/2026-10-17-pm-dsa.md): You are given a list of jobs, where each job is represented as a tuple (start, finish, profit). No two jobs that you select can overlap in time. Find the maximum total profit you can obtain by selecting a subset of non‑overlapping jobs.
-- **2026-10-17 [AM]** [CSE Core](questions/2026-10-17-am-cse-core.md): What is Multiversion Concurrency Control (MVCC) in relational databases, and how does it enable concurrent reads and writes without locking conflicts?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

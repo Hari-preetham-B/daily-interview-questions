@@ -24,16 +24,37 @@ A Wait‑For Graph (WFG) is a directed graph where each node represents a proces
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-25) — DSA
+
+**You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use a sliding window and maintain two monotonic queues (or a balanced BST) to track the current window’s maximum and minimum efficiently.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A linear‑time solution uses two deques: one to keep indices of elements in decreasing order (for the maximum) and one for increasing order (for the minimum). Expand the right end of the window one step at a time, pushing the new index into both deques and popping from the back to maintain monotonicity. If the difference between nums[maxDeque[0]] and nums[minDeque[0]] exceeds k, shrink the window from the left: remove the leftmost index and pop from deques if they are at that index. Track the maximum window length seen. This runs in O(n) time and O(1) extra space (apart from the deques).
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **109**
-- DSA: 27 · AI/ML: 27 · CSE Core: 28 · Behavioral: 27
+- Total questions logged: **110**
+- DSA: 28 · AI/ML: 27 · CSE Core: 28 · Behavioral: 27
 
 ## 🗂️ Recent Questions
 
+- **2026-10-25 [PM]** [DSA](questions/2026-10-25-pm-dsa.md): You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.
 - **2026-10-25 [AM]** [CSE Core](questions/2026-10-25-am-cse-core.md): What is a Wait-For Graph in the context of deadlock detection, how does the operating system use it to detect deadlocks, and what are common recovery strategies once a deadlock is detected?
 - **2026-10-24 [PM]** [Behavioral](questions/2026-10-24-pm-behavioral.md): Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?
 - **2026-10-24 [AM]** [AIML](questions/2026-10-24-am-aiml.md): In contrastive representation learning, what is the InfoNCE loss? Describe its mathematical form, explain the role of the temperature hyper‑parameter, and discuss why using a higher number of negative samples can improve the learned embeddings.
@@ -48,7 +69,6 @@ A Wait‑For Graph (WFG) is a directed graph where each node represents a proces
 - **2026-10-19 [PM]** [CSE Core](questions/2026-10-19-pm-cse-core.md): Explain the role of the 'page table walk' in translating virtual addresses to physical addresses in an x86‑64 system, and discuss how the TLB mitigates the performance impact of this process.
 - **2026-10-19 [AM]** [DSA](questions/2026-10-19-am-dsa.md): Given the root of a binary tree, return the length of its diameter. The diameter is defined as the number of edges between the two farthest nodes in the tree (the path may or may not pass through the root).
 - **2026-10-18 [PM]** [AIML](questions/2026-10-18-pm-aiml.md): Explain the concept of gradient clipping and its impact on training deep neural networks, especially in the presence of exploding gradients.
-- **2026-10-18 [AM]** [Behavioral](questions/2026-10-18-am-behavioral.md): Tell me about a time when you worked with a remote team from a different cultural background, and you had to adjust your communication style to ensure clarity and maintain team cohesion.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

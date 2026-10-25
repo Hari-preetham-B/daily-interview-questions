@@ -1088,6 +1088,16 @@
       "hint": "Think about representing processes and their waiting relationships as a directed graph and look for cycles; then consider how to break such cycles.",
       "answer": "A Wait\u2011For Graph (WFG) is a directed graph where each node represents a process and an edge from Pi to Pj indicates that Pi is waiting for a resource currently held by Pj. The OS constructs or updates the WFG from the resource\u2011allocation table and periodically runs a cycle\u2011detection algorithm (e.g., depth\u2011first search); a cycle means a set of processes are deadlocked. After detection, typical recovery actions include terminating one or more victim processes in the cycle, preempting resources from selected processes and rolling them back, or aborting and restarting affected transactions. Victim selection is usually based on criteria such as minimal cost, priority, or the number of resources held.",
       "generated_at": "2026-10-25T07:42:58.580243+00:00"
+    },
+    {
+      "date": "2026-10-25",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.",
+      "difficulty": "Medium",
+      "hint": "Use a sliding window and maintain two monotonic queues (or a balanced BST) to track the current window\u2019s maximum and minimum efficiently.",
+      "answer": "A linear\u2011time solution uses two deques: one to keep indices of elements in decreasing order (for the maximum) and one for increasing order (for the minimum). Expand the right end of the window one step at a time, pushing the new index into both deques and popping from the back to maintain monotonicity. If the difference between nums[maxDeque[0]] and nums[minDeque[0]] exceeds k, shrink the window from the left: remove the leftmost index and pop from deques if they are at that index. Track the maximum window length seen. This runs in O(n) time and O(1) extra space (apart from the deques).",
+      "generated_at": "2026-10-25T17:44:34.654832+00:00"
     }
   ]
 }

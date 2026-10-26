@@ -1098,6 +1098,16 @@
       "hint": "Use a sliding window and maintain two monotonic queues (or a balanced BST) to track the current window\u2019s maximum and minimum efficiently.",
       "answer": "A linear\u2011time solution uses two deques: one to keep indices of elements in decreasing order (for the maximum) and one for increasing order (for the minimum). Expand the right end of the window one step at a time, pushing the new index into both deques and popping from the back to maintain monotonicity. If the difference between nums[maxDeque[0]] and nums[minDeque[0]] exceeds k, shrink the window from the left: remove the leftmost index and pop from deques if they are at that index. Track the maximum window length seen. This runs in O(n) time and O(1) extra space (apart from the deques).",
       "generated_at": "2026-10-25T17:44:34.654832+00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to make a decision to abandon or pivot a feature that was no longer aligned with the company\u2019s product strategy. How did you handle stakeholder communication and what was the outcome?",
+      "difficulty": "Medium",
+      "hint": "Think about how you assessed the feature\u2019s alignment, gathered data, and communicated the change to stakeholders while preserving trust.",
+      "answer": "I first reviewed usage metrics and feedback to confirm the feature\u2019s low impact, then presented a concise data\u2011driven slide deck to the product and engineering leads showing the opportunity cost. I proposed a pivot that focused on high\u2011value user pain points and secured buy\u2011in by highlighting the potential revenue uplift. After aligning the roadmap, we reallocated resources, delivered the new feature on schedule, and increased overall user satisfaction by 15%.",
+      "generated_at": "2026-10-26T07:58:41.439481+00:00"
     }
   ]
 }

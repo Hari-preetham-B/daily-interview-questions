@@ -24,16 +24,37 @@ I first reviewed usage metrics and feedback to confirm the feature’s low impac
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-26) — AIML
+
+**Explain the purpose of positional encodings in Transformer models. Compare sinusoidal positional encodings with learned positional embeddings, and discuss the advantages and potential drawbacks of each approach.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how a Transformer knows the order of tokens without recurrence, and consider the properties of a fixed deterministic function versus parameters that can be optimized during training.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Positional encodings inject sequence order information into token embeddings because the self‑attention mechanism is permutation‑invariant. Sinusoidal encodings use deterministic sine and cosine functions of varying frequencies, allowing the model to extrapolate to sequence lengths longer than seen during training and providing a smooth, continuous representation of relative positions. Learned positional embeddings treat each position as a learnable vector, giving the model flexibility to adapt positional representations to the data but requiring a fixed maximum length and risking overfitting on short sequences. Sinusoidal encodings are parameter‑free and generalize better to unseen lengths, while learned embeddings can capture dataset‑specific positional patterns at the cost of extra parameters and limited extrapolation capability.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **111**
-- DSA: 28 · AI/ML: 27 · CSE Core: 28 · Behavioral: 28
+- Total questions logged: **112**
+- DSA: 28 · AI/ML: 28 · CSE Core: 28 · Behavioral: 28
 
 ## 🗂️ Recent Questions
 
+- **2026-10-26 [PM]** [AIML](questions/2026-10-26-pm-aiml.md): Explain the purpose of positional encodings in Transformer models. Compare sinusoidal positional encodings with learned positional embeddings, and discuss the advantages and potential drawbacks of each approach.
 - **2026-10-26 [AM]** [Behavioral](questions/2026-10-26-am-behavioral.md): Tell me about a time when you had to make a decision to abandon or pivot a feature that was no longer aligned with the company’s product strategy. How did you handle stakeholder communication and what was the outcome?
 - **2026-10-25 [PM]** [DSA](questions/2026-10-25-pm-dsa.md): You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.
 - **2026-10-25 [AM]** [CSE Core](questions/2026-10-25-am-cse-core.md): What is a Wait-For Graph in the context of deadlock detection, how does the operating system use it to detect deadlocks, and what are common recovery strategies once a deadlock is detected?
@@ -48,7 +69,6 @@ I first reviewed usage metrics and feedback to confirm the feature’s low impac
 - **2026-10-20 [PM]** [Behavioral](questions/2026-10-20-pm-behavioral.md): Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?
 - **2026-10-20 [AM]** [AIML](questions/2026-10-20-am-aiml.md): You have a Random Forest regressor for predicting house prices. How would you use cross-validation to tune its hyperparameters (e.g., number of trees, max depth, min samples split)? What pitfalls might arise when the dataset is small, and how can you mitigate them?
 - **2026-10-19 [PM]** [CSE Core](questions/2026-10-19-pm-cse-core.md): Explain the role of the 'page table walk' in translating virtual addresses to physical addresses in an x86‑64 system, and discuss how the TLB mitigates the performance impact of this process.
-- **2026-10-19 [AM]** [DSA](questions/2026-10-19-am-dsa.md): Given the root of a binary tree, return the length of its diameter. The diameter is defined as the number of edges between the two farthest nodes in the tree (the path may or may not pass through the root).
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1128,6 +1128,16 @@
       "hint": "Traverse the tree in post\u2011order. For each node, combine information (size, min, max, isBST) from its left and right children to decide if the subtree rooted at that node is a BST.",
       "answer": "The optimal solution is a single post\u2011order traversal that returns, for every node, four pieces of information: whether the subtree is a BST, its total size, the minimum value in the subtree, and the maximum value. For a leaf node, the subtree is trivially a BST of size\u202f1, with min\u202f=\u202fmax\u202f=\u202fnode.val. For an internal node, the subtree is a BST iff the left subtree is a BST, the right subtree is a BST, the maximum value of the left subtree is less than node.val, and the minimum value of the right subtree is greater than node.val. In that case the size is left.size + right.size + 1, min is min(left.min, node.val), and max is max(right.max, node.val). If the subtree is not a BST, we still propagate the largest BST size found so far. The maximum size encountered during the traversal is the answer. This runs in O(n) time and O(h) space for recursion depth, where h is the tree height.",
       "generated_at": "2026-10-27T08:09:41.800998+00:00"
+    },
+    {
+      "date": "2026-10-27",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade\u2011offs?",
+      "difficulty": "Medium",
+      "hint": "Consider how each algorithm decides which page to evict when a page fault occurs, and think about the data structures they require.",
+      "answer": "A page replacement algorithm selects a victim frame to free when a page fault occurs and no free frames are available, aiming to minimize future faults. LRU evicts the page that has not been accessed for the longest time; it provides good approximation of optimal replacement but requires tracking exact access order, often using a stack or timestamps, which adds overhead. The Clock algorithm approximates LRU by arranging frames in a circular list with a reference bit; the hand sweeps the list, giving each page a second chance (clearing the bit) before eviction, resulting in lower hardware/software overhead and comparable performance in practice, though it may evict a page that was more recently used than LRU would.",
+      "generated_at": "2026-10-27T19:31:43.244630+00:00"
     }
   ]
 }

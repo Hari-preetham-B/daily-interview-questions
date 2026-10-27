@@ -24,16 +24,37 @@ The optimal solution is a single post‑order traversal that returns, for every 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-27) — CSE Core
+
+**What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade‑offs?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how each algorithm decides which page to evict when a page fault occurs, and think about the data structures they require.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A page replacement algorithm selects a victim frame to free when a page fault occurs and no free frames are available, aiming to minimize future faults. LRU evicts the page that has not been accessed for the longest time; it provides good approximation of optimal replacement but requires tracking exact access order, often using a stack or timestamps, which adds overhead. The Clock algorithm approximates LRU by arranging frames in a circular list with a reference bit; the hand sweeps the list, giving each page a second chance (clearing the bit) before eviction, resulting in lower hardware/software overhead and comparable performance in practice, though it may evict a page that was more recently used than LRU would.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **113**
-- DSA: 29 · AI/ML: 28 · CSE Core: 28 · Behavioral: 28
+- Total questions logged: **114**
+- DSA: 29 · AI/ML: 28 · CSE Core: 29 · Behavioral: 28
 
 ## 🗂️ Recent Questions
 
+- **2026-10-27 [PM]** [CSE Core](questions/2026-10-27-pm-cse-core.md): What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade‑offs?
 - **2026-10-27 [AM]** [DSA](questions/2026-10-27-am-dsa.md): You are given a binary tree where each node contains an integer value. The tree is not guaranteed to satisfy any ordering property. Define a subtree as any node together with all of its descendants. A subtree is considered a Binary Search Tree (BST) if for every node, all values in its left subtree are strictly less than the node’s value, and all values in its right subtree are strictly greater than the node’s value. Write an algorithm to find the size (number of nodes) of the largest subtree that is a BST. The algorithm should run in O(n) time where n is the number of nodes in the tree.
 - **2026-10-26 [PM]** [AIML](questions/2026-10-26-pm-aiml.md): Explain the purpose of positional encodings in Transformer models. Compare sinusoidal positional encodings with learned positional embeddings, and discuss the advantages and potential drawbacks of each approach.
 - **2026-10-26 [AM]** [Behavioral](questions/2026-10-26-am-behavioral.md): Tell me about a time when you had to make a decision to abandon or pivot a feature that was no longer aligned with the company’s product strategy. How did you handle stakeholder communication and what was the outcome?
@@ -48,7 +69,6 @@ The optimal solution is a single post‑order traversal that returns, for every 
 - **2026-10-21 [PM]** [DSA](questions/2026-10-21-pm-dsa.md): You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.
 - **2026-10-21 [AM]** [CSE Core](questions/2026-10-21-am-cse-core.md): In object-oriented design, how do composition and aggregation differ, and in what scenarios would you prefer one over the other?
 - **2026-10-20 [PM]** [Behavioral](questions/2026-10-20-pm-behavioral.md): Tell me about a time when you noticed your team's morale was slipping during a critical project phase. What steps did you take to address the situation, and what was the outcome?
-- **2026-10-20 [AM]** [AIML](questions/2026-10-20-am-aiml.md): You have a Random Forest regressor for predicting house prices. How would you use cross-validation to tune its hyperparameters (e.g., number of trees, max depth, min samples split)? What pitfalls might arise when the dataset is small, and how can you mitigate them?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

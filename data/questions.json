@@ -1118,6 +1118,16 @@
       "hint": "Think about how a Transformer knows the order of tokens without recurrence, and consider the properties of a fixed deterministic function versus parameters that can be optimized during training.",
       "answer": "Positional encodings inject sequence order information into token embeddings because the self\u2011attention mechanism is permutation\u2011invariant. Sinusoidal encodings use deterministic sine and cosine functions of varying frequencies, allowing the model to extrapolate to sequence lengths longer than seen during training and providing a smooth, continuous representation of relative positions. Learned positional embeddings treat each position as a learnable vector, giving the model flexibility to adapt positional representations to the data but requiring a fixed maximum length and risking overfitting on short sequences. Sinusoidal encodings are parameter\u2011free and generalize better to unseen lengths, while learned embeddings can capture dataset\u2011specific positional patterns at the cost of extra parameters and limited extrapolation capability.",
       "generated_at": "2026-10-26T20:02:41.784810+00:00"
+    },
+    {
+      "date": "2026-10-27",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "You are given a binary tree where each node contains an integer value. The tree is not guaranteed to satisfy any ordering property. Define a subtree as any node together with all of its descendants. A subtree is considered a Binary Search Tree (BST) if for every node, all values in its left subtree are strictly less than the node\u2019s value, and all values in its right subtree are strictly greater than the node\u2019s value. Write an algorithm to find the size (number of nodes) of the largest subtree that is a BST. The algorithm should run in O(n) time where n is the number of nodes in the tree.",
+      "difficulty": "Medium",
+      "hint": "Traverse the tree in post\u2011order. For each node, combine information (size, min, max, isBST) from its left and right children to decide if the subtree rooted at that node is a BST.",
+      "answer": "The optimal solution is a single post\u2011order traversal that returns, for every node, four pieces of information: whether the subtree is a BST, its total size, the minimum value in the subtree, and the maximum value. For a leaf node, the subtree is trivially a BST of size\u202f1, with min\u202f=\u202fmax\u202f=\u202fnode.val. For an internal node, the subtree is a BST iff the left subtree is a BST, the right subtree is a BST, the maximum value of the left subtree is less than node.val, and the minimum value of the right subtree is greater than node.val. In that case the size is left.size + right.size + 1, min is min(left.min, node.val), and max is max(right.max, node.val). If the subtree is not a BST, we still propagate the largest BST size found so far. The maximum size encountered during the traversal is the answer. This runs in O(n) time and O(h) space for recursion depth, where h is the tree height.",
+      "generated_at": "2026-10-27T08:09:41.800998+00:00"
     }
   ]
 }

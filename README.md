@@ -24,16 +24,37 @@ L1 regularization adds the absolute value of the coefficients to the loss functi
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-28) — Behavioral
+
+**Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you assess critical tasks, identify alternatives, and keep stakeholders informed without losing momentum.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+I was once leading a feature rollout when our senior backend engineer unexpectedly left. I immediately mapped the remaining tasks to the team's skill sets, identified non-essential work that could be postponed, and brought the product owner into a quick sync to reset the timeline. I also created a shared risk register so everyone could see the trade-offs. By reallocating testing responsibilities to a QA teammate and outsourcing a small module to a freelance developer, we kept the launch on schedule and maintained code quality. The stakeholders appreciated the transparency, and the project delivered with only a one-week delay.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **115**
-- DSA: 29 · AI/ML: 29 · CSE Core: 29 · Behavioral: 28
+- Total questions logged: **116**
+- DSA: 29 · AI/ML: 29 · CSE Core: 29 · Behavioral: 29
 
 ## 🗂️ Recent Questions
 
+- **2026-10-28 [PM]** [Behavioral](questions/2026-10-28-pm-behavioral.md): Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?
 - **2026-10-28 [AM]** [AIML](questions/2026-10-28-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization in linear regression. How does each affect the model coefficients, and in what situations would you prefer one over the other?
 - **2026-10-27 [PM]** [CSE Core](questions/2026-10-27-pm-cse-core.md): What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade‑offs?
 - **2026-10-27 [AM]** [DSA](questions/2026-10-27-am-dsa.md): You are given a binary tree where each node contains an integer value. The tree is not guaranteed to satisfy any ordering property. Define a subtree as any node together with all of its descendants. A subtree is considered a Binary Search Tree (BST) if for every node, all values in its left subtree are strictly less than the node’s value, and all values in its right subtree are strictly greater than the node’s value. Write an algorithm to find the size (number of nodes) of the largest subtree that is a BST. The algorithm should run in O(n) time where n is the number of nodes in the tree.
@@ -48,7 +69,6 @@ L1 regularization adds the absolute value of the coefficients to the loss functi
 - **2026-10-22 [PM]** [AIML](questions/2026-10-22-pm-aiml.md): In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.
 - **2026-10-22 [AM]** [Behavioral](questions/2026-10-22-am-behavioral.md): Describe a time when you joined a team mid-project and had to quickly earn the trust of your teammates to contribute effectively.
 - **2026-10-21 [PM]** [DSA](questions/2026-10-21-pm-dsa.md): You are given an array `heights` of positive integers where each element represents the height of a building standing side by side on a straight line. A rectangle can be formed by selecting a contiguous subsequence of buildings and taking the minimum height among them as the rectangle height, with the width equal to the number of buildings chosen. Determine the maximum possible area of such a rectangle. Return that maximum area.
-- **2026-10-21 [AM]** [CSE Core](questions/2026-10-21-am-cse-core.md): In object-oriented design, how do composition and aggregation differ, and in what scenarios would you prefer one over the other?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1148,6 +1148,16 @@
       "hint": "Think about how the penalty term shapes the solution space and what happens to small coefficients.",
       "answer": "L1 regularization adds the absolute value of the coefficients to the loss function, which can drive some coefficients exactly to zero, producing a sparse model. L2 regularization adds the squared values of the coefficients, which shrinks all coefficients towards zero but rarely makes them exactly zero, leading to a dense solution. You would prefer L1 when feature selection is important or when you expect many irrelevant features; you would choose L2 when you want a stable solution with many small non\u2011zero coefficients, especially when features are correlated.",
       "generated_at": "2026-10-28T08:47:37.704941+00:00"
+    },
+    {
+      "date": "2026-10-28",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?",
+      "difficulty": "Medium",
+      "hint": "Consider how you assess critical tasks, identify alternatives, and keep stakeholders informed without losing momentum.",
+      "answer": "I was once leading a feature rollout when our senior backend engineer unexpectedly left. I immediately mapped the remaining tasks to the team's skill sets, identified non-essential work that could be postponed, and brought the product owner into a quick sync to reset the timeline. I also created a shared risk register so everyone could see the trade-offs. By reallocating testing responsibilities to a QA teammate and outsourcing a small module to a freelance developer, we kept the launch on schedule and maintained code quality. The stakeholders appreciated the transparency, and the project delivered with only a one-week delay.",
+      "generated_at": "2026-10-28T19:43:14.265771+00:00"
     }
   ]
 }

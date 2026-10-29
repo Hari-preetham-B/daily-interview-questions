@@ -24,16 +24,78 @@ The Open/Closed Principle (OCP) states that software entities such as classes, m
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-29) — DSA
+
+**Design a data structure that implements a Least Recently Used (LRU) cache. It should support the operations get(key) and put(key, value) both in O(1) average time. get(key) returns the value associated with the key if it exists, otherwise -1. put(key, value) inserts the key‑value pair into the cache; if the cache reaches its capacity, it should evict the least recently used item before inserting the new one. Initialize the cache with a positive capacity integer.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Combine a hashmap for O(1) key lookup with a doubly linked list to track usage order; move accessed nodes to the front and remove from the tail when evicting.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Use a hashmap that maps keys to nodes of a doubly linked list. Each node stores (key, value) and links to prev and next. The list head represents the most recently used item, the tail the least. For get(key): if key not in map return -1; otherwise move the node to the head and return its value. For put(key,value): if key exists, update its value and move node to head. If key is new and capacity is reached, remove the tail node from both list and map, then insert the new node at the head and add it to the map. All operations involve only constant‑time pointer updates and hashmap accesses, achieving O(1) time. Below is a concise Python implementation:
+python
+class Node:
+    def __init__(self, k, v):
+        self.key, self.val = k, v
+        self.prev = self.next = None
+
+class LRUCache:
+    def __init__(self, capacity):
+        self.cap, self.cache = capacity, {}
+        self.head = Node(0, 0)  # dummy head
+        self.tail = Node(0, 0)  # dummy tail
+        self.head.next, self.tail.prev = self.tail, self.head
+
+    def _remove(self, node):
+        node.prev.next, node.next.prev = node.next, node.prev
+
+    def _add_to_front(self, node):
+        node.next, node.prev = self.head.next, self.head
+        self.head.next.prev = node
+        self.head.next = node
+
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        node = self.cache[key]
+        self._remove(node)
+        self._add_to_front(node)
+        return node.val
+
+    def put(self, key, value):
+        if key in self.cache:
+            self._remove(self.cache[key])
+        elif len(self.cache) == self.cap:
+            # evict LRU
+            lru = self.tail.prev
+            self._remove(lru)
+            del self.cache[lru.key]
+        new_node = Node(key, value)
+        self._add_to_front(new_node)
+        self.cache[key] = new_node
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **117**
-- DSA: 29 · AI/ML: 29 · CSE Core: 30 · Behavioral: 29
+- Total questions logged: **118**
+- DSA: 30 · AI/ML: 29 · CSE Core: 30 · Behavioral: 29
 
 ## 🗂️ Recent Questions
 
+- **2026-10-29 [PM]** [DSA](questions/2026-10-29-pm-dsa.md): Design a data structure that implements a Least Recently Used (LRU) cache. It should support the operations get(key) and put(key, value) both in O(1) average time. get(key) returns the value associated with the key if it exists, otherwise -1. put(key, value) inserts the key‑value pair into the cache; if the cache reaches its capacity, it should evict the least recently used item before inserting the new one. Initialize the cache with a positive capacity integer.
 - **2026-10-29 [AM]** [CSE Core](questions/2026-10-29-am-cse-core.md): What is the Open/Closed Principle in object‑oriented design, and how can a class hierarchy be refactored to satisfy this principle when new functionality needs to be added?
 - **2026-10-28 [PM]** [Behavioral](questions/2026-10-28-pm-behavioral.md): Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?
 - **2026-10-28 [AM]** [AIML](questions/2026-10-28-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization in linear regression. How does each affect the model coefficients, and in what situations would you prefer one over the other?
@@ -48,7 +110,6 @@ The Open/Closed Principle (OCP) states that software entities such as classes, m
 - **2026-10-23 [PM]** [CSE Core](questions/2026-10-23-pm-cse-core.md): What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?
 - **2026-10-23 [AM]** [DSA](questions/2026-10-23-am-dsa.md): Given an integer array nums, find the maximum sum of any contiguous subarray that contains at most two distinct numbers. For example, in nums = [1,2,1,4,7,2,5], the subarray [1,4,7,2] has sum 14 and only contains the numbers 1,4,7,2? Actually 1,4,7,2 are four distinct, so not allowed. The best subarray is [4,7,2] with sum 13.
 - **2026-10-22 [PM]** [AIML](questions/2026-10-22-pm-aiml.md): In regression tasks, what are the main differences between Mean Squared Error (MSE) and Mean Absolute Error (MAE) as loss functions? Discuss how each behaves in the presence of outliers and the impact on the learned model. Also, explain a scenario where one would be preferable over the other.
-- **2026-10-22 [AM]** [Behavioral](questions/2026-10-22-am-behavioral.md): Describe a time when you joined a team mid-project and had to quickly earn the trust of your teammates to contribute effectively.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

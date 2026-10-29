@@ -1158,6 +1158,16 @@
       "hint": "Consider how you assess critical tasks, identify alternatives, and keep stakeholders informed without losing momentum.",
       "answer": "I was once leading a feature rollout when our senior backend engineer unexpectedly left. I immediately mapped the remaining tasks to the team's skill sets, identified non-essential work that could be postponed, and brought the product owner into a quick sync to reset the timeline. I also created a shared risk register so everyone could see the trade-offs. By reallocating testing responsibilities to a QA teammate and outsourcing a small module to a freelance developer, we kept the launch on schedule and maintained code quality. The stakeholders appreciated the transparency, and the project delivered with only a one-week delay.",
       "generated_at": "2026-10-28T19:43:14.265771+00:00"
+    },
+    {
+      "date": "2026-10-29",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is the Open/Closed Principle in object\u2011oriented design, and how can a class hierarchy be refactored to satisfy this principle when new functionality needs to be added?",
+      "difficulty": "Medium",
+      "hint": "Consider using abstraction and polymorphism so that existing code remains unchanged while new behavior is introduced.",
+      "answer": "The Open/Closed Principle (OCP) states that software entities such as classes, modules, and functions should be open for extension but closed for modification. In practice, you should be able to add new functionality by writing new code rather than altering existing, tested code. A typical refactor introduces an abstract base class or interface that defines the required operations, with concrete subclasses implementing each behavior. When a new feature is required, you add a new subclass that implements the interface, leaving the original classes untouched, and client code interacts only with the abstraction, often via dependency injection or a factory. This approach reduces regression risk and improves maintainability.",
+      "generated_at": "2026-10-29T08:43:03.498214+00:00"
     }
   ]
 }

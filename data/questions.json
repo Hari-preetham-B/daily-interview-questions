@@ -1188,6 +1188,16 @@
       "hint": "Consider the balance between honesty and empathy, and think about concrete steps you took to frame the feedback constructively.",
       "answer": "I identified that a teammate\u2019s code had several anti\u2011pattern issues that were impacting the build stability. Before the meeting I collected specific examples and potential solutions, and I chose a private setting to avoid public embarrassment. During the conversation I started by acknowledging their effort, then described the impact of the issues on the project, and suggested actionable steps they could take. I also offered to pair\u2011program to review changes. The teammate appreciated the respectful tone, adopted the suggested practices, and the overall build reliability improved within a week. The experience strengthened our collaboration and set clearer coding standards for the team.",
       "generated_at": "2026-10-30T08:49:44.649519+00:00"
+    },
+    {
+      "date": "2026-10-30",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.",
+      "difficulty": "Medium",
+      "hint": "Think about how each method constructs its base learners and how the training data is altered.",
+      "answer": "Bagging (Bootstrap Aggregating) builds each base learner independently on random bootstrap samples of the training data, then aggregates their predictions (e.g., Random Forests). This approach increases diversity among trees and reduces variance, while bias remains similar to the base learner. Boosting (e.g., AdaBoost, Gradient Boosting) trains base learners sequentially, each focusing on the mistakes of the previous ones by reweighting or adding weighted examples; this tends to reduce bias by correcting errors, but can increase variance if overfitting occurs. In practice, bagging is effective for high-variance learners like decision trees, whereas boosting is used to improve low-bias models such as shallow trees or linear models by iteratively refining them.",
+      "generated_at": "2026-10-30T19:33:59.839317+00:00"
     }
   ]
 }

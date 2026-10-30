@@ -24,16 +24,37 @@ I identified that a teammate’s code had several anti‑pattern issues that wer
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-30) — AIML
+
+**Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how each method constructs its base learners and how the training data is altered.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Bagging (Bootstrap Aggregating) builds each base learner independently on random bootstrap samples of the training data, then aggregates their predictions (e.g., Random Forests). This approach increases diversity among trees and reduces variance, while bias remains similar to the base learner. Boosting (e.g., AdaBoost, Gradient Boosting) trains base learners sequentially, each focusing on the mistakes of the previous ones by reweighting or adding weighted examples; this tends to reduce bias by correcting errors, but can increase variance if overfitting occurs. In practice, bagging is effective for high-variance learners like decision trees, whereas boosting is used to improve low-bias models such as shallow trees or linear models by iteratively refining them.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **119**
-- DSA: 30 · AI/ML: 29 · CSE Core: 30 · Behavioral: 30
+- Total questions logged: **120**
+- DSA: 30 · AI/ML: 30 · CSE Core: 30 · Behavioral: 30
 
 ## 🗂️ Recent Questions
 
+- **2026-10-30 [PM]** [AIML](questions/2026-10-30-pm-aiml.md): Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.
 - **2026-10-30 [AM]** [Behavioral](questions/2026-10-30-am-behavioral.md): Tell me about a time when you had to give a teammate difficult feedback about their work. How did you prepare for the conversation, what approach did you use, and what was the outcome for both the teammate and the project?
 - **2026-10-29 [PM]** [DSA](questions/2026-10-29-pm-dsa.md): Design a data structure that implements a Least Recently Used (LRU) cache. It should support the operations get(key) and put(key, value) both in O(1) average time. get(key) returns the value associated with the key if it exists, otherwise -1. put(key, value) inserts the key‑value pair into the cache; if the cache reaches its capacity, it should evict the least recently used item before inserting the new one. Initialize the cache with a positive capacity integer.
 - **2026-10-29 [AM]** [CSE Core](questions/2026-10-29-am-cse-core.md): What is the Open/Closed Principle in object‑oriented design, and how can a class hierarchy be refactored to satisfy this principle when new functionality needs to be added?
@@ -48,7 +69,6 @@ I identified that a teammate’s code had several anti‑pattern issues that wer
 - **2026-10-24 [PM]** [Behavioral](questions/2026-10-24-pm-behavioral.md): Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?
 - **2026-10-24 [AM]** [AIML](questions/2026-10-24-am-aiml.md): In contrastive representation learning, what is the InfoNCE loss? Describe its mathematical form, explain the role of the temperature hyper‑parameter, and discuss why using a higher number of negative samples can improve the learned embeddings.
 - **2026-10-23 [PM]** [CSE Core](questions/2026-10-23-pm-cse-core.md): What is a race condition in multithreaded programming, and what mechanisms (such as mutexes, atomic operations, or memory barriers) can be used to prevent it?
-- **2026-10-23 [AM]** [DSA](questions/2026-10-23-am-dsa.md): Given an integer array nums, find the maximum sum of any contiguous subarray that contains at most two distinct numbers. For example, in nums = [1,2,1,4,7,2,5], the subarray [1,4,7,2] has sum 14 and only contains the numbers 1,4,7,2? Actually 1,4,7,2 are four distinct, so not allowed. The best subarray is [4,7,2] with sum 13.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

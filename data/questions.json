@@ -1198,6 +1198,16 @@
       "hint": "Think about how each method constructs its base learners and how the training data is altered.",
       "answer": "Bagging (Bootstrap Aggregating) builds each base learner independently on random bootstrap samples of the training data, then aggregates their predictions (e.g., Random Forests). This approach increases diversity among trees and reduces variance, while bias remains similar to the base learner. Boosting (e.g., AdaBoost, Gradient Boosting) trains base learners sequentially, each focusing on the mistakes of the previous ones by reweighting or adding weighted examples; this tends to reduce bias by correcting errors, but can increase variance if overfitting occurs. In practice, bagging is effective for high-variance learners like decision trees, whereas boosting is used to improve low-bias models such as shallow trees or linear models by iteratively refining them.",
       "generated_at": "2026-10-30T19:33:59.839317+00:00"
+    },
+    {
+      "date": "2026-10-31",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given a string s and an integer k, find the length of the longest substring of s that contains at most k distinct characters. Return 0 if no such substring exists.",
+      "difficulty": "Medium",
+      "hint": "Use a sliding window and a hash map (or array) to track character frequencies. Expand the right pointer while the distinct count \u2264\u202fk, and shrink from the left when it exceeds k.",
+      "answer": "Maintain two pointers left and right defining the current window and a hash map counting characters in the window. As right moves forward, add s[right] to the map; if the map size exceeds k, move left forward, decrementing counts and removing characters with zero frequency. Keep track of the maximum window size seen whenever the map size \u2264\u202fk. This runs in O(n) time with O(k) extra space, where n is the length of s.",
+      "generated_at": "2026-10-31T08:37:31.161219+00:00"
     }
   ]
 }

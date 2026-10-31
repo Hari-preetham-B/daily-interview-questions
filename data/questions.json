@@ -1208,6 +1208,16 @@
       "hint": "Use a sliding window and a hash map (or array) to track character frequencies. Expand the right pointer while the distinct count \u2264\u202fk, and shrink from the left when it exceeds k.",
       "answer": "Maintain two pointers left and right defining the current window and a hash map counting characters in the window. As right moves forward, add s[right] to the map; if the map size exceeds k, move left forward, decrementing counts and removing characters with zero frequency. Keep track of the maximum window size seen whenever the map size \u2264\u202fk. This runs in O(n) time with O(k) extra space, where n is the length of s.",
       "generated_at": "2026-10-31T08:37:31.161219+00:00"
+    },
+    {
+      "date": "2026-10-31",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?",
+      "difficulty": "Medium",
+      "hint": "Think about the structure of tuples, functional dependencies, and the role of primary keys in eliminating redundancy.",
+      "answer": "First Normal Form requires that every attribute of a relation be atomic\u2014no repeating groups or arrays\u2014and that each column contain a single value. Second Normal Form builds on 1NF by ensuring that every non\u2011key attribute is fully functionally dependent on the entire primary key (no partial dependencies on a composite key). Third Normal Form adds that all non\u2011key attributes must be non\u2011transitively dependent on the primary key; that is, no non\u2011key attribute should depend on another non\u2011key attribute. These constraints eliminate update, insertion, and deletion anomalies by reducing redundancy and ensuring that each piece of information is stored in exactly one place.",
+      "generated_at": "2026-10-31T18:40:35.660643+00:00"
     }
   ]
 }

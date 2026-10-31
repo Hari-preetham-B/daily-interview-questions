@@ -24,16 +24,37 @@ Maintain two pointers left and right defining the current window and a hash map 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-10-31) — CSE Core
+
+**In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about the structure of tuples, functional dependencies, and the role of primary keys in eliminating redundancy.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+First Normal Form requires that every attribute of a relation be atomic—no repeating groups or arrays—and that each column contain a single value. Second Normal Form builds on 1NF by ensuring that every non‑key attribute is fully functionally dependent on the entire primary key (no partial dependencies on a composite key). Third Normal Form adds that all non‑key attributes must be non‑transitively dependent on the primary key; that is, no non‑key attribute should depend on another non‑key attribute. These constraints eliminate update, insertion, and deletion anomalies by reducing redundancy and ensuring that each piece of information is stored in exactly one place.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **121**
-- DSA: 31 · AI/ML: 30 · CSE Core: 30 · Behavioral: 30
+- Total questions logged: **122**
+- DSA: 31 · AI/ML: 30 · CSE Core: 31 · Behavioral: 30
 
 ## 🗂️ Recent Questions
 
+- **2026-10-31 [PM]** [CSE Core](questions/2026-10-31-pm-cse-core.md): In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?
 - **2026-10-31 [AM]** [DSA](questions/2026-10-31-am-dsa.md): Given a string s and an integer k, find the length of the longest substring of s that contains at most k distinct characters. Return 0 if no such substring exists.
 - **2026-10-30 [PM]** [AIML](questions/2026-10-30-pm-aiml.md): Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.
 - **2026-10-30 [AM]** [Behavioral](questions/2026-10-30-am-behavioral.md): Tell me about a time when you had to give a teammate difficult feedback about their work. How did you prepare for the conversation, what approach did you use, and what was the outcome for both the teammate and the project?
@@ -48,7 +69,6 @@ Maintain two pointers left and right defining the current window and a hash map 
 - **2026-10-25 [PM]** [DSA](questions/2026-10-25-pm-dsa.md): You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.
 - **2026-10-25 [AM]** [CSE Core](questions/2026-10-25-am-cse-core.md): What is a Wait-For Graph in the context of deadlock detection, how does the operating system use it to detect deadlocks, and what are common recovery strategies once a deadlock is detected?
 - **2026-10-24 [PM]** [Behavioral](questions/2026-10-24-pm-behavioral.md): Describe a situation where you identified a potential ethical issue or security concern in a codebase or project you were working on. How did you address it with your team or stakeholders, and what was the outcome?
-- **2026-10-24 [AM]** [AIML](questions/2026-10-24-am-aiml.md): In contrastive representation learning, what is the InfoNCE loss? Describe its mathematical form, explain the role of the temperature hyper‑parameter, and discuss why using a higher number of negative samples can improve the learned embeddings.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

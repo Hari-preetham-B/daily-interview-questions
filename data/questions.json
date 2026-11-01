@@ -1218,6 +1218,16 @@
       "hint": "Think about the structure of tuples, functional dependencies, and the role of primary keys in eliminating redundancy.",
       "answer": "First Normal Form requires that every attribute of a relation be atomic\u2014no repeating groups or arrays\u2014and that each column contain a single value. Second Normal Form builds on 1NF by ensuring that every non\u2011key attribute is fully functionally dependent on the entire primary key (no partial dependencies on a composite key). Third Normal Form adds that all non\u2011key attributes must be non\u2011transitively dependent on the primary key; that is, no non\u2011key attribute should depend on another non\u2011key attribute. These constraints eliminate update, insertion, and deletion anomalies by reducing redundancy and ensuring that each piece of information is stored in exactly one place.",
       "generated_at": "2026-10-31T18:40:35.660643+00:00"
+    },
+    {
+      "date": "2026-11-01",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "What is the vanishing gradient problem in deep neural networks, why does it occur, and how can it be mitigated? Illustrate with a simple modification to a standard RNN cell that addresses this issue.",
+      "difficulty": "Medium",
+      "hint": "Consider how gradients are multiplied across many layers or time steps and the role of activation functions.",
+      "answer": "The vanishing gradient problem arises when gradients flowing back through many layers or time steps shrink exponentially, often due to activation functions like sigmoid or tanh whose derivatives are bounded by 1. This causes earlier layers to learn very slowly or not at all. Two common mitigations are (1) using ReLU or its variants (which have larger gradients for positive inputs) and (2) employing gating mechanisms such as in LSTM or GRU cells that provide shortcut connections for gradients. A simple way to modify a vanilla RNN cell is to replace the tanh activation with a ReLU and add a residual connection: \n\npython\nh_t = torch.relu(Wx @ x_t + Wh @ h_{t-1} + b) + h_{t-1}\n\n\nThe residual term helps keep the gradient magnitude stable while ReLU mitigates saturation, thereby reducing the vanishing gradient effect.",
+      "generated_at": "2026-11-01T09:28:29.647834+00:00"
     }
   ]
 }

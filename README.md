@@ -30,16 +30,37 @@ The residual term helps keep the gradient magnitude stable while ReLU mitigates 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-01) — Behavioral
+
+**Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance‑critical component, and how you facilitated a resolution.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about balancing technical merit with team harmony and how you gathered input from both sides.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+During a sprint I noticed a senior engineer and a junior developer were at odds about whether to use a binary search tree or a hash map for a lookup feature that would be used millions of times a day. I called a short stand‑up, asked each to explain their reasoning and the trade‑offs in terms of time complexity, memory usage, and maintainability. I then suggested we benchmark a small prototype with realistic data to see the actual performance difference. The prototype showed the hash map was faster in practice, but the tree was easier to maintain with future updates. We agreed to use the hash map for the current release and keep the tree implementation in the codebase for future extensions, ensuring both parties felt heard and the decision was data‑driven. The feature shipped on time, performance met expectations, and the team gained confidence in collaborative decision‑making. 
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **123**
-- DSA: 31 · AI/ML: 31 · CSE Core: 31 · Behavioral: 30
+- Total questions logged: **124**
+- DSA: 31 · AI/ML: 31 · CSE Core: 31 · Behavioral: 31
 
 ## 🗂️ Recent Questions
 
+- **2026-11-01 [PM]** [Behavioral](questions/2026-11-01-pm-behavioral.md): Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance‑critical component, and how you facilitated a resolution.
 - **2026-11-01 [AM]** [AIML](questions/2026-11-01-am-aiml.md): What is the vanishing gradient problem in deep neural networks, why does it occur, and how can it be mitigated? Illustrate with a simple modification to a standard RNN cell that addresses this issue.
 - **2026-10-31 [PM]** [CSE Core](questions/2026-10-31-pm-cse-core.md): In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?
 - **2026-10-31 [AM]** [DSA](questions/2026-10-31-am-dsa.md): Given a string s and an integer k, find the length of the longest substring of s that contains at most k distinct characters. Return 0 if no such substring exists.
@@ -54,7 +75,6 @@ The residual term helps keep the gradient magnitude stable while ReLU mitigates 
 - **2026-10-26 [PM]** [AIML](questions/2026-10-26-pm-aiml.md): Explain the purpose of positional encodings in Transformer models. Compare sinusoidal positional encodings with learned positional embeddings, and discuss the advantages and potential drawbacks of each approach.
 - **2026-10-26 [AM]** [Behavioral](questions/2026-10-26-am-behavioral.md): Tell me about a time when you had to make a decision to abandon or pivot a feature that was no longer aligned with the company’s product strategy. How did you handle stakeholder communication and what was the outcome?
 - **2026-10-25 [PM]** [DSA](questions/2026-10-25-pm-dsa.md): You are given an integer array nums and an integer k. Find the length of the longest contiguous subarray such that the difference between the maximum and minimum element in that subarray is at most k. If no such subarray exists, return 0.
-- **2026-10-25 [AM]** [CSE Core](questions/2026-10-25-am-cse-core.md): What is a Wait-For Graph in the context of deadlock detection, how does the operating system use it to detect deadlocks, and what are common recovery strategies once a deadlock is detected?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

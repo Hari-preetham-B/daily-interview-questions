@@ -1228,6 +1228,16 @@
       "hint": "Consider how gradients are multiplied across many layers or time steps and the role of activation functions.",
       "answer": "The vanishing gradient problem arises when gradients flowing back through many layers or time steps shrink exponentially, often due to activation functions like sigmoid or tanh whose derivatives are bounded by 1. This causes earlier layers to learn very slowly or not at all. Two common mitigations are (1) using ReLU or its variants (which have larger gradients for positive inputs) and (2) employing gating mechanisms such as in LSTM or GRU cells that provide shortcut connections for gradients. A simple way to modify a vanilla RNN cell is to replace the tanh activation with a ReLU and add a residual connection: \n\npython\nh_t = torch.relu(Wx @ x_t + Wh @ h_{t-1} + b) + h_{t-1}\n\n\nThe residual term helps keep the gradient magnitude stable while ReLU mitigates saturation, thereby reducing the vanishing gradient effect.",
       "generated_at": "2026-11-01T09:28:29.647834+00:00"
+    },
+    {
+      "date": "2026-11-01",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance\u2011critical component, and how you facilitated a resolution.",
+      "difficulty": "Medium",
+      "hint": "Think about balancing technical merit with team harmony and how you gathered input from both sides.",
+      "answer": "During a sprint I noticed a senior engineer and a junior developer were at odds about whether to use a binary search tree or a hash map for a lookup feature that would be used millions of times a day. I called a short stand\u2011up, asked each to explain their reasoning and the trade\u2011offs in terms of time complexity, memory usage, and maintainability. I then suggested we benchmark a small prototype with realistic data to see the actual performance difference. The prototype showed the hash map was faster in practice, but the tree was easier to maintain with future updates. We agreed to use the hash map for the current release and keep the tree implementation in the codebase for future extensions, ensuring both parties felt heard and the decision was data\u2011driven. The feature shipped on time, performance met expectations, and the team gained confidence in collaborative decision\u2011making. ",
+      "generated_at": "2026-11-01T19:01:59.522154+00:00"
     }
   ]
 }

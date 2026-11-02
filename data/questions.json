@@ -1248,6 +1248,16 @@
       "hint": "Consider how the operating system handles page tables after a fork and what happens when either process modifies a page.",
       "answer": "Copy\u2011on\u2011write (COW) is a memory\u2011optimization technique used when a process forks. Initially, the child and parent share the same physical pages with read\u2011only permissions; the page table entries point to the same frames. When either process attempts to write to a shared page, the OS intercepts the fault, allocates a new physical page, copies the contents, updates the faulting process\u2019s page table to point to the new page, and marks it writable. This avoids duplicating all pages up front, saving memory and reducing fork latency, and only duplicates pages that are actually modified.",
       "generated_at": "2026-11-02T09:44:37.439635+00:00"
+    },
+    {
+      "date": "2026-11-02",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.",
+      "difficulty": "Medium",
+      "hint": "Consider the array as a permutation of the sorted order and think about how many swaps are needed to fix each cycle.",
+      "answer": "First, create a copy of the array and sort it to know the target positions of each element. Build a map from element value to its index in the sorted array. Then traverse the original array, marking visited indices; for each unvisited index, follow the chain of where the current element should go, forming a cycle. A cycle of length\u202fk requires k\u20111 swaps, so sum (cycle_length\u20111) over all cycles. This runs in O(n) time and O(n) extra space.",
+      "generated_at": "2026-11-02T22:50:08.374105+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ Copy‑on‑write (COW) is a memory‑optimization technique used when a process
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-02) — DSA
+
+**Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the array as a permutation of the sorted order and think about how many swaps are needed to fix each cycle.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+First, create a copy of the array and sort it to know the target positions of each element. Build a map from element value to its index in the sorted array. Then traverse the original array, marking visited indices; for each unvisited index, follow the chain of where the current element should go, forming a cycle. A cycle of length k requires k‑1 swaps, so sum (cycle_length‑1) over all cycles. This runs in O(n) time and O(n) extra space.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **125**
-- DSA: 31 · AI/ML: 31 · CSE Core: 32 · Behavioral: 31
+- Total questions logged: **126**
+- DSA: 32 · AI/ML: 31 · CSE Core: 32 · Behavioral: 31
 
 ## 🗂️ Recent Questions
 
+- **2026-11-02 [PM]** [DSA](questions/2026-11-02-pm-dsa.md): Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.
 - **2026-11-02 [AM]** [CSE Core](questions/2026-11-02-am-cse-core.md): Explain the concept of copy‑on‑write in virtual memory, and describe how it improves memory efficiency when a process forks a child.
 - **2026-11-01 [PM]** [Behavioral](questions/2026-11-01-pm-behavioral.md): Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance‑critical component, and how you facilitated a resolution.
 - **2026-11-01 [AM]** [AIML](questions/2026-11-01-am-aiml.md): What is the vanishing gradient problem in deep neural networks, why does it occur, and how can it be mitigated? Illustrate with a simple modification to a standard RNN cell that addresses this issue.
@@ -48,7 +69,6 @@ Copy‑on‑write (COW) is a memory‑optimization technique used when a process
 - **2026-10-27 [PM]** [CSE Core](questions/2026-10-27-pm-cse-core.md): What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade‑offs?
 - **2026-10-27 [AM]** [DSA](questions/2026-10-27-am-dsa.md): You are given a binary tree where each node contains an integer value. The tree is not guaranteed to satisfy any ordering property. Define a subtree as any node together with all of its descendants. A subtree is considered a Binary Search Tree (BST) if for every node, all values in its left subtree are strictly less than the node’s value, and all values in its right subtree are strictly greater than the node’s value. Write an algorithm to find the size (number of nodes) of the largest subtree that is a BST. The algorithm should run in O(n) time where n is the number of nodes in the tree.
 - **2026-10-26 [PM]** [AIML](questions/2026-10-26-pm-aiml.md): Explain the purpose of positional encodings in Transformer models. Compare sinusoidal positional encodings with learned positional embeddings, and discuss the advantages and potential drawbacks of each approach.
-- **2026-10-26 [AM]** [Behavioral](questions/2026-10-26-am-behavioral.md): Tell me about a time when you had to make a decision to abandon or pivot a feature that was no longer aligned with the company’s product strategy. How did you handle stakeholder communication and what was the outcome?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

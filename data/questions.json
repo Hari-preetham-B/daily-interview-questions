@@ -1268,6 +1268,16 @@
       "hint": "Consider how you balanced empathy with accountability and the steps you took to ensure both personal and project responsibilities were addressed.",
       "answer": "In a recent project, a teammate had to leave unexpectedly due to a family emergency. I first assessed my own critical tasks and re\u2011scheduled non\u2011urgent work for a later date. I then offered to take over the teammate\u2019s most time\u2011sensitive assignments, coordinating with the product owner to confirm priority. I kept stakeholders informed through a brief status update, explaining the shift in responsibilities and the expected impact on delivery. The project stayed on track, and the teammate appreciated the support and timely communication.",
       "generated_at": "2026-11-03T09:47:51.523486+00:00"
+    },
+    {
+      "date": "2026-11-03",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.",
+      "difficulty": "Medium",
+      "hint": "Think of the expected return as a sum over trajectories and consider the log\u2011probability trick.",
+      "answer": "REINFORCE estimates the policy gradient as \u03b8\nabla_\\theta J(\\theta) = \\mathbb{E}_\\tau\\left[\\sum_{t=0}^{T-1}\\nabla_\\theta \\log \\pi_\\theta(a_t|s_t), G_t\\right],\nwhere \\tau denotes a trajectory and G_t is the return from time t. The estimator uses sampled trajectories, replacing the expectation with an average over a finite batch. It has high variance because the return G_t is a noisy estimate of the true advantage; the product of a noisy return with a gradient amplifies randomness. Two common variance\u2011reduction methods are (1) subtracting a baseline, e.g., a state\u2011value estimate V(s_t), to obtain the advantage A_t = G_t - V(s_t), and (2) using a control\u2011variates or Rao\u2011Blackwellized estimator, such as the advantage actor\u2011critic (A2C) approach where the critic provides a learned baseline. Both techniques reduce the magnitude of the gradient noise without introducing bias.",
+      "generated_at": "2026-11-03T20:33:24.979489+00:00"
     }
   ]
 }

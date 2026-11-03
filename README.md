@@ -24,16 +24,39 @@ In a recent project, a teammate had to leave unexpectedly due to a family emerge
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-03) — AIML
+
+**Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think of the expected return as a sum over trajectories and consider the log‑probability trick.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+REINFORCE estimates the policy gradient as θ
+abla_\theta J(\theta) = \mathbb{E}_\tau\left[\sum_{t=0}^{T-1}\nabla_\theta \log \pi_\theta(a_t|s_t), G_t\right],
+where \tau denotes a trajectory and G_t is the return from time t. The estimator uses sampled trajectories, replacing the expectation with an average over a finite batch. It has high variance because the return G_t is a noisy estimate of the true advantage; the product of a noisy return with a gradient amplifies randomness. Two common variance‑reduction methods are (1) subtracting a baseline, e.g., a state‑value estimate V(s_t), to obtain the advantage A_t = G_t - V(s_t), and (2) using a control‑variates or Rao‑Blackwellized estimator, such as the advantage actor‑critic (A2C) approach where the critic provides a learned baseline. Both techniques reduce the magnitude of the gradient noise without introducing bias.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **127**
-- DSA: 32 · AI/ML: 31 · CSE Core: 32 · Behavioral: 32
+- Total questions logged: **128**
+- DSA: 32 · AI/ML: 32 · CSE Core: 32 · Behavioral: 32
 
 ## 🗂️ Recent Questions
 
+- **2026-11-03 [PM]** [AIML](questions/2026-11-03-pm-aiml.md): Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.
 - **2026-11-03 [AM]** [Behavioral](questions/2026-11-03-am-behavioral.md): Describe a time when you had to adjust your personal work schedule to support a teammate facing a critical personal emergency, while still meeting your own project deadlines. How did you prioritize tasks and communicate with stakeholders?
 - **2026-11-02 [PM]** [DSA](questions/2026-11-02-pm-dsa.md): Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.
 - **2026-11-02 [AM]** [CSE Core](questions/2026-11-02-am-cse-core.md): Explain the concept of copy‑on‑write in virtual memory, and describe how it improves memory efficiency when a process forks a child.
@@ -48,7 +71,6 @@ In a recent project, a teammate had to leave unexpectedly due to a family emerge
 - **2026-10-28 [PM]** [Behavioral](questions/2026-10-28-pm-behavioral.md): Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?
 - **2026-10-28 [AM]** [AIML](questions/2026-10-28-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization in linear regression. How does each affect the model coefficients, and in what situations would you prefer one over the other?
 - **2026-10-27 [PM]** [CSE Core](questions/2026-10-27-pm-cse-core.md): What is the purpose of a page replacement algorithm in virtual memory systems, and how do the Least Recently Used (LRU) and Clock (Second-Chance) algorithms differ in terms of implementation complexity and performance trade‑offs?
-- **2026-10-27 [AM]** [DSA](questions/2026-10-27-am-dsa.md): You are given a binary tree where each node contains an integer value. The tree is not guaranteed to satisfy any ordering property. Define a subtree as any node together with all of its descendants. A subtree is considered a Binary Search Tree (BST) if for every node, all values in its left subtree are strictly less than the node’s value, and all values in its right subtree are strictly greater than the node’s value. Write an algorithm to find the size (number of nodes) of the largest subtree that is a BST. The algorithm should run in O(n) time where n is the number of nodes in the tree.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

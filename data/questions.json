@@ -1258,6 +1258,16 @@
       "hint": "Consider the array as a permutation of the sorted order and think about how many swaps are needed to fix each cycle.",
       "answer": "First, create a copy of the array and sort it to know the target positions of each element. Build a map from element value to its index in the sorted array. Then traverse the original array, marking visited indices; for each unvisited index, follow the chain of where the current element should go, forming a cycle. A cycle of length\u202fk requires k\u20111 swaps, so sum (cycle_length\u20111) over all cycles. This runs in O(n) time and O(n) extra space.",
       "generated_at": "2026-11-02T22:50:08.374105+00:00"
+    },
+    {
+      "date": "2026-11-03",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a time when you had to adjust your personal work schedule to support a teammate facing a critical personal emergency, while still meeting your own project deadlines. How did you prioritize tasks and communicate with stakeholders?",
+      "difficulty": "Medium",
+      "hint": "Consider how you balanced empathy with accountability and the steps you took to ensure both personal and project responsibilities were addressed.",
+      "answer": "In a recent project, a teammate had to leave unexpectedly due to a family emergency. I first assessed my own critical tasks and re\u2011scheduled non\u2011urgent work for a later date. I then offered to take over the teammate\u2019s most time\u2011sensitive assignments, coordinating with the product owner to confirm priority. I kept stakeholders informed through a brief status update, explaining the shift in responsibilities and the expected impact on delivery. The project stayed on track, and the teammate appreciated the support and timely communication.",
+      "generated_at": "2026-11-03T09:47:51.523486+00:00"
     }
   ]
 }

@@ -1288,6 +1288,16 @@
       "hint": "Track the running prefix sum while iterating and use a hash map to count how many previous prefixes have a sum equal to (currentSum\u2011k).",
       "answer": "Initialize a hash map `count` with {0:1} to handle subarrays starting at index\u202f0. Iterate through `nums`, maintaining a running sum `curr`. For each element, add `count.get(curr - k, 0)` to the answer, because any previous prefix with sum `curr\u2011k` forms a subarray summing to `k`. Then increment `count[curr]` by one. This yields O(n) time and O(n) space. Example Python implementation:\npython\ndef subarraySum(nums, k):\n    from collections import defaultdict\n    prefix_counts = defaultdict(int)\n    prefix_counts[0] = 1\n    curr = ans = 0\n    for x in nums:\n        curr += x\n        ans += prefix_counts[curr - k]\n        prefix_counts[curr] += 1\n    return ans\n",
       "generated_at": "2026-11-04T09:34:52.595035+00:00"
+    },
+    {
+      "date": "2026-11-04",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?",
+      "difficulty": "Medium",
+      "hint": "Think about how a guest OS can signal its memory needs to the hypervisor and how the hypervisor can reclaim unused memory.",
+      "answer": "A memory balloon device is a virtual device presented to the guest OS that lets the guest inflate or deflate a memory buffer. When the guest needs more memory, it inflates the balloon, allocating pages to the balloon driver; these pages are then reported to the hypervisor as free, allowing the host to reclaim memory for other guests. Conversely, if the host needs to free memory, the hypervisor can deflate the balloon, forcing the guest to release pages. This dynamic mechanism enables efficient sharing of physical RAM among multiple virtual machines without hard limits.",
+      "generated_at": "2026-11-04T20:52:22.089314+00:00"
     }
   ]
 }

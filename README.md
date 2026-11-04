@@ -36,16 +36,37 @@ def subarraySum(nums, k):
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-04) — CSE Core
+
+**What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how a guest OS can signal its memory needs to the hypervisor and how the hypervisor can reclaim unused memory.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+A memory balloon device is a virtual device presented to the guest OS that lets the guest inflate or deflate a memory buffer. When the guest needs more memory, it inflates the balloon, allocating pages to the balloon driver; these pages are then reported to the hypervisor as free, allowing the host to reclaim memory for other guests. Conversely, if the host needs to free memory, the hypervisor can deflate the balloon, forcing the guest to release pages. This dynamic mechanism enables efficient sharing of physical RAM among multiple virtual machines without hard limits.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **129**
-- DSA: 33 · AI/ML: 32 · CSE Core: 32 · Behavioral: 32
+- Total questions logged: **130**
+- DSA: 33 · AI/ML: 32 · CSE Core: 33 · Behavioral: 32
 
 ## 🗂️ Recent Questions
 
+- **2026-11-04 [PM]** [CSE Core](questions/2026-11-04-pm-cse-core.md): What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?
 - **2026-11-04 [AM]** [DSA](questions/2026-11-04-am-dsa.md): Given an integer array `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals `k`. The array may contain positive, negative, and zero values. Aim for O(n) time and O(n) extra space.
 - **2026-11-03 [PM]** [AIML](questions/2026-11-03-pm-aiml.md): Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.
 - **2026-11-03 [AM]** [Behavioral](questions/2026-11-03-am-behavioral.md): Describe a time when you had to adjust your personal work schedule to support a teammate facing a critical personal emergency, while still meeting your own project deadlines. How did you prioritize tasks and communicate with stakeholders?
@@ -60,7 +81,6 @@ def subarraySum(nums, k):
 - **2026-10-29 [PM]** [DSA](questions/2026-10-29-pm-dsa.md): Design a data structure that implements a Least Recently Used (LRU) cache. It should support the operations get(key) and put(key, value) both in O(1) average time. get(key) returns the value associated with the key if it exists, otherwise -1. put(key, value) inserts the key‑value pair into the cache; if the cache reaches its capacity, it should evict the least recently used item before inserting the new one. Initialize the cache with a positive capacity integer.
 - **2026-10-29 [AM]** [CSE Core](questions/2026-10-29-am-cse-core.md): What is the Open/Closed Principle in object‑oriented design, and how can a class hierarchy be refactored to satisfy this principle when new functionality needs to be added?
 - **2026-10-28 [PM]** [Behavioral](questions/2026-10-28-pm-behavioral.md): Describe a situation where you had to handle a sudden resource shortage (e.g., key team member leaving or budget cuts) mid-project. How did you prioritize tasks, reallocate responsibilities, and communicate the changes to stakeholders?
-- **2026-10-28 [AM]** [AIML](questions/2026-10-28-am-aiml.md): Compare L1 (Lasso) and L2 (Ridge) regularization in linear regression. How does each affect the model coefficients, and in what situations would you prefer one over the other?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

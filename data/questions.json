@@ -1278,6 +1278,16 @@
       "hint": "Think of the expected return as a sum over trajectories and consider the log\u2011probability trick.",
       "answer": "REINFORCE estimates the policy gradient as \u03b8\nabla_\\theta J(\\theta) = \\mathbb{E}_\\tau\\left[\\sum_{t=0}^{T-1}\\nabla_\\theta \\log \\pi_\\theta(a_t|s_t), G_t\\right],\nwhere \\tau denotes a trajectory and G_t is the return from time t. The estimator uses sampled trajectories, replacing the expectation with an average over a finite batch. It has high variance because the return G_t is a noisy estimate of the true advantage; the product of a noisy return with a gradient amplifies randomness. Two common variance\u2011reduction methods are (1) subtracting a baseline, e.g., a state\u2011value estimate V(s_t), to obtain the advantage A_t = G_t - V(s_t), and (2) using a control\u2011variates or Rao\u2011Blackwellized estimator, such as the advantage actor\u2011critic (A2C) approach where the critic provides a learned baseline. Both techniques reduce the magnitude of the gradient noise without introducing bias.",
       "generated_at": "2026-11-03T20:33:24.979489+00:00"
+    },
+    {
+      "date": "2026-11-04",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals `k`. The array may contain positive, negative, and zero values. Aim for O(n) time and O(n) extra space.",
+      "difficulty": "Medium",
+      "hint": "Track the running prefix sum while iterating and use a hash map to count how many previous prefixes have a sum equal to (currentSum\u2011k).",
+      "answer": "Initialize a hash map `count` with {0:1} to handle subarrays starting at index\u202f0. Iterate through `nums`, maintaining a running sum `curr`. For each element, add `count.get(curr - k, 0)` to the answer, because any previous prefix with sum `curr\u2011k` forms a subarray summing to `k`. Then increment `count[curr]` by one. This yields O(n) time and O(n) space. Example Python implementation:\npython\ndef subarraySum(nums, k):\n    from collections import defaultdict\n    prefix_counts = defaultdict(int)\n    prefix_counts[0] = 1\n    curr = ans = 0\n    for x in nums:\n        curr += x\n        ans += prefix_counts[curr - k]\n        prefix_counts[curr] += 1\n    return ans\n",
+      "generated_at": "2026-11-04T09:34:52.595035+00:00"
     }
   ]
 }

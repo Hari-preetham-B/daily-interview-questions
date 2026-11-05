@@ -24,16 +24,37 @@ FID measures the distance between two multivariate Gaussian distributions fitted
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-05) — Behavioral
+
+**Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you prioritize tasks and keep stakeholders informed about potential impacts.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In my final semester, I was leading a capstone project while also contributing to a hackathon and completing a part-time internship. I mapped each task to its deadline and impact on overall objectives, then created a visual timeline for the team. I scheduled a brief meeting with my manager and teammates to discuss the trade-offs, proposing a phased approach that prioritized high-impact deliverables. We agreed to allocate extra hours to the capstone and reassign some internship tasks, which allowed us to meet all deadlines without compromising quality.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **131**
-- DSA: 33 · AI/ML: 33 · CSE Core: 33 · Behavioral: 32
+- Total questions logged: **132**
+- DSA: 33 · AI/ML: 33 · CSE Core: 33 · Behavioral: 33
 
 ## 🗂️ Recent Questions
 
+- **2026-11-05 [PM]** [Behavioral](questions/2026-11-05-pm-behavioral.md): Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?
 - **2026-11-05 [AM]** [AIML](questions/2026-11-05-am-aiml.md): Explain how you would evaluate a generative image model’s quality using Fréchet Inception Distance (FID). What are the main steps to compute it, and why is FID generally preferred over the Inception Score?
 - **2026-11-04 [PM]** [CSE Core](questions/2026-11-04-pm-cse-core.md): What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?
 - **2026-11-04 [AM]** [DSA](questions/2026-11-04-am-dsa.md): Given an integer array `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals `k`. The array may contain positive, negative, and zero values. Aim for O(n) time and O(n) extra space.
@@ -48,7 +69,6 @@ FID measures the distance between two multivariate Gaussian distributions fitted
 - **2026-10-30 [PM]** [AIML](questions/2026-10-30-pm-aiml.md): Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.
 - **2026-10-30 [AM]** [Behavioral](questions/2026-10-30-am-behavioral.md): Tell me about a time when you had to give a teammate difficult feedback about their work. How did you prepare for the conversation, what approach did you use, and what was the outcome for both the teammate and the project?
 - **2026-10-29 [PM]** [DSA](questions/2026-10-29-pm-dsa.md): Design a data structure that implements a Least Recently Used (LRU) cache. It should support the operations get(key) and put(key, value) both in O(1) average time. get(key) returns the value associated with the key if it exists, otherwise -1. put(key, value) inserts the key‑value pair into the cache; if the cache reaches its capacity, it should evict the least recently used item before inserting the new one. Initialize the cache with a positive capacity integer.
-- **2026-10-29 [AM]** [CSE Core](questions/2026-10-29-am-cse-core.md): What is the Open/Closed Principle in object‑oriented design, and how can a class hierarchy be refactored to satisfy this principle when new functionality needs to be added?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

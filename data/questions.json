@@ -1308,6 +1308,16 @@
       "hint": "Think about extracting feature statistics from a fixed CNN and comparing distributions of real and generated images.",
       "answer": "FID measures the distance between two multivariate Gaussian distributions fitted to the feature activations of a pre\u2011trained Inception\u2011v3 network. To compute it, first pass a set of real images and a set of generated images through the network and record the mean vector \u03bc_r, \u03bc_g and covariance matrices \u03a3_r, \u03a3_g of the activations (usually from the pool3 layer). Then calculate FID = ||\u03bc_r-\u03bc_g||^2 + Tr(\u03a3_r + \u03a3_g - 2(\u03a3_r\u03a3_g)^{1/2}). It is preferred over Inception Score because it captures both the quality and diversity of samples, is invariant to the number of classes, and directly compares real vs. generated distributions rather than relying on classification confidence scores.",
       "generated_at": "2026-11-05T09:42:02.400670+00:00"
+    },
+    {
+      "date": "2026-11-05",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?",
+      "difficulty": "Medium",
+      "hint": "Consider how you prioritize tasks and keep stakeholders informed about potential impacts.",
+      "answer": "In my final semester, I was leading a capstone project while also contributing to a hackathon and completing a part-time internship. I mapped each task to its deadline and impact on overall objectives, then created a visual timeline for the team. I scheduled a brief meeting with my manager and teammates to discuss the trade-offs, proposing a phased approach that prioritized high-impact deliverables. We agreed to allocate extra hours to the capstone and reassign some internship tasks, which allowed us to meet all deadlines without compromising quality.",
+      "generated_at": "2026-11-05T21:09:26.308377+00:00"
     }
   ]
 }

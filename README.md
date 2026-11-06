@@ -24,16 +24,48 @@ The TCP three‑way handshake starts with the client sending a SYN segment conta
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-06) — DSA
+
+**Given an integer array `nums`, find the maximum product of any contiguous subarray and return that product. The subarray must contain at least one element.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Maintain both the maximum and minimum product ending at each index because a negative number can turn a small minimum into a large maximum.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+We can solve it in O(n) time and O(1) space by scanning the array while keeping three variables: `maxEndingHere`, `minEndingHere` and `result`. At each element `x`, the new `maxEndingHere` is the maximum of `x`, `maxEndingHere*x`, and `minEndingHere*x`; similarly, `minEndingHere` is the minimum of those three values. Update `result` with the larger of `result` and `maxEndingHere`. In code (Python):
+python
+def maxProduct(nums):
+    max_ending = min_ending = result = nums[0]
+    for x in nums[1:]:
+        if x < 0:
+            max_ending, min_ending = min_ending, max_ending
+        max_ending = max(x, max_ending * x)
+        min_ending = min(x, min_ending * x)
+        result = max(result, max_ending)
+    return result
+
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **133**
-- DSA: 33 · AI/ML: 33 · CSE Core: 34 · Behavioral: 33
+- Total questions logged: **134**
+- DSA: 34 · AI/ML: 33 · CSE Core: 34 · Behavioral: 33
 
 ## 🗂️ Recent Questions
 
+- **2026-11-06 [PM]** [DSA](questions/2026-11-06-pm-dsa.md): Given an integer array `nums`, find the maximum product of any contiguous subarray and return that product. The subarray must contain at least one element.
 - **2026-11-06 [AM]** [CSE Core](questions/2026-11-06-am-cse-core.md): Explain the TCP three‑way handshake process used to establish a reliable connection, including the purpose of each segment and how sequence numbers are initialized and acknowledged.
 - **2026-11-05 [PM]** [Behavioral](questions/2026-11-05-pm-behavioral.md): Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?
 - **2026-11-05 [AM]** [AIML](questions/2026-11-05-am-aiml.md): Explain how you would evaluate a generative image model’s quality using Fréchet Inception Distance (FID). What are the main steps to compute it, and why is FID generally preferred over the Inception Score?
@@ -48,7 +80,6 @@ The TCP three‑way handshake starts with the client sending a SYN segment conta
 - **2026-10-31 [PM]** [CSE Core](questions/2026-10-31-pm-cse-core.md): In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?
 - **2026-10-31 [AM]** [DSA](questions/2026-10-31-am-dsa.md): Given a string s and an integer k, find the length of the longest substring of s that contains at most k distinct characters. Return 0 if no such substring exists.
 - **2026-10-30 [PM]** [AIML](questions/2026-10-30-pm-aiml.md): Explain the difference between bagging and boosting ensemble methods, provide an example of each, and describe how each technique impacts model bias and variance.
-- **2026-10-30 [AM]** [Behavioral](questions/2026-10-30-am-behavioral.md): Tell me about a time when you had to give a teammate difficult feedback about their work. How did you prepare for the conversation, what approach did you use, and what was the outcome for both the teammate and the project?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

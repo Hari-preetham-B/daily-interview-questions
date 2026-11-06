@@ -1318,6 +1318,16 @@
       "hint": "Consider how you prioritize tasks and keep stakeholders informed about potential impacts.",
       "answer": "In my final semester, I was leading a capstone project while also contributing to a hackathon and completing a part-time internship. I mapped each task to its deadline and impact on overall objectives, then created a visual timeline for the team. I scheduled a brief meeting with my manager and teammates to discuss the trade-offs, proposing a phased approach that prioritized high-impact deliverables. We agreed to allocate extra hours to the capstone and reassign some internship tasks, which allowed us to meet all deadlines without compromising quality.",
       "generated_at": "2026-11-05T21:09:26.308377+00:00"
+    },
+    {
+      "date": "2026-11-06",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain the TCP three\u2011way handshake process used to establish a reliable connection, including the purpose of each segment and how sequence numbers are initialized and acknowledged.",
+      "difficulty": "Medium",
+      "hint": "Consider the SYN, SYN\u2011ACK, and ACK packets and how each side picks an initial sequence number.",
+      "answer": "The TCP three\u2011way handshake starts with the client sending a SYN segment containing its initial sequence number (ISN). The server replies with a SYN\u2011ACK segment that acknowledges the client\u2019s ISN (ACK = client ISN\u202f+\u202f1) and includes its own ISN. Finally, the client sends an ACK segment acknowledging the server\u2019s ISN (ACK = server ISN\u202f+\u202f1). This exchange synchronizes both ends' sequence numbers, confirming that both parties are ready to transmit data and establishing the parameters for reliable, ordered delivery.",
+      "generated_at": "2026-11-06T09:36:32.889415+00:00"
     }
   ]
 }

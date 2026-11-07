@@ -1348,6 +1348,16 @@
       "hint": "Consider how you identified priorities, communicated constraints, and worked with the stakeholder to find a compromise.",
       "answer": "In a recent project, the product manager requested a real\u2011time analytics dashboard, but our sprint budget could only support a simplified version. I first mapped the user journey and identified the three most critical metrics that drove business decisions. I scheduled a short meeting with the stakeholder, presented the cost estimates, and explained the trade\u2011off between a full dashboard and a lightweight report. Together we agreed to postpone advanced visualizations to the next release and focus on delivering the core metrics with a clean interface. The stakeholder approved the reduced scope, and we delivered the MVP on time, keeping the budget intact while still meeting the primary user needs.",
       "generated_at": "2026-11-07T09:00:10.311711+00:00"
+    },
+    {
+      "date": "2026-11-07",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias\u2011variance trade\u2011off view? Provide an example of a model type where double descent has been empirically observed.",
+      "difficulty": "Medium",
+      "hint": "Think about the point where a model first fits the training data perfectly (interpolation threshold) and how increasing model capacity further can reduce generalization error.",
+      "answer": "Double descent refers to the observation that test error first follows the classic U\u2011shaped curve (bias decreasing, variance increasing) as model capacity grows, then spikes at the interpolation threshold where the model can perfectly fit the training data. Beyond this point, adding more parameters \u2013 i.e., further over\u2011parameterizing the model \u2013 causes the test error to decrease again, producing a second descent. This occurs because highly over\u2011parameterized models can implicitly regularize themselves through optimization dynamics or implicit bias of the training algorithm, leading to smoother solutions that generalize better. It challenges the traditional bias\u2011variance trade\u2011off by showing that very large models can have low variance and low bias simultaneously. Empirical studies have observed double descent in deep neural networks, random forests, and kernel methods such as random Fourier features.",
+      "generated_at": "2026-11-07T18:58:03.965958+00:00"
     }
   ]
 }

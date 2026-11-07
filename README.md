@@ -24,16 +24,37 @@ In a recent project, the product manager requested a real‑time analytics dashb
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-07) — AIML
+
+**Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias‑variance trade‑off view? Provide an example of a model type where double descent has been empirically observed.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about the point where a model first fits the training data perfectly (interpolation threshold) and how increasing model capacity further can reduce generalization error.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Double descent refers to the observation that test error first follows the classic U‑shaped curve (bias decreasing, variance increasing) as model capacity grows, then spikes at the interpolation threshold where the model can perfectly fit the training data. Beyond this point, adding more parameters – i.e., further over‑parameterizing the model – causes the test error to decrease again, producing a second descent. This occurs because highly over‑parameterized models can implicitly regularize themselves through optimization dynamics or implicit bias of the training algorithm, leading to smoother solutions that generalize better. It challenges the traditional bias‑variance trade‑off by showing that very large models can have low variance and low bias simultaneously. Empirical studies have observed double descent in deep neural networks, random forests, and kernel methods such as random Fourier features.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **135**
-- DSA: 34 · AI/ML: 33 · CSE Core: 34 · Behavioral: 34
+- Total questions logged: **136**
+- DSA: 34 · AI/ML: 34 · CSE Core: 34 · Behavioral: 34
 
 ## 🗂️ Recent Questions
 
+- **2026-11-07 [PM]** [AIML](questions/2026-11-07-pm-aiml.md): Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias‑variance trade‑off view? Provide an example of a model type where double descent has been empirically observed.
 - **2026-11-07 [AM]** [Behavioral](questions/2026-11-07-am-behavioral.md): Describe a situation where you had to negotiate with a stakeholder to reduce the scope of a feature due to budget constraints, while still ensuring the core user needs were met.
 - **2026-11-06 [PM]** [DSA](questions/2026-11-06-pm-dsa.md): Given an integer array `nums`, find the maximum product of any contiguous subarray and return that product. The subarray must contain at least one element.
 - **2026-11-06 [AM]** [CSE Core](questions/2026-11-06-am-cse-core.md): Explain the TCP three‑way handshake process used to establish a reliable connection, including the purpose of each segment and how sequence numbers are initialized and acknowledged.
@@ -48,7 +69,6 @@ In a recent project, the product manager requested a real‑time analytics dashb
 - **2026-11-01 [PM]** [Behavioral](questions/2026-11-01-pm-behavioral.md): Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance‑critical component, and how you facilitated a resolution.
 - **2026-11-01 [AM]** [AIML](questions/2026-11-01-am-aiml.md): What is the vanishing gradient problem in deep neural networks, why does it occur, and how can it be mitigated? Illustrate with a simple modification to a standard RNN cell that addresses this issue.
 - **2026-10-31 [PM]** [CSE Core](questions/2026-10-31-pm-cse-core.md): In relational database design, what is the difference between the First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), and how do these normal forms prevent data anomalies?
-- **2026-10-31 [AM]** [DSA](questions/2026-10-31-am-dsa.md): Given a string s and an integer k, find the length of the longest substring of s that contains at most k distinct characters. Return 0 if no such substring exists.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

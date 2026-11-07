@@ -1338,6 +1338,16 @@
       "hint": "Maintain both the maximum and minimum product ending at each index because a negative number can turn a small minimum into a large maximum.",
       "answer": "We can solve it in O(n) time and O(1) space by scanning the array while keeping three variables: `maxEndingHere`, `minEndingHere` and `result`. At each element `x`, the new `maxEndingHere` is the maximum of `x`, `maxEndingHere*x`, and `minEndingHere*x`; similarly, `minEndingHere` is the minimum of those three values. Update `result` with the larger of `result` and `maxEndingHere`. In code (Python):\npython\ndef maxProduct(nums):\n    max_ending = min_ending = result = nums[0]\n    for x in nums[1:]:\n        if x < 0:\n            max_ending, min_ending = min_ending, max_ending\n        max_ending = max(x, max_ending * x)\n        min_ending = min(x, min_ending * x)\n        result = max(result, max_ending)\n    return result\n",
       "generated_at": "2026-11-06T20:29:30.760458+00:00"
+    },
+    {
+      "date": "2026-11-07",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you had to negotiate with a stakeholder to reduce the scope of a feature due to budget constraints, while still ensuring the core user needs were met.",
+      "difficulty": "Medium",
+      "hint": "Consider how you identified priorities, communicated constraints, and worked with the stakeholder to find a compromise.",
+      "answer": "In a recent project, the product manager requested a real\u2011time analytics dashboard, but our sprint budget could only support a simplified version. I first mapped the user journey and identified the three most critical metrics that drove business decisions. I scheduled a short meeting with the stakeholder, presented the cost estimates, and explained the trade\u2011off between a full dashboard and a lightweight report. Together we agreed to postpone advanced visualizations to the next release and focus on delivering the core metrics with a clean interface. The stakeholder approved the reduced scope, and we delivered the MVP on time, keeping the budget intact while still meeting the primary user needs.",
+      "generated_at": "2026-11-07T09:00:10.311711+00:00"
     }
   ]
 }

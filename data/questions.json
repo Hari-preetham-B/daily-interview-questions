@@ -1358,6 +1358,16 @@
       "hint": "Think about the point where a model first fits the training data perfectly (interpolation threshold) and how increasing model capacity further can reduce generalization error.",
       "answer": "Double descent refers to the observation that test error first follows the classic U\u2011shaped curve (bias decreasing, variance increasing) as model capacity grows, then spikes at the interpolation threshold where the model can perfectly fit the training data. Beyond this point, adding more parameters \u2013 i.e., further over\u2011parameterizing the model \u2013 causes the test error to decrease again, producing a second descent. This occurs because highly over\u2011parameterized models can implicitly regularize themselves through optimization dynamics or implicit bias of the training algorithm, leading to smoother solutions that generalize better. It challenges the traditional bias\u2011variance trade\u2011off by showing that very large models can have low variance and low bias simultaneously. Empirical studies have observed double descent in deep neural networks, random forests, and kernel methods such as random Fourier features.",
       "generated_at": "2026-11-07T18:58:03.965958+00:00"
+    },
+    {
+      "date": "2026-11-08",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an unsorted integer array, find the length of the longest sequence of consecutive integers that appear in the array. For example, for [100, 4, 200, 1, 3, 2], the longest consecutive sequence is [1,2,3,4] so the answer is 4.",
+      "difficulty": "Medium",
+      "hint": "Use a hash set to look up elements in O(1) time. For each element, check if it could be the start of a sequence (i.e., its predecessor is missing) and then count how long the chain continues.",
+      "answer": "A linear\u2011time, linear\u2011space solution uses a set to store all numbers. Iterate over each number; if `num-1` is not in the set, `num` is the start of a new consecutive chain. Then repeatedly increment `num` while `num+1` exists in the set, counting the length. Keep the maximum length seen. The code in Python:\n\npython\ndef longestConsecutive(nums):\n    s = set(nums)\n    best = 0\n    for num in nums:\n        if num - 1 not in s:          # start of a sequence\n            cur = num\n            length = 1\n            while cur + 1 in s:\n                cur += 1\n                length += 1\n            best = max(best, length)\n    return best\n\nThis runs in O(n) time and uses O(n) additional space for the set.",
+      "generated_at": "2026-11-08T09:17:34.803731+00:00"
     }
   ]
 }

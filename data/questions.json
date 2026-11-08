@@ -1368,6 +1368,16 @@
       "hint": "Use a hash set to look up elements in O(1) time. For each element, check if it could be the start of a sequence (i.e., its predecessor is missing) and then count how long the chain continues.",
       "answer": "A linear\u2011time, linear\u2011space solution uses a set to store all numbers. Iterate over each number; if `num-1` is not in the set, `num` is the start of a new consecutive chain. Then repeatedly increment `num` while `num+1` exists in the set, counting the length. Keep the maximum length seen. The code in Python:\n\npython\ndef longestConsecutive(nums):\n    s = set(nums)\n    best = 0\n    for num in nums:\n        if num - 1 not in s:          # start of a sequence\n            cur = num\n            length = 1\n            while cur + 1 in s:\n                cur += 1\n                length += 1\n            best = max(best, length)\n    return best\n\nThis runs in O(n) time and uses O(n) additional space for the set.",
       "generated_at": "2026-11-08T09:17:34.803731+00:00"
+    },
+    {
+      "date": "2026-11-08",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?",
+      "difficulty": "Medium",
+      "hint": "Consider how the congestion window grows during each phase and what happens when a loss is detected.",
+      "answer": "In TCP slow start, the congestion window starts small and grows exponentially, doubling each RTT until it reaches a predefined threshold. After that, congestion avoidance uses additive increase, adding roughly one maximum segment size per RTT. When a packet loss occurs, TCP assumes congestion and performs multiplicative decrease, reducing the congestion window to a fraction (typically half). This drop leads to a sudden decrease in throughput; slow start then re\u2011increases the window, producing a sawtooth pattern in throughput over time.",
+      "generated_at": "2026-11-08T18:55:47.566966+00:00"
     }
   ]
 }

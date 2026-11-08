@@ -40,16 +40,37 @@ This runs in O(n) time and uses O(n) additional space for the set.
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-08) — CSE Core
+
+**What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how the congestion window grows during each phase and what happens when a loss is detected.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In TCP slow start, the congestion window starts small and grows exponentially, doubling each RTT until it reaches a predefined threshold. After that, congestion avoidance uses additive increase, adding roughly one maximum segment size per RTT. When a packet loss occurs, TCP assumes congestion and performs multiplicative decrease, reducing the congestion window to a fraction (typically half). This drop leads to a sudden decrease in throughput; slow start then re‑increases the window, producing a sawtooth pattern in throughput over time.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **137**
-- DSA: 35 · AI/ML: 34 · CSE Core: 34 · Behavioral: 34
+- Total questions logged: **138**
+- DSA: 35 · AI/ML: 34 · CSE Core: 35 · Behavioral: 34
 
 ## 🗂️ Recent Questions
 
+- **2026-11-08 [PM]** [CSE Core](questions/2026-11-08-pm-cse-core.md): What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?
 - **2026-11-08 [AM]** [DSA](questions/2026-11-08-am-dsa.md): Given an unsorted integer array, find the length of the longest sequence of consecutive integers that appear in the array. For example, for [100, 4, 200, 1, 3, 2], the longest consecutive sequence is [1,2,3,4] so the answer is 4.
 - **2026-11-07 [PM]** [AIML](questions/2026-11-07-pm-aiml.md): Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias‑variance trade‑off view? Provide an example of a model type where double descent has been empirically observed.
 - **2026-11-07 [AM]** [Behavioral](questions/2026-11-07-am-behavioral.md): Describe a situation where you had to negotiate with a stakeholder to reduce the scope of a feature due to budget constraints, while still ensuring the core user needs were met.
@@ -64,7 +85,6 @@ This runs in O(n) time and uses O(n) additional space for the set.
 - **2026-11-02 [PM]** [DSA](questions/2026-11-02-pm-dsa.md): Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.
 - **2026-11-02 [AM]** [CSE Core](questions/2026-11-02-am-cse-core.md): Explain the concept of copy‑on‑write in virtual memory, and describe how it improves memory efficiency when a process forks a child.
 - **2026-11-01 [PM]** [Behavioral](questions/2026-11-01-pm-behavioral.md): Describe a situation where you had to mediate a disagreement between a senior engineer and a junior developer over the choice of algorithm for a performance‑critical component, and how you facilitated a resolution.
-- **2026-11-01 [AM]** [AIML](questions/2026-11-01-am-aiml.md): What is the vanishing gradient problem in deep neural networks, why does it occur, and how can it be mitigated? Illustrate with a simple modification to a standard RNN cell that addresses this issue.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

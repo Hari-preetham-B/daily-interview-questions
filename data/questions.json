@@ -1378,6 +1378,16 @@
       "hint": "Consider how the congestion window grows during each phase and what happens when a loss is detected.",
       "answer": "In TCP slow start, the congestion window starts small and grows exponentially, doubling each RTT until it reaches a predefined threshold. After that, congestion avoidance uses additive increase, adding roughly one maximum segment size per RTT. When a packet loss occurs, TCP assumes congestion and performs multiplicative decrease, reducing the congestion window to a fraction (typically half). This drop leads to a sudden decrease in throughput; slow start then re\u2011increases the window, producing a sawtooth pattern in throughput over time.",
       "generated_at": "2026-11-08T18:55:47.566966+00:00"
+    },
+    {
+      "date": "2026-11-09",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain the purpose of batch normalization in deep neural networks. Include its mathematical formulation, how it normalizes activations during training, the role of running estimates during inference, and how it impacts gradient flow and training speed.",
+      "difficulty": "Medium",
+      "hint": "Think about how normalizing the distribution of activations can make the loss landscape smoother and what parameters the layer learns to preserve the representational power.",
+      "answer": "Batch Normalization (BN) rescales and re-centers activations to have zero mean and unit variance per mini\u2011batch:\n\na\u0302_i = (a_i - \u03bc_B)/\u221a(\u03c3_B\u00b2+\u03b5),\n\ny_i = \u03b3\u00b7a\u0302_i + \u03b2,\nwhere \u03bc_B and \u03c3_B\u00b2 are batch mean and variance, \u03b3 and \u03b2 are learnable scale and shift. During training, BN uses the current batch statistics; during inference it uses running estimates of \u03bc and \u03c3 accumulated over training. By keeping activations well\u2011scaled, BN reduces internal covariate shift, allowing larger learning rates, faster convergence, and more stable gradients. The \u03b3, \u03b2 parameters let the network recover any necessary scaling or bias that would otherwise be lost due to normalization.",
+      "generated_at": "2026-11-09T10:00:04.694428+00:00"
     }
   ]
 }

@@ -29,16 +29,37 @@ where μ_B and σ_B² are batch mean and variance, γ and β are learnable scale
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-09) — Behavioral
+
+**Describe a time when you faced a significant setback or error in a project and how you recovered from it. What steps did you take to fix the issue and prevent similar problems in the future?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think of a concrete incident where a mistake or failure affected the outcome, and focus on the actions you took afterward.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In a recent project, a misconfigured database migration caused a data loss during a deployment. I immediately notified the team, rolled back to the last backup, and worked overnight to rebuild the affected records. I then implemented automated validation scripts for future migrations and added a manual approval step in the CI pipeline. As a result, we avoided another data loss incident, and the team learned the importance of thorough testing and rollback procedures.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **139**
-- DSA: 35 · AI/ML: 35 · CSE Core: 35 · Behavioral: 34
+- Total questions logged: **140**
+- DSA: 35 · AI/ML: 35 · CSE Core: 35 · Behavioral: 35
 
 ## 🗂️ Recent Questions
 
+- **2026-11-09 [PM]** [Behavioral](questions/2026-11-09-pm-behavioral.md): Describe a time when you faced a significant setback or error in a project and how you recovered from it. What steps did you take to fix the issue and prevent similar problems in the future?
 - **2026-11-09 [AM]** [AIML](questions/2026-11-09-am-aiml.md): Explain the purpose of batch normalization in deep neural networks. Include its mathematical formulation, how it normalizes activations during training, the role of running estimates during inference, and how it impacts gradient flow and training speed.
 - **2026-11-08 [PM]** [CSE Core](questions/2026-11-08-pm-cse-core.md): What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?
 - **2026-11-08 [AM]** [DSA](questions/2026-11-08-am-dsa.md): Given an unsorted integer array, find the length of the longest sequence of consecutive integers that appear in the array. For example, for [100, 4, 200, 1, 3, 2], the longest consecutive sequence is [1,2,3,4] so the answer is 4.
@@ -53,7 +74,6 @@ where μ_B and σ_B² are batch mean and variance, γ and β are learnable scale
 - **2026-11-03 [PM]** [AIML](questions/2026-11-03-pm-aiml.md): Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.
 - **2026-11-03 [AM]** [Behavioral](questions/2026-11-03-am-behavioral.md): Describe a time when you had to adjust your personal work schedule to support a teammate facing a critical personal emergency, while still meeting your own project deadlines. How did you prioritize tasks and communicate with stakeholders?
 - **2026-11-02 [PM]** [DSA](questions/2026-11-02-pm-dsa.md): Given an array of distinct integers, you may swap any two elements. Determine the minimum number of swaps required to sort the array in ascending order.
-- **2026-11-02 [AM]** [CSE Core](questions/2026-11-02-am-cse-core.md): Explain the concept of copy‑on‑write in virtual memory, and describe how it improves memory efficiency when a process forks a child.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

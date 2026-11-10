@@ -1408,6 +1408,16 @@
       "hint": "Think about how different page replacement policies behave when the frame count changes, especially FIFO vs. LRU.",
       "answer": "Belady's anomaly refers to the counter\u2011intuitive situation where a paging algorithm (most commonly FIFO) results in more page faults when the number of available page frames increases. It occurs because the algorithm does not consider future page accesses; adding frames can change the order in which pages are evicted, sometimes causing a previously loaded page to be discarded prematurely. For example, consider the reference string 1,2,3,4,1,2,5,1,2,3,4,5 with 3 frames and FIFO: 9 faults. With 4 frames the same string yields 10 faults, demonstrating the anomaly. This effect does not happen with optimal or LRU policies, which are theoretically optimal or near\u2011optimal, respectively.",
       "generated_at": "2026-11-10T10:10:19.288375+00:00"
+    },
+    {
+      "date": "2026-11-10",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.",
+      "difficulty": "Medium",
+      "hint": "Sort the intervals by start time and think about how to efficiently know when the earliest\u2011finishing meeting ends.",
+      "answer": "Sort the intervals by their start time. Use a min\u2011heap (priority queue) to store the end times of meetings that are currently occupying rooms. For each interval, if its start time is greater than or equal to the smallest end time in the heap, pop that end time (the room becomes free) and push the current interval's end time; otherwise, push the current end time, indicating a new room is needed. After processing all intervals, the heap size equals the minimum number of rooms required. This algorithm runs in O(n log n) time and uses O(n) extra space.",
+      "generated_at": "2026-11-10T20:56:11.533056+00:00"
     }
   ]
 }

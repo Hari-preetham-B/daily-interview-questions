@@ -24,16 +24,37 @@ Belady's anomaly refers to the counter‑intuitive situation where a paging algo
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-10) — DSA
+
+**Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Sort the intervals by start time and think about how to efficiently know when the earliest‑finishing meeting ends.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Sort the intervals by their start time. Use a min‑heap (priority queue) to store the end times of meetings that are currently occupying rooms. For each interval, if its start time is greater than or equal to the smallest end time in the heap, pop that end time (the room becomes free) and push the current interval's end time; otherwise, push the current end time, indicating a new room is needed. After processing all intervals, the heap size equals the minimum number of rooms required. This algorithm runs in O(n log n) time and uses O(n) extra space.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **141**
-- DSA: 35 · AI/ML: 35 · CSE Core: 36 · Behavioral: 35
+- Total questions logged: **142**
+- DSA: 36 · AI/ML: 35 · CSE Core: 36 · Behavioral: 35
 
 ## 🗂️ Recent Questions
 
+- **2026-11-10 [PM]** [DSA](questions/2026-11-10-pm-dsa.md): Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.
 - **2026-11-10 [AM]** [CSE Core](questions/2026-11-10-am-cse-core.md): What is Belady's anomaly in virtual memory systems, and under what conditions does it occur? Illustrate with an example where increasing the number of page frames leads to more page faults.
 - **2026-11-09 [PM]** [Behavioral](questions/2026-11-09-pm-behavioral.md): Describe a time when you faced a significant setback or error in a project and how you recovered from it. What steps did you take to fix the issue and prevent similar problems in the future?
 - **2026-11-09 [AM]** [AIML](questions/2026-11-09-am-aiml.md): Explain the purpose of batch normalization in deep neural networks. Include its mathematical formulation, how it normalizes activations during training, the role of running estimates during inference, and how it impacts gradient flow and training speed.
@@ -48,7 +69,6 @@ Belady's anomaly refers to the counter‑intuitive situation where a paging algo
 - **2026-11-04 [PM]** [CSE Core](questions/2026-11-04-pm-cse-core.md): What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?
 - **2026-11-04 [AM]** [DSA](questions/2026-11-04-am-dsa.md): Given an integer array `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals `k`. The array may contain positive, negative, and zero values. Aim for O(n) time and O(n) extra space.
 - **2026-11-03 [PM]** [AIML](questions/2026-11-03-pm-aiml.md): Explain how the REINFORCE algorithm estimates the gradient of the expected return with respect to policy parameters. Derive the gradient estimator, discuss why it has high variance, and name at least two common techniques to reduce this variance.
-- **2026-11-03 [AM]** [Behavioral](questions/2026-11-03-am-behavioral.md): Describe a time when you had to adjust your personal work schedule to support a teammate facing a critical personal emergency, while still meeting your own project deadlines. How did you prioritize tasks and communicate with stakeholders?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

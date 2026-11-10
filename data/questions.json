@@ -1398,6 +1398,16 @@
       "hint": "Think of a concrete incident where a mistake or failure affected the outcome, and focus on the actions you took afterward.",
       "answer": "In a recent project, a misconfigured database migration caused a data loss during a deployment. I immediately notified the team, rolled back to the last backup, and worked overnight to rebuild the affected records. I then implemented automated validation scripts for future migrations and added a manual approval step in the CI pipeline. As a result, we avoided another data loss incident, and the team learned the importance of thorough testing and rollback procedures.",
       "generated_at": "2026-11-09T23:29:45.362054+00:00"
+    },
+    {
+      "date": "2026-11-10",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is Belady's anomaly in virtual memory systems, and under what conditions does it occur? Illustrate with an example where increasing the number of page frames leads to more page faults.",
+      "difficulty": "Medium",
+      "hint": "Think about how different page replacement policies behave when the frame count changes, especially FIFO vs. LRU.",
+      "answer": "Belady's anomaly refers to the counter\u2011intuitive situation where a paging algorithm (most commonly FIFO) results in more page faults when the number of available page frames increases. It occurs because the algorithm does not consider future page accesses; adding frames can change the order in which pages are evicted, sometimes causing a previously loaded page to be discarded prematurely. For example, consider the reference string 1,2,3,4,1,2,5,1,2,3,4,5 with 3 frames and FIFO: 9 faults. With 4 frames the same string yields 10 faults, demonstrating the anomaly. This effect does not happen with optimal or LRU policies, which are theoretically optimal or near\u2011optimal, respectively.",
+      "generated_at": "2026-11-10T10:10:19.288375+00:00"
     }
   ]
 }

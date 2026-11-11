@@ -24,16 +24,37 @@ During a university hackathon, I volunteered to lead the frontend team. I starte
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-11) — AIML
+
+**How does a Bayesian neural network model predictive uncertainty, and what are the main computational challenges compared to a standard deterministic network?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how weights are treated as random variables and how predictions are aggregated over multiple draws. Think about the need for approximate inference.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In a Bayesian neural network (BNN) each weight is treated as a random variable with a posterior distribution conditioned on the data, instead of a single point estimate. Predictions are obtained by integrating over all possible weight configurations, which is typically approximated by sampling from the posterior (e.g., Monte Carlo sampling) and averaging the outputs. This approach yields a predictive distribution that captures both aleatoric and epistemic uncertainty. However, the main challenges are computational: sampling many weight sets is expensive, the posterior is usually intractable, and approximate inference methods (e.g., variational inference, MCMC, Monte Carlo dropout) introduce bias and require careful tuning. Consequently, BNNs are slower to train and evaluate, and scaling them to large architectures remains a research problem.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **143**
-- DSA: 36 · AI/ML: 35 · CSE Core: 36 · Behavioral: 36
+- Total questions logged: **144**
+- DSA: 36 · AI/ML: 36 · CSE Core: 36 · Behavioral: 36
 
 ## 🗂️ Recent Questions
 
+- **2026-11-11 [PM]** [AIML](questions/2026-11-11-pm-aiml.md): How does a Bayesian neural network model predictive uncertainty, and what are the main computational challenges compared to a standard deterministic network?
 - **2026-11-11 [AM]** [Behavioral](questions/2026-11-11-am-behavioral.md): Tell me about a time you participated in a hackathon or coding sprint where the team had to deliver a working prototype within a 48‑hour deadline. How did you quickly assign roles, manage your own tasks, and coordinate with teammates to ensure the project was completed on time?
 - **2026-11-10 [PM]** [DSA](questions/2026-11-10-pm-dsa.md): Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.
 - **2026-11-10 [AM]** [CSE Core](questions/2026-11-10-am-cse-core.md): What is Belady's anomaly in virtual memory systems, and under what conditions does it occur? Illustrate with an example where increasing the number of page frames leads to more page faults.
@@ -48,7 +69,6 @@ During a university hackathon, I volunteered to lead the frontend team. I starte
 - **2026-11-05 [PM]** [Behavioral](questions/2026-11-05-pm-behavioral.md): Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?
 - **2026-11-05 [AM]** [AIML](questions/2026-11-05-am-aiml.md): Explain how you would evaluate a generative image model’s quality using Fréchet Inception Distance (FID). What are the main steps to compute it, and why is FID generally preferred over the Inception Score?
 - **2026-11-04 [PM]** [CSE Core](questions/2026-11-04-pm-cse-core.md): What is the purpose of a memory balloon device in a virtualized environment, and how does it help manage memory between the host and guest operating systems?
-- **2026-11-04 [AM]** [DSA](questions/2026-11-04-am-dsa.md): Given an integer array `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals `k`. The array may contain positive, negative, and zero values. Aim for O(n) time and O(n) extra space.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

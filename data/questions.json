@@ -1448,6 +1448,16 @@
       "hint": "For each index i, maintain a map from difference d to the length of the longest arithmetic subsequence ending at i with that difference. Update these maps by examining all previous indices j < i.",
       "answer": "We can solve it in O(n^2) time using DP. Create an array dp where dp[i] is a hash map: dp[i][d] stores the length of the longest arithmetic subsequence ending at index i with common difference d. Iterate i from 0 to n-1, and for each j < i compute d = nums[i] - nums[j]. If dp[j] contains d, set dp[i][d] = dp[j][d] + 1; otherwise start a new subsequence of length\u202f2 (dp[i][d] = 2). Keep a global maximum of all dp[i][d] values. After processing, if the maximum is still 2 and n < 2, return 0; otherwise return the maximum length found. The algorithm runs in O(n^2) time and uses O(n^2) space in the worst case.",
       "generated_at": "2026-11-12T10:00:25.258303+00:00"
+    },
+    {
+      "date": "2026-11-12",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "Explain the structure of a B+ tree and how it differs from a B\u2011tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?",
+      "difficulty": "Medium",
+      "hint": "Consider where the actual records are stored and how the leaf nodes are linked.",
+      "answer": "In a B+ tree, all keys are stored in the leaf nodes, while internal nodes only contain copy of keys used for routing. The leaf nodes are linked in a doubly\u2011linked list, which allows range scans to be performed efficiently. This separation means that internal nodes can hold more keys, reducing tree height compared to a B\u2011tree where keys and pointers to data are mixed. Consequently, B+ trees provide better cache locality and faster sequential access, making them the preferred structure for database indexes.",
+      "generated_at": "2026-11-12T21:31:04.140709+00:00"
     }
   ]
 }

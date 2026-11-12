@@ -24,16 +24,37 @@ We can solve it in O(n^2) time using DP. Create an array dp where dp[i] is a has
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-12) — CSE Core
+
+**Explain the structure of a B+ tree and how it differs from a B‑tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider where the actual records are stored and how the leaf nodes are linked.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In a B+ tree, all keys are stored in the leaf nodes, while internal nodes only contain copy of keys used for routing. The leaf nodes are linked in a doubly‑linked list, which allows range scans to be performed efficiently. This separation means that internal nodes can hold more keys, reducing tree height compared to a B‑tree where keys and pointers to data are mixed. Consequently, B+ trees provide better cache locality and faster sequential access, making them the preferred structure for database indexes.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **145**
-- DSA: 37 · AI/ML: 36 · CSE Core: 36 · Behavioral: 36
+- Total questions logged: **146**
+- DSA: 37 · AI/ML: 36 · CSE Core: 37 · Behavioral: 36
 
 ## 🗂️ Recent Questions
 
+- **2026-11-12 [PM]** [CSE Core](questions/2026-11-12-pm-cse-core.md): Explain the structure of a B+ tree and how it differs from a B‑tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?
 - **2026-11-12 [AM]** [DSA](questions/2026-11-12-am-dsa.md): Given an integer array nums, find the length of the longest arithmetic subsequence (not necessarily contiguous). An arithmetic subsequence is a sequence of at least two indices i1 < i2 < ... < ik such that the difference nums[i_j] - nums[i_{j-1}] is the same for all j>1. Return the maximum possible length; if no arithmetic subsequence of length ≥ 2 exists, return 0.
 - **2026-11-11 [PM]** [AIML](questions/2026-11-11-pm-aiml.md): How does a Bayesian neural network model predictive uncertainty, and what are the main computational challenges compared to a standard deterministic network?
 - **2026-11-11 [AM]** [Behavioral](questions/2026-11-11-am-behavioral.md): Tell me about a time you participated in a hackathon or coding sprint where the team had to deliver a working prototype within a 48‑hour deadline. How did you quickly assign roles, manage your own tasks, and coordinate with teammates to ensure the project was completed on time?
@@ -48,7 +69,6 @@ We can solve it in O(n^2) time using DP. Create an array dp where dp[i] is a has
 - **2026-11-06 [PM]** [DSA](questions/2026-11-06-pm-dsa.md): Given an integer array `nums`, find the maximum product of any contiguous subarray and return that product. The subarray must contain at least one element.
 - **2026-11-06 [AM]** [CSE Core](questions/2026-11-06-am-cse-core.md): Explain the TCP three‑way handshake process used to establish a reliable connection, including the purpose of each segment and how sequence numbers are initialized and acknowledged.
 - **2026-11-05 [PM]** [Behavioral](questions/2026-11-05-pm-behavioral.md): Can you describe a situation where you had to balance competing deadlines from multiple projects and how you communicated the trade-offs to your manager and teammates?
-- **2026-11-05 [AM]** [AIML](questions/2026-11-05-am-aiml.md): Explain how you would evaluate a generative image model’s quality using Fréchet Inception Distance (FID). What are the main steps to compute it, and why is FID generally preferred over the Inception Score?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

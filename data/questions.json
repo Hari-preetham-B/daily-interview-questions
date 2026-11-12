@@ -1438,6 +1438,16 @@
       "hint": "Consider how weights are treated as random variables and how predictions are aggregated over multiple draws. Think about the need for approximate inference.",
       "answer": "In a Bayesian neural network (BNN) each weight is treated as a random variable with a posterior distribution conditioned on the data, instead of a single point estimate. Predictions are obtained by integrating over all possible weight configurations, which is typically approximated by sampling from the posterior (e.g., Monte Carlo sampling) and averaging the outputs. This approach yields a predictive distribution that captures both aleatoric and epistemic uncertainty. However, the main challenges are computational: sampling many weight sets is expensive, the posterior is usually intractable, and approximate inference methods (e.g., variational inference, MCMC, Monte Carlo dropout) introduce bias and require careful tuning. Consequently, BNNs are slower to train and evaluate, and scaling them to large architectures remains a research problem.",
       "generated_at": "2026-11-11T21:29:23.217321+00:00"
+    },
+    {
+      "date": "2026-11-12",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an integer array nums, find the length of the longest arithmetic subsequence (not necessarily contiguous). An arithmetic subsequence is a sequence of at least two indices i1 < i2 < ... < ik such that the difference nums[i_j] - nums[i_{j-1}] is the same for all j>1. Return the maximum possible length; if no arithmetic subsequence of length\u202f\u2265\u202f2 exists, return 0.",
+      "difficulty": "Medium",
+      "hint": "For each index i, maintain a map from difference d to the length of the longest arithmetic subsequence ending at i with that difference. Update these maps by examining all previous indices j < i.",
+      "answer": "We can solve it in O(n^2) time using DP. Create an array dp where dp[i] is a hash map: dp[i][d] stores the length of the longest arithmetic subsequence ending at index i with common difference d. Iterate i from 0 to n-1, and for each j < i compute d = nums[i] - nums[j]. If dp[j] contains d, set dp[i][d] = dp[j][d] + 1; otherwise start a new subsequence of length\u202f2 (dp[i][d] = 2). Keep a global maximum of all dp[i][d] values. After processing, if the maximum is still 2 and n < 2, return 0; otherwise return the maximum length found. The algorithm runs in O(n^2) time and uses O(n^2) space in the worst case.",
+      "generated_at": "2026-11-12T10:00:25.258303+00:00"
     }
   ]
 }

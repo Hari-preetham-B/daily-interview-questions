@@ -24,16 +24,37 @@ Accuracy can be misleading because it is dominated by the majority class; a mode
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-13) — Behavioral
+
+**Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about the steps you took to absorb the material, practice quickly, and apply it in a real scenario.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+I was assigned to a project that required using Go for a microservices component, but I had only a few days to learn it. First, I identified the core concepts needed for the task: concurrency, HTTP handling, and testing. I used the official Go tour and focused on the concurrency patterns, then built small sample programs to practice goroutines and channels. After grasping the fundamentals, I read the existing codebase to see how the team structured services and adapted my sample to fit the architecture. I also reached out to a senior Go developer for quick code reviews, which helped me avoid common pitfalls. By iterating on real code rather than just tutorials, I was able to deliver a functional service within the deadline while maintaining quality. This experience taught me how to efficiently acquire new skills under time constraints and validate them through peer feedback. 
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **147**
-- DSA: 37 · AI/ML: 37 · CSE Core: 37 · Behavioral: 36
+- Total questions logged: **148**
+- DSA: 37 · AI/ML: 37 · CSE Core: 37 · Behavioral: 37
 
 ## 🗂️ Recent Questions
 
+- **2026-11-13 [PM]** [Behavioral](questions/2026-11-13-pm-behavioral.md): Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.
 - **2026-11-13 [AM]** [AIML](questions/2026-11-13-am-aiml.md): You have a binary classification task where only 1% of the instances belong to the positive class. A model trained on this data reports 99.5% accuracy but only 20% recall. Why can accuracy be misleading in this setting, and what two evaluation metrics would you recommend instead? How can one of those metrics be used to choose a decision threshold for the classifier?
 - **2026-11-12 [PM]** [CSE Core](questions/2026-11-12-pm-cse-core.md): Explain the structure of a B+ tree and how it differs from a B‑tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?
 - **2026-11-12 [AM]** [DSA](questions/2026-11-12-am-dsa.md): Given an integer array nums, find the length of the longest arithmetic subsequence (not necessarily contiguous). An arithmetic subsequence is a sequence of at least two indices i1 < i2 < ... < ik such that the difference nums[i_j] - nums[i_{j-1}] is the same for all j>1. Return the maximum possible length; if no arithmetic subsequence of length ≥ 2 exists, return 0.
@@ -48,7 +69,6 @@ Accuracy can be misleading because it is dominated by the majority class; a mode
 - **2026-11-07 [PM]** [AIML](questions/2026-11-07-pm-aiml.md): Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias‑variance trade‑off view? Provide an example of a model type where double descent has been empirically observed.
 - **2026-11-07 [AM]** [Behavioral](questions/2026-11-07-am-behavioral.md): Describe a situation where you had to negotiate with a stakeholder to reduce the scope of a feature due to budget constraints, while still ensuring the core user needs were met.
 - **2026-11-06 [PM]** [DSA](questions/2026-11-06-pm-dsa.md): Given an integer array `nums`, find the maximum product of any contiguous subarray and return that product. The subarray must contain at least one element.
-- **2026-11-06 [AM]** [CSE Core](questions/2026-11-06-am-cse-core.md): Explain the TCP three‑way handshake process used to establish a reliable connection, including the purpose of each segment and how sequence numbers are initialized and acknowledged.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1468,6 +1468,16 @@
       "hint": "Consider metrics that focus on the minority class rather than overall correctness, and think about how a curve of two rates can guide threshold selection.",
       "answer": "Accuracy can be misleading because it is dominated by the majority class; a model that predicts every instance as negative will still achieve 99% accuracy. Two more informative metrics for highly imbalanced data are the Precision\u2011Recall curve (specifically its area, AUPRC) and the F1\u2011score (the harmonic mean of precision and recall). By plotting the Precision\u2011Recall curve, you can select a threshold that balances precision and recall to meet a business\u2011driven trade\u2011off; for example, choose the threshold that maximizes the F1\u2011score or that achieves a desired minimum precision while maintaining acceptable recall. This approach directly optimizes the model\u2019s performance on the minority class rather than on overall accuracy.",
       "generated_at": "2026-11-13T09:49:00.230755+00:00"
+    },
+    {
+      "date": "2026-11-13",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.",
+      "difficulty": "Medium",
+      "hint": "Think about the steps you took to absorb the material, practice quickly, and apply it in a real scenario.",
+      "answer": "I was assigned to a project that required using Go for a microservices component, but I had only a few days to learn it. First, I identified the core concepts needed for the task: concurrency, HTTP handling, and testing. I used the official Go tour and focused on the concurrency patterns, then built small sample programs to practice goroutines and channels. After grasping the fundamentals, I read the existing codebase to see how the team structured services and adapted my sample to fit the architecture. I also reached out to a senior Go developer for quick code reviews, which helped me avoid common pitfalls. By iterating on real code rather than just tutorials, I was able to deliver a functional service within the deadline while maintaining quality. This experience taught me how to efficiently acquire new skills under time constraints and validate them through peer feedback. ",
+      "generated_at": "2026-11-13T20:57:32.667843+00:00"
     }
   ]
 }

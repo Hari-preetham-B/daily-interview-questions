@@ -1458,6 +1458,16 @@
       "hint": "Consider where the actual records are stored and how the leaf nodes are linked.",
       "answer": "In a B+ tree, all keys are stored in the leaf nodes, while internal nodes only contain copy of keys used for routing. The leaf nodes are linked in a doubly\u2011linked list, which allows range scans to be performed efficiently. This separation means that internal nodes can hold more keys, reducing tree height compared to a B\u2011tree where keys and pointers to data are mixed. Consequently, B+ trees provide better cache locality and faster sequential access, making them the preferred structure for database indexes.",
       "generated_at": "2026-11-12T21:31:04.140709+00:00"
+    },
+    {
+      "date": "2026-11-13",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "You have a binary classification task where only 1% of the instances belong to the positive class. A model trained on this data reports 99.5% accuracy but only 20% recall. Why can accuracy be misleading in this setting, and what two evaluation metrics would you recommend instead? How can one of those metrics be used to choose a decision threshold for the classifier?",
+      "difficulty": "Medium",
+      "hint": "Consider metrics that focus on the minority class rather than overall correctness, and think about how a curve of two rates can guide threshold selection.",
+      "answer": "Accuracy can be misleading because it is dominated by the majority class; a model that predicts every instance as negative will still achieve 99% accuracy. Two more informative metrics for highly imbalanced data are the Precision\u2011Recall curve (specifically its area, AUPRC) and the F1\u2011score (the harmonic mean of precision and recall). By plotting the Precision\u2011Recall curve, you can select a threshold that balances precision and recall to meet a business\u2011driven trade\u2011off; for example, choose the threshold that maximizes the F1\u2011score or that achieves a desired minimum precision while maintaining acceptable recall. This approach directly optimizes the model\u2019s performance on the minority class rather than on overall accuracy.",
+      "generated_at": "2026-11-13T09:49:00.230755+00:00"
     }
   ]
 }

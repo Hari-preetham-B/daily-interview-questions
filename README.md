@@ -27,16 +27,37 @@ Linux allows applications to request more virtual memory than the system actuall
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-14) — DSA
+
+**Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n, |Σ|)) extra space, where Σ is the character set.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use a sliding window and a map (or array) to store the last index where each character appeared, then move the left bound when a duplicate is found.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Maintain two pointers, left and right, defining the current window. As right advances, store the index of each character in a hash map; if the character is already in the map and its stored index is ≥ left, move left to index+1 to exclude the previous occurrence. Update the maximum window size after each step. This yields O(n) time because each character is processed at most twice, and O(min(n, |Σ|)) space for the map. The final maximum length is the answer.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **149**
-- DSA: 37 · AI/ML: 37 · CSE Core: 38 · Behavioral: 37
+- Total questions logged: **150**
+- DSA: 38 · AI/ML: 37 · CSE Core: 38 · Behavioral: 37
 
 ## 🗂️ Recent Questions
 
+- **2026-11-14 [PM]** [DSA](questions/2026-11-14-pm-dsa.md): Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n, |Σ|)) extra space, where Σ is the character set.
 - **2026-11-14 [AM]** [CSE Core](questions/2026-11-14-am-cse-core.md): Explain how Linux implements memory overcommit and the role of the overcommit_memory sysctl setting. What are the implications for applications that allocate large amounts of memory?
 - **2026-11-13 [PM]** [Behavioral](questions/2026-11-13-pm-behavioral.md): Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.
 - **2026-11-13 [AM]** [AIML](questions/2026-11-13-am-aiml.md): You have a binary classification task where only 1% of the instances belong to the positive class. A model trained on this data reports 99.5% accuracy but only 20% recall. Why can accuracy be misleading in this setting, and what two evaluation metrics would you recommend instead? How can one of those metrics be used to choose a decision threshold for the classifier?
@@ -51,7 +72,6 @@ Linux allows applications to request more virtual memory than the system actuall
 - **2026-11-08 [PM]** [CSE Core](questions/2026-11-08-pm-cse-core.md): What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?
 - **2026-11-08 [AM]** [DSA](questions/2026-11-08-am-dsa.md): Given an unsorted integer array, find the length of the longest sequence of consecutive integers that appear in the array. For example, for [100, 4, 200, 1, 3, 2], the longest consecutive sequence is [1,2,3,4] so the answer is 4.
 - **2026-11-07 [PM]** [AIML](questions/2026-11-07-pm-aiml.md): Explain the double descent phenomenon observed in modern machine learning models. What causes the risk curve to exhibit a second descent after the interpolation threshold, and how does this challenge the traditional bias‑variance trade‑off view? Provide an example of a model type where double descent has been empirically observed.
-- **2026-11-07 [AM]** [Behavioral](questions/2026-11-07-am-behavioral.md): Describe a situation where you had to negotiate with a stakeholder to reduce the scope of a feature due to budget constraints, while still ensuring the core user needs were met.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1488,6 +1488,16 @@
       "hint": "Think about the kernel\u2019s policy for allowing more virtual memory than physical RAM and how it signals when the limit is reached.",
       "answer": "Linux allows applications to request more virtual memory than the system actually has in RAM using overcommit. The overcommit_memory sysctl has three modes:\n1. 0 \u2013 heuristic: the kernel estimates available RAM and decides at allocation time whether to allow the request.\n2. 1 \u2013 always allow: every allocation succeeds; the kernel only checks during actual physical page allocation and may kill the process if it overuses memory.\n3. 2 \u2013 no overcommit: the kernel rejects any allocation that would exceed the sum of RAM, swap, and a configurable overcommit factor. Applications that allocate large buffers must handle failures from malloc/alloca, and developers may set overcommit_memory=2 or tune vm.overcommit_ratio to protect against out\u2011of\u2011memory situations.",
       "generated_at": "2026-11-14T09:12:31.065803+00:00"
+    },
+    {
+      "date": "2026-11-14",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n,\u202f|\u03a3|)) extra space, where \u03a3 is the character set.",
+      "difficulty": "Medium",
+      "hint": "Use a sliding window and a map (or array) to store the last index where each character appeared, then move the left bound when a duplicate is found.",
+      "answer": "Maintain two pointers, left and right, defining the current window. As right advances, store the index of each character in a hash map; if the character is already in the map and its stored index is \u2265 left, move left to index+1 to exclude the previous occurrence. Update the maximum window size after each step. This yields O(n) time because each character is processed at most twice, and O(min(n,\u202f|\u03a3|)) space for the map. The final maximum length is the answer.",
+      "generated_at": "2026-11-14T19:21:40.622651+00:00"
     }
   ]
 }

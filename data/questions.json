@@ -1478,6 +1478,16 @@
       "hint": "Think about the steps you took to absorb the material, practice quickly, and apply it in a real scenario.",
       "answer": "I was assigned to a project that required using Go for a microservices component, but I had only a few days to learn it. First, I identified the core concepts needed for the task: concurrency, HTTP handling, and testing. I used the official Go tour and focused on the concurrency patterns, then built small sample programs to practice goroutines and channels. After grasping the fundamentals, I read the existing codebase to see how the team structured services and adapted my sample to fit the architecture. I also reached out to a senior Go developer for quick code reviews, which helped me avoid common pitfalls. By iterating on real code rather than just tutorials, I was able to deliver a functional service within the deadline while maintaining quality. This experience taught me how to efficiently acquire new skills under time constraints and validate them through peer feedback. ",
       "generated_at": "2026-11-13T20:57:32.667843+00:00"
+    },
+    {
+      "date": "2026-11-14",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain how Linux implements memory overcommit and the role of the overcommit_memory sysctl setting. What are the implications for applications that allocate large amounts of memory?",
+      "difficulty": "Medium",
+      "hint": "Think about the kernel\u2019s policy for allowing more virtual memory than physical RAM and how it signals when the limit is reached.",
+      "answer": "Linux allows applications to request more virtual memory than the system actually has in RAM using overcommit. The overcommit_memory sysctl has three modes:\n1. 0 \u2013 heuristic: the kernel estimates available RAM and decides at allocation time whether to allow the request.\n2. 1 \u2013 always allow: every allocation succeeds; the kernel only checks during actual physical page allocation and may kill the process if it overuses memory.\n3. 2 \u2013 no overcommit: the kernel rejects any allocation that would exceed the sum of RAM, swap, and a configurable overcommit factor. Applications that allocate large buffers must handle failures from malloc/alloca, and developers may set overcommit_memory=2 or tune vm.overcommit_ratio to protect against out\u2011of\u2011memory situations.",
+      "generated_at": "2026-11-14T09:12:31.065803+00:00"
     }
   ]
 }

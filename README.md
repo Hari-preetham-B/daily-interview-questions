@@ -24,16 +24,37 @@ In a recent sprint, I noticed a legacy authentication module was causing frequen
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-15) — AIML
+
+**Compare batch gradient descent, stochastic gradient descent, and mini‑batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how the size of the sample that you compute the gradient on influences both computational cost per step and the noisiness of the update direction.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Batch gradient descent computes the gradient using the entire training set for each update, yielding an exact gradient with low variance but high per‑iteration cost and often slower wall‑clock convergence. Stochastic gradient descent (SGD) uses a single randomly chosen example per update, giving very cheap updates and fast initial progress, but the gradient estimate has high variance, which can cause noisy convergence and require a decreasing learning rate schedule. Mini‑batch SGD strikes a balance by using a small subset (e.g., 32–256 examples) per update, reducing variance compared to pure SGD while still allowing efficient vectorized computation and smoother convergence; it is the default choice for deep learning. Batch GD is useful when the dataset fits in memory and a deterministic solution is needed; pure SGD may be chosen for very large or streaming data where quick, noisy updates are acceptable; mini‑batch is preferred in most practical deep‑learning scenarios for its speed and stability.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **151**
-- DSA: 38 · AI/ML: 37 · CSE Core: 38 · Behavioral: 38
+- Total questions logged: **152**
+- DSA: 38 · AI/ML: 38 · CSE Core: 38 · Behavioral: 38
 
 ## 🗂️ Recent Questions
 
+- **2026-11-15 [PM]** [AIML](questions/2026-11-15-pm-aiml.md): Compare batch gradient descent, stochastic gradient descent, and mini‑batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?
 - **2026-11-15 [AM]** [Behavioral](questions/2026-11-15-am-behavioral.md): Describe a scenario where you had to manage a technical debt issue that was impacting the team's velocity, and explain how you decided whether to address it immediately or postpone it.
 - **2026-11-14 [PM]** [DSA](questions/2026-11-14-pm-dsa.md): Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n, |Σ|)) extra space, where Σ is the character set.
 - **2026-11-14 [AM]** [CSE Core](questions/2026-11-14-am-cse-core.md): Explain how Linux implements memory overcommit and the role of the overcommit_memory sysctl setting. What are the implications for applications that allocate large amounts of memory?
@@ -48,7 +69,6 @@ In a recent sprint, I noticed a legacy authentication module was causing frequen
 - **2026-11-09 [PM]** [Behavioral](questions/2026-11-09-pm-behavioral.md): Describe a time when you faced a significant setback or error in a project and how you recovered from it. What steps did you take to fix the issue and prevent similar problems in the future?
 - **2026-11-09 [AM]** [AIML](questions/2026-11-09-am-aiml.md): Explain the purpose of batch normalization in deep neural networks. Include its mathematical formulation, how it normalizes activations during training, the role of running estimates during inference, and how it impacts gradient flow and training speed.
 - **2026-11-08 [PM]** [CSE Core](questions/2026-11-08-pm-cse-core.md): What is the difference between TCP's slow start and congestion avoidance phases, and how do they affect throughput after a packet loss?
-- **2026-11-08 [AM]** [DSA](questions/2026-11-08-am-dsa.md): Given an unsorted integer array, find the length of the longest sequence of consecutive integers that appear in the array. For example, for [100, 4, 200, 1, 3, 2], the longest consecutive sequence is [1,2,3,4] so the answer is 4.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

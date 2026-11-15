@@ -1508,6 +1508,16 @@
       "hint": "Consider the trade\u2011offs between short\u2011term delivery and long\u2011term maintainability, and how you might involve stakeholders in that decision.",
       "answer": "In a recent sprint, I noticed a legacy authentication module was causing frequent bugs and slowing down feature integration. I quantified the impact by measuring defects linked to that module and time spent debugging, then weighed it against the sprint goal of delivering a new user\u2011profile feature. After discussing with product and engineering leads, we allocated a small portion of the next sprint to refactor the module while deferring non\u2011critical enhancements. This reduced the defect rate by 30% and kept the main delivery on schedule. I documented the technical debt in the backlog to keep it visible for future planning.",
       "generated_at": "2026-11-15T09:41:37.612091+00:00"
+    },
+    {
+      "date": "2026-11-15",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "Compare batch gradient descent, stochastic gradient descent, and mini\u2011batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?",
+      "difficulty": "Medium",
+      "hint": "Consider how the size of the sample that you compute the gradient on influences both computational cost per step and the noisiness of the update direction.",
+      "answer": "Batch gradient descent computes the gradient using the entire training set for each update, yielding an exact gradient with low variance but high per\u2011iteration cost and often slower wall\u2011clock convergence. Stochastic gradient descent (SGD) uses a single randomly chosen example per update, giving very cheap updates and fast initial progress, but the gradient estimate has high variance, which can cause noisy convergence and require a decreasing learning rate schedule. Mini\u2011batch SGD strikes a balance by using a small subset (e.g., 32\u2013256 examples) per update, reducing variance compared to pure SGD while still allowing efficient vectorized computation and smoother convergence; it is the default choice for deep learning. Batch GD is useful when the dataset fits in memory and a deterministic solution is needed; pure SGD may be chosen for very large or streaming data where quick, noisy updates are acceptable; mini\u2011batch is preferred in most practical deep\u2011learning scenarios for its speed and stability.",
+      "generated_at": "2026-11-15T19:53:29.106628+00:00"
     }
   ]
 }

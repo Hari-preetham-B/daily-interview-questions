@@ -38,16 +38,37 @@ def min_subarray_len(nums, target):
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-16) — CSE Core
+
+**Explain how the priority inheritance protocol (PIP) works in a real‑time operating system to prevent priority inversion. What are the key steps involved when a high‑priority task is blocked by a lower‑priority task holding a shared resource?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider what happens to the priority of the task that holds the lock when another task of higher priority is waiting for it.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In priority inheritance, when a high‑priority task becomes blocked waiting for a lock held by a lower‑priority task, the lower‑priority task temporarily inherits the higher priority. This allows the lock holder to finish quickly and release the resource, reducing the blocking time for the high‑priority task. Once the lock is released, the holder reverts to its original priority. The protocol also propagates the highest waiting priority up nested lock chains, thereby preventing priority inversion and guaranteeing bounded waiting for high‑priority tasks.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **153**
-- DSA: 39 · AI/ML: 38 · CSE Core: 38 · Behavioral: 38
+- Total questions logged: **154**
+- DSA: 39 · AI/ML: 38 · CSE Core: 39 · Behavioral: 38
 
 ## 🗂️ Recent Questions
 
+- **2026-11-16 [PM]** [CSE Core](questions/2026-11-16-pm-cse-core.md): Explain how the priority inheritance protocol (PIP) works in a real‑time operating system to prevent priority inversion. What are the key steps involved when a high‑priority task is blocked by a lower‑priority task holding a shared resource?
 - **2026-11-16 [AM]** [DSA](questions/2026-11-16-am-dsa.md): Given an array of positive integers `nums` and an integer `target`, find the length of the shortest contiguous subarray whose sum is **greater than or equal to** `target`. Return 0 if no such subarray exists. Aim for O(n) time and O(1) extra space.
 - **2026-11-15 [PM]** [AIML](questions/2026-11-15-pm-aiml.md): Compare batch gradient descent, stochastic gradient descent, and mini‑batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?
 - **2026-11-15 [AM]** [Behavioral](questions/2026-11-15-am-behavioral.md): Describe a scenario where you had to manage a technical debt issue that was impacting the team's velocity, and explain how you decided whether to address it immediately or postpone it.
@@ -62,7 +83,6 @@ def min_subarray_len(nums, target):
 - **2026-11-10 [PM]** [DSA](questions/2026-11-10-pm-dsa.md): Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.
 - **2026-11-10 [AM]** [CSE Core](questions/2026-11-10-am-cse-core.md): What is Belady's anomaly in virtual memory systems, and under what conditions does it occur? Illustrate with an example where increasing the number of page frames leads to more page faults.
 - **2026-11-09 [PM]** [Behavioral](questions/2026-11-09-pm-behavioral.md): Describe a time when you faced a significant setback or error in a project and how you recovered from it. What steps did you take to fix the issue and prevent similar problems in the future?
-- **2026-11-09 [AM]** [AIML](questions/2026-11-09-am-aiml.md): Explain the purpose of batch normalization in deep neural networks. Include its mathematical formulation, how it normalizes activations during training, the role of running estimates during inference, and how it impacts gradient flow and training speed.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

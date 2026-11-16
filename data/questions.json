@@ -1528,6 +1528,16 @@
       "hint": "Use a sliding\u2011window: expand the right end while the sum is below `target`, then shrink the left end as soon as the sum meets or exceeds `target` to try to minimize the window size.",
       "answer": "Use two pointers `left` and `right` and a running sum. Initialise `left=0, sum=0, minLen=inf`. Iterate `right` from 0 to n\u20111, adding `nums[right]` to `sum`. While `sum >= target`, update `minLen = min(minLen, right-left+1)`, subtract `nums[left]` from `sum`, and increment `left`. After the loop, return `minLen` if it was updated, otherwise 0.\n\npython\ndef min_subarray_len(nums, target):\n    left = 0\n    cur_sum = 0\n    min_len = float('inf')\n    for right, val in enumerate(nums):\n        cur_sum += val\n        while cur_sum >= target:\n            min_len = min(min_len, right - left + 1)\n            cur_sum -= nums[left]\n            left += 1\n    return 0 if min_len == float('inf') else min_len\n",
       "generated_at": "2026-11-16T09:58:58.263933+00:00"
+    },
+    {
+      "date": "2026-11-16",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "Explain how the priority inheritance protocol (PIP) works in a real\u2011time operating system to prevent priority inversion. What are the key steps involved when a high\u2011priority task is blocked by a lower\u2011priority task holding a shared resource?",
+      "difficulty": "Medium",
+      "hint": "Consider what happens to the priority of the task that holds the lock when another task of higher priority is waiting for it.",
+      "answer": "In priority inheritance, when a high\u2011priority task becomes blocked waiting for a lock held by a lower\u2011priority task, the lower\u2011priority task temporarily inherits the higher priority. This allows the lock holder to finish quickly and release the resource, reducing the blocking time for the high\u2011priority task. Once the lock is released, the holder reverts to its original priority. The protocol also propagates the highest waiting priority up nested lock chains, thereby preventing priority inversion and guaranteeing bounded waiting for high\u2011priority tasks.",
+      "generated_at": "2026-11-16T23:27:32.873787+00:00"
     }
   ]
 }

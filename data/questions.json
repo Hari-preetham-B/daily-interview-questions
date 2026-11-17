@@ -1548,6 +1548,16 @@
       "hint": "Think about how the loss can be modulated based on the model\u2019s confidence in the prediction.",
       "answer": "Focal loss is a modified cross\u2011entropy loss that adds a modulating factor to down\u2011weight easy examples and focus learning on hard negatives. For a binary classification case with true label y\u2208{0,1} and predicted probability p, focal loss is defined as: FL(p_t) = -\u03b1 (1\u2212p_t)^\u03b3 log(p_t), where p_t = p if y=1 and p_t = 1\u2212p if y=0. The hyperparameter \u03b1 balances class importance (often set to 0.25 for the minority class), while \u03b3 (>0) controls the focusing effect: larger \u03b3 gives more weight to hard, misclassified examples. In object detection, this loss reduces the overwhelming influence of abundant background (negative) samples, allowing the model to learn more effectively from scarce foreground (positive) instances.",
       "generated_at": "2026-11-17T10:55:29.218483+00:00"
+    },
+    {
+      "date": "2026-11-17",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a time when you had to coordinate a cross\u2011functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.",
+      "difficulty": "Medium",
+      "hint": "Think about the tools and meetings you used to keep everyone on the same page.",
+      "answer": "In my senior capstone, I led a project that required collaboration between engineers, designers, and marketers. I started by mapping each team's responsibilities and creating a shared roadmap in Jira. I scheduled weekly syncs with representatives from each group, used a shared Confluence space for documentation, and set up a Slack channel for quick updates. By clarifying ownership early and fostering open dialogue, we avoided misunderstandings, met our milestones, and delivered a product that satisfied all stakeholders.",
+      "generated_at": "2026-11-17T22:31:51.084157+00:00"
     }
   ]
 }

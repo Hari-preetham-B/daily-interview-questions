@@ -24,16 +24,37 @@ Focal loss is a modified cross‑entropy loss that adds a modulating factor to d
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-17) — Behavioral
+
+**Describe a time when you had to coordinate a cross‑functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about the tools and meetings you used to keep everyone on the same page.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In my senior capstone, I led a project that required collaboration between engineers, designers, and marketers. I started by mapping each team's responsibilities and creating a shared roadmap in Jira. I scheduled weekly syncs with representatives from each group, used a shared Confluence space for documentation, and set up a Slack channel for quick updates. By clarifying ownership early and fostering open dialogue, we avoided misunderstandings, met our milestones, and delivered a product that satisfied all stakeholders.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **155**
-- DSA: 39 · AI/ML: 39 · CSE Core: 39 · Behavioral: 38
+- Total questions logged: **156**
+- DSA: 39 · AI/ML: 39 · CSE Core: 39 · Behavioral: 39
 
 ## 🗂️ Recent Questions
 
+- **2026-11-17 [PM]** [Behavioral](questions/2026-11-17-pm-behavioral.md): Describe a time when you had to coordinate a cross‑functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.
 - **2026-11-17 [AM]** [AIML](questions/2026-11-17-am-aiml.md): What is focal loss and how does it help in training object detection models on highly imbalanced datasets? Provide its mathematical definition, explain the role of its hyperparameters “…”
 - **2026-11-16 [PM]** [CSE Core](questions/2026-11-16-pm-cse-core.md): Explain how the priority inheritance protocol (PIP) works in a real‑time operating system to prevent priority inversion. What are the key steps involved when a high‑priority task is blocked by a lower‑priority task holding a shared resource?
 - **2026-11-16 [AM]** [DSA](questions/2026-11-16-am-dsa.md): Given an array of positive integers `nums` and an integer `target`, find the length of the shortest contiguous subarray whose sum is **greater than or equal to** `target`. Return 0 if no such subarray exists. Aim for O(n) time and O(1) extra space.
@@ -48,7 +69,6 @@ Focal loss is a modified cross‑entropy loss that adds a modulating factor to d
 - **2026-11-11 [PM]** [AIML](questions/2026-11-11-pm-aiml.md): How does a Bayesian neural network model predictive uncertainty, and what are the main computational challenges compared to a standard deterministic network?
 - **2026-11-11 [AM]** [Behavioral](questions/2026-11-11-am-behavioral.md): Tell me about a time you participated in a hackathon or coding sprint where the team had to deliver a working prototype within a 48‑hour deadline. How did you quickly assign roles, manage your own tasks, and coordinate with teammates to ensure the project was completed on time?
 - **2026-11-10 [PM]** [DSA](questions/2026-11-10-pm-dsa.md): Given an array of meeting time intervals where each interval is represented as a pair [start, end) (start inclusive, end exclusive), determine the minimum number of conference rooms required so that all meetings can be scheduled without any overlap.
-- **2026-11-10 [AM]** [CSE Core](questions/2026-11-10-am-cse-core.md): What is Belady's anomaly in virtual memory systems, and under what conditions does it occur? Illustrate with an example where increasing the number of page frames leads to more page faults.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

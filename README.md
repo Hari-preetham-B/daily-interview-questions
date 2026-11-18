@@ -24,16 +24,40 @@ The Liskov Substitution Principle states that objects of a superclass must be re
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-18) — DSA
+
+**Given an integer array `nums`, you can increment any element by 1 any number of times. Compute the minimum total number of increments required to make the array strictly increasing (i.e., `nums[i] < nums[i+1]` for all valid `i`). Return that total count.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Traverse the array from left to right, keeping track of the smallest value the current element must reach to stay strictly larger than its predecessor.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Initialize `ops = 0` and `prev = nums[0]`. For each index `i` from 1 to `n-1`:
+- If `nums[i] > prev`, set `prev = nums[i]` (no increment needed).
+- Otherwise, compute `need = prev + 1 - nums[i]`; add `need` to `ops` and update `prev = prev + 1`.
+After processing all elements, `ops` holds the minimum number of increments. This runs in O(n) time and O(1) extra space.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **157**
-- DSA: 39 · AI/ML: 39 · CSE Core: 40 · Behavioral: 39
+- Total questions logged: **158**
+- DSA: 40 · AI/ML: 39 · CSE Core: 40 · Behavioral: 39
 
 ## 🗂️ Recent Questions
 
+- **2026-11-18 [PM]** [DSA](questions/2026-11-18-pm-dsa.md): Given an integer array `nums`, you can increment any element by 1 any number of times. Compute the minimum total number of increments required to make the array strictly increasing (i.e., `nums[i] < nums[i+1]` for all valid `i`). Return that total count.
 - **2026-11-18 [AM]** [CSE Core](questions/2026-11-18-am-cse-core.md): What is the Liskov Substitution Principle (LSP) in object‑oriented design, and how does adhering to it affect the correctness and extensibility of class hierarchies?
 - **2026-11-17 [PM]** [Behavioral](questions/2026-11-17-pm-behavioral.md): Describe a time when you had to coordinate a cross‑functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.
 - **2026-11-17 [AM]** [AIML](questions/2026-11-17-am-aiml.md): What is focal loss and how does it help in training object detection models on highly imbalanced datasets? Provide its mathematical definition, explain the role of its hyperparameters “…”
@@ -48,7 +72,6 @@ The Liskov Substitution Principle states that objects of a superclass must be re
 - **2026-11-12 [PM]** [CSE Core](questions/2026-11-12-pm-cse-core.md): Explain the structure of a B+ tree and how it differs from a B‑tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?
 - **2026-11-12 [AM]** [DSA](questions/2026-11-12-am-dsa.md): Given an integer array nums, find the length of the longest arithmetic subsequence (not necessarily contiguous). An arithmetic subsequence is a sequence of at least two indices i1 < i2 < ... < ik such that the difference nums[i_j] - nums[i_{j-1}] is the same for all j>1. Return the maximum possible length; if no arithmetic subsequence of length ≥ 2 exists, return 0.
 - **2026-11-11 [PM]** [AIML](questions/2026-11-11-pm-aiml.md): How does a Bayesian neural network model predictive uncertainty, and what are the main computational challenges compared to a standard deterministic network?
-- **2026-11-11 [AM]** [Behavioral](questions/2026-11-11-am-behavioral.md): Tell me about a time you participated in a hackathon or coding sprint where the team had to deliver a working prototype within a 48‑hour deadline. How did you quickly assign roles, manage your own tasks, and coordinate with teammates to ensure the project was completed on time?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

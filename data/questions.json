@@ -1558,6 +1558,16 @@
       "hint": "Think about the tools and meetings you used to keep everyone on the same page.",
       "answer": "In my senior capstone, I led a project that required collaboration between engineers, designers, and marketers. I started by mapping each team's responsibilities and creating a shared roadmap in Jira. I scheduled weekly syncs with representatives from each group, used a shared Confluence space for documentation, and set up a Slack channel for quick updates. By clarifying ownership early and fostering open dialogue, we avoided misunderstandings, met our milestones, and delivered a product that satisfied all stakeholders.",
       "generated_at": "2026-11-17T22:31:51.084157+00:00"
+    },
+    {
+      "date": "2026-11-18",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "What is the Liskov Substitution Principle (LSP) in object\u2011oriented design, and how does adhering to it affect the correctness and extensibility of class hierarchies?",
+      "difficulty": "Medium",
+      "hint": "Consider what must remain true when a subclass instance is used wherever a base\u2011class instance is expected, especially regarding method contracts.",
+      "answer": "The Liskov Substitution Principle states that objects of a superclass must be replaceable with objects of any subclass without affecting program correctness. This means a subclass cannot strengthen preconditions, weaken postconditions, or violate invariants defined by the base class. When LSP is respected, polymorphic code works reliably and new subclasses can be added without breaking existing functionality, improving extensibility. Violations often appear when a subclass changes the expected behavior, such as a Square subclass of Rectangle that restricts width and height independently, breaking client code that assumes independent dimension changes.",
+      "generated_at": "2026-11-18T10:27:03.753070+00:00"
     }
   ]
 }

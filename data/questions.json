@@ -1578,6 +1578,16 @@
       "hint": "Traverse the array from left to right, keeping track of the smallest value the current element must reach to stay strictly larger than its predecessor.",
       "answer": "Initialize `ops = 0` and `prev = nums[0]`. For each index `i` from 1 to `n-1`:\n- If `nums[i] > prev`, set `prev = nums[i]` (no increment needed).\n- Otherwise, compute `need = prev + 1 - nums[i]`; add `need` to `ops` and update `prev = prev + 1`.\nAfter processing all elements, `ops` holds the minimum number of increments. This runs in O(n) time and O(1) extra space.",
       "generated_at": "2026-11-18T22:12:07.183201+00:00"
+    },
+    {
+      "date": "2026-11-19",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Tell me about a time when you had to onboard a new team member whose skill set was very different from the rest of the team, and how you used their unique strengths to benefit the project.",
+      "difficulty": "Medium",
+      "hint": "Consider the initial assessment you did and how you matched tasks to their abilities.",
+      "answer": "During my second semester project, a new member joined with a strong background in data visualization but little experience in backend development. I first organized a short skill\u2011mapping session to understand their strengths and areas of interest. I then delegated the UI dashboard creation to them while I handled the API and database logic, ensuring that both parts of the project progressed concurrently. This division of labor not only kept the timeline on track but also resulted in a more polished and intuitive user interface, which earned us a higher grade and positive feedback from our professor.",
+      "generated_at": "2026-11-19T10:34:03.603629+00:00"
     }
   ]
 }

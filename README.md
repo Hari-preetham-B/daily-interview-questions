@@ -24,16 +24,37 @@ During my second semester project, a new member joined with a strong background 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-19) — AIML
+
+**Explain the differences between Layer Normalization and Batch Normalization, including how each computes its statistics, the types of neural network architectures where they are typically applied, and the practical advantages or drawbacks of using Layer Normalization over Batch Normalization.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider whether the normalization statistics are computed across the batch dimension or within each individual example, and think about sequence models and transformer architectures.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Batch Normalization computes mean and variance across the examples in a mini‑batch for each feature, then normalizes using these batch‑level statistics; it requires maintaining running estimates for inference and works best with convolutional or feed‑forward networks where batch sizes are large. Layer Normalization, by contrast, computes mean and variance across the hidden units of a single example, normalizing each sample independently, which makes it invariant to batch size and suitable for recurrent networks and transformers where sequence length varies. Because Layer Normalization does not depend on batch statistics, it avoids issues with small or variable batch sizes and simplifies inference, but it adds a modest computational overhead and may be less effective at reducing internal covariate shift in deep CNNs compared to Batch Normalization. Consequently, practitioners often use Batch Normalization in CNNs with stable batch sizes and Layer Normalization in RNNs, Transformers, or when batch sizes are too small for reliable batch statistics.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **159**
-- DSA: 40 · AI/ML: 39 · CSE Core: 40 · Behavioral: 40
+- Total questions logged: **160**
+- DSA: 40 · AI/ML: 40 · CSE Core: 40 · Behavioral: 40
 
 ## 🗂️ Recent Questions
 
+- **2026-11-19 [PM]** [AIML](questions/2026-11-19-pm-aiml.md): Explain the differences between Layer Normalization and Batch Normalization, including how each computes its statistics, the types of neural network architectures where they are typically applied, and the practical advantages or drawbacks of using Layer Normalization over Batch Normalization.
 - **2026-11-19 [AM]** [Behavioral](questions/2026-11-19-am-behavioral.md): Tell me about a time when you had to onboard a new team member whose skill set was very different from the rest of the team, and how you used their unique strengths to benefit the project.
 - **2026-11-18 [PM]** [DSA](questions/2026-11-18-pm-dsa.md): Given an integer array `nums`, you can increment any element by 1 any number of times. Compute the minimum total number of increments required to make the array strictly increasing (i.e., `nums[i] < nums[i+1]` for all valid `i`). Return that total count.
 - **2026-11-18 [AM]** [CSE Core](questions/2026-11-18-am-cse-core.md): What is the Liskov Substitution Principle (LSP) in object‑oriented design, and how does adhering to it affect the correctness and extensibility of class hierarchies?
@@ -48,7 +69,6 @@ During my second semester project, a new member joined with a strong background 
 - **2026-11-13 [PM]** [Behavioral](questions/2026-11-13-pm-behavioral.md): Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.
 - **2026-11-13 [AM]** [AIML](questions/2026-11-13-am-aiml.md): You have a binary classification task where only 1% of the instances belong to the positive class. A model trained on this data reports 99.5% accuracy but only 20% recall. Why can accuracy be misleading in this setting, and what two evaluation metrics would you recommend instead? How can one of those metrics be used to choose a decision threshold for the classifier?
 - **2026-11-12 [PM]** [CSE Core](questions/2026-11-12-pm-cse-core.md): Explain the structure of a B+ tree and how it differs from a B‑tree in terms of leaf node organization and data lookup efficiency. Why is a B+ tree preferred for database indexing?
-- **2026-11-12 [AM]** [DSA](questions/2026-11-12-am-dsa.md): Given an integer array nums, find the length of the longest arithmetic subsequence (not necessarily contiguous). An arithmetic subsequence is a sequence of at least two indices i1 < i2 < ... < ik such that the difference nums[i_j] - nums[i_{j-1}] is the same for all j>1. Return the maximum possible length; if no arithmetic subsequence of length ≥ 2 exists, return 0.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

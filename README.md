@@ -24,16 +24,37 @@ Perform a topological sort of the DAG (e.g., Kahn's algorithm). Create an array 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-20) — CSE Core
+
+**Describe how a Linux page fault handler decides whether to bring a page from disk into RAM or to kill a process, and explain the role of the 'swappiness' setting in this decision.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider the current memory pressure and how the kernel uses the swap file or swap partition when a fault occurs.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+When a page fault occurs, the kernel first checks if the faulting page is a valid page that was previously swapped out. If it is, the kernel brings the page back into RAM by reading it from the swap area, then updates the page table. If the faulting address is invalid (e.g., points to unmapped memory), the kernel will terminate the process with a segmentation fault. When memory pressure is high, the kernel may decide to evict other pages to free up space before bringing in the faulting page. The 'swappiness' sysctl value (0–100) controls how aggressively the kernel swaps memory pages: a higher value makes the kernel favor swapping out pages, which can reduce page faults but increase disk I/O; a lower value keeps more pages in RAM, reducing swap activity but risking out‑of‑memory (OOM) kills if memory runs low.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **161**
-- DSA: 41 · AI/ML: 40 · CSE Core: 40 · Behavioral: 40
+- Total questions logged: **162**
+- DSA: 41 · AI/ML: 40 · CSE Core: 41 · Behavioral: 40
 
 ## 🗂️ Recent Questions
 
+- **2026-11-20 [PM]** [CSE Core](questions/2026-11-20-pm-cse-core.md): Describe how a Linux page fault handler decides whether to bring a page from disk into RAM or to kill a process, and explain the role of the 'swappiness' setting in this decision.
 - **2026-11-20 [AM]** [DSA](questions/2026-11-20-am-dsa.md): Given a directed acyclic graph (DAG) represented as an adjacency list, and two distinct nodes `source` and `target`, count the number of distinct directed paths from `source` to `target`. Return the count as an integer (you may assume it fits in a 64‑bit signed integer).
 - **2026-11-19 [PM]** [AIML](questions/2026-11-19-pm-aiml.md): Explain the differences between Layer Normalization and Batch Normalization, including how each computes its statistics, the types of neural network architectures where they are typically applied, and the practical advantages or drawbacks of using Layer Normalization over Batch Normalization.
 - **2026-11-19 [AM]** [Behavioral](questions/2026-11-19-am-behavioral.md): Tell me about a time when you had to onboard a new team member whose skill set was very different from the rest of the team, and how you used their unique strengths to benefit the project.
@@ -48,7 +69,6 @@ Perform a topological sort of the DAG (e.g., Kahn's algorithm). Create an array 
 - **2026-11-14 [PM]** [DSA](questions/2026-11-14-pm-dsa.md): Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n, |Σ|)) extra space, where Σ is the character set.
 - **2026-11-14 [AM]** [CSE Core](questions/2026-11-14-am-cse-core.md): Explain how Linux implements memory overcommit and the role of the overcommit_memory sysctl setting. What are the implications for applications that allocate large amounts of memory?
 - **2026-11-13 [PM]** [Behavioral](questions/2026-11-13-pm-behavioral.md): Tell me about a time when you had to learn a new programming language or framework in a very short period to complete a project, and how you approached the learning process.
-- **2026-11-13 [AM]** [AIML](questions/2026-11-13-am-aiml.md): You have a binary classification task where only 1% of the instances belong to the positive class. A model trained on this data reports 99.5% accuracy but only 20% recall. Why can accuracy be misleading in this setting, and what two evaluation metrics would you recommend instead? How can one of those metrics be used to choose a decision threshold for the classifier?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1608,6 +1608,16 @@
       "hint": "Topologically sort the DAG first, then use dynamic programming to accumulate the number of ways to reach each node from the source.",
       "answer": "Perform a topological sort of the DAG (e.g., Kahn's algorithm). Create an array dp of size V initialized to 0 and set dp[source]=1. Process vertices in topological order; for each vertex u, for every outgoing edge (u,v) add dp[u] to dp[v] (dp[v] += dp[u]). After all vertices are processed, dp[target] holds the total number of distinct paths from source to target. This runs in O(V+E) time and O(V) extra space, and works because each path contribution is propagated forward exactly once in topological order.",
       "generated_at": "2026-11-20T10:15:12.704352+00:00"
+    },
+    {
+      "date": "2026-11-20",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "Describe how a Linux page fault handler decides whether to bring a page from disk into RAM or to kill a process, and explain the role of the 'swappiness' setting in this decision.",
+      "difficulty": "Medium",
+      "hint": "Consider the current memory pressure and how the kernel uses the swap file or swap partition when a fault occurs.",
+      "answer": "When a page fault occurs, the kernel first checks if the faulting page is a valid page that was previously swapped out. If it is, the kernel brings the page back into RAM by reading it from the swap area, then updates the page table. If the faulting address is invalid (e.g., points to unmapped memory), the kernel will terminate the process with a segmentation fault. When memory pressure is high, the kernel may decide to evict other pages to free up space before bringing in the faulting page. The 'swappiness' sysctl value (0\u2013100) controls how aggressively the kernel swaps memory pages: a higher value makes the kernel favor swapping out pages, which can reduce page faults but increase disk I/O; a lower value keeps more pages in RAM, reducing swap activity but risking out\u2011of\u2011memory (OOM) kills if memory runs low.",
+      "generated_at": "2026-11-20T21:54:33.125627+00:00"
     }
   ]
 }

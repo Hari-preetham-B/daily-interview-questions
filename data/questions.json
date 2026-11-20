@@ -1598,6 +1598,16 @@
       "hint": "Consider whether the normalization statistics are computed across the batch dimension or within each individual example, and think about sequence models and transformer architectures.",
       "answer": "Batch Normalization computes mean and variance across the examples in a mini\u2011batch for each feature, then normalizes using these batch\u2011level statistics; it requires maintaining running estimates for inference and works best with convolutional or feed\u2011forward networks where batch sizes are large. Layer Normalization, by contrast, computes mean and variance across the hidden units of a single example, normalizing each sample independently, which makes it invariant to batch size and suitable for recurrent networks and transformers where sequence length varies. Because Layer Normalization does not depend on batch statistics, it avoids issues with small or variable batch sizes and simplifies inference, but it adds a modest computational overhead and may be less effective at reducing internal covariate shift in deep CNNs compared to Batch Normalization. Consequently, practitioners often use Batch Normalization in CNNs with stable batch sizes and Layer Normalization in RNNs, Transformers, or when batch sizes are too small for reliable batch statistics.",
       "generated_at": "2026-11-19T22:20:59.722187+00:00"
+    },
+    {
+      "date": "2026-11-20",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given a directed acyclic graph (DAG) represented as an adjacency list, and two distinct nodes `source` and `target`, count the number of distinct directed paths from `source` to `target`. Return the count as an integer (you may assume it fits in a 64\u2011bit signed integer).",
+      "difficulty": "Medium",
+      "hint": "Topologically sort the DAG first, then use dynamic programming to accumulate the number of ways to reach each node from the source.",
+      "answer": "Perform a topological sort of the DAG (e.g., Kahn's algorithm). Create an array dp of size V initialized to 0 and set dp[source]=1. Process vertices in topological order; for each vertex u, for every outgoing edge (u,v) add dp[u] to dp[v] (dp[v] += dp[u]). After all vertices are processed, dp[target] holds the total number of distinct paths from source to target. This runs in O(V+E) time and O(V) extra space, and works because each path contribution is propagated forward exactly once in topological order.",
+      "generated_at": "2026-11-20T10:15:12.704352+00:00"
     }
   ]
 }

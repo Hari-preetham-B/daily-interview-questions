@@ -24,16 +24,37 @@ Permutation importance evaluates a feature’s importance by randomly permuting 
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-21) — Behavioral
+
+**Tell me about a time when you had to create a contingency plan for a project that was on the brink of failure due to external dependencies. What steps did you take, and what was the outcome?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how you identified risks and what alternatives you could have pursued.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+During a semester-long capstone project, our third‑party API provider announced an outage that would have delayed our delivery. I first gathered all team members and mapped the critical path to identify the single point of failure. I then researched an open‑source alternative that offered similar endpoints and performed a quick feasibility test. I presented the findings to the project sponsor, highlighting the trade‑offs and the minimal impact on cost. The sponsor approved the switch, and we completed the project on schedule with only a one‑day delay. The experience taught me the importance of having backup options and communicating risks early.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **163**
-- DSA: 41 · AI/ML: 41 · CSE Core: 41 · Behavioral: 40
+- Total questions logged: **164**
+- DSA: 41 · AI/ML: 41 · CSE Core: 41 · Behavioral: 41
 
 ## 🗂️ Recent Questions
 
+- **2026-11-21 [PM]** [Behavioral](questions/2026-11-21-pm-behavioral.md): Tell me about a time when you had to create a contingency plan for a project that was on the brink of failure due to external dependencies. What steps did you take, and what was the outcome?
 - **2026-11-21 [AM]** [AIML](questions/2026-11-21-am-aiml.md): Explain how permutation importance is used to assess feature importance in a trained model, and compare it with SHAP values. In what situations might permutation importance give misleading results, and how can SHAP mitigate those issues?
 - **2026-11-20 [PM]** [CSE Core](questions/2026-11-20-pm-cse-core.md): Describe how a Linux page fault handler decides whether to bring a page from disk into RAM or to kill a process, and explain the role of the 'swappiness' setting in this decision.
 - **2026-11-20 [AM]** [DSA](questions/2026-11-20-am-dsa.md): Given a directed acyclic graph (DAG) represented as an adjacency list, and two distinct nodes `source` and `target`, count the number of distinct directed paths from `source` to `target`. Return the count as an integer (you may assume it fits in a 64‑bit signed integer).
@@ -48,7 +69,6 @@ Permutation importance evaluates a feature’s importance by randomly permuting 
 - **2026-11-15 [PM]** [AIML](questions/2026-11-15-pm-aiml.md): Compare batch gradient descent, stochastic gradient descent, and mini‑batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?
 - **2026-11-15 [AM]** [Behavioral](questions/2026-11-15-am-behavioral.md): Describe a scenario where you had to manage a technical debt issue that was impacting the team's velocity, and explain how you decided whether to address it immediately or postpone it.
 - **2026-11-14 [PM]** [DSA](questions/2026-11-14-pm-dsa.md): Given a string s, find the length of the longest substring that contains no repeated characters. Aim for O(n) time and O(min(n, |Σ|)) extra space, where Σ is the character set.
-- **2026-11-14 [AM]** [CSE Core](questions/2026-11-14-am-cse-core.md): Explain how Linux implements memory overcommit and the role of the overcommit_memory sysctl setting. What are the implications for applications that allocate large amounts of memory?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

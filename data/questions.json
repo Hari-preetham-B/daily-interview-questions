@@ -1618,6 +1618,16 @@
       "hint": "Consider the current memory pressure and how the kernel uses the swap file or swap partition when a fault occurs.",
       "answer": "When a page fault occurs, the kernel first checks if the faulting page is a valid page that was previously swapped out. If it is, the kernel brings the page back into RAM by reading it from the swap area, then updates the page table. If the faulting address is invalid (e.g., points to unmapped memory), the kernel will terminate the process with a segmentation fault. When memory pressure is high, the kernel may decide to evict other pages to free up space before bringing in the faulting page. The 'swappiness' sysctl value (0\u2013100) controls how aggressively the kernel swaps memory pages: a higher value makes the kernel favor swapping out pages, which can reduce page faults but increase disk I/O; a lower value keeps more pages in RAM, reducing swap activity but risking out\u2011of\u2011memory (OOM) kills if memory runs low.",
       "generated_at": "2026-11-20T21:54:33.125627+00:00"
+    },
+    {
+      "date": "2026-11-21",
+      "slot": "AM",
+      "category": "AIML",
+      "question": "Explain how permutation importance is used to assess feature importance in a trained model, and compare it with SHAP values. In what situations might permutation importance give misleading results, and how can SHAP mitigate those issues?",
+      "difficulty": "Medium",
+      "hint": "Think about how permutation importance perturbs feature values and measures performance change, versus SHAP\u2019s game\u2011theoretic attribution. Consider feature correlations and model non\u2011linearity.",
+      "answer": "Permutation importance evaluates a feature\u2019s importance by randomly permuting its values in the validation set and measuring the drop in model performance; a large drop indicates the feature is influential. SHAP values, derived from Shapley values in cooperative game theory, assign each feature a contribution to the prediction by considering all possible feature combinations, thus providing a local, consistent explanation. Permutation importance can be misleading when features are highly correlated: permuting one feature may have little effect because other correlated features still carry the same information, underestimating its importance. SHAP mitigates this by accounting for feature interactions and correlations through its exhaustive coalition consideration, giving more reliable attribution even in correlated settings.",
+      "generated_at": "2026-11-21T10:00:05.802763+00:00"
     }
   ]
 }

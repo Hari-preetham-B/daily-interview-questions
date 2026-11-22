@@ -1648,6 +1648,16 @@
       "hint": "Think about the chain of servers the resolver contacts, and how cached records can skip some steps.",
       "answer": "When a client wants to resolve \"www.example.com\", the local resolver first checks its cache; if the record is not found, it sends a recursive query to a root server. The root server returns the address of the TLD (.com) server. The resolver then queries the TLD server, which returns the authoritative server for \"example.com\". Finally, the resolver contacts the authoritative server, which returns the A record. The resolver caches this record for a period defined by its TTL, so future queries for the same name can be answered immediately, reducing latency and load on the hierarchy of DNS servers.",
       "generated_at": "2026-11-22T10:00:45.575217+00:00"
+    },
+    {
+      "date": "2026-11-22",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given the root of a binary tree and two nodes p and q, find the lowest common ancestor (LCA) of p and q. Nodes are guaranteed to exist in the tree. Return the reference to the LCA node.",
+      "difficulty": "Medium",
+      "hint": "Use a recursive post\u2011order traversal and combine the results from the left and right subtrees.",
+      "answer": "Perform a depth\u2011first search. For each node, recursively find the LCA in its left and right subtrees. If both recursive calls return non\u2011null, the current node is the LCA. If only one side returns non\u2011null, propagate that value upward. If both are null, return null. This runs in O(n) time and O(h) space, where h is the tree height.",
+      "generated_at": "2026-11-22T20:46:58.473391+00:00"
     }
   ]
 }

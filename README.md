@@ -24,16 +24,37 @@ When a client wants to resolve "www.example.com", the local resolver first check
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-22) — DSA
+
+**Given the root of a binary tree and two nodes p and q, find the lowest common ancestor (LCA) of p and q. Nodes are guaranteed to exist in the tree. Return the reference to the LCA node.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Use a recursive post‑order traversal and combine the results from the left and right subtrees.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Perform a depth‑first search. For each node, recursively find the LCA in its left and right subtrees. If both recursive calls return non‑null, the current node is the LCA. If only one side returns non‑null, propagate that value upward. If both are null, return null. This runs in O(n) time and O(h) space, where h is the tree height.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **165**
-- DSA: 41 · AI/ML: 41 · CSE Core: 42 · Behavioral: 41
+- Total questions logged: **166**
+- DSA: 42 · AI/ML: 41 · CSE Core: 42 · Behavioral: 41
 
 ## 🗂️ Recent Questions
 
+- **2026-11-22 [PM]** [DSA](questions/2026-11-22-pm-dsa.md): Given the root of a binary tree and two nodes p and q, find the lowest common ancestor (LCA) of p and q. Nodes are guaranteed to exist in the tree. Return the reference to the LCA node.
 - **2026-11-22 [AM]** [CSE Core](questions/2026-11-22-am-cse-core.md): Describe the process a DNS resolver follows to translate a hostname into an IP address. Include the role of recursive and iterative queries, root servers, TLD servers, and authoritative servers. Explain how DNS caching improves lookup speed and reduces load on servers.
 - **2026-11-21 [PM]** [Behavioral](questions/2026-11-21-pm-behavioral.md): Tell me about a time when you had to create a contingency plan for a project that was on the brink of failure due to external dependencies. What steps did you take, and what was the outcome?
 - **2026-11-21 [AM]** [AIML](questions/2026-11-21-am-aiml.md): Explain how permutation importance is used to assess feature importance in a trained model, and compare it with SHAP values. In what situations might permutation importance give misleading results, and how can SHAP mitigate those issues?
@@ -48,7 +69,6 @@ When a client wants to resolve "www.example.com", the local resolver first check
 - **2026-11-16 [PM]** [CSE Core](questions/2026-11-16-pm-cse-core.md): Explain how the priority inheritance protocol (PIP) works in a real‑time operating system to prevent priority inversion. What are the key steps involved when a high‑priority task is blocked by a lower‑priority task holding a shared resource?
 - **2026-11-16 [AM]** [DSA](questions/2026-11-16-am-dsa.md): Given an array of positive integers `nums` and an integer `target`, find the length of the shortest contiguous subarray whose sum is **greater than or equal to** `target`. Return 0 if no such subarray exists. Aim for O(n) time and O(1) extra space.
 - **2026-11-15 [PM]** [AIML](questions/2026-11-15-pm-aiml.md): Compare batch gradient descent, stochastic gradient descent, and mini‑batch gradient descent. How do they differ in terms of the number of training examples used per parameter update, convergence speed, and the variance of the gradient estimate? Under what circumstances would you prefer each variant?
-- **2026-11-15 [AM]** [Behavioral](questions/2026-11-15-am-behavioral.md): Describe a scenario where you had to manage a technical debt issue that was impacting the team's velocity, and explain how you decided whether to address it immediately or postpone it.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

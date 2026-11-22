@@ -1638,6 +1638,16 @@
       "hint": "Think about how you identified risks and what alternatives you could have pursued.",
       "answer": "During a semester-long capstone project, our third\u2011party API provider announced an outage that would have delayed our delivery. I first gathered all team members and mapped the critical path to identify the single point of failure. I then researched an open\u2011source alternative that offered similar endpoints and performed a quick feasibility test. I presented the findings to the project sponsor, highlighting the trade\u2011offs and the minimal impact on cost. The sponsor approved the switch, and we completed the project on schedule with only a one\u2011day delay. The experience taught me the importance of having backup options and communicating risks early.",
       "generated_at": "2026-11-21T20:37:21.374627+00:00"
+    },
+    {
+      "date": "2026-11-22",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Describe the process a DNS resolver follows to translate a hostname into an IP address. Include the role of recursive and iterative queries, root servers, TLD servers, and authoritative servers. Explain how DNS caching improves lookup speed and reduces load on servers.",
+      "difficulty": "Medium",
+      "hint": "Think about the chain of servers the resolver contacts, and how cached records can skip some steps.",
+      "answer": "When a client wants to resolve \"www.example.com\", the local resolver first checks its cache; if the record is not found, it sends a recursive query to a root server. The root server returns the address of the TLD (.com) server. The resolver then queries the TLD server, which returns the authoritative server for \"example.com\". Finally, the resolver contacts the authoritative server, which returns the A record. The resolver caches this record for a period defined by its TTL, so future queries for the same name can be answered immediately, reducing latency and load on the hierarchy of DNS servers.",
+      "generated_at": "2026-11-22T10:00:45.575217+00:00"
     }
   ]
 }

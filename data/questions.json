@@ -1668,6 +1668,16 @@
       "hint": "Recall a concrete example, describe your initial reaction, the steps you took to improve, and how it impacted the project or your growth.",
       "answer": "When I was reviewing my code for a feature, a senior engineer pointed out that my implementation lacked proper error handling and could cause crashes in edge cases. I thanked him, asked clarifying questions, and then refactored the code to include comprehensive try\u2011catch blocks and unit tests for those scenarios. I also documented the new error\u2011handling strategy for the team. After the changes, the feature passed all quality gates without incidents, and I incorporated a checklist to avoid similar oversights in future work.",
       "generated_at": "2026-11-23T10:59:00.695838+00:00"
+    },
+    {
+      "date": "2026-11-24",
+      "slot": "AM",
+      "category": "DSA",
+      "question": "Given an undirected graph represented as an adjacency list, write a function that returns the number of articulation points (cut vertices) in the graph. A vertex is an articulation point if removing it and its incident edges increases the number of connected components. The graph has N vertices labeled 0..N-1 and may be disconnected.",
+      "difficulty": "Hard",
+      "hint": "Use a depth\u2011first search and keep track of discovery times and low values to identify critical vertices.",
+      "answer": "Use Tarjan\u2019s algorithm: run a DFS, assign each vertex a discovery time and compute low[v] = min(discovery[v], discovery[w]) for back edges and low[w] for child w. A vertex v (except root) is an articulation point if it has a child w such that low[w] >= discovery[v]. The root is an articulation point if it has more than one child. Count such vertices. The algorithm runs in O(V+E) time and O(V) space.",
+      "generated_at": "2026-11-24T01:46:37.814185+00:00"
     }
   ]
 }

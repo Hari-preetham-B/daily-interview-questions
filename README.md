@@ -24,16 +24,37 @@ Use Tarjan’s algorithm: run a DFS, assign each vertex a discovery time and com
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-24) — CSE Core
+
+**How does HTTP/2 achieve multiplexing of multiple request/response streams over a single TCP connection, and what mechanisms does it use to avoid head‑of‑line blocking? Explain the role of stream identifiers, frames, and stream priority.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about how data is broken into smaller units that carry a stream ID and how the protocol can interleave those units on one TCP flow.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+HTTP/2 splits each request/response into a sequence of frames, each prefixed with a 9‑byte header that includes a 31‑bit stream identifier. Because frames from different streams can be interleaved arbitrarily on the same TCP stream, the client and server can transmit multiple concurrent conversations over a single connection. To avoid head‑of‑line blocking, HTTP/2 uses flow‑control windows per stream and per connection, so a slow stream does not stall others. Additionally, each stream can be assigned a priority (weight and parent stream) so that the receiver can decide which streams to transmit first. These mechanisms together allow concurrent, independent streams while keeping the underlying TCP connection free of per‑stream stalls.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **168**
-- DSA: 43 · AI/ML: 41 · CSE Core: 42 · Behavioral: 42
+- Total questions logged: **169**
+- DSA: 43 · AI/ML: 41 · CSE Core: 43 · Behavioral: 42
 
 ## 🗂️ Recent Questions
 
+- **2026-11-24 [PM]** [CSE Core](questions/2026-11-24-pm-cse-core.md): How does HTTP/2 achieve multiplexing of multiple request/response streams over a single TCP connection, and what mechanisms does it use to avoid head‑of‑line blocking? Explain the role of stream identifiers, frames, and stream priority.
 - **2026-11-24 [AM]** [DSA](questions/2026-11-24-am-dsa.md): Given an undirected graph represented as an adjacency list, write a function that returns the number of articulation points (cut vertices) in the graph. A vertex is an articulation point if removing it and its incident edges increases the number of connected components. The graph has N vertices labeled 0..N-1 and may be disconnected.
 - **2026-11-23 [AM]** [Behavioral](questions/2026-11-23-am-behavioral.md): Tell me about a time when you received critical feedback on your performance or a deliverable. How did you respond, what actions did you take to address the feedback, and what was the result?
 - **2026-11-22 [PM]** [DSA](questions/2026-11-22-pm-dsa.md): Given the root of a binary tree and two nodes p and q, find the lowest common ancestor (LCA) of p and q. Nodes are guaranteed to exist in the tree. Return the reference to the LCA node.
@@ -48,7 +69,6 @@ Use Tarjan’s algorithm: run a DFS, assign each vertex a discovery time and com
 - **2026-11-18 [AM]** [CSE Core](questions/2026-11-18-am-cse-core.md): What is the Liskov Substitution Principle (LSP) in object‑oriented design, and how does adhering to it affect the correctness and extensibility of class hierarchies?
 - **2026-11-17 [PM]** [Behavioral](questions/2026-11-17-pm-behavioral.md): Describe a time when you had to coordinate a cross‑functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.
 - **2026-11-17 [AM]** [AIML](questions/2026-11-17-am-aiml.md): What is focal loss and how does it help in training object detection models on highly imbalanced datasets? Provide its mathematical definition, explain the role of its hyperparameters “…”
-- **2026-11-16 [PM]** [CSE Core](questions/2026-11-16-pm-cse-core.md): Explain how the priority inheritance protocol (PIP) works in a real‑time operating system to prevent priority inversion. What are the key steps involved when a high‑priority task is blocked by a lower‑priority task holding a shared resource?
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

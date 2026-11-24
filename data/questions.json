@@ -1678,6 +1678,16 @@
       "hint": "Use a depth\u2011first search and keep track of discovery times and low values to identify critical vertices.",
       "answer": "Use Tarjan\u2019s algorithm: run a DFS, assign each vertex a discovery time and compute low[v] = min(discovery[v], discovery[w]) for back edges and low[w] for child w. A vertex v (except root) is an articulation point if it has a child w such that low[w] >= discovery[v]. The root is an articulation point if it has more than one child. Count such vertices. The algorithm runs in O(V+E) time and O(V) space.",
       "generated_at": "2026-11-24T01:46:37.814185+00:00"
+    },
+    {
+      "date": "2026-11-24",
+      "slot": "PM",
+      "category": "CSE Core",
+      "question": "How does HTTP/2 achieve multiplexing of multiple request/response streams over a single TCP connection, and what mechanisms does it use to avoid head\u2011of\u2011line blocking? Explain the role of stream identifiers, frames, and stream priority.",
+      "difficulty": "Medium",
+      "hint": "Think about how data is broken into smaller units that carry a stream ID and how the protocol can interleave those units on one TCP flow.",
+      "answer": "HTTP/2 splits each request/response into a sequence of frames, each prefixed with a 9\u2011byte header that includes a 31\u2011bit stream identifier. Because frames from different streams can be interleaved arbitrarily on the same TCP stream, the client and server can transmit multiple concurrent conversations over a single connection. To avoid head\u2011of\u2011line blocking, HTTP/2 uses flow\u2011control windows per stream and per connection, so a slow stream does not stall others. Additionally, each stream can be assigned a priority (weight and parent stream) so that the receiver can decide which streams to transmit first. These mechanisms together allow concurrent, independent streams while keeping the underlying TCP connection free of per\u2011stream stalls.",
+      "generated_at": "2026-11-24T12:45:51.359695+00:00"
     }
   ]
 }

@@ -24,16 +24,37 @@ To choose γ, set up a grid (e.g., 2⁻⁹ to 2⁴) and perform k‑fold cross�
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-25) — Behavioral
+
+**Describe a time when you had to advocate for a technical decision that differed from the majority opinion in your team. How did you present your case, what evidence did you use, and what was the result?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Consider how you gathered data, framed the benefits, and addressed concerns from your teammates.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+In my final semester project, I proposed using a new caching library that would reduce API latency, but most teammates preferred sticking with the legacy solution for familiarity. I gathered benchmark data from a small prototype, quantified the performance gains, and identified potential integration risks. I organized a brief demo showing the improved response times and drafted a risk mitigation plan. When I presented these points in our sprint planning meeting, the team agreed to a phased adoption, allowing us to validate the benefits in production without disrupting the existing workflow. The decision ultimately cut our API response time by 30% and set a precedent for data‑driven tech choices.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **170**
-- DSA: 43 · AI/ML: 42 · CSE Core: 43 · Behavioral: 42
+- Total questions logged: **171**
+- DSA: 43 · AI/ML: 42 · CSE Core: 43 · Behavioral: 43
 
 ## 🗂️ Recent Questions
 
+- **2026-11-25 [PM]** [Behavioral](questions/2026-11-25-pm-behavioral.md): Describe a time when you had to advocate for a technical decision that differed from the majority opinion in your team. How did you present your case, what evidence did you use, and what was the result?
 - **2026-11-25 [AM]** [AIML](questions/2026-11-25-am-aiml.md): Suppose you are training a support vector machine (SVM) with an RBF kernel on a medium‑size tabular dataset.  How would you go about selecting an appropriate kernel bandwidth (γ) using cross‑validation, and what is the expected impact of a very small versus a very large γ on the model’s bias‑variance trade‑off?
 - **2026-11-24 [PM]** [CSE Core](questions/2026-11-24-pm-cse-core.md): How does HTTP/2 achieve multiplexing of multiple request/response streams over a single TCP connection, and what mechanisms does it use to avoid head‑of‑line blocking? Explain the role of stream identifiers, frames, and stream priority.
 - **2026-11-24 [AM]** [DSA](questions/2026-11-24-am-dsa.md): Given an undirected graph represented as an adjacency list, write a function that returns the number of articulation points (cut vertices) in the graph. A vertex is an articulation point if removing it and its incident edges increases the number of connected components. The graph has N vertices labeled 0..N-1 and may be disconnected.
@@ -48,7 +69,6 @@ To choose γ, set up a grid (e.g., 2⁻⁹ to 2⁴) and perform k‑fold cross�
 - **2026-11-19 [AM]** [Behavioral](questions/2026-11-19-am-behavioral.md): Tell me about a time when you had to onboard a new team member whose skill set was very different from the rest of the team, and how you used their unique strengths to benefit the project.
 - **2026-11-18 [PM]** [DSA](questions/2026-11-18-pm-dsa.md): Given an integer array `nums`, you can increment any element by 1 any number of times. Compute the minimum total number of increments required to make the array strictly increasing (i.e., `nums[i] < nums[i+1]` for all valid `i`). Return that total count.
 - **2026-11-18 [AM]** [CSE Core](questions/2026-11-18-am-cse-core.md): What is the Liskov Substitution Principle (LSP) in object‑oriented design, and how does adhering to it affect the correctness and extensibility of class hierarchies?
-- **2026-11-17 [PM]** [Behavioral](questions/2026-11-17-pm-behavioral.md): Describe a time when you had to coordinate a cross‑functional project involving engineering, design, and marketing teams, and how you ensured effective communication and alignment across the groups.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1698,6 +1698,16 @@
       "hint": "Think about how the kernel width controls the locality of each support vector and how cross\u2011validation can help find a sweet spot.  Remember that extreme values can lead to over\u2011 or under\u2011fitting.",
       "answer": "To choose \u03b3, set up a grid (e.g., 2\u207b\u2079 to 2\u2074) and perform k\u2011fold cross\u2011validation for each value, recording the validation error.  Pick the \u03b3 that minimizes the cross\u2011validated loss, optionally using a validation curve to visualize the bias\u2011variance trend.  A very small \u03b3 (narrow kernel) makes each support vector influence only a tiny region, leading to a highly flexible model that captures noise (low bias, high variance).  Conversely, a very large \u03b3 (wide kernel) turns the decision surface into a smooth, almost linear function, reducing variance but increasing bias and potentially under\u2011fitting the data.",
       "generated_at": "2026-11-25T11:31:39.333475+00:00"
+    },
+    {
+      "date": "2026-11-25",
+      "slot": "PM",
+      "category": "Behavioral",
+      "question": "Describe a time when you had to advocate for a technical decision that differed from the majority opinion in your team. How did you present your case, what evidence did you use, and what was the result?",
+      "difficulty": "Medium",
+      "hint": "Consider how you gathered data, framed the benefits, and addressed concerns from your teammates.",
+      "answer": "In my final semester project, I proposed using a new caching library that would reduce API latency, but most teammates preferred sticking with the legacy solution for familiarity. I gathered benchmark data from a small prototype, quantified the performance gains, and identified potential integration risks. I organized a brief demo showing the improved response times and drafted a risk mitigation plan. When I presented these points in our sprint planning meeting, the team agreed to a phased adoption, allowing us to validate the benefits in production without disrupting the existing workflow. The decision ultimately cut our API response time by 30% and set a precedent for data\u2011driven tech choices.",
+      "generated_at": "2026-11-25T23:11:46.129288+00:00"
     }
   ]
 }

@@ -1708,6 +1708,16 @@
       "hint": "Consider how you gathered data, framed the benefits, and addressed concerns from your teammates.",
       "answer": "In my final semester project, I proposed using a new caching library that would reduce API latency, but most teammates preferred sticking with the legacy solution for familiarity. I gathered benchmark data from a small prototype, quantified the performance gains, and identified potential integration risks. I organized a brief demo showing the improved response times and drafted a risk mitigation plan. When I presented these points in our sprint planning meeting, the team agreed to a phased adoption, allowing us to validate the benefits in production without disrupting the existing workflow. The decision ultimately cut our API response time by 30% and set a precedent for data\u2011driven tech choices.",
       "generated_at": "2026-11-25T23:11:46.129288+00:00"
+    },
+    {
+      "date": "2026-11-26",
+      "slot": "AM",
+      "category": "CSE Core",
+      "question": "Explain how the Linux kernel\u2019s slab allocator manages memory for frequently allocated and freed small objects. What advantages does it provide over the generic kmalloc allocator, and how does it help reduce fragmentation?",
+      "difficulty": "Medium",
+      "hint": "Think about how the kernel keeps pre\u2011built chunks of memory ready for use, and how that affects allocation speed and memory layout.",
+      "answer": "The slab allocator maintains a set of caches, each cache holding a number of pre\u2011allocated objects called slabs. When a request for a small object arrives, the allocator simply hands out a free object from the appropriate cache, avoiding the overhead of allocating a whole page. On free, the object is returned to its cache instead of being returned to the page allocator, which keeps the object in place for future reuse. This reduces fragmentation, improves cache locality, and speeds up both allocation and deallocation compared to the generic kmalloc path.",
+      "generated_at": "2026-11-26T11:13:36.106168+00:00"
     }
   ]
 }

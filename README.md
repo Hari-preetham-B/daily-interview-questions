@@ -24,16 +24,37 @@ The slab allocator maintains a set of caches, each cache holding a number of pre
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-26) — DSA
+
+**Given an array of non‑negative integers `nums` where each element represents the maximum jump length from that position, return the minimum number of jumps required to reach the last index of the array. If the last index is unreachable, return -1. You must achieve O(n) time and O(1) extra space.**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think greedily: while scanning the array keep track of the farthest index you can reach within the current number of jumps and when you exceed that range, increase the jump count and update the range.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+We can solve it in a single pass using a greedy approach. Maintain three variables: `maxReach` – the farthest index reachable so far, `edge` – the end of the current jump range, and `jumps` – the number of jumps made. Iterate i from 0 to n‑2: update `maxReach = max(maxReach, i + nums[i])`. When i reaches `edge`, we must make another jump, so increment `jumps` and set `edge = maxReach`. If at any point `maxReach` does not advance beyond i, the end is unreachable and we return -1. After the loop, `jumps` holds the minimum jumps to reach the last index. The algorithm runs in O(n) time and O(1) space.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **172**
-- DSA: 43 · AI/ML: 42 · CSE Core: 44 · Behavioral: 43
+- Total questions logged: **173**
+- DSA: 44 · AI/ML: 42 · CSE Core: 44 · Behavioral: 43
 
 ## 🗂️ Recent Questions
 
+- **2026-11-26 [PM]** [DSA](questions/2026-11-26-pm-dsa.md): Given an array of non‑negative integers `nums` where each element represents the maximum jump length from that position, return the minimum number of jumps required to reach the last index of the array. If the last index is unreachable, return -1. You must achieve O(n) time and O(1) extra space.
 - **2026-11-26 [AM]** [CSE Core](questions/2026-11-26-am-cse-core.md): Explain how the Linux kernel’s slab allocator manages memory for frequently allocated and freed small objects. What advantages does it provide over the generic kmalloc allocator, and how does it help reduce fragmentation?
 - **2026-11-25 [PM]** [Behavioral](questions/2026-11-25-pm-behavioral.md): Describe a time when you had to advocate for a technical decision that differed from the majority opinion in your team. How did you present your case, what evidence did you use, and what was the result?
 - **2026-11-25 [AM]** [AIML](questions/2026-11-25-am-aiml.md): Suppose you are training a support vector machine (SVM) with an RBF kernel on a medium‑size tabular dataset.  How would you go about selecting an appropriate kernel bandwidth (γ) using cross‑validation, and what is the expected impact of a very small versus a very large γ on the model’s bias‑variance trade‑off?
@@ -48,7 +69,6 @@ The slab allocator maintains a set of caches, each cache holding a number of pre
 - **2026-11-20 [AM]** [DSA](questions/2026-11-20-am-dsa.md): Given a directed acyclic graph (DAG) represented as an adjacency list, and two distinct nodes `source` and `target`, count the number of distinct directed paths from `source` to `target`. Return the count as an integer (you may assume it fits in a 64‑bit signed integer).
 - **2026-11-19 [PM]** [AIML](questions/2026-11-19-pm-aiml.md): Explain the differences between Layer Normalization and Batch Normalization, including how each computes its statistics, the types of neural network architectures where they are typically applied, and the practical advantages or drawbacks of using Layer Normalization over Batch Normalization.
 - **2026-11-19 [AM]** [Behavioral](questions/2026-11-19-am-behavioral.md): Tell me about a time when you had to onboard a new team member whose skill set was very different from the rest of the team, and how you used their unique strengths to benefit the project.
-- **2026-11-18 [PM]** [DSA](questions/2026-11-18-pm-dsa.md): Given an integer array `nums`, you can increment any element by 1 any number of times. Compute the minimum total number of increments required to make the array strictly increasing (i.e., `nums[i] < nums[i+1]` for all valid `i`). Return that total count.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

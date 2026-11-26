@@ -1718,6 +1718,16 @@
       "hint": "Think about how the kernel keeps pre\u2011built chunks of memory ready for use, and how that affects allocation speed and memory layout.",
       "answer": "The slab allocator maintains a set of caches, each cache holding a number of pre\u2011allocated objects called slabs. When a request for a small object arrives, the allocator simply hands out a free object from the appropriate cache, avoiding the overhead of allocating a whole page. On free, the object is returned to its cache instead of being returned to the page allocator, which keeps the object in place for future reuse. This reduces fragmentation, improves cache locality, and speeds up both allocation and deallocation compared to the generic kmalloc path.",
       "generated_at": "2026-11-26T11:13:36.106168+00:00"
+    },
+    {
+      "date": "2026-11-26",
+      "slot": "PM",
+      "category": "DSA",
+      "question": "Given an array of non\u2011negative integers `nums` where each element represents the maximum jump length from that position, return the minimum number of jumps required to reach the last index of the array. If the last index is unreachable, return -1. You must achieve O(n) time and O(1) extra space.",
+      "difficulty": "Medium",
+      "hint": "Think greedily: while scanning the array keep track of the farthest index you can reach within the current number of jumps and when you exceed that range, increase the jump count and update the range.",
+      "answer": "We can solve it in a single pass using a greedy approach. Maintain three variables: `maxReach` \u2013 the farthest index reachable so far, `edge` \u2013 the end of the current jump range, and `jumps` \u2013 the number of jumps made. Iterate i from 0 to n\u20112: update `maxReach = max(maxReach, i + nums[i])`. When i reaches `edge`, we must make another jump, so increment `jumps` and set `edge = maxReach`. If at any point `maxReach` does not advance beyond i, the end is unreachable and we return -1. After the loop, `jumps` holds the minimum jumps to reach the last index. The algorithm runs in O(n) time and O(1) space.",
+      "generated_at": "2026-11-26T23:09:52.288598+00:00"
     }
   ]
 }

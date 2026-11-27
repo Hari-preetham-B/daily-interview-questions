@@ -24,16 +24,37 @@ I identified a bottleneck in our deployment pipeline and proposed adopting a con
 
 </details>
 
+---
+
+### 🌙 Evening (2026-11-27) — AIML
+
+**What is label smoothing in neural network classification, how is it implemented mathematically, and what effects does it have on model confidence, calibration, and generalization?**
+
+<details>
+<summary>💡 Hint</summary>
+
+Think about modifying the one‑hot target vector by mixing it with a uniform distribution over classes before computing the cross‑entropy loss.
+
+</details>
+
+<details>
+<summary>✅ Answer</summary>
+
+Label smoothing replaces the hard one‑hot target vector y with a softened version y_s = (1‑ε)·y + ε/K·1, where K is the number of classes and ε∈(0,1) is the smoothing factor. In practice, the cross‑entropy loss is computed using y_s instead of y, which can be done by adjusting the target probabilities or by adding ε/K to the logits before softmax. This regularization discourages the network from assigning full probability mass to a single class, reducing over‑confidence and improving calibration. It also acts as a form of confidence penalty that mitigates overfitting, often leading to better generalization, especially when the training set is noisy or small. Typical values of ε are 0.1 or 0.01, and the technique is widely used in image classification and language models.
+
+</details>
+
 
 ---
 
 ## 📊 Stats
 
-- Total questions logged: **174**
-- DSA: 44 · AI/ML: 42 · CSE Core: 44 · Behavioral: 44
+- Total questions logged: **175**
+- DSA: 44 · AI/ML: 43 · CSE Core: 44 · Behavioral: 44
 
 ## 🗂️ Recent Questions
 
+- **2026-11-27 [PM]** [AIML](questions/2026-11-27-pm-aiml.md): What is label smoothing in neural network classification, how is it implemented mathematically, and what effects does it have on model confidence, calibration, and generalization?
 - **2026-11-27 [AM]** [Behavioral](questions/2026-11-27-am-behavioral.md): Describe a situation where you introduced a new process or tool to your team that required everyone to change their workflow, but initially met resistance. How did you handle the pushback, ensure adoption, and measure success?
 - **2026-11-26 [PM]** [DSA](questions/2026-11-26-pm-dsa.md): Given an array of non‑negative integers `nums` where each element represents the maximum jump length from that position, return the minimum number of jumps required to reach the last index of the array. If the last index is unreachable, return -1. You must achieve O(n) time and O(1) extra space.
 - **2026-11-26 [AM]** [CSE Core](questions/2026-11-26-am-cse-core.md): Explain how the Linux kernel’s slab allocator manages memory for frequently allocated and freed small objects. What advantages does it provide over the generic kmalloc allocator, and how does it help reduce fragmentation?
@@ -48,7 +69,6 @@ I identified a bottleneck in our deployment pipeline and proposed adopting a con
 - **2026-11-21 [AM]** [AIML](questions/2026-11-21-am-aiml.md): Explain how permutation importance is used to assess feature importance in a trained model, and compare it with SHAP values. In what situations might permutation importance give misleading results, and how can SHAP mitigate those issues?
 - **2026-11-20 [PM]** [CSE Core](questions/2026-11-20-pm-cse-core.md): Describe how a Linux page fault handler decides whether to bring a page from disk into RAM or to kill a process, and explain the role of the 'swappiness' setting in this decision.
 - **2026-11-20 [AM]** [DSA](questions/2026-11-20-am-dsa.md): Given a directed acyclic graph (DAG) represented as an adjacency list, and two distinct nodes `source` and `target`, count the number of distinct directed paths from `source` to `target`. Return the count as an integer (you may assume it fits in a 64‑bit signed integer).
-- **2026-11-19 [PM]** [AIML](questions/2026-11-19-pm-aiml.md): Explain the differences between Layer Normalization and Batch Normalization, including how each computes its statistics, the types of neural network architectures where they are typically applied, and the practical advantages or drawbacks of using Layer Normalization over Batch Normalization.
 
 Full history in [`data/questions.json`](data/questions.json). All past questions live in [`questions/`](questions/).
 

@@ -1738,6 +1738,16 @@
       "hint": "Consider the steps you took to communicate benefits, address concerns, and demonstrate value through metrics or small wins.",
       "answer": "I identified a bottleneck in our deployment pipeline and proposed adopting a continuous integration tool. Initially, teammates were hesitant because it meant extra steps in their daily routine. I organized a short demo showing how the tool could catch bugs early and save time in the long run, and then ran a pilot with a single feature branch. I gathered feedback, tweaked the configuration, and provided a cheat sheet for the most common commands. After a week, our build failure rate dropped by 30% and the average release cycle shortened by 20%, which convinced the team to fully adopt the new process.",
       "generated_at": "2026-11-27T11:07:16.400009+00:00"
+    },
+    {
+      "date": "2026-11-27",
+      "slot": "PM",
+      "category": "AIML",
+      "question": "What is label smoothing in neural network classification, how is it implemented mathematically, and what effects does it have on model confidence, calibration, and generalization?",
+      "difficulty": "Medium",
+      "hint": "Think about modifying the one\u2011hot target vector by mixing it with a uniform distribution over classes before computing the cross\u2011entropy loss.",
+      "answer": "Label smoothing replaces the hard one\u2011hot target vector y with a softened version y_s = (1\u2011\u03b5)\u00b7y + \u03b5/K\u00b71, where K is the number of classes and \u03b5\u2208(0,1) is the smoothing factor. In practice, the cross\u2011entropy loss is computed using y_s instead of y, which can be done by adjusting the target probabilities or by adding \u03b5/K to the logits before softmax. This regularization discourages the network from assigning full probability mass to a single class, reducing over\u2011confidence and improving calibration. It also acts as a form of confidence penalty that mitigates overfitting, often leading to better generalization, especially when the training set is noisy or small. Typical values of \u03b5 are 0.1 or 0.01, and the technique is widely used in image classification and language models.",
+      "generated_at": "2026-11-27T22:49:47.830065+00:00"
     }
   ]
 }

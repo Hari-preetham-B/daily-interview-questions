@@ -1728,6 +1728,16 @@
       "hint": "Think greedily: while scanning the array keep track of the farthest index you can reach within the current number of jumps and when you exceed that range, increase the jump count and update the range.",
       "answer": "We can solve it in a single pass using a greedy approach. Maintain three variables: `maxReach` \u2013 the farthest index reachable so far, `edge` \u2013 the end of the current jump range, and `jumps` \u2013 the number of jumps made. Iterate i from 0 to n\u20112: update `maxReach = max(maxReach, i + nums[i])`. When i reaches `edge`, we must make another jump, so increment `jumps` and set `edge = maxReach`. If at any point `maxReach` does not advance beyond i, the end is unreachable and we return -1. After the loop, `jumps` holds the minimum jumps to reach the last index. The algorithm runs in O(n) time and O(1) space.",
       "generated_at": "2026-11-26T23:09:52.288598+00:00"
+    },
+    {
+      "date": "2026-11-27",
+      "slot": "AM",
+      "category": "Behavioral",
+      "question": "Describe a situation where you introduced a new process or tool to your team that required everyone to change their workflow, but initially met resistance. How did you handle the pushback, ensure adoption, and measure success?",
+      "difficulty": "Medium",
+      "hint": "Consider the steps you took to communicate benefits, address concerns, and demonstrate value through metrics or small wins.",
+      "answer": "I identified a bottleneck in our deployment pipeline and proposed adopting a continuous integration tool. Initially, teammates were hesitant because it meant extra steps in their daily routine. I organized a short demo showing how the tool could catch bugs early and save time in the long run, and then ran a pilot with a single feature branch. I gathered feedback, tweaked the configuration, and provided a cheat sheet for the most common commands. After a week, our build failure rate dropped by 30% and the average release cycle shortened by 20%, which convinced the team to fully adopt the new process.",
+      "generated_at": "2026-11-27T11:07:16.400009+00:00"
     }
   ]
 }
